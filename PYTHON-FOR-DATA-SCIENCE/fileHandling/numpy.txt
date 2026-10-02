@@ -1,0 +1,68 @@
+Introduction to NumPy
+NumPy is a library for scientific computing that serves as the basis for Pandas. Compared to regular Python, operations in NumPy are computationally faster and require less memory.
+
+Creating Arrays and Basic Attributes
+A NumPy array (or ndarray) is a container used to store and access data. While similar to a Python list, an ndarray is usually fixed in size, and each element must be of the exact same data type (e.g., integers, real numbers).
+
+Creation and Data Types
+
+Casting: You can create an array by importing NumPy and casting a standard Python list to a NumPy array.
+
+Type: Checking the type of this object returns numpy.ndarray.
+
+dtype Attribute: Returns the specific data type of the array's elements (e.g., a 64-bit integer or float64 for real numbers).
+
+Array Attributes
+
+size: Returns the total number of elements in the array.
+
+ndim: Represents the number of array dimensions (or the rank of the array). For a 1D array, this is 1.
+
+shape: Returns a tuple of integers indicating the size of the array in each dimension.
+
+Indexing and Slicing
+Accessing Elements: Like lists, each element is associated with an index. You can access or modify specific elements using integers and square brackets (e.g., changing the first element to 100).
+
+Slicing: You can select a range of elements (e.g., index 1 to 3) and assign them to a completely new NumPy array. Like Python lists, the element corresponding to the final index in the slice is not included.
+
+Assigning to Slices: You can assign completely new values to a specified sliced index range within an array.
+
+Vector Operations
+NumPy simplifies operations commonly used in data science, allowing them to be executed in a single line of code rather than requiring complex loops.
+
+Vector Addition: Adds the corresponding components of two vectors together to create a new vector (a linear combination). Visually represented using the tip-to-tail method (placing the tail of the second vector on the tip of the first).
+
+Vector Subtraction: Operates identically to addition, but subtracts the corresponding components.
+
+Scalar Multiplication: Multiplying a vector by a scalar value multiplies each component of the vector by that value (e.g., multiplying by 2 stretches the vector to be twice as long in each direction).
+
+Hadamard Product: Produces a new vector consisting of the entry-wise product (multiplying the corresponding elements of two distinct vectors together).
+
+Dot Product: Uses the dot function to multiply corresponding components of two vectors and add the results together. This yields a single number representing how similar the two vectors are.
+
+Broadcasting: If you add a single scalar value to an entire array, NumPy automatically adds that value to every single element within the array.
+
+Universal Functions
+Universal functions operate directly on ndarrays.
+
+mean: Calculates and returns the average value of all elements in the array.
+
+max: Finds and returns the largest value in the array.
+
+Mathematical Mapping: You can map an array to a new array by applying a function to it. For example, creating an array in radians (using NumPy's pi value) and applying the sin function will apply the sine function to every single element, creating a new resulting array.
+
+Generating Sequences and Plotting
+The linspace Function
+Returns evenly spaced numbers over a specified interval.
+
+Parameters: You specify the starting point, the ending point, and the parameter num (the number of samples to generate).
+
+Example: Generating 5 samples between -2 and 2 yields a space of 1 between samples. Generating 9 samples over the same interval yields a space of 0.5.
+
+Plotting
+
+Import the library pyplot as plt.
+
+In a Jupyter Notebook, use the command %matplotlib inline to display the plot.
+
+Use the plotting command to graph the data: the first input corresponds to the horizontal (x-axis) values, and the second input corresponds to the vertical (y-axis) values.

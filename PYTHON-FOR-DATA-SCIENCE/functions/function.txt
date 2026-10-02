@@ -1,0 +1,84 @@
+Python Functions Overview
+Functions take some input, perform a task using a reusable piece of code, and produce some output or change. By calling a function, you can replace long, repetitive lines of code with a single short command.
+
+Built-In Functions
+Python has many pre-built functions where you simply need to know what task they perform, not how they work internally.
+
+len: Takes an input of a sequence (like a string or list) or a collection (like a dictionary or set) and returns its length.
+
+sum: Takes in an iterable (like a tuple or list) and returns the total sum of all its elements.
+
+sorted: Takes an input (like a list) and produces a new, sorted output list. The original list remains unchanged.
+
+Functions vs. Methods
+Functions (e.g., sorted(album_ratings)): Generally take an input and return a completely new output, leaving the original data unchanged.
+
+Methods (e.g., album_ratings.sort()): Applied directly to the object. Applying the sort method changes the original list itself, and no new list is created.
+
+Building Custom Functions
+1. Basic Syntax
+
+Start with the keyword def.
+
+Provide a descriptive function name, followed by formal parameters in parentheses, and a colon :.
+
+Write the block of code to be executed on an indent.
+
+Use a return statement to output the final value.
+
+2. Documentation
+
+It is customary to document a function on its first few lines using triple quotes.
+
+This documentation explains what the function does and can be displayed using the help() command.
+
+3. Multiple Parameters & Type Behavior
+
+Functions can take multiple parameters (e.g., multiplying two inputs).
+
+Because Python allows flexibility, passing different data types yields different results:
+
+Integer + Integer = Integer
+
+Integer + Float = Float
+
+Integer + String = Repeated sequence (e.g., 2 * "Michael Jackson" results in "Michael JacksonMichael Jackson"). Python will not throw an error here, so thorough testing is required.
+
+4. The return Statement and None
+
+If a function does not have a return statement, Python automatically returns the special None object.
+
+Python does not allow a function to have an empty body. To create a function that does nothing, use the keyword pass.
+
+5. Advanced Parameters and Loops
+
+Loops: Functions can contain loops. For example, using the enumerate function inside a loop passes both the index and the value of a list to the loop for iteration.
+
+Variadic Parameters: Allows you to input a variable number of elements.
+
+Indicated by an asterisk (*) before the parameter name.
+
+When called, the inputs are packed into a tuple (e.g., *names).
+
+Variable Scope
+The scope of a variable determines the part of the program where that variable is accessible.
+
+1. Global Scope
+
+Variables defined outside of any function belong to the global scope.
+
+They are called global variables and can be accessed anywhere after they are defined.
+
+2. Local Scope
+
+Variables defined inside a function are local variables.
+
+They only exist within the specific scope of that function. After the function returns its value, the local scope is deleted.
+
+3. Scope Rules & Interactions
+
+Same Names: A variable inside a local scope can have the same name as a variable in the global scope without conflict. Inside the function, Python will use the local value. Outside, it will use the global value.
+
+Global Lookup: If a variable is used within a function but never defined locally, Python will check the global scope and use the global variable's value.
+
+The global Keyword: If you define a variable inside a function using the keyword global (e.g., global claimed_sales), that variable becomes a global variable and will be accessible outside the function.

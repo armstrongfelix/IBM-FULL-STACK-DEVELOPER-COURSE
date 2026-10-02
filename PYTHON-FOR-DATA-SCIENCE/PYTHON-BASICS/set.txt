@@ -1,0 +1,32 @@
+Python Sets
+Definition: A type of collection that can hold different Python data types (similar to lists and tuples).
+
+Key Characteristics:
+
+Unordered: Sets do not record the position of elements.
+
+Unique Elements: Sets only contain unique items. If you try to create a set with duplicate items, the duplicates will not be present in the final set.
+
+Syntax: Sets are defined by placing elements within curly brackets {}.
+
+Typecasting: You can convert a list into a set using the set function (e.g., passing the list as an input to the function). This automatically removes any duplicate elements from the original list.
+
+Modifying Sets
+add method: Adds a new item to the set. Formatted as the set name, a dot, the add method, and the new element as the argument. If you add the same item twice, nothing happens because sets cannot have duplicates.
+
+remove method: Removes a specific item from the set. Formatted similarly to the add method, passing the item you want to remove as the argument.
+
+in command: Verifies if a specific element is present in the set. It returns True if the item is in the set, and False if it is not.
+
+Mathematical Set Operations
+Sets can be visualized using Venn diagrams, where circles represent the sets and overlap represents shared elements.
+
+Intersection (AND logic): Creates a new set containing only the elements that exist in both sets (the overlapping area of the Venn diagram).
+
+Syntax: Place an ampersand (&) between the two sets in Python.
+
+Union: Creates a new set containing all the elements from both sets combined.
+
+Subsets: Occurs when all elements of one set are entirely contained within another set (visualized as one circle completely encapsulated by another).
+
+Syntax: Use the isSubset method to check this relationship. It returns True if the first set is a subset of the second.

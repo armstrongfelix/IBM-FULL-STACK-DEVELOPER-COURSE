@@ -1,0 +1,61 @@
+Overview: High-Level vs. Low-Level Languages
+Programming languages are broadly categorized into two levels based on how close they are to human language versus machine code.
+
+High-Level Programming Languages
+
+Characteristics: More sophisticated and use common English words, making the code much easier to read, write, and debug. One statement in a high-level language can translate into multiple machine code instructions.
+
+Examples: Query languages (SQL), Structured languages (PASCAL), and Object-oriented languages (Python).
+
+Low-Level Programming Languages
+
+Characteristics: Less sophisticated and use a simple set of symbols to represent the ones and zeros of machine code.
+
+Examples: Assembly languages (ARM, MIPS, x86).
+
+1. Query Languages (High-Level)
+A query language is primarily used to communicate with a database to request information or manipulate data.
+
+How They Work
+
+The user or application uses predefined instructions (queries) to ask the database for specific data.
+
+The database retrieves the requested data from its structured tables (rows and columns) and returns the results.
+
+These languages are heavily used for CRUD operations: Create, Read, Update, and Delete data.
+
+Types of Queries
+
+Select Queries: Used purely to request and retrieve data from a database.
+
+Action Queries: Used to manipulate or change data (e.g., create, insert, or update).
+
+Note: Query statements can also handle administrative tasks, like modifying user permissions.
+
+SQL vs. NoSQL
+
+SQL (Structured Query Language): By far the most prevalent query language. It is used for relational databases that rely on structured, predefined schemas.
+
+NoSQL (Not Only SQL): A different type of database used for non-relational systems. It handles unstructured data using dynamic schemas.
+
+Other Query Languages: AQL, CQL, Datalog, and DMX.
+
+2. Assembly Languages (Low-Level)
+Assembly languages are a step right above pure binary machine code. They use simple, readable formats for their statements but are highly specific to the hardware they run on.
+
+Key Characteristics
+
+Hardware-Specific: Assembly languages are closely tied to the specific processor (CPU) architecture of a hardware manufacturer. Because of this, there are many different assembly languages in use today.
+
+The Assembler: Unlike high-level languages that use compilers or interpreters, assembly languages are translated into machine code by an assembler.
+
+One-to-One Translation: One line of assembly language translates into exactly one machine code instruction.
+
+Syntax and Structure
+Assembly language statements are entered one line at a time. A standard statement typically consists of two main parts:
+
+The Instruction (Mnemonic or Opcode): Tells the processor what to do (e.g., INP for Input, LDA for Load, ADD for Add).
+
+The Parameters (Operands): Tells the processor where to find the data it needs to work with.
+
+Comments: Optional helpful notes can be added to the end of the statement by the programmer.

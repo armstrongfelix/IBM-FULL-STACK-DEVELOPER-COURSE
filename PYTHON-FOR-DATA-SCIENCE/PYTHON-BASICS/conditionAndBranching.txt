@@ -1,0 +1,68 @@
+Comparison Operations
+Comparison operations compare a value or operand and produce a Boolean (True or False) based on a specific condition. They can be applied to integers, floats, and strings.
+
+Equality (==): Denoted with two equal signs. Determines if two values are equal.
+
+Example: 7 == 6 results in False. 6 == 6 results in True.
+
+String Example: "AC DC" == "Michael Jackson" results in False.
+
+Inequality (!=): Uses an exclamation mark preceding an equal sign. The condition becomes True if the two operands are not equal.
+
+Example: 2 != 6 results in True.
+
+String Example: "AC DC" != "Michael Jackson" results in True.
+
+Greater than (>): True if the left operand is larger than the right operand (e.g., i > 5).
+
+Greater than or equal to (>=): True if the left operand is larger than or equal to the right operand (e.g., i >= 5).
+
+Less than (<): True if the left operand is smaller than the right operand (e.g., i < 6).
+
+Branching
+Branching allows a program to run different statements for different inputs.
+
+1. The if Statement
+
+Concept: Think of it as a locked room. If the statement is True, you can enter the room and run a predefined task. If False, the program skips the task.
+
+Syntax: Uses the if keyword, followed by an expression (brackets are not necessary), and a colon. The task to be executed if True is placed on the next line with an indent.
+
+Execution: Statements placed after the if statement block (without an indent) will run regardless of whether the condition was True or False.
+
+2. The else Statement
+
+Concept: Runs a different block of code if the initial if condition is False.
+
+Syntax: Appends the statement else: followed by an indented expression.
+
+Execution: If the if condition is False, the program skips the if block and runs the indented expression under else.
+
+3. The elif Statement (Else If)
+
+Concept: Allows you to check additional conditions if the preceding condition is False.
+
+Syntax: Uses the elif keyword with a new condition and a colon, followed by an indented expression.
+
+Execution: If the initial if statement is False, the program checks the elif condition. If the elif condition is True, its alternate expressions are run.
+
+Concert Analogy from Transcript:
+
+if age > 18: Enter the AC/DC concert.
+
+elif age == 18: Go see Pink Floyd instead.
+
+else (age < 18): Go see the Meatloaf concert.
+
+Logic Operators
+Logic operations take Boolean values and produce different Boolean values.
+
+not Operator: Reverses the Boolean value. If the input is True, the result is False. If the input is False, the result is True.
+
+or Operator: Takes in two Boolean values. It produces a False only if all the Boolean values are False. If at least one statement is True, the result is True.
+
+Example: Checking if an album was made in the 70s or the 90s. If the year is 1990, one condition is met, so the entire statement is True.
+
+and Operator: Takes in two Boolean values. It produces a True only if all the Boolean values are True.
+
+Example: Checking if an album was made in the 80s (year is > 1979 and < 1990). If the year is 1983, both conditions are met, so the statement is True.

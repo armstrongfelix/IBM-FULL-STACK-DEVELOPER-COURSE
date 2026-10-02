@@ -1,0 +1,71 @@
+Here are your lecture notes, created strictly from the provided transcript:
+
+Python Strings: Basics
+Definition: A string is a sequence of characters.
+
+Formatting: Strings are contained within two quotes (double quotes) or single quotes.
+
+Content: A string can consist of letters, spaces, digits, or special characters.
+
+Assignment: You can bind or assign a string to a variable.
+
+Immutability: Strings are immutable. You cannot change the value of an existing string, but you can create a new string (e.g., by taking the original variable and concatenating it with new text to create a new string).
+
+Indexing and Sequence Operations
+It is helpful to think of a string as an ordered sequence, similar to a list or a tuple. Each element can be accessed using an index represented by an array of numbers.
+
+1. Indexing
+
+Standard Indexing: You can access specific elements using positive numbers (e.g., the first index, index six, or the 13th index).
+
+Negative Indexing: You can also use negative numbers to access elements from the end of the string.
+
+The last element is accessed using the index -1.
+
+In a 15-character string, the first element can be obtained using the index -15.
+
+2. Slicing and Strides
+
+Stride: You can input a stride value to skip characters. For example, a stride of 2 indicates you will select every second character/value.
+
+Slicing with Stride: You can combine slicing and striding (e.g., returning every second value up to index 4).
+
+3. Useful Commands and Operations
+
+Length: Use the len command to obtain the length of the string (e.g., if there are 15 elements, the result is 15).
+
+Concatenation: Use the addition symbol (+) to combine strings. The result is a completely new string.
+
+Replication: Multiply the string by the number of times you want to replicate it. The result is a new string consisting of multiple copies of the original.
+
+Escape Sequences
+Escape sequences represent strings or formatting that may be difficult to input directly. They begin with a backslash (\).
+
+New Line (\n): Outputs a new line after the backslash "n" is encountered.
+
+Tab (\t): Outputs a tab space where the backslash "t" is located.
+
+Backslash (\\): If you want to place a literal backslash in your string, use a double backslash.
+
+Alternative: You can also place an r in front of the string.
+
+String Methods
+Strings have methods that work on lists and tuples (since they are sequences), as well as a specific set of methods that only work on strings. When you apply a method to string "A", you get a new string "B" that is different from "A".
+
+Key Methods:
+
+Upper: Converts all lowercase characters in the string to uppercase characters.
+
+Replace method: Replaces a segment of the string (a substring) with a new string.
+
+Argument 1: The part of the string you want to change.
+
+Argument 2: What you want to exchange the segment with.
+
+find: Used to find substrings (e.g., finding the substring "Jack").
+
+Argument: The substring you want to find.
+
+Output: The first index of the sequence where the substring starts.
+
+Not Found: If the substring is not in the string, the output is -1.

@@ -1,0 +1,35 @@
+Software Development Life Cycle (SDLC):
+    Software Development Lifecycle (SDLC) is  structured process used to build software. Originally conceived as a linear "waterfall" method, the SDLC is now often adapted to accommodate iterative development. The process is divided into six discrete phases, meaning tasks from one phase generally do not overlap with the next.
+
+Source: Shutterstock
+Explore
+
+
+The Six Phases of the SDLC
+    Planning:
+         (or Requirements/Analysis): The team gathers, analyzes, and prioritizes requirements by considering factors like user needs, risks, costs, and resources. Stakeholders and developers agree on the goals, culminating in a Software Requirements Specification (SRS) document. Prototypes (small-scale replicas) are often used here to clarify requirements.
+
+    Design: 
+        Using the SRS, the team develops the software architecture and creates a Design Document. Preliminary mock-ups of the system can also be built during this phase to demonstrate ideas.
+
+    Development (Building/Implementation): 
+        Developers begin the actual coding process based on the design document. Tasks are assigned, and specific programming languages and tech stacks are utilized.
+
+    Testing: 
+        Dedicated teams or developers thoroughly test the code (manually, automatically, or both) to ensure it is stable, secure, and meets the SRS requirements. Bugs are tracked and fixed. Testing levels include unit, integration, system, and acceptance testing.
+
+    Deployment: 
+        The software is released into the production environment for users. This often happens in stages, starting with User Acceptance Testing (UAT) for final customer sign-off before full release.
+
+    Maintenance: 
+        Post-release, the team monitors the software to fix newly discovered bugs, address user interface (UI) issues, and identify potential code enhancements. This feedback can trigger a new development cycle.
+
+
+Key Takeaways:
+        Clear Documentation is Crucial: The output of the planning phase (the SRS) drives the design phase, and the output of the design phase (the Design Document) drives the coding phase.
+
+        Prototyping Mitigates Risk: Building small mock-ups helps tease out exact requirements from stakeholders early on, though it can be utilized at any stage if requirements need clarification.
+
+        Testing is Comprehensive: Code must pass multiple levels of testing to ensure it matches the initial expectations outlined in the SRS before anyone uses it.
+
+        The Cycle is Continuous: The end of the process (Maintenance) is often the beginning of a new one. Feedback, missed bugs, and new feature requests feed directly back into the planning stage for future software updates.

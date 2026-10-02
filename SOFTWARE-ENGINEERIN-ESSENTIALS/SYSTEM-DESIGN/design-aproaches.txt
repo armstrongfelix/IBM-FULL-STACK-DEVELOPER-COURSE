@@ -1,0 +1,63 @@
+Approaches to Application Architecture
+1. Components
+A component is an individual unit of encapsulated functionality that works with other components to serve as part of an application.
+
+Six Characteristics of a Component
+Reusable: Designed to be used across different applications.
+
+Replaceable: Can be easily swapped out for another component.
+
+Independent: Does not rely on dependencies from other components.
+
+Extensible: Behavior can be added without altering other components.
+
+Encapsulated: Bundles data and methods to hide its internal state and specific implementation.
+
+Non-context Specific: Can operate in different environments; state-setting data is passed to the component rather than included within it.
+
+Examples:
+
+An open-source API connecting a system to a database.
+
+A Data Access Object (DAO) interface that switches databases without the application knowing.
+
+A Controller that dictates data flow and determines which components to call for an event.
+
+2. Component-Based Architecture
+Focuses on decomposing a system's design into logical, loosely coupled, and independent components.
+
+Provides a higher level of abstraction than standard object-oriented (OO) designs.
+
+3. Services & Service-Oriented Architecture (SOA)
+A service is a specific type of component designed to solve a business need. It is deployed independently and reused by multiple systems.
+
+Components vs. Services
+The Key Difference: A service has only one unique, always-running instance that multiple clients communicate with.
+
+The Hierarchy: Services are made of components, and components consist of objects.
+
+Examples of Services: Checking a customer’s credit, calculating a loan payment, or processing a mortgage.
+
+Service-Oriented Architecture (SOA)
+An architecture where loosely coupled services interface with one another via a communication protocol over a network.
+
+Supports the building of distributed systems.
+
+4. Distributed Systems
+A distributed system features multiple services located on different machines that coordinate by passing messages (e.g., via HTTP). Despite being spread out, it appears to the end-user as a single, coherent system.
+
+Key Properties
+Resource Sharing: Shares hardware, software, and data.
+
+Fault-Tolerant: If a node or service fails, the system continues to run. It can also adapt during execution without service interruption.
+
+High Performance: Runs multiple activities concurrently, reducing latency and increasing throughput.
+
+Scalable: Can easily handle an increasing number of users.
+
+Heterogeneous: Machines do not need the same hardware, operating systems, or programming languages.
+
+Network Nodes & Architectures
+Node: Any device on a network that can recognize, process, and transmit data to other nodes.
+
+Common Architectures: Distributed systems typically use Client-Server, Three-Tier, Peer-to-Peer (P2P), or Microservices architectures.

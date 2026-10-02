@@ -1,0 +1,25 @@
+Software documentation consists of written, video, or graphical assets that describe what a software product is and how to use it. It is an essential component across all phases of the Software Development Life Cycle (SDLC) and serves various audiences, including developers, QA engineers, and end-users. Documentation is broadly categorized into two main areas: product documentation (detailing software functionality) and process documentation (detailing how to complete tasks). To remain effective and accurate, all documentation must be regularly reviewed and updated, typically during the maintenance phase of the SDLC.
+
+
+Key Takeaways:
+Two Main Categories:
+Product Documentation: Focuses on the product itself (how it functions, its features, and how it is built).
+
+Process Documentation: Focuses on the implementation of tasks and business processes.
+
+
+Five Types of Product Documentation:
+
+Requirements: Written during the planning phase (e.g., system and user requirement specifications).
+
+Design: Explains how the software will be built conceptually and technically.
+
+Technical: In-code comments and developer notes explaining how the code behaves.
+
+Quality Assurance (QA): Testing strategies, test cases, and traceability matrices.
+
+User: Manuals, FAQs, and installation guides intended for the end-user.
+
+Standard Operating Procedures (SOPs): Often accompanying process documentation, SOPs are highly detailed, step-by-step instructions for completing common, organization-specific tasks (e.g., exactly how a specific company merges code into their main branch).
+
+Maintenance is Mandatory: Documentation is useless if it is outdated. Businesses must allocate resources to update and review documentation whenever changes to the software or UI occur.

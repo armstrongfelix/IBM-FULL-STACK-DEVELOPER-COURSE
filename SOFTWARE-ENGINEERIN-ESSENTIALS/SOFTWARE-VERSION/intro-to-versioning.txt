@@ -1,0 +1,29 @@
+SOFTWARE VERSIONING
+
+    This lecture explains the concept of software versioning—the system developers use to track releases, updates, and patches for their applications. It breaks down how to read and interpret different version number formats, such as semantic and date-based numbering, and explains how users can locate version information on their devices. Finally, it highlights how version numbers are crucial for troubleshooting compatibility issues between older and newer software.
+
+    Key Takeaways
+    The Purpose of Versioning: Version numbers provide a brief history of a program, indicating when it was released and whether any patches, fixes, or minor changes have been applied.
+
+    Initial vs. Beta Releases: A first official release is usually labeled 1.0. If a software is still in beta or testing, it typically starts with a number lower than 1 (like 0.9).
+
+    Semantic Numbering Structure: 
+        major-changes.minor-changes.patches-or-bug-fixes.build-number-or-date.
+        Many programs use a 4-part numbering system separated by periods. Each position means something specific:
+        
+
+    1st Number: Major changes or an entirely new release.
+
+    2nd Number: Minor changes and feature additions.
+
+    3rd Number: Patches or minor bug fixes.
+
+    4th Number: The build number, build date, or very minor background tweaks.
+
+    Date-Based Versioning: 
+        yy.mm.build-no
+        Some developers use the release date instead of arbitrary numbers. For example, Ubuntu 18.04.2 means the software was released in 2018, in the 4th month (April), and is on its second update (.2).
+
+    How to Find It: You can usually find the version number of an application by navigating to the "Help" or "About" section in the main menu (e.g., clicking the three dots in Google Chrome, then Help > About).
+
+    Software Compatibility: A common tech issue is a lack of compatibility between old and new software versions. Knowing your current version helps you troubleshoot. If software is backwards compatible, it means older files and systems will still work perfectly with the newer update.

@@ -1,0 +1,43 @@
+Working with DataFrames
+1. Finding Unique Elements
+When working with a DataFrame, you may need to find out how many unique elements are in a specific column (e.g., finding unique release years out of millions of entries).
+
+Method: Use the unique method.
+
+Syntax / Process:
+
+Enter the name of the DataFrame.
+
+Enter the name of the column within brackets (e.g., ['Released']).
+
+Apply the method unique.
+
+Result: This returns all of the unique elements found within that specific column.
+
+2. Filtering and Selecting Data
+You can use inequality operators to filter a DataFrame and create a new one based on specific conditions (e.g., selecting songs released after 1979).
+
+How Inequalities Work in Pandas: If you specify a column and apply an inequality (like albums after 1979), the result is a series of Boolean values. It returns True when the condition is met and False otherwise.
+
+Selecting Data in One Line:
+
+Use the DataFrame name.
+
+Follow it with square brackets.
+
+Place the inequality condition inside those square brackets.
+
+Assign this to a new variable (e.g., df1).
+
+Result: You now have a completely new DataFrame containing only the rows that met your condition (e.g., albums released after 1979).
+
+3. Saving DataFrames
+Once you have manipulated your data, you can save the resulting DataFrame into various file formats.
+
+Method: Use the to_csv method to save it as a CSV file.
+
+Argument: Pass the desired name of the CSV file as the argument.
+
+Important: You must remember to include the .csv extension in the file name.
+
+Other Formats: Pandas includes other functions that allow you to save DataFrames in other formats as well.

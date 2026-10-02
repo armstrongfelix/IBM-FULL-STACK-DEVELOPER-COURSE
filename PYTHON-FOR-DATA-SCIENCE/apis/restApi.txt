@@ -1,0 +1,64 @@
+The HTTP Protocol: Overview
+Definition: The HTTP protocol is a general protocol for transferring information through the web.
+
+REST APIs: REST APIs function by sending requests communicated via HTTP messages. These messages usually contain a JSON file.
+
+Client-Server Interaction:
+
+When you (the client) use a web page, your browser sends an HTTP request to the server hosting the page.
+
+The server attempts to find the requested resource (by default, this is index.html).
+
+If successful, the server sends the requested object (e.g., an HTML file, PNG image, or TXT file) back to the client in an HTTP response. This response includes metadata like the resource type and length.
+
+Uniform Resource Locator (URL)
+A URL is the most popular way to find resources on the web. It can be broken down into three main parts:
+
+Scheme: This is the protocol being used. For this lab, it will always be http://.
+
+Internet Address (Base URL): This is used to find the location on the web (e.g., [www.ibm.com](https://www.ibm.com) or [www.gitlab.com](https://www.gitlab.com)).
+
+Route: This specifies the exact location of the resource on the web server (e.g., /images/IDSNlogo.png).
+
+The Request and Response Process
+1. The HTTP Request
+An HTTP request message tells the server what action to perform.
+
+Start Line: Contains the specific HTTP method being used (e.g., GET) and the file being requested (e.g., index.html).
+
+Request Header: Passes additional information along with the HTTP request. (Note: In a standard GET method, the request header is empty).
+
+Request Body: Some requests contain a body to send data, though not all do.
+
+2. The HTTP Response
+The HTTP response message is what the server sends back to the client.
+
+Response Start Line: Contains three pieces of information:
+
+The version number (e.g., HTTP/1.0).
+
+A status code (e.g., 200).
+
+A descriptive phrase (e.g., OK).
+
+Response Header: Contains additional information about the resource.
+
+Response Body: Contains the actual requested file (e.g., the HTML document).
+
+Status Codes
+Status codes are grouped into classes based on their prefix (the first digit):
+
+100s (Informational): Indicates everything is functioning properly so far (e.g., 100 means everything is OK so far).
+
+200s (Successful): Indicates success (e.g., 200 means the request has succeeded).
+
+400s (Client Errors / "Bad News"): Indicates a problem with the request (e.g., 401 means the request is unauthorized).
+
+500s (Server Errors): Indicates an issue on the server side (e.g., 501 means Not Implemented).
+
+HTTP Methods
+When an HTTP request is made, an HTTP method is sent to tell the server what specific action to perform.
+
+GET: Retrieves data from the server.
+
+POST: Sends data to the server.

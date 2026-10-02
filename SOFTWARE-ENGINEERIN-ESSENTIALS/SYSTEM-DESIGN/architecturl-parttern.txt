@@ -1,0 +1,61 @@
+Architectural Patterns in Software
+1. Introduction to Architectural Patterns
+Definition: A repeatable solution to a common problem in software architecture.
+
+Purpose: Patterns highlight the internal elements and structural organization of a software system.
+
+Composition: Patterns are not always mutually exclusive. For example, a 3-tier system can use microservices, or a peer-to-peer network can be event-driven. However, some cannot combine (e.g., a system cannot be simultaneously 2-tier and peer-to-peer due to structural contradictions).
+
+Note: Other patterns not covered in depth here include Model-View-Controller (MVC), Message-Broker, Blackboard, Pipe-Filter, and Controller-Responder.
+
+2. Core Architectural Patterns
+A. 2-Tier Architecture (Client-Server)
+Structure: A centralized model consisting of a Client (handles the user interface and requests data/services) and a Server (hosts, delivers, and manages most resources).
+
+Connectivity: Typically involves multiple clients connected to a single server over a network.
+
+Example: * Text messaging apps: A client requests to send a message through a server, which then delivers it to another client.
+
+Database clients: Direct connections between a database client application and a database server.
+
+B. 3-Tier Architecture (N-Tier)
+Structure: The most common software architecture. It organizes applications into three distinct physical/logical computing layers. A tier only communicates with the tiers directly above and below it, making changes isolated and modular.
+
+Presentation Tier: The user interface (UI).
+
+Middle (Application) Tier: Where business logic and data inputs are processed.
+
+Data Tier: Where data is securely stored and managed.
+
+Example: * Modern Web Applications: A web server hosts the UI (Presentation), an application server processes inputs (Middle), and a database server manages information (Data).
+
+C. Peer-to-Peer Architecture (P2P)
+Structure: A decentralized network of nodes where every node acts as both a client and a server.
+
+Mechanism: Workloads and resources (processing power, storage, bandwidth) are partitioned directly among peers without central coordination by a server.
+
+Example: * Cryptocurrencies (Bitcoin/Ethereum): Every computer in the blockchain network serves as both a client and a server to validate and share ledger data.
+
+Other uses: File sharing, instant messaging, and high-performance collaborative computing.
+
+D. Event-Driven Architecture
+Structure: Focuses on state changes ("events") triggered by users (like clicks) or other programs. It relies on a decoupled producer-consumer model:
+
+Producer: Listens for triggers and publishes an event notification message.
+
+Event Router: Receives the message and determines which consumer needs it.
+
+Consumer: Listens for specific notifications and processes the event.
+
+Example: * Ride-sharing apps (Uber/Lyft): A customer triggers an event by requesting a ride location. The platform's router pushes this event notification out to nearby driver consumers.
+
+E. Microservices Architecture
+Structure: Breaks down an application's functionality into small, modular, loosely coupled components called services.
+
+Mechanism: Services communicate via Application Programming Interfaces (APIs), which define how data is shared and modified.
+
+An API Gateway routes requests from the client to the correct service.
+
+Orchestration manages the communication patterns between the individual services.
+
+Example: * Social Media Platforms: Instead of a single massive program, separate services independently handle specific tasks like account profile management, friend requests, ad targeting recommendations, and content feeds.

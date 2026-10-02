@@ -1,0 +1,65 @@
+Python Expressions
+Definition: Expressions are operations that Python (the computer) performs.
+
+Terminology:
+
+Operands: The numbers involved in an operation.
+
+Operators: The math symbols used to perform the operation (e.g., addition, subtraction, asterisk, forward slash).
+
+Types of Arithmetic Operations:
+
+Addition: Adding multiple numbers together.
+
+Subtraction: Uses the subtraction sign (can result in negative numbers).
+
+Multiplication: Uses the asterisk (*).
+
+Division: Uses the forward slash (/).
+
+Note: In Python 3 (the version used in this course), regular division always results in a float (e.g., 25 / 5 = 5.0, 25 / 6 is approx 4.167).
+
+Integer Division: Uses the double slash (//). The result is rounded. Be aware that the results are not always the same as regular division.
+
+Order of Operations:
+
+Python follows standard mathematical conventions.
+
+Multiplication is performed before addition.
+
+Expressions inside parentheses are performed first. (For example, numbers inside parentheses will be added together before being multiplied by a number outside them).
+
+Python Variables
+Purpose: Variables are used to store values.
+
+The Assignment Operator: Use the equals sign (=) to assign a value to a variable.
+
+Using Variables: Once a value is stored, you can use it elsewhere in your code by typing the exact name of the variable.
+
+Reassigning Values: You can assign a new value to an existing variable. When you do this, the old value is no longer important and is replaced.
+
+Variables and Expressions:
+
+You can store the result of an expression (like adding several numbers) inside a variable (e.g., x).
+
+You can perform operations on a variable and save the result to a completely new variable (e.g., y).
+
+You can perform operations on a variable and assign the new value back to the same variable (e.g., doing math on x and saving it as x).
+
+Checking Types: The type command can be used on variables just like it can on raw data.
+
+Variable Naming Best Practices:
+
+Always use meaningful variable names so you do not have to keep track of what the variable is doing.
+
+To separate words in a variable name, it is common to use an underscore (e.g., total_min, total_hour) or to start a new word with a capital letter.
+
+Example Application:
+
+If you have a music dataset and want to convert minutes to hours:
+
+Store the minutes in a variable called total_min.
+
+Divide total_min by 60 and assign the result to a new variable called total_hour.
+
+Benefit: If you modify the starting value in the first variable, the final result values change accordingly, and you do not have to modify the rest of the code.

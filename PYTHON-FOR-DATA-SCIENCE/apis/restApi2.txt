@@ -1,0 +1,63 @@
+The Python requests Library
+Overview: While Python has several libraries for working with the HTTP protocol (like HTTPlib and urllib), requests is a popular library that allows you to send HTTP/1.1 requests easily.
+
+The Response Object: When you make a request, it returns a response object (e.g., R) that contains information about the request.
+
+Standard GET Requests
+A GET request is used to retrieve data from a server (e.g., requesting a webpage like www.ibm.com).
+
+Status Code: You can view the status of the request using the attribute status_code (e.g., returns 200 for OK).
+
+Request Body: The request body for a GET request will return a value of None, as GET requests do not have a body.
+
+Response Headers: Using the headers attribute returns a Python dictionary of the HTTP response headers.
+
+Example Keys: The date key tells you when the request was sent. The content-type key indicates the type of data returned.
+
+Response Body/Text: If the content type is text or HTML, you can use the text attribute to display the HTML in the body (e.g., reviewing the first 100 characters).
+
+Encoding: You can also use the response object to check the encoding of the data.
+
+GET Requests with Query Strings
+You can use the GET method to modify the results of your query (e.g., retrieving specific data from an API like httpbin.org). To do this, you append /get to the base URL and use a query string.
+
+Query String Structure: This is part of the URL used to send information to the web server.
+
+It begins with a question mark (?).
+
+It is followed by parameter and value pairs (e.g., parameter name and value Joseph).
+
+Each parameter and value is separated by an equal sign (=).
+
+Multiple pairs are separated by an ampersand (&).
+
+Python Implementation:
+
+Create a dictionary (called a payload) where the keys are the parameter names and the values are the values of the query string.
+
+Pass this dictionary to the params parameter of the GET function.
+
+Because the information is sent entirely within the URL, the request body remains None.
+
+JSON Responses: If the returned content type is JSON, you can format it using the json method, which returns a Python dictionary. The key args within that dictionary will contain the names and values from your query string.
+
+POST Requests
+A POST request is also used to send data to a server, but it operates differently from a GET request.
+
+Key Difference: A POST request sends data in the request body, not in the URL.
+
+Python Implementation:
+
+Change the route endpoint to /post, which tells the server to expect data.
+
+Use the POST function.
+
+Pass the payload dictionary to the data parameter.
+
+Comparing POST and GET:
+
+URL: If you examine the URL attribute of a POST request, you will see it has no name or value pairs attached to it.
+
+Body: Only the POST request has data in its request body.
+
+Payload Retrieval: You can view the key form in the response to see the payload data that was sent.

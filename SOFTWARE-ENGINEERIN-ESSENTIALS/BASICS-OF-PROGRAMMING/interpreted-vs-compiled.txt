@@ -1,0 +1,56 @@
+Overview: Programming Languages
+Purpose: Programming languages allow humans to give instructions to computers.
+
+The Barrier: Computers only understand machine code (binary code: ones and zeros), not human language.
+
+The Solution: Human-readable programming languages are used to write code, which is then translated into machine code for the computer to execute. The two main categories are Interpreted and Compiled languages.
+
+Core Differences: Interpreted vs. Compiled Languages
+How the Code is Translated
+
+Interpreted: The code is translated line-by-line by a program called an interpreter, which is built into a web browser or operating system.
+
+Compiled: The code is packaged and translated upfront into a single executable file by a program called a compiler.
+
+How the Code Runs
+
+Interpreted: Runs through a secondary program (the interpreter).
+
+Compiled: Runs directly on the device hardware (e.g., when you double-click an app icon).
+
+Speed and Performance
+
+Interpreted: Generally slower because the translation happens on the fly while the program is running.
+
+Compiled: Runs significantly faster because the translation is already complete, and it can be executed repeatedly with ease.
+
+Complexity and Best Use Cases
+
+Interpreted: Best for running repetitive scripts, web page functionality, and versatile cross-platform use.
+
+Compiled: Best for solving challenging problems and building large, complex programs like desktop applications and operating systems.
+
+Detailed Breakdown
+1. Interpreted Programming Languages
+Also known as scripted or scripting languages, these are highly versatile and often easier for developers to learn.
+
+How they work: The source code must be run through an interpreter every time it executes. As long as the correct interpreter is present on the device or browser, the code will run seamlessly across different platforms.
+
+Key Examples:
+
+Python: Highly popular, versatile, and known for being easy for developers to learn and use.
+
+JavaScript: A simple scripting language that primarily runs through web browser interpreters.
+
+Lua: A lightweight, general-purpose scripting language often used for games.
+
+2. Compiled Programming Languages
+Often referred to simply as "programming languages," these are used to build heavy-duty, complex software like music apps, entire operating systems, and even compilers themselves.
+
+How they work: A compiler program translates the human-readable source code into machine code all at once, saving it as one executable file. When you download an update for your OS, for example, you are downloading files written in compiled languages.
+
+Key Examples:
+
+C, C++, and C# (C Sharp): Powerhouse languages used to build major operating systems like Microsoft Windows, Apple's macOS, and the open-source Linux OS.
+
+Java: Used to write the Android OS due to its excellent cross-platform capabilities. (Note: Java is a completely different language from JavaScript).

@@ -1,0 +1,23 @@
+Summary:
+    Software Engineering is the application of systematic, scientific principles to design, build, and test software applications. The discipline evolved from the ad-hoc programming of the 1950s into a formalized field to combat the "software crisis" of the 1960s to 1980s—a period plagued by buggy, unscalable, and over-budget projects. By adopting structured engineering methodologies and Computer-Aided Software Engineering (CASE) tools, the industry learned to manage complex, large-scale systems effectively. Today, modern software creation is guided by the Software Development Lifecycle (SDLC).
+
+    Additionally, while the terms are often used interchangeably, there is a distinction between a software engineer and a software developer. Software engineers focus on the "big picture" to design and maintain entire software systems, whereas software developers typically focus on writing code to implement specific features within that broader system.
+
+
+Key Takeaways: 
+        Definition of Software Engineering: It is a systematic, scientific approach to gathering business requirements and using them to design, develop, and test software applications.
+
+        The "Software Crisis" (mid-1960s to mid-1980s): Rapid technological growth and a lack of formal development processes led to projects that were frequently delayed, over budget, and full of unmanageable code.
+
+        The Solution: The crisis was resolved by treating software creation as an engineering discipline. This included the use of CASE tools (Computer-Aided Software Engineering) which assist with business analysis, debugging, validation, project management, and more.
+
+
+    Software Engineer vs. Software Developer:
+
+        Software Engineers take a big-picture, systematic approach to build and manage entirely integrated systems.
+
+        Software Developers take a narrower, sometimes more creative approach to write code for specific functionalities within a system.
+
+        Responsibilities of a Software Engineer: Designing, building, and mai   ntaining software systems; writing and testing code; and collaborating with various stakeholders (clients, vendors, security specialists, and team members).
+
+        The SDLC: Modern software engineering relies on the Software Development Lifecycle (SDLC) to dictate the steps required to produce high-quality software.

@@ -1,0 +1,25 @@
+Introduction to Exception Handling
+Purpose: Exception handlers are used to deal with errors gracefully. Instead of a program terminating unexpectedly when an error occurs, an exception handler allows the program to output a specific error message and continue running.
+
+Triggering Events: Errors are triggered in the background when a program attempts an invalid computation (e.g., a user mistakenly entering numbers into an input field meant for text).
+
+The try...except Statement
+The try Block: The program will first attempt to execute the code placed inside the "try" block.
+
+The except Block: If an error occurs within the "try" block, the program skips the remaining code in that block. It then searches for an except statement that matches the specific error. Once it finds the correct match, it executes that specific block of code.
+
+Example Application: If a program attempts to open and write a file but cannot read the data, an error occurs. The program skips the "try" code and moves to an exception line (like an IOError guideline), which can then print a message like, “Unable to open or read the data in the file.”
+
+Exception Best Practices
+Multiple Exceptions: Simple programs might only need one except statement, but if an error occurs that is not caught by the first one (like an IOError), you need to add additional except statements.
+
+Specify Error Types: It is not a best practice to use an except statement without specifying the exact type of error to catch, even though it will catch all errors and prevent termination.
+
+Debugging Issues: If you use an unspecified exception in a large program (e.g., over a thousand lines of code), the resulting error message will lack details. This forces you to spend hours trying to pinpoint and fix the disruption.
+
+The else and finally Statements
+The else Statement: Used to define what happens if the program executes properly without any errors. It provides a notification of success (e.g., printing “The file was written successfully.” to the console).
+
+The finally Statement: Tells the program to execute a specific action no matter the end result (whether the try block succeeded or an except block was triggered).
+
+Example: When opening a file, you must close it at the end. The finally statement ensures the file is closed regardless of errors and can print a confirmation like “File is now closed.”

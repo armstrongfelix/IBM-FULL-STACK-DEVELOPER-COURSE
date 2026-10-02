@@ -1,0 +1,55 @@
+Writing to Files in Python
+The Basics of Writing
+
+The open Function: Used to get a file object to create a text file.
+
+Arguments:
+
+File Path: Made up of the file name and directory. Warning: If a file with this name already exists in your directory, it will be overwritten.
+
+Mode: Set the parameter to W (or w) for writing.
+
+The write Method: Applied to the file object to input data (text) into the file. The argument passed to this method is the text you want to write.
+
+Using the with Statement
+
+It is best practice to use the with statement when opening files.
+
+The code will run everything inside the indented block and then automatically close the file when the block is finished.
+
+Successive Writing: You can use the write method multiple times within the block. Each time it is called, it adds to the file.
+
+Example: The first call writes "This is line A" (using \n to indicate a new line). The second call writes "This is line B". The file then closes.
+
+Advanced Writing Techniques
+Writing a List to a File
+You can write each element of a list into a file using a loop:
+
+Use the with command and the open function to create a file.
+
+Take a list (e.g., a list called Lines containing text elements).
+
+Use a for loop to iterate through the list.
+
+Pass each element to a variable (e.g., line) and write it to the file during each iteration.
+
+At the end of the loop, the file automatically closes.
+
+Appending to a File
+
+Mode a: By setting the mode parameter to a lowercase a (append), Python will not overwrite or create a new file. Instead, it uses the existing file.
+
+When you call the write method in append mode, it simply adds the new text (e.g., "This is line C") to the end of the existing document and then closes it.
+
+Copying a File
+You can copy the contents of one file to a completely new file using the following steps:
+
+Read the original file (e.g., Example1) and interact with it via a read file object (e.g., readfile).
+
+Create a new file (e.g., Example3) and interact with it via a write file object (e.g., writefile).
+
+Use a for loop to take a line from readfile and store it in the new file using writefile.
+
+The loop will iterate line by line until the end of the file is reached.
+
+Both files are then closed.

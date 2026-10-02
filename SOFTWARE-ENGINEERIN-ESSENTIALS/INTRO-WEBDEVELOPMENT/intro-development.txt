@@ -1,0 +1,58 @@
+Application Development Tools: Lecture Notes
+    1. CI/CD (Continuous Integration & Continuous Delivery/Deployment)
+    Overview: 
+        A set of best practices for DevOps teams that enables developers to deliver frequent changes reliably.
+
+    Continuous Integration (CI): 
+        Uses a build-automation server to ensure all code components work together smoothly. Code is integrated frequently, often daily or hourly.
+
+    Continuous Delivery (CD): 
+        Picks up where CI leaves off. It automatically deploys the code (which CI has just built and tested) to a testing or staging environment.
+
+    2. Build Tools
+        Core Purpose: 
+            Transform source code into installable binaries, organize code, set compile flags, and manage dependencies.
+
+    Importance: 
+        Essential for tracking changes and dependencies in environments with interconnected projects and multiple developers.
+
+    Automated Tasks: 
+        Include downloading dependencies, compiling source code, packaging binaries, running tests, and deploying to production.
+
+    Tool Category 1 (Utilities): 
+        Build-automation utilities generate build artifacts, like executables, by compiling and linking source code.
+
+    Tool Category 2 (Servers): 
+        Build-automation servers execute the utilities on a scheduled or triggered basis.
+
+    Examples: 
+        Webpack (JS module bundler), Babel (JS compiler), and Web Assembly (binary instruction format for browsers).
+
+    3. Packages
+        Core Purpose: 
+            Bundle all necessary files together so an application is simple and trouble-free for users to install.
+
+    Contents: 
+        Archive files containing the app files, installation instructions, and metadata.
+
+    Metadata: 
+        Includes the package description, package version, and any dependencies (other packages required for the app to run).
+
+    4. Package Managers
+    Core Purpose:   
+        Distribute packages and handle finding, installing, maintaining, or uninstalling software at the user's request.
+
+    Key Functions: 
+        Extract package archives, verify checksums and digital certificates for security, locate and download software from repositories, and manage dependencies.
+
+    5. Popular Package Manager Examples
+        Operating Systems: 
+            Linux uses DPKG (Debian) and RPM (Red Hat). Windows uses Chocolatey. macOS uses Homebrew and MacPorts. Android uses Package Manager.
+
+                Node.js / JavaScript: npm
+
+                Java: Gradle and Maven
+
+                Ruby: RubyGems
+
+                Python: Pip and Conda

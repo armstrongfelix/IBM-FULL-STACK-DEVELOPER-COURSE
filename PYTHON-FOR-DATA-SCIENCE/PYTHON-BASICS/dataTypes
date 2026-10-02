@@ -1,0 +1,50 @@
+Introduction to Python Data Types
+Definition: A "type" is how Python represents different types of data.
+
+Identifying Types: You can see the actual data type of an expression in Python by using the type command.
+
+Primary Data Types
+1. Integers (int)
+
+Represent whole numbers (e.g., 11).
+
+Can be positive or negative.
+
+They have a finite range, though it is quite large.
+
+2. Floats (float)
+
+Represent real numbers (e.g., 21.213).
+
+They include integers as well as the numbers in between them (e.g., numbers between 0 and 1, or between 0.5 and 0.6).
+
+You can continue "zooming in" for different numbers between floats up to a limit, which is quite small.
+
+3. Strings
+
+Represent words.
+
+Defined as a sequence of characters.
+
+4. Booleans (bool)
+
+Can only take on two values: True (must use an uppercase T) and False (must use an uppercase F).
+
+Using the type command on a Boolean value returns the term bool.
+
+Typecasting
+Definition: Typecasting is the process of changing the type of an expression in Python.
+
+Rules & Examples for Typecasting:
+
+Int to Float: You can cast an integer (like 2) to a float (2.0). Nothing really changes.
+
+Float to Int: You must be careful. Casting a float (like 1.1) to an integer (1) will cause you to lose some information.
+
+String to Int: You can convert a string to an integer only if the string contains an integer value. If you try to convert a string that contains a non-integer value, Python will return an error.
+
+Int or Float to String: You can convert both integers and floats to strings.
+
+Boolean to Int or Float: Casting True gives you a 1. Casting False gives you a 0.
+
+Int to Boolean: Casting a 1 gives you True. Casting a 0 gives you False.

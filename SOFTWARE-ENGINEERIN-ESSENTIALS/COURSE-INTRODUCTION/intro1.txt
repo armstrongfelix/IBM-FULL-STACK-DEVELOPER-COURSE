@@ -1,0 +1,8 @@
+So what's in this course:
+It's divided into five modules
+    1. the Software Development Lifecycle
+    2. Introduction to Software ​Development
+    3. Basics of Programming 
+    4. Software Architecture, Design, and Patterns, and Job ​Opportunities 5. 5. Skillsets in Software Engineering.
+    
+        ​When you complete this course, you'll be able to ​Describe software engineering and approaches to software development ​Identify software development tools and technologies ​Compare different types of programming languages and recognize basic programming constructs ​Outline approaches to application and deployment architectures ​And review the skills required in software engineering and describe the career options ​it provides. ​During this course, you will learn through Guided instructional videos that walk you ​through key concepts with essential need-to-know facts ​Interactive exercises to reinforce what you've learned in videos ​Insider viewpoints that enrich your understanding of IT support work ​Practice assessments to help you gauge your knowledge ​And finally, graded assessments to prove what you've learned. ​Upon successful completion of this course, you'll earn a shareable badge and certificate ​that you can show to prospective employers. ​We're here to support your success. ​If you have any questions for the course staff, or if you want to connect with your peers in ​this course, please feel free to post on the course discussion forums.

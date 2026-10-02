@@ -1,0 +1,29 @@
+Production Deployment Components
+An n-tier architecture is a common structure used to deploy applications in a production environment. While not every deployment requires all of these components (e.g., some may only need web servers and not app servers), a standard comprehensive setup includes the following layers:
+
+Presentation Tier: The top tier containing the front-end client applications.
+
+Web Tier: Located behind a firewall, this tier typically features a web load balancer that distributes incoming traffic across several web servers.
+
+Application Server Tier: Sits below the web tier and contains an app load balancer (or proxy server) that routes traffic to various application servers.
+
+Data Tier: The bottom tier containing the database server. A high-availability replica of the database is often included here to ensure system reliability.
+
+Key Infrastructure Components
+Firewalls
+A firewall is a security device that monitors traffic between networks. It acts as a protective barrier, permitting or blocking requested data based on strict security rules to keep viruses, malware, and hackers out of the internal network.
+
+Load Balancers
+Positioned between clients and servers, load balancers efficiently distribute incoming network traffic across multiple servers (known as a server farm). They prevent server overload, manage concurrent client requests, and ensure data is returned quickly, thereby maximizing the application's availability and responsiveness.
+
+Servers
+Servers are machines or software that provide services, resources, and data to client programs. There are several specific types used in production:
+
+Web Servers: Primarily deliver content like web pages, images, and videos to clients. They respond directly to HTTP requests coming from user web browsers.
+
+Application Servers: Host the application and run the core business logic rather than having the client's machine run it. They handle the interaction between the end-user and server-side code, dictating transaction results and how data is processed.
+
+Proxy Servers: Intermediate servers that sit between architectural tiers to handle requests. They are highly versatile and can be used for caching, load balancing, system optimization, encryption, malware scanning, or acting as an additional firewall.
+
+Databases and Database Servers
+A database is an organized collection of related data. It is controlled by a Database Management System (DBMS), which acts as the bridge connecting the database to users and other applications. The Database Server is responsible for controlling the actual flow and secure storage of this data so the application can effectively retrieve and manipulate it.

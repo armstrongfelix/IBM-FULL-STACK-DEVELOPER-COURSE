@@ -1,0 +1,67 @@
+Introduction to Dependencies and Pandas
+Dependencies/Libraries: Pre-written code designed to help solve problems.
+
+Pandas: A popular library specifically used for data analysis. It provides access to a large number of pre-built classes and functions (assuming the library is installed).
+
+Importing Pandas:
+
+Use the command import pandas to load the library.
+
+Aliasing: To avoid typing "pandas" repeatedly, you can shorten the name using the as statement. The standard abbreviation is pd (e.g., import pandas as pd). Note: You can use any abbreviation (even "banana"), but pd is standard.
+
+Loading Data and DataFrames
+DataFrames: The primary way Pandas allows you to work with data. A DataFrame is comprised of rows and columns.
+
+Loading a CSV File:
+
+A CSV is a typical file type used to store data.
+
+Store the path of the CSV file in a variable.
+
+Use the readcsv function (e.g., pd.readcsv()) with the path variable as an argument to load the data into a DataFrame (often assigned to the variable df).
+
+Loading an Excel File: The process is identical to loading a CSV, but uses the readexcel function.
+
+Viewing Data: Use the head method to examine the first five rows of a DataFrame.
+
+Creating a DataFrame from a Dictionary
+You can create a DataFrame directly from a Python dictionary using the DataFrame function.
+
+Keys: Correspond to the column labels (table headers).
+
+Values: Must be lists, which correspond to the rows of data.
+
+Once cast using the function, there is a direct correspondence between the dictionary and the resulting table.
+
+Selecting Columns
+You can create a new DataFrame consisting of specific columns from an existing DataFrame.
+
+Single Column: Enclose the DataFrame name and the column header in double brackets (e.g., df[['ColumnName']]).
+
+Multiple Columns: Enclose the DataFrame name and multiple column headers in double brackets.
+
+Accessing Elements (iloc vs. loc)
+Pandas provides specific methods to access unique elements in the DataFrame.
+
+1. The iloc Method
+
+Used to access data using integer indexes.
+
+The first input is an integer representing the row index, and the second input is an integer representing the column index.
+
+Examples: Accessing the first row and first column, or the second row and third column, purely by their numerical positions.
+
+2. The loc Method
+
+Used to access data using the name of the row index and the column.
+
+Useful if the row index is not an integer (e.g., if you replace row indexes 1, 2, 3 with letters A, B, C).
+
+Examples: Accessing index 'A' (first row) of the column named 'Artist', or index 'B' (second row) for the column 'Released'.
+
+Slicing DataFrames
+You can slice DataFrames to extract a specific portion of the data and assign those values to a new DataFrame.
+
+Slicing with integers: You can slice by specifying numerical ranges (e.g., assigning the first two rows and the first three columns to a new variable Z).
+
+Slicing with loc: You can slice using names (e.g., assigning the first two rows and all columns in between the columns named 'Artist' and 'Released' to a new DataFrame).

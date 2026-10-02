@@ -1,0 +1,75 @@
+Compound Data Types
+Compound data types are key data structures in Python. In this module, we focus on Tuples and Lists.
+
+1. Tuples
+Definition: An ordered sequence of elements.
+
+Syntax: Expressed as comma-separated elements within parentheses ().
+
+Contents: Can contain different data types (strings, integers, floats, etc.) within the same tuple. The type of the variable itself is tuple.
+
+Immutability: Tuples are immutable, meaning they cannot be changed after they are created.
+
+You cannot change a specific element at an index.
+
+If you assign an existing tuple to a new variable (e.g., ratings1 = ratings), both variables reference the same immutable object.
+
+To manipulate a tuple, you must create a new object. For example, using the sorted function on a tuple will output a new, sorted list.
+
+You can, however, assign a completely new tuple to an existing variable name.
+
+Tuple Operations & Indexing:
+
+Indexing: Accessed via square brackets []. The first element is at index 0.
+
+Negative Indexing: Python supports negative indexing to access elements from the end of the tuple.
+
+Concatenation: You can combine tuples by adding them together using the plus sign.
+
+Slicing: You can get multiple elements by slicing. The last index specified in the command must be one larger than the index you actually want to extract.
+
+Length: Use the len command to find out how many elements are in the tuple.
+
+Nesting: Tuples can contain other tuples and complex data types.
+
+Visualized as a "tree."
+
+You can access nested elements by adding additional square brackets (e.g., accessing an element inside a tuple that is inside another tuple).
+
+2. Lists
+Definition: Another popular ordered sequence in Python.
+
+Syntax: Represented with square brackets [].
+
+Contents: Like tuples, they can contain strings, floats, integers, and nested lists or tuples.
+
+Mutability: The key difference from tuples is that lists are mutable, meaning they can be changed.
+
+List Operations & Methods:
+
+Indexing & Slicing: The index conventions (starting at 0, negative indexing, slicing rules) are identical to tuples.
+
+Concatenation: Like tuples, lists can be combined by adding them together, which creates a new list.
+
+extend Method: Adds multiple new elements from another list to the original list. It modifies the original list rather than creating a new one.
+
+append Method: Adds exactly one element to the list. (If you append a list to a list, it gets added as a single nested element at the next index).
+
+Changing Elements: Because they are mutable, you can change a specific element directly by assigning a new value to its index (e.g., changing the first element).
+
+del Command: Deletes a specific element from the list by indicating the item's index as an argument.
+
+split Method (Strings): Converts a string into a list.
+
+By default, it converts groups of characters separated by a space into list elements.
+
+You can pass a specific "delimiter" (like a comma) as an argument to split the string based on that character.
+
+Aliasing vs. Cloning (Important Concept):
+
+Aliasing: If you set variable b equal to variable a (b = a), multiple names are referring to the same list object. This causes a side effect: if you change an element in list a, list b will also change because they are referencing the exact same list.
+
+Cloning: You can clone a list using specific syntax so that variable b references a new copy (clone) of the original list. If you change a after cloning, b will not change.
+
+General Tips
+Help Command: You can get more information on lists, tuples, and many other Python objects by passing them into the help command.

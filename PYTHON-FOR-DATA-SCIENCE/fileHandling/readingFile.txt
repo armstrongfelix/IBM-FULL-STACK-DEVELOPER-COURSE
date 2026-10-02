@@ -1,0 +1,61 @@
+Opening Files in Python
+The open Function: Used to create a file object and obtain data from a .txt file.
+
+Arguments for open:
+
+File Path: Made up of the file name and the file directory (e.g., Example1.txt).
+
+Mode: Tells Python what you want to do with the file.
+
+r = Reading
+
+w = Writing
+
+a = Appending
+
+File Object Data Attributes:
+
+.name: Returns a string that contains the name of the file.
+
+.mode: Tells you what mode the object is in (e.g., returns r representing read).
+
+Closing Files and Best Practices
+The .close Method: You should always close the file object using this method when you are done.
+
+The with Statement (Best Practice):
+
+Because manually closing files can get tedious, it is better practice to open files using a with statement.
+
+It automatically closes the file after running all the operations within its indented block.
+
+Rules of the with statement:
+
+You cannot read from the file outside the indent.
+
+You can verify if the file is closed outside the indent.
+
+You can print the file content outside the indent (as long as you saved it to a variable inside the indent).
+
+Reading Data from a File
+.read Method: Stores the values of the file as a single string (e.g., saving it to a variable like file_stuff).
+
+Note: If you examine the raw string, you will see \n, which tells Python to start a new line.
+
+.readlines Method: Outputs every line as an element in a list. The first line of the file corresponds to the first element in the list, the second line to the second element, and so on.
+
+.readline Method: Reads individual lines sequentially.
+
+Calling it the first time saves and prints the first line.
+
+Calling it a second time saves and prints the second line.
+
+Loops: You can use a loop to print out each line of the file individually.
+
+Reading Specific Character Counts
+You can specify the exact number of characters you want to read from a string by passing an argument to the method (the transcript notes this as passing an argument to readlines).
+
+Example: If you use 4 as an argument, it prints out the first four characters in the file.
+
+Each time you call the method, it progresses further through the text.
+
+Example sequence: Calling it with 16 prints the first 16 characters and the new line. Calling it a second time with 5 prints the next five characters. Calling it a final time with 9 prints the last nine characters.

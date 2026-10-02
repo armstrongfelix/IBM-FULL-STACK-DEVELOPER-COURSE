@@ -1,0 +1,49 @@
+Python Dictionaries
+Definition: Dictionaries are a type of collection in Python.
+
+Dictionaries vs. Lists:
+
+A list uses integer indexes (which act like addresses) to find elements.
+
+A dictionary uses keys (analogous to indexes) to find values (analogous to list elements).
+
+Unlike list indexes, dictionary keys do not have to be integers; they are usually characters.
+
+Structure and Creation
+Syntax: To create a dictionary, use curly brackets {}.
+
+Keys: These are the first elements. They act as the lookup addresses.
+
+Rules: Keys must be unique and immutable.
+
+Values: These contain the information you want to look up.
+
+Rules: Values can be immutable, mutable, and can contain duplicates.
+
+Formatting:
+
+Each key is followed by its corresponding value, separated by a colon (:).
+
+Each key-value pair is separated from the next by a comma (,).
+
+Visualization: It is helpful to visualize a dictionary as a table where the first column represents the keys (e.g., Album Title) and the second column represents the values (e.g., Release Date).
+
+Assignment: Like other data types, you can assign a dictionary to a variable.
+
+Dictionary Operations
+Looking up a value: You use the key to look up its corresponding value. This is done using square brackets [] with the key placed inside as the argument.
+
+Example: Looking up the key "back in black" returns the value "1980".
+
+Adding an entry: You can add a new key-value pair to an existing dictionary (e.g., adding the key "graduation" with the value "2007").
+
+Deleting an entry: You can delete an entry, which will completely remove both the key and its associated value from the dictionary (e.g., deleting the key "thriller").
+
+Verifying elements (in command): You can check if a key exists in the dictionary using the in command.
+
+It checks the keys and returns True if the key is in the dictionary, and False if it is not.
+
+Dictionary Methods
+keys method: Used to see all the keys in a dictionary. The output is a list-like object containing only the keys.
+
+values method: Used in the exact same way to obtain all the values stored in the dictionary.

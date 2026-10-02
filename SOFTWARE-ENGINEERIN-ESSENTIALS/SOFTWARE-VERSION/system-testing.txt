@@ -1,0 +1,41 @@
+What is Software Testing?
+    It is the process of checking a piece of software to make sure it does exactly what it was designed to do, without crashing or throwing errors.
+
+    What is a Test Case?
+    Think of a test case as a recipe or a strict checklist. It contains specific steps, data to input, and the exact output you expect to get. If the actual output matches the expected output, the software passes the test.
+
+The Three Categories of Testing
+        Testing is broken down into three main categories based on what you are trying to evaluate.
+
+    Functional Testing: Does it do what it should?
+        e.g Clicking "Add to Cart" successfully adds the item to your shopping cart.
+
+    non-functional testing: How well does it do it?
+        The website doesn't crash when 10,000 people click "Add to Cart" at the exact same time.
+
+    Regression testing: Did we break anything new?
+        We fixed a typo on the homepage, so we test the shopping cart to ensure our fix didn't accidentally break the checkout button.
+
+
+The Four Levels of Testing
+        Testing is also categorized by when it happens and how broadly you are looking at the software. This helps teams save time by preventing overlapping work.
+
+        Unit Testing: Testing the individual, tiny building blocks. Developers do this to check specific functions of code before they are attached to anything else.
+
+        Integration Testing: Connecting the blocks. This tests whether two or more of those independent units communicate and work properly when linked together.
+
+        System Testing: Testing the fully built product. The complete, integrated software is evaluated in a staging environment that mimics the real world to ensure everything is cohesive.
+
+        Acceptance Testing: The final walkthrough. Customers, users, or business stakeholders test the software to ensure it actually solves their real-world needs before it officially launches.
+
+
+Your Key Takeaways:
+    Testing is mandatory quality assurance. It ensures the software matches user requirements and is free of errors.
+
+    Preparation is key. Test cases must always be written after the requirements are finalized so you know exactly what success looks like.
+
+    Testing looks at both the "what" and the "how." Functional testing ensures the features work, while non-functional testing ensures it is fast, secure, and scalable.
+
+    Every change requires a re-check. Regression testing is necessary because fixing one bug can easily create another elsewhere in the code.
+
+    Testing scales up. It starts small with developers (Unit Testing) and ends broad with the actual users/clients (Acceptance Testing).
