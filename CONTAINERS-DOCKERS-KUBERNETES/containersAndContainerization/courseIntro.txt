@@ -1,0 +1,53 @@
+Course Notes: Introduction to Containers w/ Docker, Kubernetes & OpenShift
+Course Overview & Instructors
+Instructors: Alex Parker and Upkar Lidder.
+
+Target Audience: Anyone wanting to learn how to design, develop, deploy, and manage secure applications on public, private, and hybrid cloud platforms.
+
+Goal: By the end of the course, learners will have a running application on the public cloud and a solid understanding of Containers and Kubernetes.
+
+Key Concept: Containers and Kubernetes have become the de facto standards for cloud-native applications and serve as the foundation for cloud computing education.
+
+Prerequisites
+Basic computer literacy.
+
+Basic cloud literacy and understanding of core cloud concepts.
+
+Familiarity with the command line and shell commands (beneficial for hands-on work).
+
+Industry Trends & Statistics
+Containerization
+Containerization is not new, but gained major prominence in 2013 with the release of Docker.
+
+Gartner Prediction: By 2023, over 70% of global organizations will run more than two containerized applications in production (up from <20% in 2019).
+
+CNCF Survey Data (Containers in Production):
+
+2016: 23%
+
+2018: 74%
+
+2019: 84%
+
+Kubernetes
+An open-source platform for orchestrating running containers, originally developed and contributed to the open-source community by Google in 2015.
+
+CNCF Survey Data (Interest in Cloud-Native Technologies): Grew from 58% to 78% year-over-year (2018 to 2019).
+
+GitHub Activity:
+
+3rd largest platform by number of committers.
+
+2nd largest for issues and pull requests (behind only the Linux Kernel).
+
+Course Structure & Curriculum
+Foundations: Introduction to Containers, Docker, and container registries.
+
+Kubernetes Core: Need for container orchestration, Kubernetes architecture, deployable resources, and assembling components to deploy a functional application.
+
+Ecosystem & Advanced Tools: Overview of the broader Kubernetes ecosystem, including Red Hat OpenShift, Istio, cloud security, and service meshes.
+
+Labs & Practical Environment
+The course includes several hands-on labs to apply learned concepts.
+
+A free environment is provided to complete the labs if you do not have the resources to set up your own Kubernetes cluster.

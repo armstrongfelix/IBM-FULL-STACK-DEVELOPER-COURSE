@@ -1,0 +1,87 @@
+Introduction to Containers
+Video Learning Objectives
+By the end of this module, you should be able to:
+
+Identify traditional computing issues in software development.
+
+Define a container and describe its key characteristics.
+
+List the benefits and challenges of containerization.
+
+Identify popular container vendors.
+
+What is a Container?
+A container is a standard unit of software powered by a containerization engine. It encapsulates everything needed for programmers to build, ship, and run applications efficiently, including:
+
+Application code
+
+Runtime environment
+
+System tools
+
+System libraries
+
+Settings
+
+The Shipping Container Analogy
+Just as standardized physical shipping containers allow logistics teams to move goods seamlessly via ships, planes, trains, or trucks regardless of contents, digital containers make software portable so applications run consistently across any platform.
+
+Key Characteristics & Portability
+Size & Speed: Containers can be small (tens of megabytes) and spin up almost instantly.
+
+Portability: Applications move smoothly between laptops, testing/staging/production environments, physical vs. virtual machines, and private or public clouds.
+
+Operating System Independent: Runs on Linux, Windows, or macOS.
+
+Platform Independent: Operates across cloud platforms, desktops, and on-premises infrastructure.
+
+Language & IDE Independent: Supports any stack (e.g., Python, Node.js, Java).
+
+Isolation: Containers are isolated, secure, lightweight, and efficient in memory usage. One physical machine can host multiple containers.
+
+Traditional Computing Challenges vs. Container Solutions
+Traditional Computing Challenges
+No App Isolation or Resource Allocation: Difficult to assign designated storage and memory to specific apps on physical servers.
+
+Poor Resource Utilization: Servers are frequently underutilized or overutilized, leading to bad return on investment.
+
+High Costs: Requires comprehensive provisioning resources and expensive maintenance.
+
+Limited Scalability & Performance: Physical server limits constrain application performance during peak workloads.
+
+Lack of Portability: Applications are not portable across multiple environments and operating systems.
+
+Complex Resiliency & Automation: Implementing hardware for resiliency is time-consuming, complex, and expensive, while software distribution automation remains challenging.
+
+How Containers Solve These Issues
+Isolated Environments: Operating system-level virtualization allows multiple containers to run isolated on a single machine.
+
+High Resource Efficiency: Maximizes CPU and memory utilization while reducing overhead.
+
+Lower Costs: Reduces overall deployment time and infrastructure/maintenance expenses.
+
+Rapid Automation & Scaling: Lightweight containers enable rapid app creation, automated deployment, and effortless scaling.
+
+Universal Portability: Bundled code, binaries, and libraries ensure applications run consistently anywhere (cloud, desktop, or on-premises).
+
+Modern Architecture Support: Built to seamlessly support next-generation software development, such as microservices.
+
+Key Challenges of Containerization
+While powerful, container technology presents specific operational hurdles:
+
+Host Security Risks: If the underlying host operating system is compromised, server security as a whole is affected.
+
+Management Complexity: Managing thousands of container instances can easily overwhelm developers and ops teams.
+
+Legacy Migration: Converting monolithic legacy applications into containerized architectures can be complex.
+
+Right-Sizing: Setting optimal resource allocations (CPU/memory limits) for specific scenarios can be difficult.
+
+Popular Container Vendors & Engines
+Docker: A robust, industry-standard platform and currently the most popular container technology.
+
+Podman: A daemon-less container engine that offers higher security compared to traditional setups.
+
+LXC (Linux Containers): Frequently preferred for data-intensive applications and operations.
+
+Vagrant: Offers maximum levels of isolation on the running physical host machine.

@@ -1,0 +1,129 @@
+Lecture Notes: OpenShift Builds and Image Streams
+
+Learning Objectives
+
+After completing this lecture, you will be able to:
+
+Define what a build is and list build input sources in order of precedence.
+
+Explain the function, architecture, and benefits of Image Streams in OpenShift.
+
+Describe how to automate build execution using Build Triggers.
+
+Identify the structure of a BuildConfig manifest.
+
+Compare Source-to-Image (S2I), Docker, and Custom build strategies.
+
+What is a Build?
+
+A build in OpenShift is the process of transforming input artifacts (such as raw source code or binaries) into a resultant object, typically a runnable OCI/Docker container image.
+
+Every build is governed by a Build Configuration (BuildConfig) resource, which defines:
+
+The build strategy to execute.
+
+The input sources to consume.
+
+The triggers that initiate execution.
+
+The destination repository for the output image.
+
+Build Input Sources (In Order of Precedence)
+
+When multiple input sources are specified in a BuildConfig, OpenShift resolves them according to the following strict hierarchy:
+
+Inline Dockerfile Definitions (overwrites any external Dockerfile found in the repository)
+
+Content extracted from existing container images
+
+Git repositories
+
+Binary or local inputs
+
+Input secrets (for credentials or sensitive build tokens)
+
+External artifacts
+
+Image Streams & Abstraction
+
+An Image Stream is an OpenShift abstraction layer for referencing container images without hardcoding specific registry URLs or explicit image digests.
+
+Key Characteristics & Benefits
+
+Virtual References: Image Streams do not store actual container image layers; they hold pointers (tags) to images in internal or external registries (e.g., Quay.io, Docker Hub, IBM Cloud Container Registry).
+
+Tag Management: A single Image Stream can track multiple tags (e.g., :latest, :dev, :v1.0).
+
+Decoupled Deployments: Applications point to Image Stream tags instead of hardcoded registry URLs. If the base registry location changes, only the Image Stream definition needs updating—all dependent deployments remain untouched.
+
+Automated Deployment Triggers: Image Streams track new image digests and automatically notify OpenShift when a new version is pushed, triggering automated rollouts.
+
+Automated Build Triggers
+
+Builds can be invoked automatically without manual developer intervention using three primary types of Build Triggers:
+
+Webhook Triggers: An API endpoint call triggers the build. OpenShift supports generic webhooks as well as provider-specific webhooks (e.g., GitHub webhooks triggered on code commits, pull requests, or merges).
+
+Image Change Triggers: Automatically kicks off a new build whenever an underlying base image (e.g., a Node.js or Ruby builder image) is updated with security patches or upstream changes.
+
+Configuration Change Triggers: Automatically runs a new build immediately upon creating or modifying the BuildConfig resource itself.
+
+Anatomy of a BuildConfig File
+
+A BuildConfig manifest defines the operational rules for image creation:
+
+Metadata: Specifies the name and namespace of the build (e.g., ruby-sample-build).
+
+Run Policy: Controls how concurrent builds execute:
+
+Serial (default): Runs builds sequentially one after another.
+
+Parallel: Executes multiple builds simultaneously.
+
+SerialLatestOnly: Cancels older in-flight builds to run only the latest commit.
+
+Triggers: Defines the events that initiate automatic builds (Webhooks, Image Change, Config Change).
+
+Source: Specifies the primary build inputs (Git repository URL, inline Dockerfile, or binary payload).
+
+Strategy: Defines the build execution method (S2I, Docker, or Custom).
+
+Output: Defines the target Image Stream or registry where the resulting image is pushed.
+
+PostCommit Hooks: Optional post-build validation checks or unit tests executed inside the container prior to pushing.
+
+Build Strategies Compared
+
+OpenShift supports three core build strategies tailored to different developer workflows and security permissions:
+
+Source-to-Image (S2I) Strategy
+
+How It Works: Injects application source code directly into a pre-configured builder image (e.g., ruby-20-centos7) to generate a ready-to-run container image in a single step.
+
+Key Advantage: Eliminates the need to write or maintain Dockerfiles, ensuring standard base configurations across development teams.
+
+Docker Build Strategy
+
+How It Works: Expects a Dockerfile and associated build context in the source repository. OpenShift invokes a native Docker build command and pushes the resulting image to the registry.
+
+Customization Options: Supports replacing Dockerfiles from images, custom Dockerfile paths, build environment variables, and custom build arguments.
+
+Custom Build Strategy
+
+How It Works: Requires developers to provide a custom builder image containing custom scripting and execution logic.
+
+Use Cases: Used for complex CI/CD tasks, compiling artifact packages (e.g., JAR/WAR files), or running extensive integration test suites.
+
+Privilege Level: Requires cluster administrator privileges due to elevated permissions needed during execution.
+
+Lecture Summary
+
+A build transforms source code or binaries into runnable container images using a BuildConfig resource.
+
+Build inputs follow a strict precedence order where inline Dockerfiles override external files.
+
+Image Streams abstract registry URLs and enable automated deployment updates upon new image tags.
+
+Automated builds are triggered via Webhooks, Image Changes, or Configuration Changes.
+
+OpenShift provides three build strategies: S2I (no Dockerfile needed), Docker (uses standard Dockerfile), and Custom (admin-level specialized builds)

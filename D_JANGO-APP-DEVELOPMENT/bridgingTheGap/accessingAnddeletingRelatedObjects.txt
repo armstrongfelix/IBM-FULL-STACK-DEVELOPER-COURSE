@@ -1,0 +1,51 @@
+Lecture Notes: Accessing and Deleting Related Objects in Django
+1. Forward vs. Backward Relationships
+When modeling relationships, Django only requires you to define the relationship on one model.
+
+Forward (Explicit) Access: Accessing a related object from the model where the relationship field (ForeignKey, OneToOneField, or ManyToManyField) is defined.
+
+Backward (Implicit) Access: Accessing the related object from the target model where no explicit field was written. Django generates this link automatically under the hood.
+
+2. Relationship Navigation Patterns
+A. One-to-One and Inheritance
+Forward Access: Access the related object directly via the defined field name (e.g., learner.user).
+
+Backward Access: Access the related model using its lowercase class name (e.g., user.learner).
+
+Inheritance Pointer (_ptr): For model inheritance, Django creates an implicit OneToOneField named <parent_model>_ptr (e.g., user_ptr), allowing direct access to the parent model reference.
+
+B. One-to-Many / Many-to-One (ForeignKey)
+Forward Access: Access the single parent object directly via the ForeignKey field name (e.g., project.course).
+
+Backward Access: Access the collection of related child objects using the generated manager named <child_model>_set (e.g., course.project_set.all()).
+
+C. Many-to-Many (ManyToManyField)
+Forward Access: Access the related collection using the defined field name (e.g., course.instructors.all()).
+
+Backward Access: Access the related collection from the target model using <model>_set or the explicit related name (e.g., instructor.course_set.all()).
+
+3. Deletion Behaviors (on_delete Options)
+When a parent record in a relationship is deleted, the on_delete parameter specified on the foreign key determines what happens to associated child records:
+
+CASCADE (Default): Automatically deletes all related child objects when the parent object is deleted.
+
+PROTECT: Prevents deletion of the parent object by raising an exception (ProtectedError) if any related child objects exist.
+
+SET_NULL: Sets the foreign key reference in child objects to NULL. Requires null=True on the field definition.
+
+SET_DEFAULT / SET(...): Sets the foreign key reference in child objects to a pre-configured default value or a specified callable target.
+
+DO_NOTHING: Takes no action in the database, leaving child objects pointing to a non-existent parent key (creates orphan records; strongly discouraged).
+
+4. Related Manager Methods
+Django provides specific methods on related set managers (e.g., course.project_set or course.instructors) to manipulate collections of related records:
+
+add(obj1, obj2, ...): Adds existing model instances to the related set.
+
+create(**kwargs): Creates a new object, saves it to the database, and immediately adds it to the related set.
+
+remove(obj1, obj2, ...): Removes specific related objects from the relationship without deleting the objects themselves.
+
+clear(): Removes all objects from the related set at once.
+
+set([obj1, obj2, ...]): Replaces the current set of related objects with a new list of objects.

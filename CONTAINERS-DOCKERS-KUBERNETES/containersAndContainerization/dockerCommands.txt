@@ -1,0 +1,27 @@
+Course Notes: Key Docker Commands
+Overview of Essential Docker Commands
+1. docker build
+Purpose: Creates a container image from a Dockerfile.
+
+Usage: Used with a Dockerfile to build container images with specific tags.
+
+2. docker run
+Purpose: Creates and runs a container from a specified container image.
+
+Usage: Combines image creation and container startup into a single step to instantiate a running container.
+
+3. docker ps -a
+Purpose: Displays details of all containers (both running and stopped).
+
+Usage: Used with appropriate flags/inputs to inspect container details, status, and IDs.
+
+4. docker images
+Purpose: Lists all container images stored locally on the host.
+
+Details Shown: Displays image repositories, tags, and sizes.
+
+5. docker pull
+Purpose: Retrieves/downloads container images from a configured image registry.
+
+6. docker push
+Purpose: Stores/uploads local container images to a configured image registry.

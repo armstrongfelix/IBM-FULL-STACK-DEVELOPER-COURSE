@@ -1,0 +1,42 @@
+Here are the rewritten notes without tables:
+
+Lecture Notes: Object-Relational Mapping (ORM)
+1. The Paradigm Gap: OOP vs. SQL
+Software applications frequently use relational databases for data persistence, requiring developers to execute SQL queries within Object-Oriented Programming (OOP) code. However, OOP and SQL model data and relationships differently across three main areas:
+
+Data Representation: OOP uses classes, objects, and attributes, while SQL uses tables, rows, and columns.
+
+Relationships: OOP expresses connections using patterns like inheritance, association, and aggregation, whereas SQL uses Foreign Keys and JOIN operations.
+
+Data Manipulation: OOP performs operations using class methods, whereas SQL relies on DML statements like INSERT, UPDATE, and DELETE.
+
+2. Core Concepts of ORM
+Definition: Object-Relational Mapping (ORM) is a technique that bridges the gap between OOP and SQL.
+
+Functionality: Maps database rows into objects and translates object operations into standard database query operations (and vice versa).
+
+Abstraction: Allows developers to interact with the database using their preferred OOP language methods instead of writing manual SQL queries or handling low-level database cursors.
+
+3. Popular ORM Libraries
+Python: Django Models, SQLAlchemy
+
+Java: Hibernate, OpenJPA
+
+JavaScript: Sequelize, TypeORM
+
+4. Pros and Cons of ORM
+Pros
+Speeds Up Development: Developers focus strictly on object logic rather than writing repetitive SQL queries.
+
+Database Abstraction: Provides a uniform interface across different database management systems (e.g., PostgreSQL, MySQL, SQLite) without needing syntax adjustments.
+
+Simplified Queries: Complex multi-table join operations can often be executed using a single line of method calls in code.
+
+Cons
+Imperfect Mapping: Complex domain objects and inheritance hierarchies do not always translate cleanly into flat relational tables.
+
+Increased Coupling: Changes to database schemas often necessitate simultaneous updates to application code and data access structures.
+
+Debugging Complexity: Hiding SQL generation behind an abstraction layer makes tracking down hidden database bugs more difficult.
+
+Performance Overhead: The added translation layer does not always generate optimal SQL queries, which can lead to performance degradation.

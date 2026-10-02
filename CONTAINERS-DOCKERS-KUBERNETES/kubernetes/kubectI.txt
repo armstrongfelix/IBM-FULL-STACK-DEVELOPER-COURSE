@@ -1,0 +1,90 @@
+Course Notes: Using Kubectl
+Video Learning Objectives
+By the end of this module, you should be able to:
+
+Define kubectl and explain its fundamental command structure.
+
+List the three kubectl command types along with their features, advantages, and drawbacks.
+
+List commonly used kubectl commands and describe specific operational examples.
+
+What is Kubectl?
+Definition: kubectl stands for "kube command tool line" and serves as the official Command Line Interface (CLI) for Kubernetes.
+
+Core Functions: Used to deploy applications, inspect and manage cluster resources, view logs, and handle running cluster workloads.
+
+Kubectl Command Structure
+Every kubectl command follows a strict order that must be maintained:
+
+Plaintext
+kubectl [command] [type] [name] [flags]
+command: Specifies the operation to perform (e.g., create, get, apply, delete).
+
+type: Specifies the Kubernetes resource type (e.g., pod, deployment, replicaset, service).
+
+name: Specifies the specific name of the resource (if applicable).
+
+flags: Special options or modifiers used to override default settings (e.g., -f, -o wide, --all-namespaces).
+
+The Three Kubectl Command Types
+1. Imperative Commands
+How it Works: Users run commands directly in the CLI, passing required operations, options, and parameters as arguments/flags without using configuration files (e.g., kubectl run nginx --image=nginx).
+
+Advantages: Very easy to learn, quick to execute, and ideal for fast experimentation in development/test environments.
+
+Disadvantages: Lacks an audit trail for tracking changes, lacks flexibility due to limited CLI options, does not support templates, and cannot integrate with code review processes.
+
+Team Impact: If one developer deploys an app imperatively, another developer cannot replicate it without asking for the exact CLI string because no shared file exists.
+
+2. Imperative Object Configuration
+How it Works: The user writes full resource definitions in YAML or JSON files and specifies both the operation and the filename in the command (e.g., kubectl create -f nginx.yaml or kubectl delete -f nginx.yaml).
+
+Advantages: Templates can be stored in source control (Git), integrate with change review processes, provide audit trails, and yield identical deployment results across environments.
+
+Disadvantages: Requires deep knowledge of object schemas and manual creation of complex YAML/JSON files.
+
+Team Impact: If a developer updates a live object without merging the change back into the configuration file, subsequent deployments using the original file will overwrite those live updates.
+
+3. Declarative Object Configuration
+How it Works: The user defines the desired final state in YAML/JSON configuration files (or directories of files) and runs kubectl apply (e.g., kubectl apply -f ./configs/). The system automatically compares the live cluster state against the files, determines the required operations, and transitions the cluster to the desired state.
+
+Advantages: Operations are automated by Kubernetes rather than specified by the user; works seamlessly on entire directories; provides a single source of truth; updates remain consistent even if team members miss intermediate changes.
+
+Best Practice: This is the ideal method for production systems.
+
+Commonly Used Kubectl Commands & Examples
+kubectl get: Accesses and lists information about resources.
+
+List services in the current namespace: kubectl get services
+
+List pods in all namespaces: kubectl get pods --all-namespaces
+
+List details for a specific deployment: kubectl get deployment my-dep
+
+kubectl apply: Creates or updates resources defined in .yaml, .yml, or .json files or URLs.
+
+Apply configuration from a file: kubectl apply -f deployment.yaml
+
+Apply configuration from a directory: kubectl apply -f ./my-configs/
+
+kubectl delete: Removes resources or files from the cluster.
+
+Delete a resource using its configuration file: kubectl delete -f nginx.yaml
+
+kubectl scale: Adjusts the replica count for a running workload.
+
+Scale a ReplicaSet named foo to 3 replicas: kubectl scale rs/foo --replicas=3
+
+Scale using a configuration file: kubectl scale -f resourceinfo.yaml --replicas=3
+
+kubectl autoscale: Applies horizontal autoscaling rules to selected workloads based on target metrics.
+
+Practical Deployment Example Walkthrough
+Deploying Applications Declaratively:
+Run kubectl apply -f deployment.yaml to instantiate an NGINX deployment with 3 desired replicas.
+
+Verifying Deployment Status:
+Run kubectl get deployment my-dep to view replica metrics.
+
+Expected Output Parameters:
+The output confirms the creation of replicas with key metrics showing Ready, Up-to-date, and Available

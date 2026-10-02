@@ -1,0 +1,59 @@
+Django Function-Based Views
+1. Overview of Django Views
+Definition: A view is a Python function (or class) that receives an HTTP Request object, applies application and business logic, and returns an HTTP Response object.
+
+HTTP Methods: Processes incoming requests using standard HTTP methods, such as GET, POST, PUT/UPDATE, or DELETE.
+
+Output Types: Generates a web response, which can be an HTML page, a dynamic template, a plain text string, a byte stream, structured data (JSON/XML), a redirect, or an HTTP error status code.
+
+2. Anatomy of a Function-Based View
+Input Argument: Accepts an HttpRequest object as its first positional parameter.
+
+HttpRequest Metadata: Contains read-only metadata, including the request method (GET, POST), HTTP headers, URL parameters, and payload data.
+
+Processing & Logic: Interacts with Django Models to perform CRUD operations or execute custom business logic (e.g., retrieving a Course record from the database and embedding its properties into an HTML structure).
+
+Return Value: Constructs and returns an HttpResponse instance populated with response content and an appropriate HTTP status code.
+
+3. URL Mapping and Namespacing (urls.py)
+To make a view accessible via web requests, its function must be mapped to a URL pattern in the application's urls.py file using the path() function.
+
+Python
+from django.urls import path
+from . import views
+
+app_name = 'onlinecourse'
+
+urlpatterns = [
+    path('course/', views.course_detail, name='course'),
+]
+Parameters of path():
+route: A string defining the URL pattern to match against incoming HTTP request URLs.
+
+view: The view function to execute when the route pattern matches (e.g., views.course_detail).
+
+name: A unique identifier for the URL route. Allows referencing and reversing the URL dynamically throughout the Django project without hardcoding absolute path strings.
+
+app_name (Namespacing): Setting app_name at the top of urls.py provides a namespace prefix. The view URL can then be referenced globally using the format 'app_name:view_name' (e.g., 'onlinecourse:course').
+
+4. Handling HTTP Status Codes
+Every HttpResponse object carries an HTTP status code indicating the outcome of the request:
+
+Success Responses (200 OK):
+
+Returned by default when an HttpResponse is instantiated without an explicit status code parameter.
+
+Indicates that the request was processed successfully and contains the requested payload or rendered template.
+
+Error Responses (e.g., 404 Not Found):
+
+Explicitly passed to the status argument of the HttpResponse constructor when a requested resource is missing or invalid.
+
+Can be combined with custom error text or error HTML pages.
+
+Python
+# Example: Returning a 404 response
+return HttpResponse("Course not found.", status=404)
+
+# Example: Returning a 200 response
+return HttpResponse("<h1>Course Details</h1>", status=200)

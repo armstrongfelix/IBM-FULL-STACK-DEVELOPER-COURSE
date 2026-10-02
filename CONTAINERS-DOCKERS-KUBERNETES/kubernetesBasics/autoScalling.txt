@@ -1,0 +1,80 @@
+Course Notes: Kubernetes Auto-Scaling
+
+Video Learning Objectives
+
+By the end of this module, you should be able to:
+
+- Define auto-scaling and explain its role in optimizing resource usage and cost efficiency.
+- Identify the two primary layers where auto-scaling occurs in Kubernetes.
+- Compare the three types of Kubernetes auto-scalers: HPA, VPA, and CA.
+- Demonstrate how auto-scaling is configured and executed across workloads and cluster nodes.
+
+
+Core Auto-Scaling Concepts
+
+Definition: Automatically scaling cluster capacity up or down to align with real-time application demands.
+
+Primary Benefit: Optimizes compute resource utilization and minimizes cloud infrastructure costs by eliminating over-provisioning.
+
+Two Auto-Scaling Layers:
+- Pod Level: Adjusts the count or resource allocation of application containers.
+- Cluster/Node Level: Adjusts the underlying physical or virtual server infrastructure.
+
+
+The Three Kubernetes Auto-Scalers
+
+1. Horizontal Pod Autoscaler (HPA)
+
+Scaling Type: Scaling Out / Scaling In.
+
+Mechanism: Adjusts the number of running Pod replicas in a workload (e.g., Deployments or ReplicaSets) in response to demand metrics like CPU or memory utilization.
+
+Workflow:
+- Peak Demand (e.g., 11:00 AM): System load rises -> HPA automatically provisions extra Pod replicas to distribute traffic.
+- Off-Peak (e.g., 5:00 PM): System load drops -> HPA marks extra Pods for deletion and scales down the replica count.
+
+CLI Command Syntax:
+kubectl autoscale deployment <deployment-name> --min=2 --max=10 --cpu-percent=50
+
+- min: Guarantees a minimum baseline count of Pods.
+- max: Sets a ceiling on the maximum number of Pods allowed.
+- cpu-percent: Trigger threshold across the cluster (e.g., creates new Pods when average CPU utilization hits 50%).
+
+Manifest Configuration: HPA can also be created declaratively via YAML using targetCPUUtilizationPercentage and replica boundaries.
+
+
+2. Vertical Pod Autoscaler (VPA)
+
+Scaling Type: Scaling Up / Scaling Down.
+
+Mechanism: Adjusts the resource size or speed (CPU cores and Memory allocation requests/limits) of individual container Pods without altering the replica count.
+
+Workflow:
+- Peak Demand: Adds more CPU and RAM to existing Pods to handle elevated workloads.
+- Off-Peak: Reduces the allocated CPU and RAM for Pods to baseline levels.
+
+Best Practice & Rules:
+- Best suited for workloads where horizontal scaling is not supported or practical.
+- Important Constraint: Do not run VPA and HPA simultaneously on the same metrics (such as CPU or Memory), as their control loops will conflict. (They may be combined if HPA monitors custom or external metrics).
+
+
+3. Cluster Autoscaler (CA)
+
+Scaling Type: Infrastructure Scaling.
+
+Mechanism: Adjusts the total number of worker nodes in the cluster.
+
+Workflow:
+- Node Overload: New Pod requests fail to schedule due to insufficient node capacity -> CA provisions and attaches new nodes to the cluster.
+- Low Utilization: When Pod demand drops and nodes sit underutilized -> CA evicts remaining Pods to other nodes, terminates the empty node, and reduces infrastructure cost.
+
+Use Case: Crucial during off-peak windows, weekends, or between batch job executions to avoid paying for idle compute power.
+
+
+Key Differences & Synergy
+
+Target Levels: HPA manages Pod replica counts, VPA manages Pod CPU/RAM limits, and CA manages the underlying worker nodes.
+
+Primary Actions: HPA increases or decreases Pod counts; VPA adjusts container resource sizing; CA adds or removes server nodes.
+
+Best Practice Synergy: Production Kubernetes environments typically combine HPA (to handle web application traffic bursts) with Cluster Autoscaler (to automatically supply new hardware nodes whenever HPA creates more Pods than existing nodes can host).

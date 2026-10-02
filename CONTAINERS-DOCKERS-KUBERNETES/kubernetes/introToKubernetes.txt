@@ -1,0 +1,94 @@
+Course Notes: Introduction to Kubernetes
+Video Learning Objectives
+By the end of this module, you should be able to:
+
+Define Kubernetes and explain its core purpose.
+
+Identify what Kubernetes is not (its boundaries and scope).
+
+Relate key Kubernetes concepts and abstractions.
+
+Describe core Kubernetes capabilities and features.
+
+Overview the broader Kubernetes ecosystem and its supporting categories.
+
+What is Kubernetes?
+Official Definition: An open-source system for automating deployment, scaling, and management of containerized applications.
+
+Origin & Maintenance: Originally developed as a project by Google, it is currently maintained by the Cloud Native Computing Foundation (CNCF).
+
+Portability: Highly portable across public clouds, private clouds, and on-premises infrastructure.
+
+De Facto Standard: Recognized as the go-to container orchestration solution, growing as an extension of Containers as a Service (CaaS).
+
+Declarative Management: Facilitates declarative management, automatically performing the necessary operations to maintain the desired application state.
+
+What Kubernetes Is NOT
+Understanding the boundaries of Kubernetes helps clarify its role:
+
+Not a Traditional PaaS: It is not a rigid, opinionated Platform as a Service; rather, it offers a flexible model supporting diverse workloads (stateless, stateful, and data processing).
+
+Not Limited to Specific Apps: Works with any application that can be containerized.
+
+No Built-in CI/CD: Does not provide Continuous Integration/Continuous Delivery pipelines to build apps or deploy source code directly.
+
+No Prescribed Monitoring/Logging: Does not dictate logging, monitoring, or alerting tools; organizations choose and integrate their own third-party tools.
+
+No Built-in Middleware or Databases: Does not ship with built-in databases, message queues, or middleware services.
+
+Core Kubernetes Concepts
+Pods: The smallest deployable compute object in Kubernetes and the base abstraction used to run workloads.
+
+Services: Exposes applications running on sets of Pods. Assigns a unique IP address to each Pod and provides a single DNS name for sets of Pods.
+
+Storage: Supports both persistent and temporary storage options for Pods.
+
+Configuration: Provisioning of resources for setting up and configuring Pods.
+
+Security: Enforces security policies for cloud-native workloads, controlling access to Pods and the Kubernetes API.
+
+Policies: Rules governing groups of resources, ensuring Pods are matched to Nodes so the Kubelet can discover and execute them.
+
+Scheduling & Eviction: Assigns Pods to Nodes and proactively terminates Pods on resource-starved Nodes.
+
+Preemption: Priority-based management that terminates lower-priority Pods to schedule and run higher-priority Pods on Nodes.
+
+Cluster Administration: Encompasses the tools and details necessary to create, configure, and administer a Kubernetes cluster.
+
+Key Kubernetes Capabilities
+Automated Rollouts & Rollbacks: Automatically deploys changes to applications or configurations while monitoring health, rolling back if changes fail.
+
+Storage Orchestration: Automatically mounts chosen storage systems (local, network, or public cloud storage).
+
+Horizontal Scaling: Scales workloads horizontally up or down using commands or metrics-based autoscaling.
+
+Automated Bin Packing: Optimizes resource utilization and cost by auto-placing containers based on resource requirements and constraints without sacrificing high availability.
+
+Secret & Configuration Management: Manages sensitive information (passwords, OAuth tokens, SSH keys) and updates configurations without needing to rebuild container images.
+
+IPv4/IPv6 Dual-Stack: Assigns both IPv4 and IPv6 addresses to Pods and Services.
+
+Batch & CI Workloads: Manages batch execution and continuous integration workloads.
+
+Self-Healing: Automatically replaces failed containers, restarts unresponsive containers, and kills non-reporting containers.
+
+Service Discovery & Load Balancing: Discovers Pods via IP address or DNS name and load balances traffic to ensure performance and high availability.
+
+Designed for Extensibility: Adds features and capabilities to your cluster without modifying underlying application source code.
+
+The Kubernetes Ecosystem
+Running containerized applications requires separate supporting tools alongside the orchestration platform. Major ecosystem categories and providers include:
+
+Public Cloud Providers: Prisma, IBM, Google, AWS.
+
+Open-Source Framework Providers: Red Hat, VMware, SUSE, Mesosphere, Docker, Cloud Foundry.
+
+Management Providers: DigitalOcean, Loodse, SUPERGIANT, CloudSoft, Turbonomic, Tectonic, Weaveworks.
+
+Tool Providers: JFrog, Univa, Aspen Mesh, Bitnami, Cloud 66.
+
+Monitoring & Logging Providers: Sumo Logic, Datadog, New Relic, Iguazio, Grafana, SignalFx, Sysdig, Dynatrace.
+
+Security Providers: Guardicore, Black Duck, Yubico, Cilium, Aqua, Twistlock, Alcide.
+
+Load Balancing Providers: Avi Networks, VMware, NGINX.

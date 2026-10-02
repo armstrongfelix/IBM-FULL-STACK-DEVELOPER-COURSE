@@ -1,0 +1,50 @@
+Lecture Notes: Introduction to Data & Databases
+1. Data Fundamentals
+Definition: A collection of facts in the form of words, numbers, or pictures.
+
+Importance: One of the most critical assets of any business, collected and used everywhere (e.g., bank, credit card, and PayPal accounts storing names, addresses, phone numbers, and account numbers).
+
+Core Requirements: Data must be kept secure, stored, and accessed quickly.
+
+2. Databases vs. DBMS
+Database: A collection of data or information designed for input, storage, search and retrieval, and modification.
+
+Database Management System (DBMS): A set of programs that creates and maintains the database.
+
+Querying Function: Allows you to store, modify, and extract information.
+
+Example: Retrieving data for all customers who have been inactive for six months or more.
+
+Note: Though they have different meanings, "database" and "DBMS" are often used interchangeably.
+
+3. Factors Influencing Database Selection
+The choice of database depends on several key factors:
+
+Data type and structure
+
+Querying mechanisms
+
+Latency requirements
+
+Transaction speeds
+
+Intended use of the data
+
+4. Main Types of Databases
+Relational Databases (RDBMS)
+Built on organizational principles of flat files, with data organized into a tabular format using rows and columns.
+
+Follows a well-defined structure and schema.
+
+Unlike flat files, RDBMSs are optimized for data operations and querying involving many tables and much larger data volumes.
+
+Standard Querying Language: SQL (Structured Query Language).
+
+Non-Relational Databases (NoSQL / Not Only SQL)
+Emerged in response to the volume, diversity, and speed of data generated today (influenced by cloud computing, IoT, and social media proliferation).
+
+Built for speed, flexibility, and scale.
+
+Allows data to be stored in a schema-less or free-form fashion.
+
+Widely used for processing big data.

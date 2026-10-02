@@ -1,0 +1,37 @@
+Lecture Notes: Useful Expressions with SELECT Statements
+1. The COUNT() Function
+Definition: A built-in database aggregate function that retrieves the number of rows matching the specified query criteria.
+
+Counting All Rows:
+
+Syntax: SELECT COUNT(*) FROM tablename;
+
+Function: Returns the total count of rows present in the table.
+
+Counting Conditional Rows:
+
+Syntax Example: SELECT COUNT(COUNTRY) FROM MEDALS WHERE COUNTRY = 'CANADA';
+
+Function: Counts only the rows where the specified condition evaluates to true (e.g., medal recipients from Canada).
+
+2. The DISTINCT Keyword
+Definition: Used to remove duplicate values from a query's result set, leaving only unique values.
+
+Syntax: SELECT DISTINCT columnname FROM tablename;
+
+Example Use Case:
+
+Goal: Retrieve a list of unique countries that have received gold medals, eliminating repeated country names.
+
+Query: SELECT DISTINCT COUNTRY FROM MEDALS WHERE MEDALTYPE = 'GOLD';
+
+3. The LIMIT Clause
+Definition: Used to restrict the maximum number of rows returned in a result set.
+
+Purpose: Useful for inspecting large datasets by previewing just a few rows without retrieving the full table, saving performance and memory.
+
+Syntax Examples:
+
+Retrieve first 10 rows: SELECT * FROM tablename LIMIT 10;
+
+Retrieve restricted rows with a condition: SELECT * FROM MEDALS WHERE YEAR = 2018 LIMIT 5;

@@ -1,0 +1,25 @@
+Lecture Notes: Building and Customizing the Django Admin Site1. Overview of Django AdminPurpose: Provides a built-in, out-of-the-box interface for managing application content without writing custom UI code or using Model APIs via the shell.Separation of Roles:Content Publishers / Site Managers: Use the Django Admin site to create, edit, update, and manage domain entities (e.g., Courses, Lessons, Questions, Instructors).End Users / Students: Access published data through the public site UI (e.g., enrolling in courses, submitting questions).2. Creating a Superuser and Accessing AdminCreate Administrator Account: Run the terminal command python manage.py createsuperuser and provide credentials (username, email, password).Launch Development Server: Execute python manage.py runserver.Access Administrative Portal: Navigate to /admin/ in the browser and log in using the superuser credentials.3. Registering Models with Django AdminModels must be registered in the app's admin.py file to appear in the Django Admin interface.Pythonfrom django.contrib import admin
+from .models import Course, Instructor
+
+admin.site.register(Course)
+admin.site.register(Instructor)
+Default Admin UI GenerationDjango automatically inspects model fields and generates corresponding form widgets:BooleanField: Renders as a checkbox (e.g., is_full_time).IntegerField: Renders as a numeric input field (e.g., total_learners).ForeignKey / ManyToManyField: Renders as select or multi-select UI controls.4. Customizing the Admin Site (ModelAdmin)A. Controlling Form Fields and Field Order (fields)To explicitly specify which fields appear on the admin create/edit form—and control their display order—define a custom ModelAdmin class:Pythonclass CourseAdmin(admin.ModelAdmin):
+    fields = ['pub_date', 'name', 'description']
+
+# Register Model with ModelAdmin class
+admin.site.register(Course, CourseAdmin)
+B. Inline Editing of Related Objects (StackedInline / TabularInline)Instead of managing parent and child entities on separate forms, inline classes allow editing child objects directly within the parent object's admin form.Types of Inlines:admin.StackedInline: Renders related child fields in stacked vertical blocks.admin.TabularInline: Renders related child fields compactly in rows and columns.extra Parameter: Specifies how many empty forms to render for adding new related instances.Pythonclass LessonInline(admin.StackedInline):
+    model = Lesson
+    extra = 5  # Renders space to add up to 5 lessons at once
+
+class CourseAdmin(admin.ModelAdmin):
+    fields = ['pub_date', 'name', 'description']
+    inlines = [LessonInline]
+
+admin.site.register(Course, CourseAdmin)
+C. Customizing Table ListView Columns (list_display)To choose which specific field columns are displayed in the administrative table view list:Pythonclass CourseAdmin(admin.ModelAdmin):
+    list_display = ['name', 'pub_date']
+D. Enabling Search and Filtering (search_fields & list_filter)To manage long record lists, add search functionality and side filter menus:search_fields: Adds a search box targeting designated fields.list_filter: Adds a side panel to filter records by specific field values.Pythonclass CourseAdmin(admin.ModelAdmin):
+    list_display = ['name', 'pub_date']
+    search_fields = ['name', 'description']
+    list_filter = ['pub_date']

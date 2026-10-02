@@ -1,0 +1,50 @@
+Lecture Notes: The Model-View-Template (MVT) Pattern in Django
+1. The Standard Model-View-Controller (MVC) Pattern
+The MVC design pattern divides application logic into three distinct components:
+
+Model: Accesses and manipulates data without presenting it. It handles database interfaces (such as SQL or ORM) and processes raw data using business logic.
+
+View: Presents data in various formats, such as visual elements on a webpage, a mobile app interface, or structured data like JSON and XML.
+
+Controller: Coordinates communication between the Model and View. It routes incoming client requests, validates and processes user input, requests data CRUD operations from the Model, and forwards updated data to the View for rendering.
+
+MVC Request Flow
+A client application sends a request with inputs to the Controller.
+
+The Controller routes the request, validates, and processes the input.
+
+The Controller requests data CRUD operations from the Model.
+
+The Controller forwards data to the View to be presented to the client.
+
+2. The Django Model-View-Template (MVT) Pattern
+Django adapts the traditional MVC architecture into the Model-View-Template (MVT) pattern. In Django, there is no explicit Controller written by the developer; instead, the Django server itself acts as the Controller.
+
+A. Model
+Data & Mapping: Classes that map directly to database tables.
+
+APIs & Logic: Uses Django Model APIs to perform CRUD operations on objects and contains business logic written as functions within the model classes.
+
+B. View
+Functionality: Essentially a Python function that takes a web request and applies logic to generate a web response (e.g., HTML content, redirects, 404 errors, XML documents, or images).
+
+Role in MVT: Interacts with the Django Model to fetch required data in the form of a QuerySet or objects.
+
+Responsibility: Describes which data is presented, but delegates the presentation format to a Template.
+
+C. Template
+Functionality: Generates dynamic web pages that are sent back and rendered in the user's browser.
+
+Structure: Contains static HTML elements alongside special Python code that defines how dynamic HTML content will be generated.
+
+Responsibility: Describes how data is presented.
+
+D. Django Framework (Acting as Controller)
+Handles request routing automatically based on the project's Django URL configuration.
+
+Directs incoming client requests to the appropriate view function.
+
+3. Key Differences: MVC vs. MVT
+Controller Layer: Traditional MVC requires a distinct Controller component. In Django MVT, the Django framework/server itself acts as the Controller via URL configuration routing.
+
+View Layer: In standard MVC, the View handles presentation rendering. In Django MVT, the View determines which data to process, while the Template governs how that data is visually presented.

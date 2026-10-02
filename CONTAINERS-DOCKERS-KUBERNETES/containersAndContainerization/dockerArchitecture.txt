@@ -1,0 +1,41 @@
+Course Notes: Docker Architecture
+Video Learning Objectives
+By the end of this module, you should be able to:
+
+Identify the primary components of Docker architecture.
+
+Explain the features and roles of each Docker architecture component.
+
+Describe the step-by-step process of containerization using Docker.
+
+Core Docker Architecture Components
+Docker utilizes a client-server architecture that provides a complete application execution environment. The three main components are:
+
+Docker Client: The primary user interface for Docker. It uses the Docker Command Line Interface (CLI) or REST APIs to send commands and instructions to the Docker host. The client can communicate with a local host or connect remotely to a Docker host elsewhere.
+
+Docker Host: The server environment that hosts and manages Docker resources. It contains the Docker daemon (dockerd) which listens for incoming Docker API requests (such as docker run) and performs the heavy lifting to build, execute, and manage containers. The host also manages images, containers, namespaces, networks, storage plugins, and add-ons.
+
+Docker Registry: A centralized storage system for storing and distributing Docker images. Registries can be public (such as Docker Hub, accessible to everyone) or private (preferred by enterprises for enhanced security). Registries can be hosted via third-party cloud providers (e.g., IBM Cloud Container Registry) or self-hosted on-premises.
+
+Docker Client-Server Communication
+Daemon Interaction: The client sends instructions via REST APIs or CLI commands to dockerd.
+
+Remote Management: The Docker client and daemon can run on the exact same local system, or the client can be connected to a remote Docker daemon.
+
+Daemon-to-Daemon: Docker daemons can also communicate directly with other daemons to manage distributed Docker services.
+
+The Containerization Process Step-by-Step
+1. Build Phase
+Developers start with an existing base image or write a Dockerfile.
+
+Executing the docker build command compiles the instructions and creates a tagged container image.
+
+2. Push Phase
+Developers issue the docker push command to store and publish the newly built container image to a public or private registry (often via automated build pipelines).
+
+3. Run & Pull Phase
+When a docker run command is issued with an image name, the Docker host first checks locally to see if the image is already available.
+
+If the image is not present locally, the host automatically connects to the registry, issues a docker pull to download the image, and transfers it to the host.
+
+The Docker daemon then instantiates and executes a running container using that image.

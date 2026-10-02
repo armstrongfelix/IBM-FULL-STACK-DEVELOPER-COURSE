@@ -1,0 +1,29 @@
+Lecture Notes: UPDATE and DELETE Statements
+1. The UPDATE Statement
+Purpose: Used to alter or modify existing data in a relational database table after it has been populated.
+
+Classification: UPDATE is a Data Manipulation Language (DML) statement used to read and modify data.
+
+Basic Syntax: UPDATE TableName SET ColumnName1 = Value1, ColumnName2 = Value2 WHERE Condition;
+
+Example: Updating the name of an author with Author_ID = 'A2' from Rav Ahuja to Lakshmi Katta:
+
+Query: UPDATE AUTHOR SET LASTNAME = 'KATTA', FIRSTNAME = 'LAKSHMI' WHERE AUTHOR_ID = 'A2';
+
+2. The DELETE Statement
+Purpose: Used to remove one or more existing rows/records from a relational database table.
+
+Classification: DELETE is a Data Manipulation Language (DML) statement.
+
+Basic Syntax: DELETE FROM TableName WHERE Condition;
+
+Example: Deleting multiple rows for authors with IDs A2 and A3:
+
+Query: DELETE FROM AUTHOR WHERE AUTHOR_ID IN ('A2', 'A3');
+
+3. Critical Importance of the WHERE Clause
+The WHERE clause specifies which exact rows should be affected by the UPDATE or DELETE operations.
+
+In UPDATE Statements: Omitting the WHERE clause will update all rows in the table (e.g., setting every single author's name in the table to "Lakshmi Katta").
+
+In DELETE Statements: Omitting the WHERE clause will delete all rows from the table, completely emptying it of data.

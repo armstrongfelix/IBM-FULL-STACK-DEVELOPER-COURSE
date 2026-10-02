@@ -1,0 +1,80 @@
+NoSQL Databases (Non-Relational)
+1. Introduction to NoSQL
+Meaning: Stands for "Not Only SQL" (or sometimes Non-SQL), emphasizing that it is an alternative/supplement to traditional SQL rather than a complete rejection of SQL.
+
+Definition: A non-relational database design providing flexible, schema-less (or free-form) storage and retrieval of data.
+
+Data Flexibility: Can store structured, semi-structured, or unstructured data in any record.
+
+Querying: Typically does not use SQL, though some NoSQL databases support SQL or SQL-like interfaces.
+
+Rise in Popularity: Driven by cloud computing, big data, high-volume web applications, and mobile apps due to attributes around scale, performance, and ease of use.
+
+2. The Four Common Types of NoSQL Databases
+A. Key-Value Store
+Structure: Data is stored as a collection of key-value pairs.
+
+The key is a unique identifier representing an attribute.
+
+Both keys and values range from simple integers/strings to complex JSON documents.
+
+Ideal Use Cases: User session data, user preferences, real-time recommendations, targeted advertising, and in-memory data caching.
+
+When NOT to Use: When querying data on specific data values, requiring complex relationships between values, or needing multiple unique keys.
+
+Examples: Redis, Memcached, DynamoDB.
+
+B. Document-Based
+Structure: Each record and its associated data are stored within a single document.
+
+Features: Flexible indexing, powerful ad-hoc queries, and analytics over collections of documents.
+
+Ideal Use Cases: E-commerce platforms, medical records storage, CRM platforms, and analytics platforms.
+
+When NOT to Use: When executing complex search queries or multi-operation transactions.
+
+Examples: MongoDB, DocumentDB, CouchDB, Cloudant.
+
+C. Column-Based
+Structure: Data is stored in cells grouped as columns rather than rows.
+
+Column Family: A logical grouping of columns accessed together (e.g., grouping a customer's name and profile info separately from purchase history).
+
+Performance: Cells for a column are stored as continuous disk entries, making data access and searching extremely fast.
+
+Ideal Use Cases: Systems requiring heavy write requests, time-series data, weather data, and IoT data.
+
+When NOT to Use: When needing complex queries or frequently changing query patterns.
+
+Examples: Cassandra, HBase.
+
+D. Graph-Based
+Structure: Uses a graphical model to store and visualize data:
+
+Nodes (Circles): Contain the actual data.
+
+Edges/Arrows: Represent relationships between data.
+
+Ideal Use Cases: Connected data scenarios such as social networks, real-time product recommendations, network diagrams, fraud detection, and access management.
+
+When NOT to Use: Processing high volumes of transactions or running large-volume analytics queries.
+
+Examples: Neo4J, CosmosDB.
+
+3. Key Advantages of NoSQL
+Data Handling: Capable of processing large volumes of structured, semi-structured, and unstructured data.
+
+Distributed Architecture: Runs seamlessly as distributed systems across multiple data centers, taking full advantage of cloud infrastructure.
+
+Cost-Effective Scale-Out: Scales horizontally by adding low-cost commodity hardware/nodes rather than upgrading single expensive servers.
+
+Agility: Simpler design with better control over availability and scalability, allowing developers to iterate and deploy features faster.
+
+4. Key Differences: RDBMS vs. NoSQL
+Schemas: RDBMS uses rigidly defined schemas that require structured data formatting. NoSQL is schema-agnostic and stores structured, semi-structured, or unstructured data.
+
+Hardware & Costs: Maintaining high-end commercial RDBMS systems is expensive. NoSQL is engineered specifically to scale out on low-cost commodity hardware.
+
+Transaction Reliability: Relational databases natively enforce strict ACID compliance for crash recovery and transactional reliability, whereas most NoSQL systems prioritize speed and scale.
+
+Maturity: RDBMS is a mature, well-documented, and predictable technology. NoSQL is newer and rapidly evolving, though it is increasingly relied upon for mission-critical applications.

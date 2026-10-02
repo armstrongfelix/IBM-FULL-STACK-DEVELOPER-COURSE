@@ -1,0 +1,93 @@
+Lecture Notes: Creating a Django Web Application
+1. Typical Django Development Lifecycle
+The development process for a Django web application generally follows these sequential phases:
+
+Project Creation: Create a Django project container to hold apps and configuration settings.
+
+App Creation: Generate one or more Django apps and register them within the project.
+
+Core Development:
+
+Define models to map application data to the database via ORM.
+
+Build views to handle request logic and determine what data to present.
+
+Map request URLs to corresponding views via URL configuration (URLConf).
+
+Design and construct the user interface (UI) using templates.
+
+Testing: Perform unit and system testing on the application.
+
+Production Readiness: Incorporate add-ons, such as Django's built-in admin site or 3rd-party front-end libraries.
+
+Deployment & Monitoring: Deploy the application to a web server (on-premise or cloud) and monitor server performance.
+
+2. Creating and Structuring a Django Project
+Definition: A Django project is a Python package containing settings and configuration for a Django application instance.
+
+Command: Run django-admin startproject <project_name> (e.g., django-admin startproject mysite) in the command terminal to initialize project files and folders.
+
+Core Project Files
+manage.py: A command-line utility used to interact with the Django project (e.g., starting the development server, running migrations).
+
+settings.py: Holds configuration settings, installed applications, database parameters, and project variables.
+
+urls.py: Contains the top-level URL declarations and routing rules for the Django project.
+
+3. Creating and Plugging in a Django App
+Command: From the project root directory, run python manage.py startapp <app_name> (e.g., python manage.py startapp onlinecourse).
+
+Core App Files and Folders
+admin.py: Configuration file for registering models and customizing the built-in admin interface.
+
+models.py: Defines data models and ORM database mappings.
+
+views.py: Contains view functions or class-based views that process HTTP requests and return responses.
+
+urls.py: App-level URL declarations and routing rules.
+
+apps.py: Holds app configuration classes (e.g., OnlinecourseConfig).
+
+migrations/: Directory containing auto-generated Python scripts for database schema migrations.
+
+Registering the App
+To link the app to the project, open mysite/settings.py, locate the INSTALLED_APPS list, and add the app's configuration class path:
+
+Python
+INSTALLED_APPS = [
+    ...,
+    'onlinecourse.apps.OnlinecourseConfig',
+]
+4. Database Setup and Migration Workflow
+Database Configuration: Set up connection parameters (engine, database name, username, password) inside the DATABASES dictionary in settings.py.
+
+Define Models: Write model classes inside models.py (e.g., a Course model with name and description fields).
+
+Generate Migration Scripts: Run python manage.py makemigrations <app_name> to generate migration scripts in the migrations/ folder.
+
+Inspect SQL (Optional): Run python manage.py sqlmigrate <app_name> <migration_number> (e.g., sqlmigrate onlinecourse 0001) to preview generated SQL statements (e.g., CREATE TABLE).
+
+Apply Migrations: Run python manage.py migrate to execute scripts and update the database schema.
+
+5. Views and URL Routing
+Creating a View Function
+In onlinecourse/views.py, define a view function that takes an HttpRequest object, queries data from the model, constructs an HTML response, and returns an HttpResponse object:
+
+Example logic: Fetch a Course object from the database, dynamically inject the course name into an HTML string, and return it inside an HttpResponse.
+
+App-Level URL Routing (urls.py)
+Create onlinecourse/urls.py and define a path object pointing to the view function:
+
+The path() constructor's first argument is route. Leaving it empty ("") routes the root URL of the app (host/onlinecourse/) directly to the target view function.
+
+Project-Level URL Routing
+Include the app's URLConf inside mysite/urls.py:
+
+Add a path() object referencing the app's urls.py using include('onlinecourse.urls'). Requests matching the prefix onlinecourse/ are forwarded to onlinecourse/urls.py.
+
+6. Running the Development Server
+Command: Execute python manage.py runserver.
+
+Behavior: Starts a local web server hosted at [http://127.0.0.1:8000/](http://127.0.0.1:8000/).
+
+Testing: Navigating to [http://127.0.0.1:8000/onlinecourse/](http://127.0.0.1:8000/onlinecourse/) renders the HTML output returned by the course_list view function.

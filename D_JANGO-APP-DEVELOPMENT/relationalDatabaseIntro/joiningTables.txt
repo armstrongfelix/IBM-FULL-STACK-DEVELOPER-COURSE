@@ -1,0 +1,34 @@
+Lecture Notes: JOIN Overview
+1. Introduction to the JOIN Operator
+Purpose: While a standard SELECT statement retrieves data from a single table, the JOIN operator is used to combine rows from two or more tables into a single result set.
+
+Mechanism: Tables are combined based on a logical relationship between common columns shared across those tables.
+
+2. Primary Keys and Foreign Keys in Joins
+To combine tables, you must identify the common column(s) that serve as the link between them:
+
+Primary Key (PK): Uniquely identifies each row (tuple) within a table (e.g., borrower_id in the borrower table).
+
+Foreign Key (FK): A column or set of columns in one table that references the Primary Key of another table (e.g., borrower_id in the loan table).
+
+Linking Concept: The JOIN matches rows where the Foreign Key value in one table equals the Primary Key value in the referenced table.
+
+3. Combining Three or More Tables
+Joins are not restricted to just two tables. You can join three or more tables by chaining relationships sequentially.
+
+Example (Borrower, Loan, and Copy Tables):
+
+Join the borrower table and loan table by matching borrower_id.
+
+Join the loan table and copy table by matching copy_id.
+
+4. Types of JOIN Operators
+A. Inner Join
+Definition: The most common type of join.
+
+Behavior: Returns only the rows from both tables that have matching values in the specified common column (the intersection of the two tables).
+
+B. Outer Join
+Definition: Returns matching rows as well as non-matching rows from one or both tables.
+
+Varieties: Includes several varieties (such as Left, Right, and Full Outer Joins) used to refine and expand the returned result set up to the combination of all data across the tables

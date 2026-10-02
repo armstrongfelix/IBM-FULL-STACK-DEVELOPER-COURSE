@@ -1,0 +1,92 @@
+Lecture Notes: Django Authentication and Authorization System
+1. Fundamentals of Authentication vs. Authorization
+Authentication (Identity Validation):
+
+The process of verifying the identity of a user using credentials such as username and password, one-time passcodes (SMS/email), Single Sign-On (SSO), or biometrics (fingerprints/face recognition).
+
+In Django, authentication is managed primarily via the built-in User model and helper functions from django.contrib.auth.
+
+Authorization (Access Control):
+
+The process of determining a verified user's access permissions for specific system resources or operations.
+
+System administrators define roles or groups with dedicated permissions (e.g., viewing, editing, or deleting a course) and assign users accordingly.
+
+2. The User Model & Authentication Workflow
+A. User Login Process
+Login Form: A web template collects user credentials via an HTML form with username and password input fields and submits a POST request to a login view.
+
+authenticate(request, username, password):
+
+Checks the provided credentials against database records.
+
+Return Value: Returns a valid User instance if credentials match; returns None if invalid.
+
+login(request, user):
+
+Attaches the authenticated user to the current web session and updates the session metadata.
+
+Redirects the user to the destination view (e.g., the application index page).
+
+B. User Registration Process
+A registration form sends new credential inputs (username, password, email) via a POST request to a registration view.
+
+The registration view extracts POST data and creates a new user using the model manager's create_user() method:
+
+Python
+from django.contrib.auth.models import User
+
+user = User.objects.create_user(username=username, password=password)
+The user can then be automatically logged in via login(request, user) and redirected.
+
+C. User Logout Process
+Calling logout(request) terminates the current user session, clears session data, and logs the user out.
+
+3. Web Sessions and Cookies
+Stateful Sessions: Web sessions store stateful data across multiple HTTP requests so users remain logged in without re-authenticating on every page interaction.
+
+Session Mechanics:
+
+Server Side: Django creates a unique session ID, queries the user's information, and links it to that session ID.
+
+Browser Side: The browser stores the session ID in a COOKIE.
+
+Accessing Session Metadata in Django:
+
+request.COOKIES: Retrieves client-side cookies, including the session ID.
+
+request.session: A dictionary-like object storing session data (e.g., user_id).
+
+Unauthenticated State: If a user is not logged in, the session ID returns None and request.session is empty.
+
+4. Django Authorization: Users, Permissions, and Groups
+Authorization in Django is structured around three core interconnected models: User, Permission, and Group.
+
+A. The Permission Model
+Has a Many-to-Many relationship with the User model.
+
+Defines object types and action privileges. By default, Django automatically creates four basic permissions for every registered model:
+
+View (e.g., Can view course)
+
+Add (e.g., Can add course)
+
+Change (e.g., Can change course)
+
+Delete (e.g., Can delete course)
+
+B. The Group Model
+Provides a batch mechanism to manage permissions for multiple users sharing the same role.
+
+Permissions assigned to a Group automatically apply to all users belonging to that group.
+
+Examples:
+
+Instructors Group: Assigned Add, Change, Delete, and View permissions for course content.
+
+Learners Group: Assigned only View permissions for course content.
+
+C. Management Interfaces
+Django Admin Site: Offers a built-in graphical user interface to create groups, configure model permissions, and assign users to groups with zero custom code.
+
+Programmatic APIs: Allows developers to assign permissions or group memberships dynamically via code.

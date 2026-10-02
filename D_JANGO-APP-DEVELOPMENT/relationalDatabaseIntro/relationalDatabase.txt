@@ -1,0 +1,96 @@
+Relational Databases (RDBMS)
+1. Relational Database Concepts
+Definition: A relational database organizes data into tables that can be linked or related based on common data fields.
+
+Table Structure:
+
+Rows: Represent individual records.
+
+Columns: Represent attributes of those records.
+
+Example of Linked Tables:
+
+Customer Table: Contains attributes like Customer ID, Customer Name, Customer Address, and Customer Primary Phone. Each row is a customer record.
+
+Transaction Table: Describes individual customer transactions with attributes such as Transaction Date, Customer ID, Transaction Amount, and Payment Method.
+
+Relationship: Linked via the common Customer ID field.
+
+Benefits of Relating Tables:
+
+Allows querying to produce consolidated reports (e.g., customer statements for a given period).
+
+Enables retrieving an entirely new table from one or more tables with a single query.
+
+Helps reveal relationships across data for better decision-making.
+
+2. Relational Databases vs. Spreadsheets (Flat Files)
+Similarities: Both organize data into rows and columns following a structure and schema.
+
+Differences & Advantages over Spreadsheets:
+
+Scalability: Built for optimized storage, retrieval, and processing of large data volumes (not constrained by spreadsheet row/column limits).
+
+Reduced Redundancy: Relationships between tables minimize data duplication across the system.
+
+Data Integrity: Restricting fields to specific data types and values reduces irregularities and increases consistency.
+
+Performance: Uses SQL to process millions of records and retrieve large data volumes in seconds.
+
+Security & Governance: Provides controlled access to data and enforces data governance standards and policies.
+
+3. Deployment, Licensing, and Examples
+Deployment Range: Scales from small desktop systems to massive cloud-based systems.
+
+Licensing Types:
+
+Open source
+
+Internally supported open source with commercial support
+
+Commercial closed-source systems
+
+Popular RDBMS Software: IBM DB2, Microsoft SQL Server, MySQL, Oracle Database, PostgreSQL.
+
+Cloud-Based Relational Databases (Database-as-a-Service): Utilize cloud compute and storage capabilities.
+
+Examples: Amazon RDS, Google Cloud SQL, IBM DB2 on Cloud, Oracle Cloud, SQL Azure.
+
+Ecosystem Advantage: RDBMS is a mature, well-documented technology, making it easy to learn and find qualified talent.
+
+4. Key Advantages of Relational Databases
+Flexibility: Schema changes (adding columns/tables, renaming relations) can be made using SQL while the database is actively running and serving queries.
+
+Reduced Redundancy: Customer details appear once in a Customer Table; transaction tables simply store a link to that entry.
+
+Backup and Disaster Recovery:
+
+Easy import/export options while the database is running.
+
+Cloud RDBMS uses continuous mirroring, limiting data loss on restore to seconds or less.
+
+ACID Compliance: Ensures database transactions are processed reliably, keeping data accurate and consistent despite failures.
+
+A - Atomicity
+
+C - Consistency
+
+I - Isolation
+
+D - Durability
+
+5. Common Use Cases
+Online Transaction Processing (OLTP): Focuses on high-rate, transaction-oriented tasks. Handles large numbers of users, frequent small inserts/updates/deletes, and fast response times.
+
+Data Warehouses: Optimized for Online Analytical Processing (OLAP) to analyze historical data for business intelligence.
+
+IoT Solutions: Uses lightweight relational database solutions to collect and process data quickly from edge devices.
+
+6. Limitations of Relational Databases
+Unstructured Data: Does not work well with semi-structured or unstructured data; unsuitable for extensive analytics on these data types.
+
+Migration Requirements: Source and destination table schemas and data types must be identical when migrating between two RDBMS systems.
+
+Field Length Constraints: Has strict limits on data field lengths; data exceeding the field capacity will not be stored.
+
+Current Status: Despite these limitations, RDBMS remains the predominant technology for working with structured data.

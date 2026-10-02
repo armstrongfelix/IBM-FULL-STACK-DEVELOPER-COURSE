@@ -1,0 +1,80 @@
+Course Notes: Kubernetes Architecture
+Video Learning Objectives
+By the end of this module, you should be able to:
+
+Identify the primary components of a Kubernetes architecture.
+
+Identify the individual components that make up the Control Plane (Master Node).
+
+Identify the individual components that make up the Worker Plane (Worker Nodes).
+
+High-Level Kubernetes Cluster Concepts
+A Kubernetes deployment is called a Kubernetes cluster.
+
+Cluster Structure: Consists of one Control Plane (Master Node) and one or more Worker Nodes.
+
+Thermostat Analogy: The Control Plane functions like a thermostat. You specify the desired state (e.g., target temperature), and the Control Plane continuously regulates the cluster state to match that specification.
+
+Infrastructure Flexibility: Nodes are not created by Kubernetes itself, but by underlying cloud providers or physical hosts. This allows Kubernetes to run on a wide variety of infrastructures.
+
+Control Plane Components (Master Node)
+The Control Plane makes global decisions about the cluster (e.g., workload scheduling) and detects/responds to cluster events (e.g., instantiating new resources when an app is deployed).
+
+1. Kubernetes API Server (kube-apiserver)
+Serves as the front end for the Control Plane.
+
+Exposes the Kubernetes API, which accepts commands to view or modify cluster state.
+
+All internal and external cluster communications utilize this API.
+
+Designed to scale horizontally across multiple kube-apiserver instances with load balancing.
+
+2. etcd
+A highly available, distributed key-value store that contains all cluster data and deployment configurations.
+
+Defines the source-of-truth state for the Kubernetes cluster.
+
+3. Kubernetes Scheduler (kube-scheduler)
+Assigns newly created Pods to specific Worker Nodes.
+
+Selects the most optimal Node based on scheduling principles, configuration options, and available hardware resources.
+
+4. Kubernetes Controller Manager (kube-controller-manager)
+Runs all controller processes that monitor cluster state and ensure the actual state matches the desired state.
+
+5. Cloud Controller Manager (cloud-controller-manager)
+Links the cluster to the underlying cloud provider's API.
+
+Decouples cloud-provider dependencies from core Kubernetes code, allowing both Kubernetes and cloud providers to evolve independently.
+
+Worker Plane Components (Worker Nodes)
+Worker Nodes are physical or virtual machines managed by the Control Plane where user workloads and applications actually run.
+
+1. Pods
+The smallest deployable computing entity in Kubernetes.
+
+Contains one or more containers that share Node resources and can communicate with each other.
+
+2. kubelet
+The most critical component on a Worker Node.
+
+Communicates with the kube-apiserver to receive new/modified Pod specifications and ensures associated containers are running as expected.
+
+Periodically reports Pod health and status back to the Control Plane.
+
+3. Container Runtime
+Software responsible for downloading container images and running containers.
+
+Integrated via the Container Runtime Interface (CRI), allowing pluggability for different runtimes.
+
+Common examples include Docker, Podman, and CRI-O (Crio).
+
+4. Kubernetes Proxy (kube-proxy)
+A network proxy running on each Worker Node.
+
+Maintains network rules on the Node to enable network communications to and from Pods across the cluster.
+
+Component Overview Summary
+Control Plane (Master): kube-apiserver, etcd, kube-scheduler, kube-controller-manager, cloud-controller-manager.
+
+Worker Plane (Nodes): kubelet, Container Runtime (Docker, Podman, CRI-O), kube-proxy, and Pods/Containers

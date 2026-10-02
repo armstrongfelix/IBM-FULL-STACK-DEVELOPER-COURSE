@@ -1,0 +1,83 @@
+Lecture Notes: Django Templates and Static Files
+1. Overview of Django Templates
+Purpose: Defines how application data is presented to the user by producing dynamic HTML pages rendered in the web browser.
+
+Composition: Combines static HTML code with Django Template Language (DTL) features:
+
+Variables: Placeholders that get replaced with real data values passed from the view.
+
+Template Tags: Logic structures (e.g., control flows, loops) executed by the Django template engine to dynamically construct HTML content.
+
+2. Template Directory Structure & Namespacing
+To ensure Django correctly identifies and loads template files without conflicting with templates of the same name in other installed applications, templates must be namespaced using a nested folder structure:
+
+Plaintext
+onlinecourse/
+└── templates/
+    └── onlinecourse/
+        └── course_list.html
+Namespacing Mechanism: Placing templates inside a subdirectory named after the app (templates/onlinecourse/) creates a namespace.
+
+Template Path Reference: Views reference the template using its relative path string: 'onlinecourse/course_list.html'.
+
+3. Template Syntax: Variables and Control Tags
+A. Variables and Dot Notation
+Variables are passed from the view inside a context dictionary.
+
+Dot Notation (.): Used within templates to access object attributes or dictionary keys (e.g., course.name, course.description).
+
+B. Control Flow Tags
+If-Else Tag ({% if %} ... {% else %} ... {% endif %}): Evaluates conditional statements (e.g., checking if course_list exists and contains records).
+
+For Loop Tag ({% for %} ... {% endfor %}): Iterates over QuerySets or lists passed in the context.
+
+HTML
+{% if course_list %}
+    {% for course in course_list %}
+        <h2>{{ course.name }}</h2>
+        <p>{{ course.description }}</p>
+    {% endfor %}
+{% else %}
+    <p>No courses are available.</p>
+{% endif %}
+4. Combining Views and Templates via render()
+Instead of manually constructing an HttpResponse string, Django views use the render() shortcut function to merge a template file with a context dictionary.
+
+Python
+from django.shortcuts import render
+from .models import Course
+
+def index(request):
+    courses = Course.objects.all()
+    context = {'course_list': courses}
+    return render(request, 'onlinecourse/course_list.html', context)
+Arguments of render():
+request: The original HttpRequest object passed into the view.
+
+template_name: The relative file path to the target HTML template (e.g., 'onlinecourse/course_list.html').
+
+context: A dictionary-like object mapping variable names used in the template to Python data objects/QuerySets.
+
+Return Value: Returns an HttpResponse object containing the fully rendered HTML text.
+
+5. Serving Static Files (CSS, JavaScript, Media)
+Static files enhance web pages by adding styling, interactivity, and media elements.
+
+Steps to Load and Use Static CSS:
+Load Static Tag Set: Include {% load static %} at the top of the template file.
+
+Generate Absolute URLs: Use the {% static %} template tag to convert a relative file path into an absolute URL string within HTML links or elements.
+
+Apply CSS Styling: Link external CSS files or classes to HTML elements (e.g., <body>, <p>, <hr>).
+
+HTML
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{% static 'onlinecourse/css/style.css' %}">
+</head>
+<body>
+    ...
+</body>
+</html>

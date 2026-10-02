@@ -1,0 +1,63 @@
+Lecture Notes: Django Models CRUD Operations
+1. Overview of CRUD Operations
+CRUD: Refers to the four core database operations: Create, Read, Update, and Delete.
+
+Django Model APIs: Allow developers to perform database operations completely in Python code without writing raw SQL queries.
+
+2. Creating Data (Create)
+Instantiation and Saving: Create an instance of a model class and call its .save() method to execute an INSERT SQL statement into the database.
+
+Linking Related Models:
+
+Assign model instances directly to ForeignKey attributes.
+
+Example: Assigning a Course instance to a Project instance's course attribute before calling .save().
+
+3. Reading and Querying Data (Read)
+Model Manager (objects):
+
+The interface through which database queries are executed on a model class (e.g., Course.objects).
+
+Accessed via the model class itself, not through an individual model instance, separating table-level operations from record-level operations.
+
+QuerySet:
+
+A collection of database records returned by manager operations (similar to a SELECT statement in SQL).
+
+Common Query Methods:
+
+.all(): Retrieves all records from the corresponding table (equivalent to SELECT *).
+
+.filter(): Returns a QuerySet matching given lookup parameters (equivalent to WHERE).
+
+.exclude(): Returns a QuerySet containing records that do not match given lookup parameters.
+
+.get(): Returns a single object matching the lookup criteria. Raises an exception if zero or multiple records match.
+
+Field Lookups:
+
+Field lookups use field names and expressions separated by double underscores (__).
+
+Examples: is_full_time=False, first_name__startswith='J', total_learners__gt=30000.
+
+Filter Chaining:
+
+QuerySet methods can be appended together (e.g., Model.objects.exclude(...).filter(...)) or pass multiple comma-separated lookups inside a single .filter() call to evaluate multiple conditions using AND logic.
+
+Querying Across Relationships:
+
+Relationships can be traversed across tables using double-underscore syntax.
+
+Example: Course.objects.filter(instructors__first_name='John') joins related tables behind the scenes automatically.
+
+4. Updating Data (Update)
+Primitive Fields: Modify the attribute on a model instance and call .save() to perform an UPDATE SQL operation.
+
+Foreign Keys: Reassign the Foreign Key attribute on an instance to a different related object and call .save().
+
+Many-to-Many Relationships: Use helper methods like .add() on the relationship field manager to attach related objects (e.g., course.learners.add(learner)).
+
+5. Deleting Data (Delete)
+Method: Call the .delete() method on either an individual model instance or an entire QuerySet to remove records.
+
+Referential Integrity: Behavior for related models is controlled by the on_delete parameter configured on foreign key definitions (e.g., models.CASCADE).

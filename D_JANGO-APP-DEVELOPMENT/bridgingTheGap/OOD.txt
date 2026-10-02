@@ -1,0 +1,56 @@
+Lecture Notes: Object-Oriented Analysis and Design (OOAD)
+1. Introduction to OOAD
+Definition: Object-Oriented Analysis and Design (OOAD) is a software engineering approach used to analyze and design a software system that will be developed using object-oriented programming (OOP) languages (such as Python, Java, or C++).
+
+Core Philosophy: OOAD structures a system into discrete objects that interact with each other.
+
+Collaborative Benefit: Breaking a system into independent objects allows multiple developers to work on different aspects of an application simultaneously.
+
+2. Core Concepts: Objects vs. Classes
+Objects:
+
+At the heart of OOAD, objects combine both data (state) and behaviors (actions the object can perform).
+
+Example: A specific patient object representing "Nia Patel" who needs to cancel an appointment.
+
+Classes:
+
+A class is a generic template or blueprint used to define objects.
+
+Defines generic attributes (properties) and methods (available actions) without setting specific values.
+
+Example: A generic Patient class serves as the blueprint for creating individual patient objects.
+
+Instantiation:
+
+The process of creating a specific object instance from a class inside the code.
+
+During instantiation, generic placeholders (e.g., LastName) are assigned actual data values (e.g., "Patel").
+
+Once instantiated, the object's methods can be called to perform actions (e.g., making or canceling an appointment).
+
+3. Class Diagrams (Structural UML)
+Purpose: Class diagrams are structural Unified Modeling Language (UML) diagrams commonly used in OOAD to communicate the static structure of a software system.
+
+Visual Components:
+
+Class Boxes: Each box represents a class and details its attributes (properties/data) and methods (actions).
+
+Relationships: Lines between boxes illustrate how classes relate to and interact with one another.
+
+4. Inheritance
+Definition: A mechanism where a subclass inherits all attributes (properties and methods) from its parent class, while also having the ability to add its own specialized properties and methods.
+
+Medical Personnel System Example:
+
+Medical Personnel is the top-level parent class.
+
+Nurse, Doctor, and Technician are subclasses of Medical Personnel.
+
+Specialist is a subclass of Doctor.
+
+Inheritance Rules:
+
+Doctors can perform any action that general Medical Personnel can do.
+
+Specialists can perform any action that a Doctor can do, plus their own specialized tasks.

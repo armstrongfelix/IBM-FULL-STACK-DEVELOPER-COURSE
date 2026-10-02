@@ -1,0 +1,85 @@
+Course Notes: Kubernetes Rolling Updates
+
+Video Learning Objectives
+
+By the end of this module, you should be able to:
+
+Explain what a rolling update is and how it works in Kubernetes.
+
+List the required pre-steps and configuration strategies before applying a rolling update.
+
+Demonstrate how to perform an image update and roll back a deployment.
+
+Compare all-at-once versus one-at-a-time (staggered) rollout and rollback strategies.
+
+Core Rolling Update Concepts
+
+Definition: Automated, scheduled updates that roll out controlled application changes across pods incrementally using pod templates (e.g., Deployments).
+
+Key Benefit: Allows seamless deployment of application updates and rollbacks without causing noticeable downtime or service interruption for end users.
+
+Pre-Steps for Configuring Rolling Updates
+
+To prepare an application for zero-downtime rolling updates, configure the following in the Deployment YAML:
+
+Health Probes: Add liveness probes and readiness probes to ensure pods are fully functional before they are marked as ready to receive traffic.
+
+Strategy Parameters:
+
+maxSurge: Specifies the maximum number of pods that can be created above the desired replica count during an update (e.g., maxSurge: 2 on 10 pods allows up to 12 total pods, setting maxSurge: 100% doubles the pod count temporarily).
+
+maxUnavailable: Specifies the maximum number of pods that can be unavailable during the update process (set maxUnavailable: 0 to guarantee a zero-downtime system).
+
+minReadySeconds: Specifies the baseline duration (in seconds) to wait after a new pod is ready before moving to the next pod in the rollout phase.
+
+Step-by-Step Rolling Update & Rollback Workflow
+
+Phase 1: Build & Publish Image
+
+Dockerize the updated application code (e.g., changing "Hello World" to "Hello World v2").
+
+Build, tag, and push the new container image to a registry (e.g., Docker Hub tag: hello-kubernetes:2.0).
+
+Phase 2: Apply Image Update
+
+Update the deployment image using the kubectl set image command.
+
+Command: kubectl set image deployment/ =
+
+Phase 3: Verify Rollout
+
+Check the update progress and confirm successful deployment using the rollout status command.
+
+Command: kubectl rollout status deployment/
+
+Phase 4: Perform Rollback
+
+If errors occur or a revert is needed, undo the rollout to restore the previous state.
+
+Command: kubectl rollout undo deployment/
+
+Verify that updated pods are terminated and replaced by original pods using kubectl get pods.
+
+Deployment Strategies Compared
+
+All-at-Once Strategy
+
+Rollout: All version 1 pods are marked for deletion and removed simultaneously as version 2 pods are created. User access is temporarily blocked during the transition until version 2 pods become active.
+
+Rollback: All version 2 pods are removed simultaneously, blocking user access until original version 1 pods are recreated and active.
+
+One-at-a-Time (Staggered) Strategy
+
+Rollout: Updates are staggered incrementally. A single version 2 pod is created, replacing one version 1 pod at a time until the rollout completes. User access remains completely uninterrupted.
+
+Rollback: Reverts changes incrementally one pod at a time, ensuring continuous availability while returning to the previous version.
+
+Summary Checklist
+
+Rolling updates deploy changes automatically and controllably across cluster pods.
+
+Readiness and liveness probes paired with maxSurge and maxUnavailable settings prevent application downtime.
+
+Rollbacks are executed using the kubectl rollout undo command.
+
+Staggered (one-at-a-time) updates preserve uninterrupted user traffic compared to all-at-once replacements.

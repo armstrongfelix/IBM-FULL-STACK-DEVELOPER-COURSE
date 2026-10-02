@@ -1,0 +1,41 @@
+Lecture Notes: Sorting SELECT Statement Result Sets
+1. Introduction to Result Set Sorting
+Purpose: While a standard SELECT query retrieves data, the resulting rows are not guaranteed to be in a specific order. Sorting result sets improves readability and usability (e.g., displaying titles alphabetically).
+
+Clause Used: The ORDER BY clause is added to a SELECT statement to sort the retrieved rows based on values in a specified column.
+
+2. Sorting Directions
+Ascending Order (Default)
+Keyword: ASC (or omitting any keyword).
+
+Behavior: By default, if no order direction is specified, ORDER BY sorts values in ascending order (A-Z for text/alphabetical data, smallest to largest for numeric data).
+
+Example Query:
+
+SQL
+SELECT Title FROM Book ORDER BY Title;
+Descending Order
+Keyword: DESC
+
+Behavior: Sorts values in descending order (Z-A for text/alphabetical data, largest to smallest for numeric data).
+
+Text Sorting Rule: When multiple rows share the same initial characters, the database evaluates and sorts based on the first character where the values differ.
+
+Example Query:
+
+SQL
+SELECT Title FROM Book ORDER BY Title DESC;
+3. Sorting by Column Sequence Number (Position)
+Concept: Instead of specifying a column by its explicit name, you can indicate its column sequence number (ordinal position) as listed in the SELECT clause.
+
+Mechanism:
+
+1 corresponds to the first column listed after SELECT.
+
+2 corresponds to the second column, and so on.
+
+Example Query:
+
+SQL
+SELECT Title, Pages FROM Book ORDER BY 2;
+Explanation: In this query, ORDER BY 2 sorts the result set in ascending order based on the Pages column (the second column in the column list).

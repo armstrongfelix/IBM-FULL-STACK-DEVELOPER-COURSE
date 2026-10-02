@@ -1,0 +1,76 @@
+Lecture Notes: Database Concepts & Entity-Relationship Modeling
+1. The Relational Model
+Primary Advantage: The main advantage of the relational model is that it provides data independence:
+
+Logical data independence
+
+Physical data independence
+
+Physical storage independence
+
+Structure: Stored in a simple structure using tables.
+
+2. Entity-Relationship (ER) Data Model
+Function: Used as a design tool to build relational databases rather than being used directly as an operational database on its own.
+
+Core Concept: Views a database as a collection of independent entities and their relationships.
+
+Library Database Example:
+
+Books can be written by one or many authors.
+
+The library can have one or many copies of a book.
+
+Each copy can be borrowed by only one borrower at a time.
+
+3. Building Blocks of ER Diagrams
+Entities:
+
+Objects that exist independently of any other entities in the database.
+
+Represented as a noun (person, place, or thing).
+
+Drawn as rectangles in an ER diagram.
+
+Attributes:
+
+Data elements that characterize or describe properties of an entity.
+
+Tell us more about the entity.
+
+Connected to exactly one entity.
+
+Drawn as ovals in an ER diagram.
+
+4. Mapping Entities & Attributes to Database Tables
+Entities to Tables: An entity name becomes the name of the database table (e.g., Book, Author, Author List, Borrower, Loan, Copy).
+
+Attributes to Columns: Attributes become the columns of the table.
+
+Data Values to Rows: Adding actual data values into each column completes the table format of rows and columns.
+
+5. Common Data Types
+Attributes store different data formats. Common types mentioned include:
+
+Variable Character (VARCHAR): Used for text that varies in length (e.g., Book Title).
+
+Fixed-Length Character (CHAR): Used for character strings that do not vary in length, or contain specific formatted characters/dashes (e.g., ISBN).
+
+Numeric: Used for numerical values (e.g., Edition, Year). Other standard types include integers and decimals.
+
+Timestamps: Includes dates and times.
+
+6. Primary Keys and Foreign Keys
+Primary Key:
+
+Uniquely identifies each tuple (row) in a table.
+
+Prevents duplicate records/data in the table.
+
+Provides a mechanism for defining relationships between different tables.
+
+Foreign Key:
+
+A primary key from one table that is defined in another table.
+
+Creates a direct link/relationship between the two tables.

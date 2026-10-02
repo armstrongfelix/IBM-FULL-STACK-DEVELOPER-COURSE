@@ -1,0 +1,60 @@
+Lecture Notes: Retrieving Data with a SELECT Statement
+1. Introduction to the SELECT Statement
+Purpose: A primary function of a Database Management System (DBMS) is facilitating data retrieval. The SELECT statement is used to retrieve and view data stored in a relational database table.
+
+Classification: SELECT is a Data Manipulation Language (DML) statement. DML statements are used to read and modify data.
+
+Terminology:
+
+Query: A SELECT statement sent to the database.
+
+Result Set / Result Table: The output generated after executing a query.
+
+2. Basic Query Syntax & Column Selection
+Retrieving All Data (SELECT *):
+
+Syntax: SELECT * FROM table_name;
+
+Example: SELECT * FROM book;
+
+Function: The asterisk (*) retrieves all data rows for every column in the table.
+
+Retrieving All Columns Explicitly:
+
+You can also retrieve all columns by individually listing every column name in the SELECT clause.
+
+Selecting Subsets of Columns:
+
+Syntax: SELECT column1, column2 FROM table_name;
+
+Example: SELECT book_id, title FROM book;
+
+Function: Limits the output to specified columns for all rows in the table.
+
+Column Order: The order of the displayed columns in the result set always matches the order in which they are listed in the SELECT statement.
+
+3. Restricting Rows with the WHERE Clause
+Purpose: To restrict the result set to specific rows rather than returning all rows in the table.
+
+Predicate Definition: A predicate is a logical condition that evaluates to True, False, or Unknown. Predicates are used in the search condition of a WHERE clause.
+
+Syntax Example:
+
+SELECT book_id, title FROM book WHERE book_id = 'B1';
+
+Behavior: The database evaluates the predicate (book_id = 'B1') for each row and only returns rows where the condition evaluates to True.
+
+4. Supported Comparison Operators
+RDBMS platforms support the following comparison operators in the WHERE clause search conditions:
+
+Equal to: =
+
+Greater than: >
+
+Less than: <
+
+Greater than or equal to: >=
+
+Less than or equal to: <=
+
+Not equal to: <> (or !=)

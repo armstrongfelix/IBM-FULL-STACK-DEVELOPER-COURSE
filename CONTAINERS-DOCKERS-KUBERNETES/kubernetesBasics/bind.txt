@@ -1,0 +1,63 @@
+Course Notes: Kubernetes Service Binding
+
+Video Learning Objectives
+
+By the end of this module, you should be able to:
+
+Explain the core roles and goals of service binding.
+
+Describe how to bind a Kubernetes cluster to external or backing services.
+
+Identify CLI commands and tools to view and retrieve Kubernetes secrets.
+
+Describe two ways applications consume service binding credentials.
+
+What is Service Binding?
+
+Definition: Service binding is the process of connecting application deployments in a Kubernetes cluster to external backing services, such as REST APIs, databases, message queues, or AI cloud services.
+
+Core Purpose: Manages service configurations and credentials automatically while keeping sensitive security data protected.
+
+Primary Mechanism: Automatically provisions service credentials from the external provider and stores them as a Base64-encoded JSON secret inside the Kubernetes cluster.
+
+Workflow for Binding External Services (IBM Cloud Example)
+
+Provision Service Instance: Create an instance of the external service (e.g., Watson Tone Analyzer) using the Cloud CLI or web dashboard catalog.
+
+Bind Service to Cluster: Execute the service bind command. This generates public endpoint service credentials and automatically creates a corresponding Kubernetes Secret object.
+
+Verify Secret Object: Confirm the secret was generated using CLI commands or cluster management dashboards.
+
+CLI Command: kubectl get secrets
+
+Alternative UI Options: Kubernetes Dashboard UI or Cloud Provider Console (e.g., IBM Cloud Kubernetes Service).
+
+Configure Application Access: Reference the generated secret inside the application deployment so the codebase can execute API calls against the external service.
+
+Two Ways Applications Consume Bound Secrets
+
+Volume Mounts
+
+Mount the secret as a volume inside the Pod container definition.
+
+Kubernetes creates a JSON-formatted file named binding inside the specified Volume Mounts directory.
+
+The application reads and parses the JSON file at runtime to retrieve connection parameters and credentials.
+
+Environment Variables
+
+Reference the secret fields directly as container environment variables inside the Deployment descriptor.
+
+Common variable mappings: binding.apikey, binding.username, and binding.password.
+
+Application code (e.g., Node.js / Express.js) reads the values via environment parameters (such as process.env.binding_apikey) to initialize SDKs or call external REST endpoints.
+
+Summary Checklist
+
+Service binding automates connecting applications to external databases, REST APIs, and backing services.
+
+Credentials generated during binding are stored securely as Kubernetes Secrets in Base64 JSON format.
+
+Secrets can be inspected via kubectl get secrets or cluster dashboard UIs.
+
+Pods access bound credentials using volume mounts (as a JSON file) or environment variables.

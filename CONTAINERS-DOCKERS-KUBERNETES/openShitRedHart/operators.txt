@@ -1,0 +1,114 @@
+Lecture Notes: OpenShift Operators
+
+Learning Objectives
+
+After completing this lecture, you will be able to:
+
+Define what an Operator is and explain its role in automating Kubernetes application management.
+
+Explain the relationship between Custom Resource Definitions (CRDs), custom controllers, and the Operator pattern.
+
+Contrast traditional Service Brokers with Operators.
+
+Describe the components of the Operator Framework (Operator SDK, OLM, Operator Registry, and Operator Hub).
+
+Understand the Operator Maturity Model and identify common application management examples.
+
+What is an Operator?
+
+An Operator is an application-specific custom controller that extends the Kubernetes API to package, deploy, and manage complex applications.
+
+Key Functions & Purpose
+
+Human Knowledge Automation: Encapsulates the domain knowledge of human operational engineers (installation, day-2 operations, troubleshooting, tuning, and recovery) directly into software code.
+
+Continuous Reconciliation: Runs as a pod inside the cluster, constantly monitoring the actual state of resources against the desired state and taking real-time corrective actions.
+
+Automated Lifecycle Management: Handles complex tasks including zero-downtime over-the-air (OTA) updates, seamless upgrades, full system health checks, failovers, and backup/restore procedures.
+
+Operators vs. Service Brokers
+
+Service Brokers: Provide short-running processes designed primarily for initial provisioning. They offer customization only at installation and cannot manage day-2 operational activities like ongoing updates, automated scaling, or failover management.
+
+Operators: Provide long-running processes that continuously watch cluster state to manage ongoing day-2 operations (upgrades, stateful backup/restore, autoscaling, and self-healing) across the full application lifecycle.
+
+The Operator Pattern (CRDs + Custom Controllers)
+
+The Operator pattern combines Custom Resource Definitions (CRDs) with custom controllers to introduce new declarative APIs into Kubernetes.
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ OPERATOR PATTERN                                                            │
+│                                                                             │
+│  ┌───────────────────────────┐                ┌──────────────────────────┐  │
+│  │ Custom Resource           │   Defines      │ Custom Controller        │  │
+│  │ Definition (CRD)          ├───────────────►│ (Reconciliation Loop)    │  │
+│  │ Stores desired state API  │   Desired      │ Watches actual vs        │  │
+│  │ (e.g., Kind: DatabaseApp) │   State        │ desired cluster state    │  │
+│  └───────────────────────────┘                └─────────────┬────────────┘  │
+│                                                             │               │
+│                                                 Reconciles  │               │
+│                                                 Cluster     │               │
+│                                                 State       ▼               │
+│  ┌───────────────────────────────────────────────────────────────────────┐  │
+│  │ Low-Level Cluster Objects (Pods, Deployments, StatefulSets, PVs)      │  │
+│  └───────────────────────────────────────────────────────────────────────┘  │
+└─────────────────────────────────────────────────────────────────────────────┘
+Core Mechanics
+
+Custom Resource Definition (CRD): Extends the native Kubernetes API by registering custom resource types (e.g., Database, AppServer). Once registered, custom resource objects are managed via standard tools like kubectl and oc.
+
+Custom Controller: Implements a continuous reconciliation loop. It reads CRD data as the desired state, compares it to the actual cluster state, and automatically creates, updates, or deletes low-level resources (such as Pods, ConfigMaps, Secrets, and Persistent Volumes) to align state.
+
+The Operator Framework
+
+The Operator Framework is an open-source toolset designed to simplify the development, packaging, and lifecycle management of Operators:
+
+Operator SDK: Allows developers to build, test, and package Operators without deep expertise in complex Kubernetes API internals. Supports three development capabilities:
+
+Helm: Best for simple application deployments.
+
+Ansible: Ideal for infrastructure automation and existing playbook integration.
+
+Go: Provides full programmatic control over advanced reconciliation logic.
+
+Operator Lifecycle Manager (OLM): Manages the installation, over-the-air upgrades, dependency resolution, and Role-Based Access Control (RBAC) permissions of Operators running on a cluster.
+
+Operator Registry: Stores CRDs, Cluster Service Versions (CSVs), and operator package metadata in channels, feeding catalog data directly to OLM.
+
+Operator Hub: A web console interface enabling cluster administrators to discover and install Operators with one-click workflows.
+
+Operator Hub Categories & Maturity Model
+
+Operator Hub Categories
+
+Red Hat Operators: Officially created, tested, and supported by Red Hat.
+
+Certified Operators: Developed by Independent Software Vendors (ISVs) partnered and validated by Red Hat.
+
+Community Operators: Maintained by the open-source community without official Red Hat support.
+
+Custom Operators: Custom-built internally by users for specialized organizational workflows.
+
+Operator Maturity Model
+
+The maturity model defines five progressive phases of operational sophistication:
+
+Basic Install: Automated application provisioning and configuration.
+
+Seamless Upgrades: Patch and minor version updates, state migration.
+
+Full Lifecycle: Application lifecycle operations, backup/restore, high availability (HA).
+
+Deep Insights: Metrics collection, alerting, log analysis, and performance profiling.
+
+Autopilot: Automatic scaling, auto-tuning, anomalous behavior mitigation, and self-healing.
+
+Lecture Summary
+
+Operators automate day-2 cluster tasks by capturing human operational knowledge into software code.
+
+The Operator pattern couples a Custom Resource Definition (CRD) with a custom reconciliation controller.
+
+The Operator Framework provides the SDK, OLM, Registry, and Operator Hub to build, package, and manage Operators.
+
+Operator Hub features Red Hat, Certified, Community, and Custom operators to deploy complex solutions like the Istio Service Mesh with ease.

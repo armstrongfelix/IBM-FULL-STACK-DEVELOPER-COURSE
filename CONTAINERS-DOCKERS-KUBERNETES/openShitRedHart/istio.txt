@@ -1,0 +1,77 @@
+Lecture Notes: Istio & Service Mesh
+Learning Objectives
+After completing this lecture, you will be able to:
+
+Describe a Service Mesh and explain its role in microservices architecture.
+
+Identify the four core concepts that Istio supports.
+
+Describe the benefits and challenges of using Istio with microservices.
+
+Identify the four basic service monitoring metrics for communication.
+
+1. What is a Service Mesh?
+A Service Mesh is a dedicated infrastructure layer designed to make service-to-service communication secure, manageable, and reliable. It creates a unified security and network domain across your applications.
+
+Core Capabilities
+Traffic Management: Controls traffic flow between services (e.g., routing, load balancing, request shifting).
+
+Security: Encrypts communications and manages service authentication and authorization.
+
+Observability: Provides visibility into service behavior to troubleshoot, trace, and optimize performance.
+
+2. The Four Core Concepts of Istio
+Istio is a platform-independent service mesh (commonly deployed on Kubernetes) that implements four main pillars:
+
+
+Connection: Intelligently routes and load-balances traffic across protocols (HTTP, TCP, gRPC, WebSocket). Enables deployment strategies like Canary releases and A/B testing.
+
+Security: Secures service-to-service communication using Mutual TLS (mTLS) encryption, robust authentication, and access control policies.
+
+Enforcement: Controls the fleet by enforcing policies such as access controls, rate limiting, and quotas.
+
+Observability: Monitors mesh activity by collecting metrics, logs, and distributed traces to pinpoint bottlenecks and track system health.
+
+3. Istio Architecture: Control Plane vs. Data Plane
+Istio splits its responsibilities into two distinct structural planes:
+
+Data Plane: Composed of Envoy proxies deployed alongside each application (often as sidecars). The Envoy proxies intercept, inspect, and manage all network traffic moving into and out of services.
+
+Control Plane: Takes desired configurations and translates them into operational rules, dynamically programming and updating Envoy proxies as the environment changes.
+
+4. Microservices: Benefits, Challenges & Istio Solutions
+Microservices break monolithic applications into smaller, independently deployable services that communicate via APIs.
+
+Benefits
+Code updates are straightforward as only the relevant service needs updating.
+
+Development teams can choose different technology stacks for different components.
+
+Individual application components can scale independently based on demand.
+
+Challenges & Istio Solutions
+Traffic Rollouts: Rolling out new features safely requires canary deployments and A/B testing. Istio provides Traffic Shifting to gradually shift traffic (e.g., 5% to 50% to 100%) or route requests based on user criteria.
+
+Cascading Failures: Failures in one service can cascade across the network. Istio provides Circuit Breaking and Retries to isolate errors and maintain system resilience.
+
+Security Risks: Unencrypted traffic is vulnerable to man-in-the-middle attacks. Istio delivers Traffic Encryption and Access Control to automatically secure data in transit and restrict unauthorized service communication.
+
+5. Basic Communication Service Monitoring Metrics
+Istio provides automatic tracking and telemetry for all inbound and outbound requests. It captures four fundamental monitoring metrics:
+
+Latency: Measures request duration (e.g., in seconds or milliseconds) to identify performance bottlenecks.
+
+Traffic: Tracks request volume and load moving through the mesh.
+
+Errors: Monitors error rates and request failure counts.
+
+Saturation: Indicates resource consumption and system capacity limits.
+
+Lecture Summary
+Service Mesh: A dedicated network layer handling security, connectivity, and telemetry for microservices.
+
+4 Pillars of Istio: Connection, Security, Enforcement, and Observability.
+
+Data Plane vs. Control Plane: Envoy proxies intercept traffic in the data plane while the control plane drives configuration.
+
+4 Key Telemetry Metrics: Latency, Traffic, Errors, and Saturation

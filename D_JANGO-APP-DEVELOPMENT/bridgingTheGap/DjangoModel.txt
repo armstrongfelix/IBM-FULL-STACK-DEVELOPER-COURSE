@@ -1,0 +1,65 @@
+Lecture Notes: Mapping ER Diagrams to Django Models
+1. Introduction to Django ORM
+Definition: Django ORM is the Object-Relational Mapping component of the Django Web Framework.
+
+Core Mapping Concept:
+
+Model Class: Maps directly to a database table.
+
+Class Object: Represents an individual row in that table.
+
+Class Field: Maps to a specific database column.
+
+Schema Generation: Defining Python model classes automatically generates the SQL statements (like CREATE TABLE) and column definitions required by the underlying database.
+
+2. Model Fields and Metadata
+Field Types: Each field is instantiated using a Django field class that converts to a specific database column type.
+
+CharField transfers to VARCHAR
+
+DateField transfers to DATE
+
+Field Metadata & Parameters: Arguments passed into field classes set rules, constraints, and column properties.
+
+max_length: Specifies character length limits for VARCHAR.
+
+Common options: null, blank, default, and primary_key.
+
+3. Modeling Entity Relationships
+A. One-to-One Relationships
+Concept: One record in Table A relates strictly to one record in Table B.
+
+Implementation: Defined using models.OneToOneField(TargetModel, ...).
+
+Example: Linking an Instructor model to a User model, where general user fields (Name, Date of Birth) live in User, and instructor-specific fields live in Instructor.
+
+B. Many-to-One Relationships
+Concept: Multiple records in Table A can relate to a single record in Table B.
+
+Implementation: Defined using models.ForeignKey(TargetModel, ...).
+
+Example: Linking Project to Course, where a single course contains many projects, but each project belongs to only one course.
+
+C. Many-to-Many Relationships
+Concept: Multiple records in Table A can relate to multiple records in Table B.
+
+Implementation: Defined using models.ManyToManyField(TargetModel). Place the field in the model that is modified most frequently.
+
+Intermediate Models (through parameter): When extra metadata is needed about the relationship itself (e.g., date_enrolled between Learner and Course), specify an explicit join table using the through argument pointing to a custom model (e.g., Enrollment).
+
+4. Model Inheritance Modes
+Django supports three primary inheritance patterns based on how tables are generated:
+
+Multi-Table Inheritance:
+
+Used when subclassing a model where both parent and child classes require their own individual database tables.
+
+Creates an implicit OneToOneField linking the child table back to the parent table.
+
+Abstract Base Classes:
+
+Used when the parent class only serves as a holder of shared fields and should not generate its own database table.
+
+Proxy Models:
+
+Used to modify Python-level behavior or methods of a model without altering its underlying table schema or fields.

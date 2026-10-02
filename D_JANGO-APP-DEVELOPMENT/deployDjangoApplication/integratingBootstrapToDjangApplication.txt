@@ -1,0 +1,65 @@
+Lecture Notes: Integrating Bootstrap with Django Templates
+1. Overview of Bootstrap
+Definition: A free, open-source front-end framework designed to simplify web app development by providing pre-styled HTML and CSS components.
+
+Purpose in Django: Replaces plain HTML with responsive, modern UI elements (navigation bars, cards, tables, forms) directly within Django template files (.html).
+
+Integration via CDN: The quickest way to include Bootstrap without downloading local source files is adding a Content Delivery Network (<link>) tag inside the <head> section of the base HTML template:
+
+HTML
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+2. Header Component: Navigation Bar (navbar)
+A top navigation bar provides site branding, navigation links, and inline user authentication controls.
+
+A. Basic Navbar Structure
+<nav class="navbar navbar-expand-lg navbar-light bg-light">: Main container establishing responsiveness, collapsing behavior, and background theme (bg-light).
+
+<ul class="navbar-nav">: Unordered list wrapping navigation items.
+
+<li class="nav-item"> & <a class="nav-link">: Individual list items and clickable link elements (e.g., "Home").
+
+B. Inline Authentication Form
+Forms embedded in the navigation bar display input fields and action buttons horizontally side-by-side:
+
+form-inline: Keeps form elements aligned on a single line.
+
+form-control: Standard Bootstrap class for styling text/password inputs with rounded borders and focus states.
+
+Button Styling:
+
+btn btn-primary: Stylizes a submission button into a solid blue primary action button (e.g., "Sign In").
+
+btn btn-link: Styles a link to look like a plain clickable link without heavy borders (e.g., "Sign Up").
+
+3. Page Layout Containers
+Bootstrap provides structural wrappers to manage page alignment and responsive margins:
+
+container: Creates a fixed-width, center-aligned container that adjusts at responsive breakpoints.
+
+container-fluid: Spans 100% of the viewport width across all device sizes.
+
+4. Presenting Data: Cards and Card Decks
+A. Individual Cards (card)
+A card is a flexible, bordered container with padding for content display:
+
+card: The main wrapper element.
+
+card-img-top: Displays featured media (e.g., course introduction thumbnail).
+
+card-body: Encapsulates text content.
+
+card-title: Bold header text for entity names (e.g., course title).
+
+card-text: Text body for detailed descriptions.
+
+B. Card Deck Grid (card-deck)
+card-deck: Wraps multiple individual .card elements into a grid layout where all adjacent cards automatically share equal height and width.
+
+5. Presenting Tabular Data: Bootstrap Tables (table)
+Used to display structured datasets, such as lists of enrolled students:
+
+table: Applied directly to an HTML <table> element to add padding, light horizontal dividers, and row alignment.
+
+thead / tbody: Structures table headers (e.g., First Name, Last Name, Email) and body rows.
+
+tr / td: Represents table rows and data cells for model instance attributes

@@ -1,0 +1,77 @@
+Course Notes: Container Orchestration
+Video Learning Objectives
+By the end of this module, you should be able to:
+
+Define the core challenges of managing large numbers of containers.
+
+Determine when container orchestration is necessary.
+
+Demonstrate the key features and benefits of container orchestration.
+
+The Challenge of Container Management
+Applications typically start with a single container, but as new apps are written and deployed globally for higher availability, the number of containers grows rapidly.
+
+Connecting, managing, and scaling hundreds or thousands of containers for large applications (such as databases or web apps) quickly becomes overwhelming without automated tools.
+
+What is Container Orchestration?
+Container orchestration is the process of automating the entire container lifecycle for containerized applications.
+
+Key Lifecycle Aspects Managed
+Deployment and provisioning
+
+Scaling and load balancing
+
+Networking and security
+
+Health monitoring and availability
+
+Resource allocation and scheduling
+
+When is it Needed?
+Container orchestration is necessary in large, dynamic environments to streamline complexity, enable hands-off scaling, increase speed and agility, integrate with CI/CD workflows and DevOps practices, and fulfill Security Orchestration, Automation, and Response (SOAR) requirements.
+
+How Container Orchestration Works
+Configuration Files: Uses declarative files written in YAML or JSON to specify container requirements, system parameters (CPU/memory), file parameters (proximity and metadata), networking, and log storage.
+
+Automated Scheduling: Automatically places and schedules new containers onto the right cluster host based on predefined settings, constraints, or system resource restrictions.
+
+Deployment Environments: Can be deployed on-premises as well as in public, private, or multi-cloud environments.
+
+Key Features of Orchestration Tools
+Image Location & Specification: Identifies which container images compose the application and where they reside in registries.
+
+Provisioning & Deployment: Automates container creation for a smooth, unified process.
+
+Network Security: Secures network connections between containers.
+
+High Availability & Failover: Automatically relocates containers to healthy hosts during outages or resource shortages.
+
+Load Balancing & Scaling: Adjusts container count to match traffic demand and distributes load evenly.
+
+Resource Allocation: Schedules containers efficiently onto underlying physical or virtual infrastructure.
+
+Updates & Rollbacks: Performs rolling updates and automated rollbacks without downtime.
+
+Health Checks & Self-Healing: Monitors application health and automatically replaces, restarts, or removes failed containers.
+
+Popular Container Orchestration Tools
+Marathon: A framework built for Apache Mesos (an open-source cluster manager developed at UC Berkeley) that automates container management and monitoring tasks.
+
+HashiCorp Nomad: A free, open-source cluster management and scheduling tool supporting Docker alongside standalone, virtualized, or containerized apps across major operating systems and environments (on-premises or cloud).
+
+Docker Swarm: A tool designed specifically to integrate seamlessly with the Docker engine and Docker toolset, popular among teams already heavily invested in Docker.
+
+Kubernetes: Originally developed by Google and now maintained by the Cloud Native Computing Foundation (CNCF), Kubernetes is the de facto industry standard for container orchestration. It provides full-lifecycle automation (storage provisioning, load balancing, service discovery, self-healing) and is widely offered as a fully managed service across major cloud providers.
+
+Benefits of Container Orchestration
+Increased Productivity: Eliminates manual per-container management, reducing human error and freeing developers to focus on feature updates.
+
+Faster Deployments: Accelerates feature releases and enables rapid, iterative deployment of containerized applications.
+
+Reduced Costs: Lower overhead and higher resource efficiency compared to virtual machines or traditional physical servers.
+
+Stronger Security: Improves application security by isolating processes while sharing underlying host resources safely.
+
+Easier Scalability: Allows applications to scale up or down easily (often with a single command).
+
+Faster Error Recovery: Maintains continuous high availability by detecting and automatically resolving infrastructure or container failures

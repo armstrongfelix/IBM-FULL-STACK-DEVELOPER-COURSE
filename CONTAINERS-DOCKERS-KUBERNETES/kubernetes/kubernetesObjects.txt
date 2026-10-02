@@ -1,0 +1,74 @@
+Kubernetes Objects Part 1
+Video Learning Objectives
+By the end of this module, you should be able to:
+
+Define a Kubernetes object and its core properties.
+
+Describe basic Kubernetes objects and their features.
+
+Demonstrate how Kubernetes objects relate to each other.
+
+Core Object Concepts & Definitions
+Software Object / Entity: A bundle of data that has an identity, state, and behavior.
+
+Persistent: Refers to entities or data that endure even across server failures or network attacks.
+
+Kubernetes Objects: Persistent entities that represent the state of your cluster (e.g., Pods, Namespaces, ReplicaSets, Deployments).
+
+Core Object Fields: spec vs. status
+spec (Object Spec): Provided by the user to declare the desired state of the object.
+
+status: Provided and updated by Kubernetes to describe the current state of the object.
+
+Reconciliation Loop: Kubernetes constantly works to drive the status (current state) to match the spec (desired state).
+
+Management Interfaces: You interact with objects directly through the Kubernetes API using client libraries, the kubectl CLI, or both.
+
+Labels, Selectors, and Namespaces
+Labels & Selectors
+Labels: Key-value pairs attached to objects intended for identification and organization. They do not uniquely identify a single object; many objects can share the same label.
+
+Label Selectors: The primary grouping mechanism in Kubernetes, allowing you to select and manage sets of objects based on shared labels.
+
+Namespaces
+Purpose: Mechanism for isolating groups of resources within a single cluster (e.g., separating teams, projects, or environments like system vs. user workloads).
+
+Scope: Provides a unique naming scope—object names must be unique within a given namespace, but can be reused across different namespaces.
+
+Default Namespaces:
+
+kube-system: Reserved for Kubernetes system components.
+
+default: Holds user applications when no specific namespace is designated.
+
+Basic Kubernetes Workload Objects
+1. Pods
+The simplest and smallest unit in Kubernetes.
+
+Represents a single process or instance of an application running in the cluster.
+
+Wraps one or more containers (must contain at least one container).
+
+YAML Spec Structure:
+
+kind: Set to Pod.
+
+spec: Specifies containers array (e.g., container name, image, and ports).
+
+2. ReplicaSets
+Manages a set of identical running replicas of a Pod to scale applications horizontally.
+
+replicas Field: Specifies the desired number of Pods. Updating this value creates or deletes Pods automatically.
+
+selector.matchLabels: Defines which Pods belong to the ReplicaSet (must match the Pod template's metadata.labels).
+
+Best Practice: Avoid creating ReplicaSets directly—use Deployments instead.
+
+3. Deployments
+Higher-level abstraction that manages ReplicaSets and Pods.
+
+Ideal for stateless applications (use StatefulSets for stateful workloads).
+
+Key Features: Supports declarative updates, scaling up/down, and rolling updates (gradually scaling up a new version while scaling down the old version without downtime)
+
+Relationships Between ObjectsDeployment $\rightarrow$ Manages and orchestrates updates for ReplicaSets.ReplicaSet $\rightarrow$ Maintains the exact requested count of Pods using Label Selectors.Pod $\rightarrow$ Wraps one or more Containers running the application code.Namespace $\rightarrow$ Provides logical boundary and name isolation for Deployments, ReplicaSets, and Pods.

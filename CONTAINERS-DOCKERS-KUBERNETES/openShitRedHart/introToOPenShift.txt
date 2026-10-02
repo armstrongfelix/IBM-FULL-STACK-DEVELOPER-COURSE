@@ -1,0 +1,82 @@
+Lecture Notes: Introduction to Red Hat OpenShift
+
+Learning Objectives
+
+After completing this lecture, you will be able to:
+
+Define Red Hat OpenShift and list its core enterprise features.
+
+Describe the Red Hat OpenShift architecture, underlying components, and the oc CLI.
+
+Contrast key operational and structural differences between OpenShift and standard Kubernetes without relying on tabular formatting.
+
+What is Red Hat OpenShift?
+
+Red Hat OpenShift is an enterprise-ready, hybrid cloud Kubernetes container platform built on Linux, containerization (OCI standards), and full-stack automation.
+
+Key Characteristics
+
+Hybrid Cloud Consistency: Provides a unified platform across on-premises, multi-cloud, and edge deployments.
+
+Full-Stack Automation: Features self-service developer provisioning and over-the-air platform upgrades with single-click OperatorHub deployments.
+
+End-to-End Application Lifecycle: Extends container orchestration to cover source builds, CI/CD pipelines, image management, cluster monitoring, and centralized logging.
+
+Security & Compliance: Includes integrated container scanning, Security Context Constraints (SCCs), access controls, threat detection, and enterprise registry services out-of-the-box.
+
+OpenShift vs. Kubernetes Comparison
+
+While Kubernetes is the core container orchestration engine embedded inside OpenShift, the two platforms differ significantly across several operational dimensions:
+
+Product Model: OpenShift is a commercial enterprise platform and product supported directly by Red Hat, whereas Kubernetes is an open-source community project.
+
+Installation & Flexibility: OpenShift features a highly opinionated installation process with strict defaults, while Kubernetes can be customized and installed across virtually any Linux environment.
+
+OS Infrastructure: OpenShift master nodes run on Red Hat Enterprise Linux CoreOS (RHCOS) with worker nodes supporting RHEL/RHCOS. Kubernetes offers broader host OS flexibility across distributions like Ubuntu, Debian, or CentOS.
+
+Image Management: OpenShift provides a built-in internal registry utilizing ImageStreams for automated image tracking and updates. In contrast, standard Kubernetes requires integration with third-party or external registries.
+
+External Network Routing: OpenShift natively uses Route objects (built on HAProxy/OVS) to expose services externally, whereas Kubernetes uses Ingress controllers provided by external plugins.
+
+Workload Deployment: OpenShift supports native Deployment objects as well as its own DeploymentConfig commands, while standard Kubernetes uses standard Deployment, StatefulSet, and DaemonSet manifests.
+
+CI/CD Integration: OpenShift provides direct out-of-the-box integration with tools like Jenkins, whereas Kubernetes requires external setup to integrate with CI/CD tools.
+
+User Experience: OpenShift provides a developer-friendly Web Console layout out of the box, whereas the standard Kubernetes dashboard requires manual installation and setup.
+
+OpenShift Architecture & Component Stack
+
+OpenShift uses a microservices-based architecture where services communicate via REST APIs, and system state is maintained in an etcd key-value stor
+
+
+Core Architectural Layers
+
+Red Hat Base Layer: Master nodes execute on RHEL CoreOS (RHCOS) for immutable host security, while worker nodes run on RHEL or RHCOS.
+
+Kubernetes Core Engine: Handles cluster orchestration, pod scheduling, API resource exposition, and maintaining state in etcd.
+
+Cluster & Platform Services: Delivers built-in networking, internal image storage, Prometheus-based monitoring, and OperatorHub integration.
+
+The OpenShift Command Line Interface (oc)
+
+The oc tool is the primary CLI binary used for interacting with an OpenShift cluster across Windows, Linux, and macOS.
+
+Key CLI Capabilities
+
+Embedded kubectl: Includes all standard kubectl functions and features.
+
+OpenShift Resource Extensions: Native command-line support for OpenShift-specific CRDs, including buildconfigs, routes, imagestreams, and deploymentconfigs.
+
+Built-in Authentication: Simplifies multi-user login workflows directly from the terminal via oc login.
+
+Rapid Application Creation: Supports commands like oc new-app to instantly instantiate microservices from existing Git repositories or container registries.
+
+Lecture Summary
+
+OpenShift builds directly upon Kubernetes, adding enterprise security, full-stack automation, and developer tooling.
+
+Key OpenShift extensions include built-in container registries, ImageStreams, Routes, and developer-focused Web Consoles.
+
+Master nodes run on RHEL CoreOS (RHCOS) to enforce baseline host security and consistency.
+
+The oc CLI extends standard kubectl functionality to manage native OpenShift objects like BuildConfigs and Routes.

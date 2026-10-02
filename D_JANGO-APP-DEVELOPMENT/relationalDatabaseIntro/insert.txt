@@ -1,0 +1,46 @@
+Lecture Notes: The INSERT Statement
+1. Introduction to the INSERT Statement
+Purpose: After a relational database table is created, it must be populated with data. The INSERT statement is used to add new rows of data into a table.
+
+Classification: INSERT is a Data Manipulation Language (DML) statement. DML statements are used to read and modify data.
+
+2. Syntax of the INSERT Statement
+Basic Syntax: INSERT INTO TableName (ColumnName1, ColumnName2, ...) VALUES (Value1, Value2, ...);
+
+Components:
+
+TableName: Specifies the target table to insert data into.
+
+ColumnName list: Identifies the specific columns being populated (separated by commas).
+
+VALUES clause: Specifies the corresponding data values to be inserted into those columns (separated by commas).
+
+Data Matching Rule: The number of values provided in the VALUES clause must exactly match the number of column names specified in the ColumnName list to ensure every specified column receives a value.
+
+3. Example: Author Table
+Based on an Author entity table with six columns (Author_ID, LastName, FirstName, Email, City, Country):
+
+Inserting a record for Raul Chong:
+
+Author_ID: A1
+
+LastName: Chong
+
+FirstName: Raul
+
+Email: rfc@ibm.com
+
+City: Toronto
+
+Country: CA
+
+4. Methods to Add Rows
+Method 1: Single-Row Insertion
+Inserts one row at a time using an individual INSERT INTO statement.
+
+Supported across all relational database management systems.
+
+Method 2: Multi-Row Insertion
+Some database engines allow inserting multiple rows in a single INSERT INTO statement by separating row values with commas inside the VALUES clause (e.g., inserting records for both Raul Chong and Rav Ahuja in one query).
+
+Database Limitation Note: SQLite does not support multi-row insertion in a single statement using this syntax; rows must be inserted individually in SQLite.

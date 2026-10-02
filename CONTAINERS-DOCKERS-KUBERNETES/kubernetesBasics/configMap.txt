@@ -1,0 +1,101 @@
+Here are the clear, plain text notes converted from the transcript, formatted with empty lines between paragraphs and sections for readability, without any Markdown syntax:
+
+Course Notes: Kubernetes ConfigMaps and Secrets
+
+Video Learning Objectives
+
+By the end of this module, you should be able to:
+
+Identify important ConfigMap characteristics and capabilities.
+
+Describe three ways to create a ConfigMap in Kubernetes.
+
+Describe three ways to create a Secret in Kubernetes.
+
+Explain how applications consume ConfigMaps and Secrets via environment variables and volume mounts.
+
+Core Best Practice: Decoupling Configuration
+
+Software Development Rule: Avoid hard-coding configuration variables inside application code.
+
+Key Benefit: Separating configuration data allows settings to change across environments (e.g., development, staging, production) without rebuilding application images or altering source code.
+
+ConfigMaps Overview
+
+Definition: A Kubernetes API object that stores non-confidential data in key-value pairs.
+
+Security Level: Designed exclusively for non-sensitive data; does not provide encryption or secrecy.
+
+Size Limit: Data stored in a single ConfigMap cannot exceed 1 megabyte (1MB). For larger files, use a mounted volume, external database, or file service.
+
+Key Characteristics:
+
+Has optional data and binaryData fields.
+
+Does not use a spec field in its YAML template.
+
+The resource name must be a valid DNS subdomain name.
+
+Highly reusable across multiple deployments, decoupling environment details from deployment definitions.
+
+Three Ways to Create a ConfigMap
+
+Using String Literals: Pass key-value pairs directly in the CLI command.
+Command syntax: kubectl create configmap myconfig --from-literal=message="hello world"
+
+Using an Existing Properties File or Directory: Load key-value pairs from a .properties file or an entire directory.
+Single file command: kubectl create configmap myconfig --from-file=my.properties
+Key-mapped file command: kubectl create configmap myconfig --from-file=custom_key=my.properties
+Directory command: kubectl create configmap myconfig --from-file=/path/to/dir/
+
+Using a YAML Descriptor File: Define the ConfigMap declaratively and apply it to the cluster.
+Command syntax: kubectl apply -f my-config.yaml
+
+Secrets Overview
+
+Definition: A Kubernetes API object used to store sensitive data such as API keys, passwords, credentials, and tokens.
+
+Key Behavior: Data inside a Secret is encoded (Base64) in YAML definitions and is hidden from plain text display when running the kubectl describe command.
+
+Three Ways to Create a Secret
+
+Using String Literals: Define sensitive key-value pairs directly on the command line.
+Command syntax: kubectl create secret generic api-creds --from-literal=API_KEY="secretvalue"
+
+Using Environment Variables / Files: Pass sensitive key-value pairs from secure configuration or .env files.
+Command syntax: kubectl create secret generic api-creds --from-file=credentials.txt
+
+Using YAML Declarative Files: Define the secret object in a YAML manifest with encoded values and apply it to the cluster.
+Command syntax: kubectl apply -f secret.yaml
+
+Consuming ConfigMaps and Secrets in Applications
+
+Kubernetes applies ConfigMaps and Secrets to pods or deployments immediately before running them. Applications can consume them in two primary ways:
+
+Environment Variables (configMapKeyRef / secretKeyRef)
+
+In the Deployment descriptor, use the valueFrom attribute to map keys to container environment variables.
+
+Example mapping: Point env variable MESSAGE to key message in ConfigMap myconfig.
+
+In application code (e.g., Node.js/JavaScript), access the value directly using process.env.MESSAGE or process.env.API_CREDS.
+
+Volume Mounts
+
+Mount the ConfigMap or Secret as a volume file path within the container filesystem.
+
+Example mapping: Mount the api-creds Secret as a file at /etc/API.
+
+The application reads the mounted file at runtime to extract the secret or configuration data.
+
+Summary Checklist
+
+ConfigMaps store non-sensitive key-value data up to 1MB; Secrets store sensitive, Base64-encoded credentials.
+
+Both ConfigMaps and Secrets decouple configurations from deployment code and container images.
+
+ConfigMaps can be created using string literals, property files, or YAML manifests.
+
+Secrets can be created using string literals, environment files, or YAML manifests.
+
+Pods consume ConfigMaps and Secrets via environment variables (valueFrom) or file volume mounts (volumeMounts).

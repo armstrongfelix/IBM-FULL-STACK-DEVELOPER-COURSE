@@ -1,0 +1,91 @@
+Course Notes: Kubernetes Objects Part 2
+Video Learning Objectives
+By the end of this module, you should be able to:
+
+Describe the purpose, properties, and uses of a Kubernetes Service.
+
+Explain the roles and use cases for ClusterIP, NodePort, LoadBalancer, and ExternalName Service types.
+
+Describe the roles and applications for Ingress, DaemonSet, StatefulSet, and Job / CronJob.
+
+Understanding Kubernetes Services
+A Service is a REST API object that provides a logical abstraction and access policy for a set of Pods within a cluster.
+
+Addressing & Discovery: Each Service is assigned a stable IP address or DNS name. This eliminates the need for separate service discovery mechanisms and solves the IP volatility issue caused by Pods being destroyed and recreated.
+
+Load Balancing: Acts as an internal load balancer to distribute traffic across a target set of backend Pods using label selectors.
+
+Protocols & Ports: Supports TCP (the default protocol), UDP, and other protocols. It allows mapping incoming ports to specific target ports on backend Pods (even if backend port names/numbers vary across Pods).
+
+Non-Native vs. Native Apps: Native Kubernetes apps automatically receive updated API endpoints when Pod changes occur, while non-native apps communicate through a virtual IP-based bridge or load balancer.
+
+The Four Kubernetes Service Types
+1. ClusterIP (Default)
+Scope: Internal to the cluster only.
+
+Function: Assigns an internal IP address reachable exclusively within the cluster. It cannot receive incoming requests from external networks.
+
+Use Case: Provides inter-service communication inside the cluster, such as connecting a frontend web app to a backend database.
+
+2. NodePort
+Scope: Exposes services on external Node IP addresses.
+
+Function: Built as an extension of ClusterIP. It automatically creates a underlying ClusterIP Service and routes traffic to it via a static port exposed on every Node's IP address.
+
+Use Case: Useful for development or direct testing, but not recommended for production due to security considerations.
+
+3. LoadBalancer
+Scope: External cluster exposure.
+
+Function: Built as an extension of NodePort. It automatically creates underlying NodePort and ClusterIP Services, integrating directly with a cloud provider's External Load Balancer (ELB) to route external Internet traffic into the cluster.
+
+Use Case: Exposing production applications directly to the public Internet with dedicated IP addresses provided by cloud infrastructure.
+
+4. ExternalName
+Scope: External DNS mapping.
+
+Function: Maps a Kubernetes Service to an external DNS CNAME record via the spec.externalName parameter, without using Pod selectors.
+
+Use Case: Allows Pods to reference external databases/storage systems or enables Pods across different namespaces to communicate seamlessly.
+
+Routing & Workload Objects
+Ingress & Ingress Controller
+Function: An API object that, when paired with an Ingress Controller, manages external HTTP/HTTPS access (ports 80 and 443) to multiple internal cluster Services using defined routing rules.
+
+Use Case: Avoids the expense of creating individual cloud LoadBalancers for every Service by managing external access rules inside the cluster.
+
+DaemonSet
+Function: Ensures that all (or a designated set of) Nodes run a copy of a single Pod. As new Nodes are added, Pods are automatically placed onto them; when Nodes are removed, those Pods are garbage collected. Deleting a DaemonSet removes all Pods it created.
+
+Use Case: Used for node-level background operations such as storage drivers, log collection daemons, and system monitoring agents.
+
+StatefulSet
+Function: Manages stateful applications with guarantees around the ordering, uniqueness, and deployment/scaling sequence of Pods.
+
+Features: Maintains a persistent ("sticky") network identity for each Pod request and provides dedicated persistent storage volumes across Pod restarts.
+
+Use Case: Databases and stateful clustered software requiring stable network identifiers and persistent disk bindings.
+
+Jobs & CronJobs
+Jobs: Creates one or more Pods to perform a specific task and tracks them through to completion. Jobs automatically retry failed tasks until finished. Deleting a Job deletes its Pods, and suspending a Job stops active Pods until resumed. Supports parallel Pod execution.
+
+CronJobs: Manages Jobs on a time-based, iterative schedule (similar to Linux cron tasks).
+
+Use Case: Batch processing, scheduled backups, continuous integration tasks, or single-run data migrations.
+
+Core Summary of Workload & Service Roles
+ClusterIP: Internal communication within the cluster.
+
+NodePort: Exposes static ports on each Node's IP.
+
+LoadBalancer: Uses cloud provider ELBs for public internet access.
+
+ExternalName: Maps internal Service names to external CNAME records.
+
+Ingress: HTTP/HTTPS routing rules for multiple cluster Services.
+
+DaemonSet: Guarantees one Pod instance per Node (logging, monitoring).
+
+StatefulSet: Manages stateful apps requiring ordered scaling and persistent storage.
+
+Job / CronJob: Runs batch processes to completion once or on a recurring schedule

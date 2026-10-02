@@ -1,0 +1,58 @@
+Lecture Notes: ALTER, DROP, and TRUNCATE Statements
+1. The ALTER TABLE Statement
+Classification: Data Definition Language (DDL) statement used to alter the structure of an existing database table.
+
+Capabilities:
+
+Add or remove columns
+
+Modify data types of existing columns
+
+Add or remove keys
+
+Add or remove constraints
+
+Syntax Rule: Unlike CREATE TABLE, the parameter list for ALTER TABLE is not enclosed in parentheses.
+
+Common ALTER TABLE Operations
+Adding a Column (ADD COLUMN):
+
+Example: Adding a telephone number column to the author table using the BIGINT numeric data type (which holds numbers up to 19 digits long):
+
+Query: ALTER TABLE author ADD COLUMN telephone_number BIGINT;
+
+Modifying a Column Data Type (ALTER COLUMN / SET DATA TYPE):
+
+Use Case: Changing a numeric column to CHAR(20) so it can store non-numeric characters like dashes, plus signs, or parentheses in phone numbers.
+
+Query: ALTER TABLE author ALTER COLUMN telephone_number SET DATA TYPE CHAR(20);
+
+Data Compatibility Warning: Changing a column's data type when it already contains existing data can cause failures if the data is incompatible with the new type (e.g., converting a CHAR column containing text characters to a numeric type will fail and log an error).
+
+Removing a Column (DROP COLUMN):
+
+Example: Deleting the telephone_number column from the author table:
+
+Query: ALTER TABLE author DROP COLUMN telephone_number;
+
+2. The DROP TABLE Statement
+Classification: Data Definition Language (DDL) statement.
+
+Purpose: Completely removes an entire table structure and its definition from the database.
+
+Data Impact: By default, deleting a table also permanently deletes all data contained within it.
+
+Syntax: DROP TABLE table_name;
+
+Example Query: DROP TABLE author;
+
+3. The TRUNCATE TABLE Statement
+Purpose: Deletes all rows of data inside a table while leaving the table structure intact.
+
+Efficiency: Generally much faster and more efficient for clearing all table data compared to using a DELETE FROM table_name; statement without a WHERE clause.
+
+Syntax: TRUNCATE TABLE table_name IMMEDIATE;
+
+The IMMEDIATE Keyword: Specifies that the statement is processed immediately and cannot be undone.
+
+Example Query: TRUNCATE TABLE author IMMEDIATE;

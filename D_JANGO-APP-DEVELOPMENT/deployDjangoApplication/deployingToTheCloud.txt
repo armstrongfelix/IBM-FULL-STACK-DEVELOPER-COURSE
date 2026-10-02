@@ -1,0 +1,52 @@
+Lecture Notes: Deploying Django Applications and Cloud Best Practices
+1. Development vs. Production Web Servers
+runserver Limitation: Django's built-in python manage.py runserver is a lightweight development server designed solely for local testing and debugging. It is not built for security, high concurrency, or production traffic.
+
+Web Server Gateway Standard: Production web servers (such as Nginx or Apache) are typically written in C/C++ and cannot process Python code directly. They require gateway interfaces to route HTTP requests to Django applications.
+
+2. WSGI and ASGI Gateway Interfaces
+A. WSGI (Web Server Gateway Interface)
+Type: Synchronous python web interface standard.
+
+Entry Point: Django automatically generates wsgi.py inside the project root during initialization, declaring an application callable.
+
+Common WSGI Servers: Gunicorn, uWSGI, Apache with mod_wsgi.
+
+B. ASGI (Asynchronous Server Gateway Interface)
+Type: Asynchronous python web interface standard.
+
+Entry Point: Django generates asgi.py, exposing an application callable for async handlers, WebSockets, and long-polling connections.
+
+Common ASGI Servers: Uvicorn, Daphne, Hypercorn.
+
+3. Cloud Hosting Options
+A. Virtual Machines (IaaS - Infrastructure as a Service)
+Approach: Provision a cloud VM (e.g., Ubuntu instance) and manually install Python, web servers, databases, and dependencies.
+
+Trade-off: Offers maximum control over system configurations but requires heavy manual management and infrastructure maintenance.
+
+B. Platform as a Service (PaaS)
+Approach: Automated platforms (e.g., Heroku, IBM Cloud Code Engine) deploy applications directly from Git repositories.
+
+Trade-off: Abstracts operational burdens and infrastructure setups so developers can focus strictly on application code.
+
+C. Containerization (Docker & Kubernetes / K8s)
+Approach: Packages the Django application, environment settings, and OS-level dependencies into isolated Docker container images.
+
+Trade-off: Ensures identical runtime environments across development and production, enabling orchestration at scale via Kubernetes.
+
+4. Production Database Configurations
+Supported Databases: PostgreSQL, MySQL, MariaDB, Oracle, and SQLite.
+
+Production Rule: Avoid using SQLite in production because it lacks multi-threaded write performance and high-concurrency capability. Use enterprise relational databases like PostgreSQL or MySQL (managed via Cloud DBaaS).
+
+5. Best Practices for Production Readiness
+Environment Variables: Never hardcode sensitive secrets (database passwords, SECRET_KEY, API tokens) inside source code; manage them using system environment variables.
+
+HTTPS Encryption: Enforce SSL/TLS certificates to secure communication between clients and the server.
+
+CDN & Cloud Storage: Offload static assets and media files to Cloud Storage buckets (e.g., AWS S3) or Content Delivery Networks (CDNs) to reduce application server load.
+
+Load Balancing & Horizontal Scaling: Leverage Django's stateless architecture to distribute incoming web traffic across multiple server instances or containers.
+
+Monitoring & Logging: Configure centralized logging frameworks and APM services to track performance bottlenecks and runtime exceptions
