@@ -1,0 +1,75 @@
+Welcome & Learning Objectives
+Welcome to "Serverless Pros and Cons." By the end of this lecture, you will be able to:
+
+Describe the benefits of serverless computing.
+
+Describe the constraints of serverless computing.
+
+Compare serverless pros and cons with containers and traditional computing.
+
+1. Benefits of Serverless Computing
+In traditional computing, development and operations teams must set up and maintain their own infrastructure, requiring capital investments, time, and complex setup. Serverless computing shifts these infrastructure responsibilities to the cloud provider, offering several key advantages:
+
+No Infrastructure Management & Cost Reduction: No infrastructure setup or maintenance is required, lowering overall costs.
+
+Developer Focus & Rapid Innovation: Developers focus purely on application business logic using preferred languages or built-in browser IDEs. Organizations can innovate faster and release products ahead of competitors.
+
+Granular, Event-Driven Execution: Applications run only necessary code paths when needed (e.g., a frontend runs continuously while an authentication service executes only when invoked).
+
+Speed: Serverless functions execute in milliseconds (compared to seconds for containers and minutes for VMs).
+
+Pay-Per-Request Billing: Charged strictly per invocation with no costs incurred during idle resource time.
+
+Reliability & Availability: Built-in high availability and fault tolerance managed automatically by the provider.
+
+Ecosystem & Sustainability: Extensive third-party support for authentication, databases, and BaaS services, along with greener computing potential due to reduced wasted compute.
+
+2. Constraints & Challenges of Serverless Computing
+Serverless computing is not ideal for every workload due to inherent limitations:
+
+Long-Running Workloads: Cost benefits diminish for long-running processes where traditional or container environments prove more cost-effective.
+
+Vendor Lock-In: Reliance on proprietary cloud platform technologies and environments creates migration risks.
+
+Cold Starts & Latency: Infrequently invoked functions suffer from cold starts (restarting processes), increasing runtime and producing latency unacceptable for time-critical applications (e.g., healthcare, banking, edge apps).
+
+Security & Attack Surface: Security concerns increase as the attack surface shifts from network perimeters to distributed endpoints and source code.
+
+Complex Debugging & Testing: Testing complete functionality locally is difficult because the backend-as-a-service (BaaS) environment cannot be easily replicated locally.
+
+Limited Control & Language Support: No access or ability to optimize server hardware/performance; language support is strictly tied to what the provider supports.
+
+No State Persistence: Functions are stateless; previous execution state is unavailable in subsequent invocations. Local cache lasts only a few hours, requiring low-latency external caches like Redis or Memcached.
+
+3. Serverless vs. Containers (Hybrid Approach)
+Serverless and containers are not mutually exclusive—they work best together in a hybrid solution. Standard industry advice recommends: "Build serverless first, and if needed, move to containers."
+
+Comparing Serverless Pros (Container Cons) vs. Container Pros (Serverless Cons):
+
+Cost & Billing: Serverless uses pay-per-request billing; containers incur costs for running instances.
+
+Deployment & Scaling: Serverless deploys in milliseconds with automatic provider scaling; containers deploy in seconds and require configured scaling resources.
+
+Portability & Environment: Containers are OS-, language-, and provider-agnostic, making local testing and porting far easier than serverless.
+
+Latency & Runtime Duration: Containers have very low latency (suitable for time-critical workloads) and no execution time limits for long-running batch jobs.
+
+4. Serverless vs. Traditional Computing
+
+Development Focus: Serverless allows pure code focus and instant scalability via cloud libraries, whereas traditional computing requires teams to manually manage, configure, and maintain hardware and networking.
+
+Data Control & Networking: Traditional environments keep data entirely under organizational control and access code via standard IP addresses rather than private APIs.
+
+Security Perimeter: Traditional security is implemented within a defined network perimeter.
+
+Vendor Dependency: Traditional setups rarely suffer from cloud vendor lock-in because the entire stack is internally managed.
+
+Lecture Summary
+
+Serverless Computing offloads infrastructure management, delivering built-in high availability, millisecond runtimes, and pay-per-request billing.
+
+Constraints include cold start latency, lack of state persistence, complex local testing, and vendor lock-in.
+
+Serverless and Containers complement each other in hybrid architectures (build serverless first; migrate to containers when required).
+
+Traditional Computing offers total control over data, networking, and long-running job costs, but requires heavy capital and maintenance overhead.

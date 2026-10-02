@@ -1,0 +1,266 @@
+Lecture Notes: Popular Serverless Platforms
+
+Learning Objectives
+
+After completing this lecture, you will be able to:
+
+Describe the most popular serverless platforms in the market.
+
+Explain the key differentiators and target use cases of each platform.
+
+Amazon Web Services (AWS) Lambda
+
+AWS Lambda is an event-driven serverless compute service that allows you to run code without provisioning or managing underlying servers.
+
+Key Differentiators & Features
+
+High Scalability: Automatically handles execution requests at any scale, ranging from a dozen daily events to hundreds of thousands per second.
+
+Cost Model: Charged only for actual function execution time and data transfer between Lambda and other AWS services.
+
+Ecosystem Integration: Integrates with over 200 native AWS cloud services.
+
+Common Use Cases
+
+File and data processing.
+
+Web applications and microservices.
+
+Internet of Things (IoT) data backends.
+
+Mobile application backends.
+
+Google Cloud Functions
+
+Google Cloud Functions focuses on delivering a simplified developer experience by handling operational infrastructure automatically.
+
+Key Differentiators & Features
+
+Zero Infrastructure Management: Automatically scales up or down to zero instances instantaneously based on incoming traffic volume.
+
+Real-Time Alerts & Events: Integrates with Google Firebase to immediately notify developers upon data changes.
+
+Asynchronous Workloads: Executes lightweight tasks—such as Extract, Transform, Load (ETL) pipelines—without requiring dedicated server setups.
+
+Microsoft Azure Functions
+
+Azure Functions emphasizes enterprise DevOps capabilities, multi-language support, and flexible execution models.
+
+Key Differentiators & Features
+
+Extensive Language Support: Native support for C#, Java, JavaScript, PowerShell, and Python, alongside custom handlers for running virtually any language.
+
+Enterprise DevOps Capabilities: Provides built-in setups for continuous integration and continuous delivery (CI/CD) pipelines.
+
+Flexible Hosting Plans: Offers a pay-per-use Consumption plan alongside Premium and App Service plans for specialized workloads.
+
+Common Use Cases
+
+Executing code when files upload or change in Azure Blob Storage.
+
+Collecting and processing telemetry from IoT devices.
+
+Running scheduled tasks at pre-defined time intervals.
+
+IBM Cloud Functions
+
+IBM Cloud Functions delivers event-driven execution with fine-grained billing and cognitive capabilities. Note that IBM officially deprecated Cloud Functions in 2023, transitioning workloads toward container-native solutions.
+
+Key Differentiators & Features
+
+Granular Billing: Measures execution time down to one-tenth of a second.
+
+Watson AI Integration: Seamlessly hooks into IBM Watson cognitive services for tasks like object and facial detection in image or video files.
+
+High Availability: Distributes actions across multiple IBM Cloud regions with automatic multi-zone data synchronization to prevent single points of failure.
+
+Operational Monitoring: Uses IBM Log Analysis with LogDNA and IBM Cloud Monitoring for metrics and remote troubleshooting.
+
+Knative (Open-Source Alternative)
+
+Knative is an open-source, container-native serverless platform built on top of Kubernetes.
+
+Key Differentiators & Features
+
+Vendor Lock-In Prevention: Being built on Kubernetes makes Knative platform-agnostic, allowing deployment across any cloud provider or on-premises cluster supporting Kubernetes.
+
+Custom Rollout Strategies: Provides granular traffic-shifting capabilities to route traffic gradually to new serverless revisions.
+
+Container-Based Execution: Packages serverless workloads inside standard containers rather than relying on proprietary cloud runtime environments.
+
+Lecture Summary
+
+AWS Lambda: Event-driven compute offering high scale and integration across the AWS ecosystem.
+
+Google Cloud Functions: Simplified developer experience with automatic zero-scaling and Firebase real-time integration.
+
+Microsoft Azure Functions: Strong CI/CD DevOps workflows, flexible hosting plans, and multi-language support.
+
+IBM Cloud Functions: Granular billing and direct integration with IBM Watson AI services (now deprecated).
+
+Knative: Open-source, Kubernetes-based serverless engine that eliminates vendor lock-in through containerized deployments.
+
+==================================================
+
+Lecture Notes: IBM Cloud Code Engine
+
+Learning Objectives
+
+After completing this lecture, you will be able to:
+
+Describe the operational challenges of self-hosting microservices.
+
+Explain what IBM Cloud Code Engine is and how it functions as a fully managed platform.
+
+Explain how IBM Cloud Code Engine simplifies application deployment and workload management.
+
+Challenges of Self-Hosting Microservices
+
+Deploying microservices on self-hosted infrastructure involves heavy operational overhead and critical architectural decisions.
+
+Key Operational Challenges
+
+Build & Asset Configuration: Packaging code, library dependencies, static assets, and environment credentials into production-ready binaries.
+
+Infrastructure Selection: Choosing and configuring web servers, operating systems, networking protocols, and database instances across development teams.
+
+Dynamic Auto-Scaling: Managing infrastructure capacity to handle fluctuating traffic demands (e.g., e-commerce holiday traffic spikes followed by usage drops).
+
+Microservice Communication: Configuring secure, reliable inter-service network routing and service discovery across microservice components.
+
+Monitoring & Observability: Setting up central logging, health check metrics, and alerting dashboards to detect or predict runtime issues.
+
+Python Web Server Interfaces (WSGI vs. ASGI)
+For Python-based microservices (e.g., Flask or Django), developers must explicitly select and manage an entry-point web server interface:
+
+WSGI (Web Server Gateway Interface): The standard for synchronous Python web applications. Common servers include Gunicorn (Green Unicorn) and uWSGI.
+
+ASGI (Asynchronous Server Gateway Interface): Designed to handle asynchronous code and non-blocking I/O. Common servers include Daphne and Hypercorn.
+
+What is IBM Cloud Code Engine?
+
+IBM Cloud Code Engine is a fully managed, serverless platform that abstracts away the underlying operational infrastructure, allowing developers to focus purely on writing code.
+
+Platform Model
+
+Combines key features across Platform as a Service (PaaS), Containers as a Service (CaaS), and Serverless deployment architectures.
+
+Completely handles underlying Kubernetes cluster provisioning, server management, auto-scaling, and environment security.
+
+Three Core Use Cases / Deployment Modes
+
+Deploying Containerized Applications
+
+Directly deploy pre-built container images for web apps, microservices, or API backends serving HTTPS traffic.
+
+Source-to-Cloud Building and Deployment
+
+Pushes raw source code directly from local workspaces or Git repositories (e.g., GitHub). Code Engine builds the container image and deploys it automatically without manual CI/CD setup.
+
+Running Batch Jobs
+
+Executes event-driven background tasks or heavy analytical processing workloads alongside microservices on the exact same infrastructure.
+
+Key Benefits of IBM Cloud Code Engine
+
+Fully Managed Infrastructure: Eliminates manual server provisioning, cluster configuration, and patching.
+
+Automatic Scaling: Scales workloads up during heavy traffic and down to zero instances when idle to minimize costs.
+
+Rapid Deployment: Converts source code into running applications in seconds for quick updates and deployments.
+
+Built-in Security: Integrates with IBM Cloud Identity and Access Management (IAM), enforces TLS encryption, and provides workload isolation.
+
+Ecosystem Integration: Connects directly with the broader IBM Cloud catalog of services and databases.
+
+Lecture Summary
+
+Self-hosting microservices requires managing complex WSGI/ASGI configurations, server provisioning, scaling, and monitoring.
+
+IBM Cloud Code Engine abstracts operational burdens by providing a serverless container platform (PaaS + CaaS + Serverless).
+
+Supports three primary workflows: Container Deployment, Source-to-Cloud Build & Deploy, and Batch Processing Jobs.
+
+==================================================
+
+Lecture Notes: Project, Application, Build, and Jobs in IBM Cloud Code Engine
+
+Learning Objectives
+
+After completing this lecture, you will be able to:
+
+Explain what a Project is in IBM Cloud Code Engine.
+
+Explain what an Application is in IBM Cloud Code Engine.
+
+Explain what a Build is in IBM Cloud Code Engine.
+
+Explain what a Job is in IBM Cloud Code Engine.
+
+Projects in IBM Cloud Code Engine
+
+A Project is the foundational organizational unit in IBM Cloud Code Engine. It acts as a logical grouping mechanism to manage resources and entities.
+
+Key Functions & Features
+
+Namespace Isolation: Provides a dedicated namespace for entities (Applications, Jobs, Builds, TLS/HTTPS certificates). Entity names must be unique within a project namespace, but can be reused across different projects.
+
+Access Control & Auditing: Manages permissions, tracks resource modifications, and audits system activities.
+
+Resource Monitoring: Aggregates resource usage metrics (such as total CPU and memory allocation) across all contained entities.
+
+Applications in IBM Cloud Code Engine
+
+An Application in Code Engine represents long-running executable code designed to serve network traffic.
+
+Key Features & Use Cases
+
+Protocol Support: Serves standard HTTP/HTTPS REST API requests and supports long-running, session-based WebSocket connections (e.g., chat applications).
+
+Automatic Scaling: Automatically scales instances up or down based on incoming request volume—scaling down to zero instances when idle to conserve compute costs.
+
+Flexible Source Configuration: Can be deployed from a pre-built container registry image or compiled directly from source code.
+
+Builds (Image Builds)
+
+A Build is the mechanism used to transform application source code into a runnable container image.
+
+Key Concepts
+
+Container Image Contents: Packages executable code, system libraries, configuration settings, dependencies, and container runtime assets.
+
+Supported Build Mechanisms:
+
+Dockerfile: A text script containing step-by-step instructions for constructing a Docker container image.
+
+Cloud Native Buildpacks: Frameworks that inspect source code, generate a build plan, and assemble container images without requiring a Dockerfile.
+
+Workflow: Source Code -> Code Engine Build -> Container Image -> Deployed Application/Job.
+
+Jobs in IBM Cloud Code Engine
+
+A Job is designed for workload executions that run to completion and exit, rather than remaining active continuously to receive incoming requests.
+
+Key Features & Differences from Applications
+
+Execution Model: Executes code one or multiple times concurrently based on configuration, then automatically terminates.
+
+Typical Use Cases:
+
+Batch data processing and ETL tasks.
+
+Machine learning model training.
+
+Periodic report generation.
+
+Batch billing and invoice processing.
+
+Lecture Summary
+
+Project: Top-level organizational boundary providing namespace isolation, access management, and resource aggregation.
+
+Application: Scalable workload engine designed to serve continuous HTTP/WebSocket requests.
+
+Build: Automated process converting source code into container images via Dockerfiles or Cloud Native Buildpacks.
+
+Job: Workload engine designed for bounded, task-driven executions that process data and terminate upon completion.

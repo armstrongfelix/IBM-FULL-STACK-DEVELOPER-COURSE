@@ -1,0 +1,44 @@
+Welcome & Learning Objectives
+Welcome to "Basics of GraphQL." By the end of this lecture, you will be able to:
+
+Describe GraphQL.
+
+Explain the key characteristics of a GraphQL API.
+
+Explain the benefits of using GraphQL APIs.
+
+What is GraphQL?
+GraphQL is a language-agnostic query language for your API. It provides a standardized way to allow clients to request only the exact data they need from the API, and it can be implemented using any programming language.
+
+Key Characteristics of GraphQL
+
+Single Endpoint: Unlike RESTful APIs which expose multiple resource endpoints, GraphQL requires just one endpoint to retrieve all required data.
+
+Exact Data Fetching: You retrieve exactly what you need—no more and no less. You do not receive unnecessary data, nor do you need to make additional requests for missing fields.
+
+Nodes & Schema: While REST relies on resource endpoints tied to HTTP methods, GraphQL relies on types defined in a schema, which act as nodes.
+
+Seamless API Extension: Extending a GraphQL API does not require creating a new API version. You can add new fields without breaking existing clients because clients only query the fields they explicitly request.
+
+Operations: Queries vs. Mutations
+
+Queries: Used for retrieving/querying data (analogous to a GET request in REST). At its simplest, a query requests specific fields on objects.
+
+Mutations: Used for manipulating and modifying data. Every field in a mutation type corresponds to POST, PUT, or DELETE operations in REST.
+
+Real-World Example: Netflix Studio API
+Netflix utilizes a loosely coupled, highly scalable microservice architecture to produce original content rapidly.
+
+The Challenge: Relationships between entities were initially disparate and spread across various separate microservices.
+
+The Solution (Studio API): Netflix built a curated Graph API called the "Studio API" to provide a unified abstraction layer over data and relationships.
+
+Architecture: The Studio API manages the schema and resolves queries. Netflix further evolved this system into a federated architecture, allowing individual teams to maintain ownership over their respective domains.
+
+Lecture Summary
+
+GraphQL is a language-agnostic query language that operates over a single API endpoint.
+
+It eliminates over-fetching and under-fetching by returning exact data specified by the client.
+
+Operations are divided into Queries (for fetching data) and Mutations (for modifying data).

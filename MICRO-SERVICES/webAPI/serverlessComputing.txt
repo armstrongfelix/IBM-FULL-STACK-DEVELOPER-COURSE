@@ -1,0 +1,79 @@
+Welcome & Learning Objectives
+Welcome to "Introduction to Serverless Computing." By the end of this lecture, you will be able to:
+
+Define "serverless computing" and describe its concepts.
+
+Identify the key characteristics of serverless computing.
+
+What is Serverless Computing?
+The Cloud Native Computing Foundation (CNCF) defines serverless as:
+
+"The concept of building and running applications that do not require server management. It describes a finer-grained deployment model where applications, bundled as one or more functions, are uploaded to a platform and then executed, scaled, and billed in response to the exact demand needed at the moment."
+
+In short, serverless offloads infrastructure management to cloud providers, allowing developers to focus purely on application business logic.
+
+Serverless computing is essentially a combination of:
+
+Function-as-a-Service (FaaS): Platforms used to execute application functions.
+
+Backend-as-a-Service (BaaS): Managed backend cloud services, such as cloud databases, object storage, and message queues.
+
+The Evolution of Computing
+The history of IT computing reflects a progressive shift from traditional setups to serverless architectures, yielding faster deployments, shorter lifespans, and higher productivity:
+
+Traditional Computing: Uses physical machines. Hampered by high upfront investments and capacity planning; takes weeks or months to deploy and lasts for years.
+
+Virtual Machines (VMs): Enabled by virtualization for faster provisioning and scalability; takes minutes to deploy and lasts for days or weeks.
+
+Containers: Based on operating system virtualization; takes seconds to deploy and lives for minutes or hours.
+
+Serverless Functions: Requires serverless architecture for core code; takes milliseconds to deploy and has a lifespan of seconds.
+
+Key Characteristics of Serverless Computing
+
+Hostless: Developers do not procure, manage, or maintain servers.
+
+Elastic: Autoscaling is immediate and inherent.
+
+Automated Load Balancing: Automatically distributes incoming traffic across backend systems.
+
+Stateless: Functions remain stateless, leading to faster performance and higher scalability.
+
+Event-Driven: Functions execute only when triggered by specific events.
+
+High Availability: Built-in availability with no extra effort or cost.
+
+Granular Billing: Usage-based pricing where clients are billed strictly for execution time—never for idle CPU time.
+
+How Serverless Functions Work
+
+Creation: A developer writes a function in a supported programming language (e.g., Python, Java, Node.js, C#, or Go).
+
+Upload: The developer uploads the function code to the cloud provider platform.
+
+Event Definition: Events (such as a user click) are defined as triggers for the function.
+
+Execution: When the event occurs, the trigger invokes the cloud provider to spin up a container object and execute the function.
+
+Division of Responsibilities Across Cloud Service Models
+Serverless drastically minimizes developer operational overhead compared to other models:
+
+Traditional (On-Premises): You manage the entire stack.
+
+Infrastructure-as-a-Service (IaaS): You manage everything from the Operating System up; cloud provider manages infrastructure layers below.
+
+Platform-as-a-Service (PaaS): You manage only the Application and Data layers.
+
+Serverless: You manage only the Application layer (as individual functions); the cloud provider handles all remaining layers, including server management, OS updates, security patches, autoscaling, performance, logging, and monitoring.
+
+Software-as-a-Service (SaaS): The cloud provider manages the entire stack.
+
+Lecture Summary
+
+Serverless computing combines FaaS and BaaS to enable building applications without managing server infrastructure.
+
+Computing evolution moves toward faster deployment (milliseconds) and shorter execution lifespans (seconds).
+
+Cloud providers handle server management, OS updates, security patches, and autoscaling.
+
+Users benefit from granular, usage-based billing and are never charged for CPU idle time.

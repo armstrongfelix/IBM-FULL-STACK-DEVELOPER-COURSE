@@ -1,0 +1,95 @@
+
+Lecture Notes: Building Container Images for Microservices
+
+Learning Objectives
+
+After completing this lecture, you will be able to:
+
+Explain what a container is and why it fits microservices architectures.
+
+Explain what Docker is and its role in containerization.
+
+Distinguish between a container image and a running container.
+
+Identify core Dockerfile instructions used to build a container image.
+
+Explain how container registries and image naming structures work.
+
+What is a Container?
+
+A container is a standalone, all-inclusive, and executable unit of software that packages application source code together with its required libraries, dependencies, and runtimes.
+
+Key Characteristics
+
+Portability: Runs consistently across any host environment, including laptops, desktop PCs, on-premises servers, and public cloud platforms.
+
+Efficiency vs. Virtual Machines: Unlike virtual machines (VMs), containers do not require a separate guest operating system for every instance. Instead, they share and leverage the host operating system kernel, making them lightweight, small, and fast to launch.
+
+Microservices Fit: Microservice instances are typically small and resource-isolated. The lightweight footprint of containers makes them an ideal deployment unit for microservices architectures.
+
+What is Docker?
+
+Docker is an open-source software platform designed for building, packaging, and running applications as containers.
+
+Key Insights
+
+Catalyst for Containerization: Docker popularized container technology, driving widespread adoption and giving rise to an ecosystem of complementary development tools and cloud methodologies.
+
+Primary Engine: Docker serves as the foundational container technology used in platforms like IBM Cloud Code Engine, where container images form the deployment basis for applications.
+
+Container Images vs. Containers
+
+Container Image
+
+Definition: An immutable, read-only file containing all static assets, source code, runtime, libraries, and dependencies required for an application to run.
+
+Immutability: Read-only by design. Modifying an image creates a completely new image asset.
+
+OOP Analogy: Functions like a Class in object-oriented programming (a static blueprint or template).
+
+Container (Running Instance)
+
+Definition: An active, instantiated execution of a container image.
+
+OOP Analogy: Functions like an Object or Instance of a class in object-oriented programming.
+
+Building Container Images via Dockerfile
+
+A Dockerfile is a text-based blueprint outlining the exact instructions Docker executes to assemble a container image.
+
+Core Dockerfile Instructions
+
+FROM: Sets the base image for subsequent instructions (e.g., FROM python or specialized stack images like uwsgi-nginx-flask).
+
+COPY: Copies files and folders from the local host system into the container file system (e.g., COPY . /app).
+
+ENV: Sets environment variables inside the container environment (e.g., ENV LISTEN_PORT 8080).
+
+EXPOSE: Informs Docker that the container listens on specified network ports at runtime (e.g., EXPOSE 8080).
+
+RUN: Executes build commands during image assembly, such as installing packages (e.g., RUN pip install -r requirements.txt).
+
+CMD: Specifies the default execution command when starting the container (e.g., launching a Flask application). Important: A Dockerfile can contain only one CMD instruction.
+
+Container Registries and Image Naming
+
+Once a container image is assembled, it can be pushed to a centralized repository service called a Container Registry for distribution and deployment. Common registries include Docker Hub and IBM Cloud Container Registry (ICR).
+
+Container Image Naming Structure
+An image name uniquely identifies and locates a container image across registries. It consists of three components:
+
+Hostname: Identifies the registry server address (e.g., icr.io for IBM Cloud Container Registry).
+
+Repository: Identifies a collection of related images, usually named after the specific application or microservice.
+
+Tag: Specifies a particular version, variant, or build release of the image (e.g., v1.0, latest).
+
+Lecture Summary
+
+Containers package application code with all dependencies, sharing the host OS kernel for lightweight portability.
+
+Docker provides the open-source engine and toolset to build and manage containerized workloads.
+
+A Dockerfile acts as a blueprint to produce a read-only container image, which is instantiated at runtime as a container.
+
+Images are stored in container registries and referenced using a Hostname / Repository : Tag naming format

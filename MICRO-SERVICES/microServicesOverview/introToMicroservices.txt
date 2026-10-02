@@ -1,0 +1,56 @@
+Welcome & Learning Objectives
+Welcome to "What are Microservices?" By the end of this lecture, you will be able to:
+
+Describe what microservices are.
+
+Explain the benefits of microservices architecture.
+
+Explain how microservices can be scaled.
+
+What Are Microservices?
+Microservices architecture is an approach where a single application is composed of many smaller services that are:
+
+Loosely coupled: Services operate independently without tight interdependencies.
+
+Independently deployable: Updating or changing one component does not require touching or redeploying the entire application.
+
+Organized by business functionality: Services are segregated along clear boundaries, referred to as a bounded context.
+
+Key Technical Characteristics
+
+Technology Stack Flexibility: Each service typically has its own technology stack, inclusive of its own database and data management model. Teams can select different programming languages and tools for different components based on their needs and expertise.
+
+Communication: Services are dependent on each other via API endpoints. Components communicate with one another using a combination of:
+
+REST APIs
+
+Event streaming
+
+Message brokers
+
+Benefits of Microservices Architecture
+
+Easier Code Updates: Because there is no interdependency between services, you can update code and add new features without touching the rest of the application.
+
+Lower Risk: Iterating on components independently lessens the risk associated with change, as failures in one service do not necessarily impact other services.
+
+Autonomous Teams: Teams have the freedom to pick the best technology stack suited for the specific component they are responsible for building.
+
+Reduced Infrastructure Costs: Precise, targeted scaling uses less infrastructure compared to scaling an entire monolithic application.
+
+Scaling Microservices
+Microservices typically scale using horizontal scaling (also described as "scaling out"), which means scaling by adding more instances of resources.
+
+Independent & Precise Scaling: Individual services can be deployed and scaled independently. You can scale only the specific component facing heavy load, avoiding the waste and cost of having to scale the entire application.
+
+Event Streaming & Message Brokers: While an API call is effective for initially establishing state for a given service, it is not particularly effective for staying up to date on progress. Event streaming helps broadcast state changes, which aids in scaling the microservice by introducing message brokers.
+
+Lecture Summary
+
+Microservices make each application component its own service, communicating via APIs.
+
+They allow components to use different technology stacks tailored to team expertise.
+
+They enable individual components to scale independently in response to demand.
+
+They lessen risk by allowing independent iterations where single-service failures do not necessarily affect the rest of the app.

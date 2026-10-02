@@ -1,0 +1,89 @@
+Welcome & Learning Objectives
+Welcome to "Introduction to API Gateway." By the end of this lecture, you will be able to:
+
+Explain what an API Gateway is.
+
+Explain the benefits of using an API Gateway.
+
+Explain the drawbacks of using an API Gateway.
+
+Describe the available API Gateway products.
+
+What is an API Gateway?
+An API Gateway is an API management tool that sits between a client and a collection of backend services. It acts as the "door" to your backend services by aggregating the various services required to fulfill a request and returning a single, appropriate result to the client.
+
+Why Use an API Gateway?
+An API Gateway addresses several operational and architectural needs:
+
+Protection & Security: Protects APIs from malicious usage or overuse using authentication services combined with rate limiting.
+
+Analytics & Monitoring: Helps track and understand how APIs are being used.
+
+Monetization: Facilitates API monetization using a billing system.
+
+Single Point of Contact: Presents a unified point of entry to your various microservices and provides a single response to a request.
+
+Backend Flexibility: Allows developers to seamlessly add, remove, or replace backend services without client knowledge.
+
+Example Scenario: Microservices in an Online Store
+Consider an online store built with microservices:
+
+Product Information Service: Shares basic info (ID, name, price).
+
+Inventory Service: Tracks stock availability.
+
+Order Service: Enables customers to place product orders.
+
+Authentication Service: Validates platform users.
+
+Interacting directly with multiple APIs creates client-side complexity. An API Gateway removes this friction, allowing you to change hosts/locations, adjust instance counts, or swap out services (e.g., replacing an old order service) while client access remains completely undisturbed.
+
+Benefits of Using an API Gateway
+
+Client Insulation: Simplifies client-side logic by shifting the responsibility of calling multiple services from the client to the API Gateway.
+
+Optimal APIs: Provides the optimal API tailored for each client type.
+
+Reduced Round Trips: Enables clients to retrieve data from multiple microservices in a single round trip request.
+
+Protocol Standardization: Provides a standard protocol to communicate with the outside world, regardless of how microservices communicate internally.
+
+Drawbacks of Using an API Gateway
+
+Maintenance Overhead: It is an additional architectural component that must be developed, configured, and maintained.
+
+Single Point of Failure: If not designed carefully, a gateway failure can bring down access to the application.
+
+Latency: Adds an extra network step in execution, which increases overall response time.
+
+Available API Gateway Products
+
+Managed / Enterprise Offerings:
+
+IBM: IBM DataPower Gateway (high-security application gateway).
+
+Google: Apigee and Cloud Endpoints.
+
+Microsoft: Azure API Gateway offerings.
+
+Amazon: AWS API Gateway offerings.
+
+Open Source Offerings:
+
+Kong: Top of the list in popularity.
+
+Apache APISIX
+
+Tyk: (Also offers a managed version).
+
+Gloo: (Also offers an enterprise version).
+
+Lecture Summary
+
+An API Gateway acts as the unified entry point to your backend services.
+
+It hides backend complexity, enables seamless scaling or replacing of microservices, and reduces client-side round trips.
+
+Key trade-offs include maintenance overhead, potential single point of failure risks, and slight response latency.
+
+A wide range of both managed (IBM, Google, AWS, Azure) and open-source (Kong, Apache APISIX, Tyk, Gloo) products are available.

@@ -1,0 +1,70 @@
+Welcome & Learning Objectives
+Welcome to "Making API Requests using cURL and Postman." By the end of this lecture, you will be able to:
+
+Explain how to use cURL to make HTTP requests.
+
+Explain how to use Postman to make HTTP requests.
+
+1. Making API Requests with cURL
+Transferring data to and from a server requires tools that support the necessary network protocols. Linux provides several tools for this, with the most popular being cURL.
+
+Definition: cURL (short for "Client URL") is a command-line tool developed in 1998 that enables data transfer over various network protocols by specifying a relevant URL and the data to be sent or received.
+
+Usage Environments: Works directly in the command line or within scripts to automate data transfers.
+
+Common Use Cases:
+
+Downloading files from the internet.
+
+Endpoint testing.
+
+Debugging.
+
+Error logging.
+
+Supported Protocols: Includes HTTP, HTTPS, FTP, IMAP, among others.
+
+cURL Options & Command Breakdown
+cURL accepts a wide array of options (starting with one or two dashes). Single-dash options without values can be written together.
+
+For example, when calling a products microservice:
+
+-X (or --request): Explicitly specifies the HTTP method/function (e.g., GET).
+
+URL: Specifies the exact target address to evaluate.
+
+-H (or --header): Defines request headers (e.g., telling the web server to send and receive data in JSON format).
+
+Output: Returns the resource response (e.g., a list of products in JSON format).
+
+2. Making API Requests with Postman
+Postman is an API platform designed for building and using APIs using user-friendly power tools. It enables developers to easily create, test, share, and document APIs.
+
+API Lifecycle Management: Simplifies each step of the API lifecycle by orchestrating multiple requests across iterations and streamlining team collaboration.
+
+Protocol & Method Support: Supports standard HTTP requests (GET, POST, PUT, PATCH) and allows converting API calls directly into code snippets for languages like JavaScript and Python.
+
+Real-World Example (WhatsApp Business Platform): The WhatsApp Business Platform Cloud API uses Postman to reduce onboarding time to minutes through automation and pre-filled data, letting developers rapidly progress from sign-up to testing phone numbers and building message calls.
+
+Access Options: Available as a desktop download or as a web-based online platform (which requires a free sign-up).
+
+Making a GET Request in Postman
+To call the products microservice GET endpoint:
+
+Open a new tab in Postman.
+
+Select GET as the HTTP request type.
+
+Enter the URL where your microservice is hosted.
+
+Click Send to view and analyze the output.
+
+Save the request in your Postman workspace for future reuse.
+
+Lecture Summary
+
+cURL is a command-line and scripting tool used to transfer data over URLs across protocols like HTTP, HTTPS, FTP, and IMAP.
+
+Postman is a popular, user-friendly API platform for building, testing, documenting, and sharing APIs.
+
+Both tools allow you to specify HTTP methods, headers, and endpoints to interact with microservice backend APIs.

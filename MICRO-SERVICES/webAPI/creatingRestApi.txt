@@ -1,0 +1,65 @@
+Welcome to "Creating REST APIs." By the end of this lecture, you will be able to:
+
+Create a RESTful API in Python.
+
+Use Flask to host your REST API.
+
+Python & Its Ecosystem
+Python is a programming language that lets you work more quickly and integrate your systems more effectively. It is used across many application domains:
+
+Web Development: Supported by web frameworks like Flask.
+
+Scientific & Numeric Computing: Supported by libraries like SciPy for mathematics, science, and engineering.
+
+Artificial Intelligence & Machine Learning: Widely popular choice among the AI/ML community.
+
+Overview of Flask
+Flask is classified as a micro web framework because it does not require specific tools or libraries.
+
+Built with simplicity and scalability in mind.
+
+Known for being lightweight compared to other frameworks.
+
+Non-opinionated about database or template engine selection, making it an excellent choice for building RESTful APIs.
+
+Environment Prerequisites & Installation
+To follow along with this module, you need:
+
+Python 3
+
+pip (the Python package manager)
+
+Once you verify that Python and pip are installed, install Flask using pip:
+pip install flask
+
+Step-by-Step Implementation
+
+1. Basic "Hello World" Application
+
+Create a Python file named hello.py.
+
+Run the Flask server to host the application file.
+
+Open the application in your browser by navigating to [http://127.0.0.1:5000](http://127.0.0.1:5000). You will see the response "Hello World".
+
+2. Building a Products Microservice (products.py)
+
+Create a new Python file named products.py to provide endpoints for a products microservice.
+
+Imports & Initial State: Define the necessary imports and establish a default list of products.
+
+Note on Persistence: Because no external database is used to persist products, restarting the API resets the data back to the default product list each time.
+
+Retrieve Products Endpoint (GET):
+
+Define a GET method to retrieve all products.
+
+This method implicitly returns an HTTP status code of 200 (which means OK in HTTP).
+
+Lecture Summary
+
+Flask is a lightweight, non-opinionated micro web framework for hosting Python web applications and services.
+
+You can quickly create and structure a RESTful API microservice using Python.
+
+You can host your RESTful API locally using the built-in Flask development server.

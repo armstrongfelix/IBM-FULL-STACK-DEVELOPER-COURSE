@@ -1,0 +1,50 @@
+Lecture Notes: Deploying Microservices with Red Hat OpenShift
+
+Learning Objectives
+
+After completing this lecture, you will be able to:
+
+Explain how Red Hat OpenShift simplifies developer workflows and minimizes operational friction.
+
+Describe the end-to-end automated process of building and deploying microservices on an OpenShift cluster.
+
+Developer Experience and Interfaces
+
+OpenShift minimizes developer distractions, allowing teams to focus directly on writing code, making changes, and testing features.
+
+Key Developer Features
+
+Project & Application Creation: Developers can quickly scaffold applications using pre-built templates supporting various programming languages and runtime stacks.
+
+Dual Interaction Interfaces: Developers can interact with the cluster using either:
+
+Command Line Interface (CLI): For terminal-based control and quick scripting.
+
+Web Console: A dedicated, graphical web portal designed specifically for developer workflows.
+
+Automated Build and Deployment Workflow
+
+OpenShift automates the entire software delivery pipeline—from raw code commit to container deployment—eliminating manual build steps
+
+
+Step-by-Step Deployment Process
+
+Source Commit: The developer pushes code updates to a source repository (such as GitHub).
+
+Webhook & Pipeline Trigger: The code commit fires a Git webhook that triggers an automated Jenkins job and pipeline provisioned automatically by OpenShift upon application setup.
+
+Source-to-Image (S2I) Assembly: The Jenkins pipeline executes an S2I process, combining raw source code with base runtime images to produce a production-ready container image without requiring a manual Dockerfile build.
+
+Image Storage: The built container image is pushed to a container registry (using OpenShift's built-in private registry or an external public/private registry).
+
+Image Streams & Zero-Downtime Rollouts: OpenShift uses Image Streams to track changes in the registry. Detecting a new image version automatically triggers a zero-downtime rolling update, gracefully terminating older instances as new application pods come online.
+
+Lecture Summary
+
+OpenShift abstracts infrastructure management so developers can focus strictly on code delivery via CLI or Web Console.
+
+Code commits automatically trigger Jenkins CI/CD pipelines and Webhooks.
+
+OpenShift uses Source-to-Image (S2I) to turn code directly into container images and store them in an image registry.
+
+Built-in Image Streams enable automated, zero-downtime rolling deployments across the cluster whenever code updates occur.

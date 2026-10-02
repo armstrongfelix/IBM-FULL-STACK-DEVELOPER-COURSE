@@ -1,0 +1,86 @@
+Introduction to Functions and Types of Functions
+Learning Objectives
+
+Define the concepts of functions in JavaScript.
+
+Differentiate between non-parameterized and parameterized functions.
+
+Identify the two main ways of defining functions and the various types of functions.
+
+What is a Function?
+A function is a reusable block of code that can be defined and executed as many times as needed.
+
+They are a fundamental part of JavaScript used to encapsulate and organize code into manageable, reusable units.
+
+Benefits: Essential for building complex applications because they help improve code structure, readability, and maintainability.
+
+Declaring and Calling a Function
+Declaring: You can declare a function using the function keyword followed by a name, enclosed parentheses (), and the function's code enclosed in curly braces {}.
+
+Calling: After declaring a function, you can call it by using its name, followed by parentheses. When called, it executes the code within its block.
+
+Categories of Functions (Based on Inputs)
+Functions can be categorized into two main types based on their parameters/inputs:
+
+Non-Parameterized Functions
+
+Do not require any parameters to operate.
+
+Can perform their tasks without receiving any specific input values.
+
+Often used for tasks that rely solely on their internal logic or external factors.
+
+Simpler and more suitable for tasks that don't need external data.
+
+Parameterized Functions
+
+Accept one or more parameters that provide input data for the function to work with.
+
+You define these parameters in the function's declaration, and pass specific values when calling the function.
+
+Highly versatile and flexible because they can adapt to different input values.
+
+Parameters vs. Arguments
+Parameters: Variables you define in the function declaration to accept input values (e.g., A and B).
+
+Arguments: The actual values you pass to a function when calling it (e.g., passing 3 and 4 to the function).
+
+Two Ways to Write a Function
+Function Declaration:
+
+The traditional way to define a function (similar to other programming languages).
+
+Starts by declaring it using the function keyword, followed by the function name and parameters.
+
+Function Expression:
+
+Defines a function using a variable and stores the returned value in that variable.
+
+Types of Functions
+Named Function:
+
+Have specific names and can be called by those names.
+
+Typically declared using the function keyword and can be defined at any point in your code.
+
+Benefit: Beneficial for debugging because they display the function's name in the call stack, aiding in identifying and tracking bugs.
+
+Immediately Invoked Function Expression (IIFE):
+
+A function that is defined and executed immediately after its creation.
+
+Often employed to encapsulate variables and code within a private scope, which helps prevent global scope contamination and variable conflicts.
+
+Arrow Function:
+
+A more concise way to write functions introduced in ES6.
+
+Often used for short, simple functions.
+
+Anonymous Function:
+
+Functions without a name.
+
+Often used as arguments for other functions or assigned to variables.
+
+You can create anonymous functions using the arrow function syntax.

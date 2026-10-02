@@ -1,0 +1,75 @@
+JavaScript DOM Objects
+Learning Objectives
+
+List related node types.
+
+Show how to access document elements.
+
+Explain object naming.
+
+Node Types (W3C DOM Level 2)
+The W3C DOM Level 2 defines 12 different types of nodes, seven of which are directly applicable to HTML documents. Each node type is a named constant that is also represented by an integer value.
+
+ELEMENT_NODE (Integer: 1)
+
+The node name is the name of the element or tag (e.g., if looking at a DIV element, the node name is "DIV").
+
+ATTRIBUTE_NODE (Integer: 2)
+
+Represents an attribute (e.g., id="div123").
+
+The attribute name (e.g., "id") is the node name, and the attribute value (e.g., "div123") is the node value (a name-value pair).
+
+TEXT_NODE (Integer: 3)
+
+Represents text strings (e.g., text following a paragraph element).
+
+The node name is #text (hash-sign-text), and the node value is the actual text string itself.
+
+COMMENT_NODE (Integer: 8)
+
+Represents comments within the document.
+
+Note: You can see these properties and corresponding data types when you view a DOM tree for an HTML page using a browser’s developer tools, such as Chrome’s DevTools.
+
+Accessing Document Elements
+When an HTML document is loaded, the browser automatically creates arrays for forms, images, anchors, links, applets, and embeds.
+
+Array Indexing:
+
+All objects of each type are placed into these arrays.
+
+Arrays are indexed as they occur in the source document.
+
+The first index of each array starts at zero (0).
+
+Nested Arrays: Each array type (like forms[]) contains an array of elements[] representing the specific fields or buttons that occur within that form.
+
+Accessing by Index: You can reference elements by their relative position.
+
+Example: document.forms[0].elements[0]
+
+Accessing by Name (Dot Notation): You can reference the exact same field using named elements.
+
+Example: document.forms["form1"].elements["field1"]
+
+Shortened Example: document.form1.field1
+
+Prefix Rules: Since only one document can be contained in a window, you can leave out the window prefix. However, you cannot omit the document prefix from the referenced object.
+
+Object Naming and the ID Attribute
+The id attribute identifies a specific element in a document and is used by scripts to refer to that element.
+
+Conventions for assigning an ID:
+
+The ID must be a unique name within the document.
+
+The name must be in quotation marks when assigned to the id attribute.
+
+The name must not start with a numeric digit.
+
+Using IDs in JavaScript:
+
+The function used to return a node object matching the ID value is document.getElementById(id_name), passing the name of the ID as a parameter argument.
+
+Best Practice: It is suggested to use the exact same value for both the id and the name attribute when both are being used on an element.

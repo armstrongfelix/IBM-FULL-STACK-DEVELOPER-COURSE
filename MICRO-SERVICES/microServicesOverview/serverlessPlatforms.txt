@@ -1,0 +1,101 @@
+Lecture Notes: Popular Serverless Platforms
+
+Learning Objectives
+
+After completing this lecture, you will be able to:
+
+Describe the most popular serverless platforms in the market.
+
+Explain the key differentiators and target use cases of each platform.
+
+Amazon Web Services (AWS) Lambda
+
+AWS Lambda is an event-driven serverless compute service that allows you to run code without provisioning or managing underlying servers.
+
+Key Differentiators & Features
+
+High Scalability: Automatically handles execution requests at any scale, ranging from a dozen daily events to hundreds of thousands per second.
+
+Cost Model: Charged only for actual function execution time and data transfer between Lambda and other AWS services.
+
+Ecosystem Integration: Integrates with over 200 native AWS cloud services.
+
+Common Use Cases
+
+File and data processing.
+
+Web applications and microservices.
+
+Internet of Things (IoT) data backends.
+
+Mobile application backends.
+
+Google Cloud Functions
+
+Google Cloud Functions focuses on delivering a simplified developer experience by handling operational infrastructure automatically.
+
+Key Differentiators & Features
+
+Zero Infrastructure Management: Automatically scales up or down to zero instances instantaneously based on incoming traffic volume.
+
+Real-Time Alerts & Events: Integrates with Google Firebase to immediately notify developers upon data changes.
+
+Asynchronous Workloads: Executes lightweight tasks—such as Extract, Transform, Load (ETL) pipelines—without requiring dedicated server setups.
+
+Microsoft Azure Functions
+
+Azure Functions emphasizes enterprise DevOps capabilities, multi-language support, and flexible execution models.
+
+Key Differentiators & Features
+
+Extensive Language Support: Native support for C#, Java, JavaScript, PowerShell, and Python, alongside custom handlers for running virtually any language.
+
+Enterprise DevOps Capabilities: Provides built-in setups for continuous integration and continuous delivery (CI/CD) pipelines.
+
+Flexible Hosting Plans: Offers a pay-per-use Consumption plan alongside Premium and App Service plans for specialized workloads.
+
+Common Use Cases
+
+Executing code when files upload or change in Azure Blob Storage.
+
+Collecting and processing telemetry from IoT devices.
+
+Running scheduled tasks at pre-defined time intervals.
+
+IBM Cloud Functions
+
+IBM Cloud Functions delivers event-driven execution with fine-grained billing and cognitive capabilities. Note that IBM officially deprecated Cloud Functions in 2023, transitioning workloads toward container-native solutions.
+
+Key Differentiators & Features
+
+Granular Billing: Measures execution time down to one-tenth of a second.
+
+Watson AI Integration: Seamlessly hooks into IBM Watson cognitive services for tasks like object and facial detection in image or video files.
+
+High Availability: Distributes actions across multiple IBM Cloud regions with automatic multi-zone data synchronization to prevent single points of failure.
+
+Operational Monitoring: Uses IBM Log Analysis with LogDNA and IBM Cloud Monitoring for metrics and remote troubleshooting.
+
+Knative (Open-Source Alternative)
+
+Knative is an open-source, container-native serverless platform built on top of Kubernetes.
+
+Key Differentiators & Features
+
+Vendor Lock-In Prevention: Being built on Kubernetes makes Knative platform-agnostic, allowing deployment across any cloud provider or on-premises cluster supporting Kubernetes.
+
+Custom Rollout Strategies: Provides granular traffic-shifting capabilities to route traffic gradually to new serverless revisions.
+
+Container-Based Execution: Packages serverless workloads inside standard containers rather than relying on proprietary cloud runtime environments.
+
+Lecture Summary
+
+AWS Lambda: Event-driven compute offering high scale and integration across the AWS ecosystem.
+
+Google Cloud Functions: Simplified developer experience with automatic zero-scaling and Firebase real-time integration.
+
+Microsoft Azure Functions: Strong CI/CD DevOps workflows, flexible hosting plans, and multi-language support.
+
+IBM Cloud Functions: Granular billing and direct integration with IBM Watson AI services (now deprecated).
+
+Knative: Open-source, Kubernetes-based serverless engine that eliminates vendor lock-in through containerized deployments.

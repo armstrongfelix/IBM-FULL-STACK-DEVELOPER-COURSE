@@ -1,0 +1,61 @@
+Welcome & Learning Objectives
+Welcome to "Comparison of Monolith vs. SOA vs. Microservices." By the end of this lecture, you will be able to:
+
+Define Monolith implementation.
+
+Define Service Oriented Architecture (SOA).
+
+Define Microservices.
+
+1. Monolith Implementation
+A monolithic application has all or most of its functionality within a single process. Its application logic is managed in internal layers or libraries (such as security, reporting, analytics, user interface, or data access) that are tightly connected and dependent on each other.
+
+Benefits: Simple design with less cross-cutting of features and functionalities since everything lives within the same codebase.
+
+Challenges: As products increase in scope over time, the design becomes complex and difficult to modify. It also creates a barrier to adopting new technologies, which would require rewriting the entire application.
+
+Example: A Windows Forms Application, where the UI, business logic, and data access are embedded inside one codebase forming the whole app (with only the database sitting outside its scope).
+
+2. Service Oriented Architecture (SOA)
+SOA is an enterprise-wide concept designed around a service provider and consumer approach. Services work as discrete units of functionality that integrate seamlessly and are easily reused across an enterprise.
+
+Each SOA service consists of three components:
+
+Interface: Defines how a service provider will execute requests from a consumer.
+
+Contract: Defines how the service provider and service consumer should interact.
+
+Implementation: The actual service code.
+
+Benefits: Increases reliability and supports parallel development due to fixed contracts between services. It allows existing applications to be exposed over loosely coupled interfaces corresponding to business functions.
+
+Challenges: Expectations and requirements make SOA complex, which can obstruct rapid application development. It is an expensive investment best suited for enterprise teams with sufficient resources and expertise.
+
+Example: A banking system, where different applications across an extended enterprise reuse functionality via exposed interfaces.
+
+3. Microservices Architecture
+Microservices is an application-scoped concept comprising loosely coupled, reusable, and specialized components that work independently. Unlike SOA, even data in a microservice is not shared with other services.
+
+Benefits:
+
+Independent Scalability & Tech Selection: Allows targeted scaling of individual microservices and the liberty to select different underlying technologies per service.
+
+Ease of Development: Work units are defined as individual services with designated responsibilities, providing flexibility to add new technology.
+
+Internal Decoupling: Enables the internals of a single application to be broken into smaller pieces that can be independently changed, scaled, and administered.
+
+Challenges:
+
+Security: Independently hosted services require their own security paradigms (e.g., implementing Transport Layer Security / TLS across network communications).
+
+Debugging: Locating the root cause of issues becomes harder because each service runs independently.
+
+Example: An e-commerce application broken into separate microservices for processing orders, security, and analytics.
+
+Lecture Summary
+
+Monolithic design relies on interconnected, interdependent internal layers within a single process, offering simplicity at the start but becoming rigid over time.
+
+SOA design provides seamless integration, enterprise-wide reusability, and fixed contracts, but requires high investment and added complexity.
+
+Microservices architecture breaks a single application into independent components, providing targeted scalability, technology flexibility, and isolated data, though it increases security and debugging challenges.

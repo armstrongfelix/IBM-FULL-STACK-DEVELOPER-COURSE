@@ -1,0 +1,82 @@
+Lecture Notes: Introduction to JavaScript and ES6
+Learning Objectives
+
+Explain how JavaScript enhances user experience in web development.
+
+Explain how to create basic JavaScript code in an HTML file.
+
+Describe the various ways to display or output information in JavaScript.
+
+What is JavaScript?
+A versatile and widely used programming language created in the mid-'90s.
+
+Executed directly in web browsers, making it an essential tool for web development.
+
+Acts as instructions for your browser to make web pages interactive and user-friendly (e.g., clicking a button to show a message or change colors without refreshing the whole page).
+
+It is the "magician behind the scenes" that brings websites to life by making them dynamic and responsive.
+
+Key Capabilities
+Manipulating the DOM: Can change a web page's content, structure, and style. It acts like a magic wand for web elements.
+
+Handling Events: Can respond to various user interactions, such as button clicks and mouse movements, to make websites more engaging.
+
+How JavaScript is Used
+Enhancing User Experience: Validates form data, creates interactive forms, and provides real-time feedback to users.
+
+Dynamic Web Content: Loads new content without refreshing the entire page (e.g., real-time social media feeds).
+
+Animations and Visual Effects: Creates animations, sliders, and other visual effects to improve website aesthetics.
+
+Web Applications: Powers smooth and responsive user experiences for complex apps like Google Docs, Netflix, and Trello.
+
+The ES6 Update (ECMAScript 2015)
+A transformative milestone in JavaScript's evolution.
+
+Marked a significant upgrade to the language.
+
+Introduced numerous new features, syntax enhancements, and improved functionality.
+
+Made JavaScript much more powerful and developer-friendly.
+
+How to Incorporate JavaScript into HTML
+There are two common methods for adding JavaScript to your web pages:
+
+In-line JavaScript
+
+Include JavaScript code directly in your HTML file using the <script> tag within the <body>.
+
+Note: You can also place this tag in the <head> section, but it may lead to unexpected results.
+
+External JavaScript File (Recommended)
+
+Best for larger projects, keeping HTML structures clean, and easier code maintenance/reuse.
+
+Step 1: Create a separate .js file (e.g., script.js) and add your JavaScript code to it.
+
+Step 2: In your HTML file, include a <script> tag with the src attribute pointing to your JavaScript file.
+
+Best Practice: Place this tag just before the closing <body> tag.
+
+Displaying or Outputting Information
+There are various ways to display results or output data in JavaScript:
+
+Using console.log
+
+Very handy for checking values, debugging errors, and seeing the results of your code.
+
+To view it, open the developer console in most browsers by pressing F12 or right-clicking on the web page, selecting "Inspect" or "Inspect Element," and navigating to the "Console" tab.
+
+Altering the DOM
+
+Dynamically changes the content of your web page.
+
+You can update text, insert elements, or modify attributes (e.g., finding an HTML element with the ID output and changing its content).
+
+Pop-up Dialogues
+
+Alert: Shows a simple message in a pop-up dialog.
+
+Confirm: Displays a message and prompts the user for a yes/no response.
+
+Prompt: Displays a message and allows the user to input text.

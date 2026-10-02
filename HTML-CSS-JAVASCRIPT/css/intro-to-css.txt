@@ -1,0 +1,127 @@
+Lecture Notes: CSS - Styling HTML
+Learning Objectives
+
+Explain what a Cascade Style Sheet (CSS) is.
+
+Describe how to use CSS to format HTML elements.
+
+Describe how to use CSS in HTML documents to format web pages.
+
+Introduction to Web Technologies & CSS
+Modern Web Development: Using a combination of HTML5, JavaScript, and CSS allows developers to create web pages for desktop computers and mobile devices.
+
+No Plugins Required: These technologies offer rich interactive applications without needing plug-ins like the Flash media player.
+
+Accessibility: Using HTML markup over plug-ins meets accessibility requirements better (e.g., rendering documents through a speech synthesizer for visually impaired users).
+
+What is CSS? It is the design layered over the top of an HTML web page. It is a style sheet language that describes how HTML elements are displayed.
+
+Core Concepts of CSS
+The "Cascade": Developers can apply CSS to create a uniform look throughout a website. Child and descendant elements generally inherit styles defined for parent elements (though exceptions exist).
+
+Separation of Data and Design:
+
+HTML sends the data to the browser; CSS applies the design to that data.
+
+Benefits of Separation:
+
+Allows users with special accessibility needs to render the page without the design.
+
+Allows search engines to index the website without the design interfering.
+
+What CSS Controls
+You can use CSS to specify style rules for the following elements:
+
+Fonts, Text, and Colors
+
+Backgrounds and Borders
+
+Sizes, Spacing, and Positioning
+
+Visual effects
+
+Tables and Lists
+
+CSS Structure and Selectors
+A CSS style element references HTML in a few ways:
+
+HTML Tags: Any tag found in HTML code (e.g., <a>, <div>, <li>, <label>).
+
+ID Reference: Displayed with a preceding hash symbol (#) in CSS code.
+
+Class Reference: Displayed with a preceding dot/period (.) symbol in CSS code.
+
+Establishing a Base Style
+When beginning a site design, establish the base style first by styling the <body> tag. Example baseline settings:
+
+background-color: Sets the background (e.g., off-white).
+
+color: Sets the font color (e.g., black).
+
+margin and padding: Ensures content edges match the browser window frame.
+
+text-align: Horizontally aligns content (e.g., left).
+
+font-size & font-family: Sets default sizes and font types (e.g., sans-serif, which is a font without the little flicks around the edges).
+
+General Guidelines for Values:
+
+Colors: Use Red-Green-Blue (RGB) hexadecimal light values.
+
+Sizes:
+
+Pixels (px).
+
+Ems (em) - the size of the font multiplied by the specified number.
+
+Percentages (%).
+
+Alignment: Text can be left, right, or center. Vertical alignments must be top, middle, or bottom.
+
+Floats: Can be left or right.
+
+Fonts: Can be a specific font, a font family (serif, sans-serif, monospace), or a downloadable font.
+
+Website Layouts: Fluid vs. Fixed
+The layout choice depends on the type/amount of content and the target audience.
+
+Fluid Layout:
+
+Height and width of elements are flexible.
+
+Expands or contracts based on the browser window, OS, and user preferences.
+
+Mostly uses percentages (%) and ems (em).
+
+Fixed Layout:
+
+Height and width of elements are specified and remain the same regardless of OS or browser.
+
+Mostly uses pixels (px).
+
+Applying CSS to HTML
+HTML references CSS in three ways. If more than one method points to an element, the one with the highest priority overrides the others.
+
+Inline CSS (Highest Priority)
+
+Use: For a single HTML element.
+
+How: Insert the style attribute inside an HTML element.
+
+Drawback: The HTML document can get messy very quickly.
+
+Internal CSS (Medium Priority)
+
+Use: For a single page.
+
+How: Place your CSS code inside a <style> tag.
+
+Drawback: Dirties the page with non-HTML code. Copying/pasting across pages increases load time.
+
+External CSS (Lowest Priority - Preferred Method)
+
+Use: To style an entire website (referred to as style sheets).
+
+How: Add the <link> tag to the <head> section of your HTML code to reference the external file.
+
+Benefits: Clean HTML, smaller page size, and can be linked from multiple pages.

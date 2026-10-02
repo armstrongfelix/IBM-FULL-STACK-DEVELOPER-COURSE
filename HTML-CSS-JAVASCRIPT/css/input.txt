@@ -1,0 +1,95 @@
+Lecture Notes: HTML5 Input Element – Attributes for the Input Tag
+Learning Objectives
+
+Describe the attributes of the HTML5 input elements.
+
+Explain different input type attributes (tel, email, datetime, number, range, and color).
+
+Understand the importance of implementing validation fallback.
+
+HTML5 Input Types and Attributes
+Color (type="color")
+
+Allows the user to select a color.
+
+The dialog varies by browser.
+
+In non-supporting browsers, it displays as a regular text input field where the user can type a valid color name or code.
+
+Date (type="date")
+
+A date control (year, month, day) with no time zone.
+
+The input dialog varies from browser to browser (e.g., seen as a calendar field in Google Chrome).
+
+Date and Time (datetime-local)
+
+Provides input for a date and time (year, month, day, hour, minute, AM/PM) with no time zone.
+
+Displays as a drop-down calendar in Chrome, where time can be typed or entered using a spinner control.
+
+Email (type="email")
+
+Displays as a regular text input field.
+
+Provides feedback when the input does not follow the standard email format.
+
+Number (type="number")
+
+Takes a numeric value as input.
+
+You can optionally specify minimum values, maximum values, and step size (e.g., restricting selection to numbers between 5 and 10).
+
+Range (type="range")
+
+Takes a numeric range as input and displays a slider with values between a specified minimum and maximum.
+
+Only the slider is shown visually; additional JavaScript code is required to display the actual numerical value of the slider.
+
+Search (type="search") vs. Text (type="text")
+
+Differences are mostly in styling.
+
+WebKit-based browsers return a history of recently searched text strings, and Safari displays the search input with rounded corners.
+
+Telephone (type="tel" pattern="[parameters]")
+
+Expects a telephone number as input.
+
+On its own, it acts as a simple text entry field and does not enforce numeric-only input (to allow for plus signs and hyphens).
+
+You must supply your own pattern matcher for the browser to validate the phone number.
+
+URL
+
+Used to validate that the user typed in a properly formatted URL or web address.
+
+Additional Features
+Datalist (list="some_list")
+
+Not to be confused with the select element; these options are only suggestions.
+
+Useful for auto-complete functionality.
+
+Filled by nesting <option> elements inside the datalist tag (e.g., a list of fruit types).
+
+Placeholder
+
+Used to provide hints of what the input text format looks like using a lighter shade of text.
+
+The form will not submit the placeholder text value if it is not overwritten.
+
+Required
+
+Enforces that some text must be typed into the field.
+
+This requirement applies even if the field already contains placeholder text.
+
+Validation Fallback
+If browser-based validation is not supported for these HTML5 attributes, there are several fallback options:
+
+JavaScript/JQuery: Use JavaScript and JQuery libraries to handle validation.
+
+Server-Side Processing: Leave all final validation to server-side processing, assuming more browsers will support these features over time.
+
+Client-Side Submit Event: Code client-side validation attached to the form submit event handler to validate all fields when the user attempts to submit the form.

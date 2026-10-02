@@ -1,0 +1,114 @@
+Lecture Notes: Introduction to the FaaS Model
+Learning Objectives
+After completing this lecture, you will be able to:
+
+Describe what Function-as-a-Service (FaaS) is.
+
+Explain the benefits of the FaaS model.
+
+Describe the components, principles, and best practices of FaaS.
+
+1. What is Function-as-a-Service (FaaS)?
+Function-as-a-Service (FaaS) is a cloud-computing service model that allows you to execute code in response to events without managing the complex infrastructure typically associated with building and launching microservices applications.
+
+Key Characteristics
+Subset of Serverless: FaaS is a core subset of the broader serverless computing paradigm.
+
+Function-Based Structure: Applications are created as multiple independent functions, where a function is a piece of software written in any programming language.
+
+Deployment Flexibility: Can be deployed on public clouds, hybrid clouds, as well as on-premises environments.
+
+Stateless: Functions are stateless by default but can maintain state using external caches (such as Redis or Memcached).
+
+Millisecond Execution & Parallelism: Functions execute in milliseconds and process individual requests in parallel, making them instantaneously scalable.
+
+Decoupled & Lightweight: Employs a decoupled architecture mechanism for lightweight execution.
+
+Execution-Based Billing: Charged strictly on the time taken to run functions, not on server instance sizes or idle time.
+
+2. Benefits of the FaaS Model
+No Infrastructure Management: Servers are divided into functions that scale automatically and independently, freeing developers from managing underlying infrastructure.
+
+Reduced Time-to-Market: Developers focus solely on writing application code, significantly speeding up product releases.
+
+Cost Efficiency: You pay only when an action occurs. When function processing completes, code execution stops, no servers idle, and no costs are incurred.
+
+Instant & Automatic Scaling: Small, independent, stateless functions scale up automatically and instantaneously during high traffic and scale back down when demand drops.
+
+Inherent High Availability: Functions are distributed across multiple availability zones and regions without incurring incremental deployment costs.
+
+3. Serverless Stack Components & Workflow
+A typical serverless stack comprises three main components:
+
+FaaS (Function-as-a-Service): Handles event-driven execution of business logic.
+
+BaaS (Backend-as-a-Service): Provides fully managed backend infrastructure (e.g., file and object storage, block storage, notification services, managed databases).
+
+API Gateway: Acts as the entry point to route incoming events and API calls.
+
+Execution Workflow
+Event Request: Requests enter from channels like HTTP calls, repository webhooks (e.g., GitHub, Docker Hub), or scheduled jobs.
+
+API Gateway Routing: The API Gateway identifies the request and forwards it to the appropriate FaaS function.
+
+Function Processing: The function executes the code and directs data to BaaS components (such as object storage or databases) if needed for storage or further processing.
+
+Response: The output is returned through the FaaS function and API Gateway back to the client.
+
+4. Real-World Use Case: Image Thumbnail Generation
+A common application of FaaS is processing user file uploads:
+
+A user selects and uploads a profile photo to a website.
+
+The image is saved directly into an Object Storage Bucket.
+
+The upload event automatically triggers a Cloud Function (e.g., IBM Cloud Functions).
+
+The function processes the profile photo, generates a thumbnail version, and stores the thumbnail back in object storage.
+
+The website accesses the generated thumbnail for display whenever required.
+
+5. FaaS Principles & Best Practices
+To maximize efficiency and cost-effectiveness when using FaaS, follow these guidelines:
+
+Single Responsibility Principle: Design each function to do a single piece of work in response to an event. Keep scope limited, efficient, and lightweight so code loads and executes quickly.
+
+Maintain Function Isolation: The value of FaaS lies in isolating functions. Creating too many small functions or chaining functions excessively increases costs and negates isolation benefits.
+
+Minimize External Dependencies: Using too many third-party libraries slows down function initialization (cold start) and impairs scaling performance.
+
+6. FaaS Platforms & Frameworks
+Managed FaaS Providers
+AWS Lambda (Amazon)
+
+Google Cloud Functions
+
+Azure Functions (Microsoft)
+
+IBM Cloud Functions
+
+Red Hat OpenShift Cloud Functions
+
+Other providers: Netlify, Oracle, Twilio
+
+Self-Managed FaaS Options
+If you prefer not to rely on third-party managed platforms, you can run self-managed FaaS on top of your own infrastructure:
+
+Fission: A framework for serverless functions on Kubernetes.
+
+Fn Project: A container-native serverless platform.
+
+Knative: A Kubernetes-based platform to build, deploy, and manage serverless workloads.
+
+OpenFaaS: Allows you to turn any Linux or Windows process into a serverless function.
+
+Lecture Summary
+FaaS allows event-driven code execution without infrastructure management, billing strictly by run time.
+
+Serverless Stack: Built on FaaS, BaaS, and an API Gateway working together to process events and return responses.
+
+Benefits: Automatic scaling, instantaneous execution, high availability, and reduced operational costs.
+
+Best Practices: Keep functions single-purpose, lightweight, isolated, and minimize external libraries.
+
+Platform Choices: Flexible deployment through fully managed cloud services or self-managed Kubernetes-based framework

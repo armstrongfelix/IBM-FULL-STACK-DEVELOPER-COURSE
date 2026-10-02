@@ -1,0 +1,72 @@
+JavaScript Functions and Prototypes
+Learning Objectives
+
+Describe functions in JavaScript.
+
+Describe prototypes in JavaScript.
+
+Demonstrate how to create a custom object.
+
+JavaScript Functions Overview
+Definition: A function is a block of code that can be called from any point in a script after being declared.
+
+Parts of a Function:
+
+The keyword function.
+
+The name of the function.
+
+Parentheses containing optional parameter arguments.
+
+Curly braces containing the logic.
+
+An optional return statement (the last statement in the block) that returns control back to whatever called the function.
+
+Data Types and Returns:
+
+Data types for function arguments do not need to be specified; they are determined by the values being passed.
+
+There is no specific return type declared; it returns whatever type is required based on the input.
+
+Example (an add function): If the passed values can be interpreted as numbers, they are added together. If they can be interpreted as strings, they are concatenated.
+
+Creating Custom Objects and the this Keyword
+Constructor Functions: You can create custom objects by declaring a function (e.g., a Car function) that accepts arguments as parameters.
+
+Instantiation: You run the function and create an object using the new keyword (e.g., var c = new Car(...) passing arguments like Meridian, Saber GT, and 2012).
+
+The this Keyword:
+
+Refers to the current instance of the object that is being created (e.g., the specific instance of the car associated with the variable c).
+
+Used to differentiate whether you are referring to the global or local instance of a variable.
+
+Example: Using model refers to the argument passed into the function, while this.model refers to the property associated with the current instance of the object.
+
+Prototypes
+Purpose: Prototypes allow you to easily define properties and methods for all instances of a particular object.
+
+Inheritance: All JavaScript objects created with the new keyword inherit properties and methods from a prototype. When an object is created, it inherits everything implicitly defined in that prototype.
+
+Modifying Prototypes:
+
+If you want to add a new property directly to an object's constructor function, you must add it as an additional argument.
+
+However, using a prototype allows you to add a property or method to the object template with just one call.
+
+Since all objects have a prototype property, this is the easiest way to add functionalities.
+
+Dynamic Updates: Any object that gets instantiated inherits the current state of the prototype. If a prototype changes (via a script overriding it, such as adding a getName method), all existing and new instances of that object automatically inherit the new properties and functions.
+
+Auto-Invocation / Self-Executing Functions
+Standard Functions: Usually declared first and do not run until you specifically ask them to.
+
+Self-Executing Functions: Start running immediately after they are declared.
+
+Characteristics:
+
+Can be unnamed or anonymous functions.
+
+Isolation: The functions and variables inside are isolated from the rest of the script and are only available to the code inside the self-executing function.
+
+Common Use Cases: Often used to initialize data or to declare DOM elements on the page.

@@ -1,0 +1,85 @@
+Lecture Notes: Serverless Reference Architecture and Use Cases
+
+Learning Objectives
+
+After completing this lecture, you will be able to:
+
+Explain a Web Application reference architecture using the Serverless Framework.
+
+Describe other core use cases of the Serverless Framework.
+
+Web Application Reference Architecture (To-Do App)
+
+A common serverless web application reference architecture relies on an event-driven back-end to handle operations such as CRUD (Create, Read, Update, Delete) actions for registered users.
+
+Key Infrastructure Components
+
+AWS Amplify Console: Hosts static front-end web content (HTML, CSS, JavaScript, images).
+
+Amazon API Gateway: Serves as the front-end entry point that exposes REST APIs.
+
+AWS Lambda: Runs the core business logic in on-demand, event-driven functions.
+
+Amazon DynamoDB: Acts as a fully managed NoSQL database for persistent data storage.
+
+Amazon Cognito: Provides user registration, identity management, and authentication via Cognito User Pools.
+
+The 3 Architecture Layers
+
+Front-End Layer
+
+Built using client-side technologies like Create React App (HTML, CSS, JavaScript) and static media assets.
+
+Static content is hosted on the AWS Amplify Console.
+
+When a user visits the site, assets download to their browser and execute locally.
+
+Communicates with the back end by making REST API calls.
+
+Back-End Layer (Business Logic)
+
+Implements the actual business functionality using AWS Lambda functions.
+
+Functions are triggered and accessed by the front end through Amazon API Gateway.
+
+Executes data actions directly against Amazon DynamoDB to retrieve or persist items.
+
+User Management & Authentication Layer
+
+Restricts data access so users can only view, create, or modify their own items.
+
+Employs Amazon Cognito User Pools to handle user registration, login, and identity verification before permitting API access.
+
+Additional Serverless Use Cases
+
+Event Streaming
+
+Enables execution without pre-allocating or managing upfront server infrastructure.
+
+Triggered by publisher/subscriber (pub/sub) topics or event logs.
+
+Creates elastic, highly scalable pipelines without managing complex clusters.
+
+Commonly used to power analytics platforms, update secondary data stores/caches, or feed system monitoring tools.
+
+Post-Processing Workloads
+
+Media Processing: Dynamically resizes images or transcodes video files for different mobile and web devices.
+
+Image Recognition & AI: Analyzes uploaded photos to ensure compliance with specific rules (e.g., detecting facial shadows on passport photo submissions).
+
+Multi-Language Support
+
+Serverless applications can be polyglot (multi-lingual).
+
+Different microservice functions can be written in different programming languages without locking development teams into a single legacy stack.
+
+Allows teams to choose the language that best fits the specific problem rather than being constrained by existing infrastructure dependencies.
+
+Lecture Summary
+
+Serverless Reference Architecture: Combines AWS Amplify Console (front-end hosting), Amazon Cognito (authentication), Amazon API Gateway (REST interface), AWS Lambda (business logic), and Amazon DynamoDB (data persistence).
+
+Core Structure: Divided into three main layers: Front-end, Back-end, and User Authentication.
+
+Key Use Cases: Extends beyond web apps into Event Streaming, Media & AI Post-Processing, and Multi-Language Microservices

@@ -1,0 +1,73 @@
+Welcome to "Documenting and Testing REST APIs with Swagger." By the end of this lecture, you will be able to:
+
+Document your REST API using Swagger.
+
+Test your REST API using Swagger.
+
+What is API Documentation & Swagger?
+APIs specify an interface and connect different systems, providing them with consistent communication. API documentation serves as a reference manual containing instructions on how to effectively use and integrate systems.
+
+Swagger's Role: Swagger saves time writing API documentation by running through the OpenAPI specification to ensure guidelines are met.
+
+Machine-Readable Structure: Swagger allows you to describe the structure of your APIs so machines can read them, automatically building an engaging UI and interactive API documentation.
+
+The OpenAPI Specification
+Originally, APIs were data-driven and built for specific connection use cases rather than self-service consumption. The OpenAPI Specification defines a standard, language-agnostic interface for RESTful APIs that is both human- and machine-readable.
+
+It allows people and computers to discover and understand a service's capabilities without needing access to source code, additional documentation, or network traffic inspection.
+
+What the OpenAPI Specification Defines:
+
+Supported API operations.
+
+Required request parameters and expected return formats.
+
+Required API authentication.
+
+Metadata such as terms of service, contact information, and license info.
+
+Defined in either a JSON or YAML file format.
+
+Integrating Swagger UI with Flask
+While Flask exposes Python functions as APIs, the Flask-Swagger-UI extension enhances Flask by allowing you to describe and visualize REST APIs directly.
+
+Step-by-Step Setup in Flask:
+
+Installation:
+Install the required Flask blueprint package using pip:
+pip install Flask-swagger-ui
+
+Import & Configuration:
+
+Import swagger_ui_blueprint into your Python app.
+
+Define basic configurations:
+
+Swagger Path: The URL route where Swagger UI will be hosted (e.g., /products/docs).
+
+API Spec URL: The path where the static Swagger JSON file is served.
+
+Blueprint Name: The designated name given to the Swagger instance.
+
+Register the Swagger blueprint with your Flask app.
+
+Serving swagger.json:
+
+Create a swagger.json file that holds the definitions, characteristics, object properties (e.g., the Product model), and routes (e.g., GET products list) for your API.
+
+Expose a route in Flask to serve this static swagger.json file to the UI.
+
+Testing APIs using Swagger UI
+The primary benefit of Swagger UI is the ability to test your API directly from the browser documentation interface.
+
+Exploration: Consumers can inspect API details, supported methods, request/response models, and product info sections.
+
+Interactive Testing: Displays endpoints (such as GET to retrieve all products) and allows you to execute the endpoint live to view the resulting response data.
+
+Lecture Summary
+
+Swagger simplifies writing and serving interactive API documentation.
+
+The OpenAPI specification provides a standard, language-agnostic format (JSON/YAML) to define RESTful API structures.
+
+Flask applications can integrate Swagger UI using the Flask-swagger-ui blueprint to document and interactively test endpoints.

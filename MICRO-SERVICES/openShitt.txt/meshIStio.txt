@@ -1,0 +1,97 @@
+Lecture Notes: Service Mesh and Istio
+
+Learning Objectives
+
+After completing this lecture, you will be able to:
+
+Explain the key operational benefits and trade-offs of microservices architectures.
+
+Define what a service mesh is and describe its core value proposition.
+
+Explain how a service mesh decouples networking concerns from application code.
+
+Identify the foundational architectural components of Istio (Data Plane and Control Plane).
+
+Describe Istio’s key Custom Resource Definitions (CRDs) used for traffic management.
+
+Benefits and Challenges of Microservices
+
+Microservices architectures enable teams to structure complex applications as small, independent services.
+
+Key Benefits
+
+Manageable Updates: Code updates are isolated to individual services without requiring full-application rebuilds.
+
+Technology Polyglotism: Teams can choose different tech stacks, languages, or databases tailored to specific service requirements.
+
+Independent Scalability: Resource-intensive components can be scaled up dynamically without scaling the entire application infrastructure.
+
+Common Challenges
+
+Network Security & Encryption: Securing inter-service communication and managing TLS certificates across many endpoints adds complexity.
+
+Advanced Deployment Strategies: Executing canary releases, blue/green deployments, or A/B testing requires sophisticated traffic routing.
+
+Cascading Failures: Unresponsive microservices can cause request backlogs and chain-reaction failures across dependent services.
+
+Resiliency Implementation: Developers must build custom logic for retries, timeouts, and circuit breakers directly into microservice code.
+
+What is a Service Mesh?
+
+A service mesh is a dedicated infrastructure layer injected between services to make service-to-service communication secure, reliable, and observable.
+
+Core Capabilities
+
+Traffic Management: Controls request routing, traffic splitting (e.g., 90/10 canary releases), and load balancing.
+
+Security: Enforces encryption via mutual TLS (mTLS) and manages service-level authentication and fine-grained authorization.
+
+Observability: Generates distributed tracing, metrics, and logs for end-to-end network visibility.
+
+Fine-Grained Access Control: Enforces layer 7 HTTP and layer 4 TCP access rules (e.g., restricting which microservices can invoke specific API endpoints).
+
+The Paradigm Shift
+
+Historically, developers hardcoded traffic routing, retries, and encryption logic into application libraries. A service mesh extracts this complexity out of the application layer and shifts network intelligence directly into the infrastructure plane.
+
+Istio Architecture
+
+Istio implements a service mesh by dividing architecture into two primary operational tiers: the Data Plane and the Control Plane.
+
+Data Plane (Envoy Proxies)
+
+High-performance Envoy proxies are deployed automatically as sidecar containers alongside application containers within the same Kubernetes pod.
+
+All inbound and outbound traffic passes through the local proxy, which enforces routing policies, inspects payload headers, encrypts traffic via mTLS, and emits telemetry data.
+
+Control Plane (Istiod / Historical Components)
+
+The control plane receives user configuration YAMLs, validates them, and converts them into low-level instructions for the Envoy proxies.
+
+Pilot: Translates high-level routing rules into Envoy configuration and distributes them across sidecars.
+
+Galley: Validates and processes user-submitted configuration manifests.
+
+Citadel: Acts as a Certificate Authority (CA) to generate, rotate, and distribute TLS certificates for secure service identity and mTLS.
+
+Policy & Telemetry (Mixer): Handles access policies and metrics collection. Note that modern Istio moves this telemetry and policy processing directly into Envoy proxies via WebAssembly extensions to eliminate extra network hops and optimize performance.
+
+Key Istio Traffic Management Resources (CRDs)
+
+Istio extends standard Kubernetes capabilities using Custom Resource Definitions (CRDs). Three primary CRDs manage network traffic:
+
+Gateway: Operates at the edge of the mesh to manage incoming and outgoing HTTP/TCP connections (acting as an ingress/egress load balancer).
+
+VirtualService: Defines how traffic is routed to specific services once it hits a Gateway or moves internally. Enables traffic splitting (e.g., canary weightings), path rewrites, and fault injection.
+
+DestinationRule: Applied after routing via VirtualService is resolved. Configures traffic behavior at the destination endpoint, including TLS settings, load balancing algorithms, and circuit breaker thresholds.
+
+Lecture Summary
+
+Service meshes solve microservice challenges (security, cascading failures, traffic management) by moving network logic from code to infrastructure.
+
+Istio uses Envoy sidecar proxies in the data plane to intercept and control network requests.
+
+The Istio control plane manages configuration, security identities, and policy propagation.
+
+Core traffic control is managed declaratively using Gateway, VirtualService, and DestinationRule manifests

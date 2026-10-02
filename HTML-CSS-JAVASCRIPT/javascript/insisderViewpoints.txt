@@ -1,0 +1,44 @@
+Insiders' Viewpoints - JavaScript Best Practices
+Overview
+This lecture gathers insights from several cloud application professionals discussing their top recommended best practices when working with JavaScript.
+
+1. Tooling and Development Environment
+Use IDEs (Integrated Development Environments): Utilize editors like VS Code or WebStorm. The content assist features allow you to view functions, documentation, and classes all within the same editor, making you a much more productive developer.
+
+Use Linters: Linters help you write standard code. This doesn't just mean ES6 standards, but the specific standards your team decides on for writing functions and documentation.
+
+Benefits: Crucial for version control and resolving code conflicts. It ensures code looks uniform across the team and reduces bugs and confusion.
+
+Recommended Tool: XO is a great linter with excellent default settings that you can easily run on your code.
+
+Use TypeScript: It is a wonderful addition to JavaScript that can often be placed right on top of a current JavaScript project without needing to change much code. It adds a significant set of features to make your codebase much better.
+
+2. Code Structure and Paradigms
+Learn JS Paradigms and Patterns: Whether working on the front-end or back-end, learn how to modularize your code.
+
+Design for Testing and Importing: Structure your code so that it is easier to unit test and easier to import other packages into your application. Always write unit and integration tests for your features.
+
+Embrace ES6: Take advantage of ES6 features (such as arrow functions and the "dot dot dot" operator). These features make code cleaner, easier to read, and more beautiful.
+
+3. Proper Scoping and Avoiding Global Variables
+A recurring piece of advice from multiple professionals is to avoid declaring global variables and functions.
+
+Performance Issues: Global variables can slow down your program because they are not deleted from memory until the browser window is closed.
+
+Overriding Risks: If other scripts run after yours and use the same variable names, they will override your variables.
+
+Name Collisions: When you include your own code alongside third-party libraries on the same page, they all share the same global context. If you pick the same name for a global variable as a third-party library, one or both of the programs will break.
+
+Solution: Follow strict, proper scoping of variables and functions.
+
+4. Performance Optimization
+Script Placement: To reduce page load times, place your JavaScript at the bottom of your HTML page. This is especially important if the script's purpose is to add functionality after an event occurs.
+
+Optimize Loops:
+
+When writing lengthy for statements, declare your variables outside of the for statement.
+
+Do not read the length attribute of an array at every single iteration. Instead, store the length value in a different variable prior to the loop.
+
+5. Code Readability and Maintenance
+Commenting: Always comment the important sections of your code. This ensures that you or your colleagues can easily understand the purpose of the code when it needs to be revised in the future.

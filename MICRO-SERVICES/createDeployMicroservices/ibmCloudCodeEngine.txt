@@ -1,0 +1,79 @@
+IBM Cloud Code Engine
+
+Learning Objectives
+
+After completing this lecture, you will be able to:
+
+Describe the operational challenges of self-hosting microservices.
+
+Explain what IBM Cloud Code Engine is and how it functions as a fully managed platform.
+
+Explain how IBM Cloud Code Engine simplifies application deployment and workload management.
+
+Challenges of Self-Hosting Microservices
+
+Deploying microservices on self-hosted infrastructure involves heavy operational overhead and critical architectural decisions.
+
+Key Operational Challenges
+
+Build & Asset Configuration: Packaging code, library dependencies, static assets, and environment credentials into production-ready binaries.
+
+Infrastructure Selection: Choosing and configuring web servers, operating systems, networking protocols, and database instances across development teams.
+
+Dynamic Auto-Scaling: Managing infrastructure capacity to handle fluctuating traffic demands (e.g., e-commerce holiday traffic spikes followed by usage drops).
+
+Microservice Communication: Configuring secure, reliable inter-service network routing and service discovery across microservice components.
+
+Monitoring & Observability: Setting up central logging, health check metrics, and alerting dashboards to detect or predict runtime issues.
+
+Python Web Server Interfaces (WSGI vs. ASGI)
+
+For Python-based microservices (e.g., Flask or Django), developers must explicitly select and manage an entry-point web server interface:
+
+WSGI (Web Server Gateway Interface): The standard for synchronous Python web applications. Common servers include Gunicorn (Green Unicorn) and uWSGI.
+
+ASGI (Asynchronous Server Gateway Interface): Designed to handle asynchronous code and non-blocking I/O. Common servers include Daphne and Hypercorn.
+
+What is IBM Cloud Code Engine?
+
+IBM Cloud Code Engine is a fully managed, serverless platform that abstracts away the underlying operational infrastructure, allowing developers to focus purely on writing code.
+
+Platform Model
+
+Combines key features across Platform as a Service (PaaS), Containers as a Service (CaaS), and Serverless deployment architectures.
+
+Completely handles underlying Kubernetes cluster provisioning, server management, auto-scaling, and environment security.
+
+Three Core Use Cases / Deployment Modes
+
+Deploying Containerized Applications
+
+Directly deploy pre-built container images for web apps, microservices, or API backends serving HTTPS traffic.
+
+Source-to-Cloud Building and Deployment
+
+Pushes raw source code directly from local workspaces or Git repositories (e.g., GitHub). Code Engine builds the container image and deploys it automatically without manual CI/CD setup.
+
+Running Batch Jobs
+
+Executes event-driven background tasks or heavy analytical processing workloads alongside microservices on the exact same infrastructure.
+
+Key Benefits of IBM Cloud Code Engine
+
+Fully Managed Infrastructure: Eliminates manual server provisioning, cluster configuration, and patching.
+
+Automatic Scaling: Scales workloads up during heavy traffic and down to zero instances when idle to minimize costs.
+
+Rapid Deployment: Converts source code into running applications in seconds for quick updates and deployments.
+
+Built-in Security: Integrates with IBM Cloud Identity and Access Management (IAM), enforces TLS encryption, and provides workload isolation.
+
+Ecosystem Integration: Connects directly with the broader IBM Cloud catalog of services and databases.
+
+Lecture Summary
+
+Self-hosting microservices requires managing complex WSGI/ASGI configurations, server provisioning, scaling, and monitoring.
+
+IBM Cloud Code Engine abstracts operational burdens by providing a serverless container platform (PaaS + CaaS + Serverless).
+
+Supports three primary workflows: Container Deployment, Source-to-Cloud Build & Deploy, and Batch Processing Jobs.

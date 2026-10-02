@@ -1,0 +1,118 @@
+Welcome & Learning Objectives
+Welcome to "Twelve-Factor App Methodology." By the end of this lecture, you will be able to:
+
+Describe the characteristics of modern software development.
+
+Describe the goal of twelve-factor apps.
+
+Identify the twelve factors and describe how they map to three phases of the software delivery lifecycle.
+
+Characteristics of Modern Software Development
+In modern software development, software is often delivered as a service. It is centrally hosted and accessed through the internet. This software is commonly called a web app or software-as-a-service (SaaS).
+
+You interact with web apps regularly—for instance, when using the internet to book reservations or file taxes.
+
+Overview of the Twelve-Factor Methodology
+The twelve-factor app methodology is suited for web applications and SaaS. While microservices are not a strict requirement for twelve-factor apps, they are often used in conjunction with this methodology.
+
+The twelve factors map directly across three phases of the software delivery lifecycle: Code, Deploy, and Operate.
+
+Phase 1: Code Factors
+
+Factor 1: Codebase
+
+Always track an application's codebase in a version control system like Git.
+
+Maintain a strict one-to-one relationship between a codebase and an app (an app is contained in a single codebase).
+
+A single codebase has multiple deploys (instances), such as development, testing, or production. Different app versions can exist across these environments as changes progress toward production.
+
+Factor 2: Dependencies
+
+An app is only as reliable as its least reliable dependency.
+
+Twelve-factor apps do not rely on the implicit existence of system packages, dependencies, or tools.
+
+Explicitly declare all dependencies so new developers can set up the codebase without assuming prior tools exist on their machines.
+
+Factor 5: Build, Release, Run
+
+Strictly separate these three stages to prevent code changes at runtime:
+
+Build: Compiles the code, gathers dependencies, and transforms the codebase into an executable unit (a build).
+
+Release: Combines the build with the deployment's current configuration to make it ready to run.
+
+Run: Implements and executes the application.
+
+Factor 10: Dev/Prod Parity
+
+Keep development and production environments as similar as possible to enable continuous delivery and catch failures early.
+
+Parity is essential for backend services (e.g., if you use a specific version of MySQL database in production, use that exact same version in development).
+
+Phase 2: Deploy Factors
+
+Factor 3: Config
+
+Configuration includes everything that varies between deployments (such as environment-specific database credentials and locations).
+
+Avoid storing configurations as constants in the code.
+
+Store configuration in environment variables, making it easy to change across deployments without modifying code.
+
+Factor 4: Backend Services
+
+Treat both local and third-party services identically as attached resources accessible via URL, location info, and credentials.
+
+This allows developers to swap backend services (like replacing a failing database) without touching application code.
+
+Factor 6: Processes
+
+Execute applications as one or more stateless, share-nothing processes.
+
+Store persistent data centrally in a backend service (like a database) rather than in memory or local filesystems, as these are not shared between processes or subsequent transactions.
+
+Factor 7: Port Binding
+
+Do not inject a web server into the application at runtime.
+
+Export HTTP (and other services) by declaring a web server library as a dependency in code, binding to a port, and listening for incoming requests.
+
+Because these exported apps are accessible via URL, they can easily serve as backend services for other apps.
+
+Phase 3: Operate Factors
+
+Factor 8: Concurrency
+
+Scale applications horizontally by running concurrent, stateless, share-nothing processes to manage increased workload.
+
+Adding new processes handles additional incoming requests without introducing interdependencies among processes.
+
+Factor 9: Disposability
+
+Application processes must feature quick startup times and end gracefully when terminated.
+
+Minimal startup times facilitate fast code or config deployments and enable rapid horizontal scaling.
+
+Factor 11: Logs
+
+Logs provide visibility into app performance, but the app should not manage its own log storage.
+
+Treat logs as an event stream written directly to standard output (stdout).
+
+The execution environment captures, aggregates, and routes these log streams to their final destination or analysis tool.
+
+Factor 12: Admin Processes
+
+Run one-off management tasks (such as database migrations) as admin processes against a release using the exact same codebase and config.
+
+Ship admin process code alongside application code to keep them synchronized.
+
+Lecture Summary
+
+Modern software is typically delivered as centrally hosted, web-based SaaS applications.
+
+The twelve-factor app methodology enables developers to build more efficient SaaS applications.
+
+The twelve factors map directly to the code, deploy, and operate phases of the software delivery lifecycle.

@@ -1,0 +1,68 @@
+Lecture Notes: JavaScript APIs
+Learning Objectives
+
+Explain how to work with nodes.
+
+Describe how to modify the content of an element.
+
+Explain how to modify the inline style and attributes of an object.
+
+Describe how to use the Window object methods and events.
+
+Retrieving Nodes
+When accessing HTML DOM elements in web pages, you can retrieve node references using the following functions:
+
+document.getElementById(id): Retrieves a node reference for a specific HTML or XML element by passing its unique id value as an argument. It returns one specific element if a match is found.
+
+document.getElementsByTagName(tagName): Retrieves a NodeList containing an array of all elements in the document that match the specified tag name (e.g., passing "p" returns all paragraphs, "img" returns all images).
+
+Example Usage: You can loop through a NodeList of image elements to access common properties like the src attribute (the location of the image source) and concatenate the results into a DOM output stream using the document.write() function to add script-generated HTML to the document.
+
+Creating and Placing Nodes
+document.createElement(TagName): Creates a new element in the current document.
+
+After creation, the element can be placed in the appropriate location within the document using functions such as:
+
+insertBefore
+
+appendChild
+
+replaceChild
+
+Example Workflow: Create a new paragraph element, create a text node with the string "Hello world!", append the text node as a child of the paragraph, and finally append the entire paragraph as a child node at the end of the body node.
+
+Modifying Element Content, Styles, and Attributes
+element.innerHTML: Retrieves or sets the contents of an HTML element.
+
+It returns all child elements as a text string.
+
+Setting this value to a text string (which can include HTML tags) removes all current child elements, parses the string, and sets the new contents.
+
+element.style: Retrieves or sets the inline CSS style for a particular element, overriding any settings from a CSS style sheet.
+
+Format: element.style.propertyName = value (e.g., changing a blue text div to red using div.style.color = 'red';).
+
+Attribute Functions:
+
+element.setAttribute(attrName, attrValue): Dynamically modifies an attribute (e.g., changing the src attribute of a target image). Note: Using element.setAttribute('style', …) wipes out all previously set inline CSS styles.
+
+element.removeAttribute(attrName): Removes a specified attribute from an element.
+
+element.getAttribute(attrName): Retrieves the value of the specified attribute, if it exists.
+
+Window Object Methods and Events
+window.open(): Opens a new browser window and returns a reference to the new window object. You can use this reference to close the window later using reference_name.close(). It accepts the following parameters:
+
+URL: A string indicating the location of the web page. You can pass an empty string to write script-generated content in the current URL context.
+
+Name: A string specifying the name of the window.
+
+Features: An optional string specifying window features (e.g., placement and dimensions) formatted as a comma-separated list of name-value pairs.
+
+Replace: An optional boolean value. If true, the new location replaces the current page in the browser history.
+
+window.onload: An event handler that runs in the current window after the document loads the web page. It can be used to start a function (like an anonymous function that triggers another function, such as addPara()) once loading is complete.
+
+window.dump("message"): Writes a string into the web browser's console. This provides a less intrusive way to display diagnostic information compared to the alert() method.
+
+window.scrollTo(x-value, y-value): Scrolls the web browser to a particular set of coordinates on a page.

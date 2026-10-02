@@ -1,0 +1,93 @@
+The Serverless Framework
+Learning Objectives
+After completing this lecture, you will be able to:
+
+Describe what the Serverless Framework is.
+
+Explain how to create a basic Serverless function.
+
+Explain how to test a Serverless function.
+
+1. Introduction to the Serverless Framework
+The Serverless Framework is a free, open-source web framework written in Node.js.
+
+It provides a command-line interface (CLI) that offers structure, automation, and best practices out-of-the-box. This structure enables developers to build event-driven, serverless architectures without manually configuring cloud infrastructure.
+
+Provider Support
+Originally designed to safely and quickly provision Amazon Web Services (AWS) Lambda functions, events, and infrastructure resources.
+
+Also supports other major cloud providers, including Microsoft Azure, Google Cloud Platform (GCP), and Apache OpenWhisk.
+
+2. Core Architecture Concepts
+The framework organizes applications using four core building blocks:
+
+Functions
+Code deployed in the cloud written to perform a single task.
+
+Functions act as independent units of execution and deployment (similar to microservices).
+
+Examples: Saving a user to a database, or running a scheduled background task.
+
+Events
+Triggers that execute functions.
+
+Events originate from cloud resources.
+
+Examples: An HTTP GET/POST request sent to an API Gateway URL, or a file upload event in an Amazon S3 bucket.
+
+Resources
+Infrastructure components utilized by functions.
+
+Managed services provided by cloud infrastructure.
+
+Examples: A cloud database service (e.g., DynamoDB) or an S3 storage bucket.
+
+Services
+The framework’s primary unit of organization (conceptually similar to a project file).
+
+An application can consist of a single service or multiple services.
+
+3. Service Configuration (serverless.yml)
+A service is defined and managed using a single configuration file named serverless.yml.
+
+Central Control: The serverless.yml file configures all functions, events, and resources within the service.
+
+Dedicated Sections: Contains explicit blocks for specifying details about functions, triggers (events), and infrastructure components (resources).
+
+Unified Deployment: Executing a deployment command via the Serverless Framework CLI packages and deploys everything declared inside serverless.yml simultaneously.
+
+4. Creating, Deploying, and Testing a Function (AWS Demo Workflow)
+Step 1: Installation & Setup
+Ensure AWS credentials are set up on your machine.
+
+Install the Serverless Framework CLI globally via Node Package Manager (npm):
+
+Bash
+npm install -g serverless
+Step 2: Service Creation
+Create a new AWS HTTP API project (using Python as the runtime):
+
+Bash
+serverless
+Running the serverless command launches an interactive wizard that generates the required project structure, including handler.py and serverless.yml.
+
+Step 3: Function Deployment
+Deploy the service and its resources to AWS:
+
+Bash
+serverless deploy
+Upon completion, the CLI provides a public HTTP endpoint URL.
+
+Step 4: Testing & Updating
+Initial Test: Open the returned API endpoint URL in a web browser to view the initial execution result.
+
+Code Update: Modify the function handler code (e.g., in Python) to return "Hello World" upon request.
+
+Re-deployment & Re-testing: Re-run serverless deploy and refresh the endpoint URL in your browser to verify the updated output.
+
+Lecture Summary
+The Serverless Framework is an open-source, Node.js-based CLI tool used to structure, automate, and deploy serverless architectures across AWS, Azure, GCP, and OpenWhisk.
+
+Functions are independent units of execution triggered by events (such as HTTP requests or S3 uploads).
+
+All service components—functions, events, and resources—are configured inside a central serverless.yml file and deployed together.

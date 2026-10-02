@@ -1,0 +1,63 @@
+Client-Side JavaScript with HTML
+Learning Objectives
+
+Define a client-side script.
+
+Give examples of when client-side scripts can be used.
+
+Explain how to use the <noscript> tag.
+
+Describe Event Binding in scripts.
+
+What is a Client-Side Script?
+Definition: A program that accompanies an HTML document or is embedded directly within the HTML document itself.
+
+Execution: It runs on the client device when the document loads, or at specific times (such as when a link is activated or a button is clicked).
+
+Language: While JavaScript is widely used as the scripting language in HTML, other scripting languages can also be used.
+
+Purpose: Scripts offer developers a means to modify and extend HTML documents to enhance the user experience, making web pages highly interactive.
+
+Use Cases for Client-Side Scripts
+Scripts can be utilized in several ways, including:
+
+Running after an HTML document has fully loaded.
+
+Validating forms or processing input as it is being typed.
+
+Triggering actions based on events that occur on a web page (e.g., clicking a button).
+
+Dynamically creating document elements on an HTML page.
+
+Including Scripts in HTML
+There are two primary ways to use the <script> tag to include scripts in an HTML document:
+
+Inline Scripting (Example 1):
+
+The script is included directly inside the HTML document.
+
+This method is best for short scripts.
+
+External Script File (Example 2):
+
+Uses the src attribute within the <script> tag to point to an external script file.
+
+This method is preferred for long scripts, importing JavaScript libraries for complex interactions, or using the same script across several different HTML documents.
+
+The <noscript> Tag
+Purpose: Provides an alternative path or content for users who have disabled JavaScript or are using a browser that does not support scripting.
+
+How it works: If the browser does not support or allow scripting, it will run the section of code placed within the <noscript> tag instead.
+
+Event Binding
+Definition: The process of calling a function when a specific event occurs during a browser session. Scripts can be bound to events so they run automatically upon detection.
+
+Event Handlers: A function that declares exactly what to do when a specific event occurs (e.g., an inline event handler named showAnswers that runs when a button is clicked).
+
+Common Events:
+
+onload: Runs a script when the browser finishes loading a page.
+
+onclick: Occurs when the pointing device is clicked over an element (such as a button) that has declared a handler for that event.
+
+onmouseover: Occurs when the user's cursor is moved onto an element.

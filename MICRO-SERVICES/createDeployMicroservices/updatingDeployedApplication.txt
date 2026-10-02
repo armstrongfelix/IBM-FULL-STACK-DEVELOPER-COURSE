@@ -1,0 +1,87 @@
+Lecture Notes: Updating Deployed Applications in IBM Cloud Code Engine
+
+Learning Objectives
+
+After completing this lecture, you will be able to:
+
+Explain common scenarios for updating deployed microservice applications.
+
+Understand how IBM Cloud Code Engine manages revisions without requiring downtime or deletion.
+
+Update application configurations, visibility, container images, and runtime resources using the IBM Cloud Console.
+
+Execute application update operations using the IBM Cloud CLI (ibmcloud ce app update).
+
+Revision Management & Update Scenarios
+
+IBM Cloud Code Engine automatically creates and manages a new revision whenever an existing application is updated. Developers do not need to delete and recreate applications to apply changes.
+
+Common Application Update Scenarios
+
+Environment Variables: Modifying database URIs, API endpoint addresses, or secret keys.
+
+Application Visibility: Altering network access boundaries (e.g., changing from a public endpoint to project-only cluster-local access).
+
+Container Image / Source Code: Updating image tags/references or changing the linked GitHub repository branch.
+
+Runtime Resources & Scaling: Adjusting CPU, memory, ephemeral storage, or autoscaling parameters (concurrency, minimum/maximum instances).
+
+Updating Applications via IBM Cloud Console (GUI)
+
+The Console UI provides visual tabs for rapid updates to running services:
+
+Environment Variables: Navigate to the Environment variables tab and click Add environment variable to insert or edit key-value pairs.
+
+Application Visibility: Navigate to the Domain mappings tab to adjust accessibility:
+
+No external system domain mapping (Cluster-local): Accessible only by other applications within the same Code Engine project.
+
+Private: Accessible exclusively via IBM Cloud Virtual Private Endpoints (VPE).
+
+Public: Fully accessible over the public internet (also provides a cluster-local URL).
+
+Image Reference: Navigate to the Code tab and enter a new container image URI or update registry secrets.
+
+Runtime Resources & Scaling: Navigate to the Runtime tab to adjust allocated CPU, memory, ephemeral storage, min/max instances, or concurrency limits.
+
+Updating Applications via IBM Cloud CLI
+
+The unified command for modifying deployed applications is ibmcloud ce app update (or ibmcloud ce application update).
+
+Updating Environment Variables
+
+Command Syntax: ibmcloud ce app update --name <APP_NAME> --env <KEY=VALUE>
+
+Verification: Use ibmcloud ce app get --name <APP_NAME> to inspect runtime configuration.
+
+Example:
+ibmcloud ce app update --name pet_db_service --env DB_HOST=localhost
+
+Updating Application Visibility
+
+Command Syntax: ibmcloud ce app update --name <APP_NAME> --visibility <public|private|cluster-local>
+
+Example:
+ibmcloud ce app update --name pet_db_service --visibility private
+
+Updating Container Image Reference
+
+Command Syntax: ibmcloud ce app update --name <APP_NAME> --image <IMAGE_URI> --registry-secret <SECRET_NAME>
+
+Example:
+ibmcloud ce app update --name pet_db_service --image us.icr.io/petshop/no_sql_pet_db_service:v2 --registry-secret myregistry
+
+Updating Runtime Compute Resources
+
+Command Syntax: ibmcloud ce app update --name <APP_NAME> --cpu <CPU_AMOUNT> --memory <MEMORY_AMOUNT>
+
+Example:
+ibmcloud ce app update --name pet_db_service --cpu 2 --memory 16G
+
+Lecture Summary
+
+Code Engine manages application lifecycle through zero-downtime revision management.
+
+Common updates include modifying environment variables, network visibility, container images, and compute allocations.
+
+Updates can be made graphically in the IBM Cloud Console or programmatically using the ibmcloud ce app update command line interface.

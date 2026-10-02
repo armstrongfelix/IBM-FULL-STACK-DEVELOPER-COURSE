@@ -1,0 +1,83 @@
+Lecture Notes: Deploying and Running Applications in IBM Cloud Code Engine
+
+Learning Objectives
+
+After completing this lecture, you will be able to:
+
+Explain the two primary modes of deploying a container image-based application.
+
+Describe how to deploy an application using the IBM Cloud Console.
+
+Describe how to deploy, manage, and test an application using the IBM Cloud CLI.
+
+Two Modes of Application Deployment
+
+IBM Cloud Code Engine supports two main approaches for deploying containerized applications. The core execution model is identical; the primary difference lies in who builds and pushes the container image.
+
+Mode 1: Deploying from a Pre-built Container Image
+
+Process: The developer manually builds the container image and pushes it to a public or private container registry (e.g., IBM Cloud Container Registry or Docker Hub).
+
+Execution: Code Engine pulls the image using a unique image name (and optional registry credentials) and deploys it automatically.
+
+Mode 2: Source-to-Cloud Deployment (Source Code Build)
+
+Process: The developer provides raw source code along with a Dockerfile or a Cloud Native Buildpack.
+
+Execution: Code Engine automatically builds the container image from the source repository, pushes it to a registry, and deploys the application.
+
+Deploying via IBM Cloud Console (GUI)
+
+The IBM Cloud Console offers an intuitive web portal for creating, configuring, and monitoring applications with minimal configuration effort.
+
+Main Deployment Steps
+
+Name Configuration: Specify a unique name for the application.
+
+Deployment Source Selection: Choose between deploying from a Container image or directly from Source code (defaults to Container image).
+
+Image Reference & Credentials: Provide the container image URI and configure registry access credentials if pulling from a private repository.
+
+Advanced Settings (Optional): Configure environment variables, runtime port mappings, resource limits (CPU/memory), and scaling parameters.
+
+Automatic Deployment & Testing: Code Engine deploys the application once created. Upon successful setup, the system generates a public endpoint URL accessible via the "Test application" action.
+
+Deploying via IBM Cloud CLI
+
+For precise control, scripting, and CI/CD automation, applications can be managed using the IBM Cloud Command Line Interface (CLI).
+
+Creating and Deploying an Application
+
+Command: ibmcloud ce app create
+
+Primary Arguments:
+
+--name: Name of the application.
+
+--image: Image reference path in the container registry.
+
+--registry-secret: Access secret name (required if using a private registry).
+
+Example Creation Command:
+ibmcloud ce app create --name helloworldapp --image us.icr.io/namespace/helloworld:v1 --registry-secret myregistry
+
+Retrieving Application Details and Endpoint URL
+
+Command: ibmcloud ce app get
+
+Primary Arguments:
+
+--name: Name of the application to query.
+
+--output: Output format (e.g., url to return the direct public HTTP/HTTPS endpoint).
+
+Example Retrieval Command:
+ibmcloud ce app get --name helloworldapp --output url
+
+Lecture Summary
+
+Applications can be deployed from existing container images or compiled directly from source code using buildpacks or Dockerfiles.
+
+The IBM Cloud Console provides a graphical interface for rapid application deployment and endpoint testing.
+
+The IBM Cloud CLI offers command-line tools (ibmcloud ce app create and ibmcloud ce app get) to automate application creation and extract operational URLs

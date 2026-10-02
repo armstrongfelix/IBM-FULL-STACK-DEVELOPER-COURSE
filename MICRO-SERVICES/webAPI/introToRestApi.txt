@@ -1,0 +1,68 @@
+Welcome & Learning Objectives
+Welcome to "What is REST?" By the end of this lecture, you will be able to:
+
+Describe RESTful APIs.
+
+Explain the key characteristics of a REST API.
+
+Explain the benefits of using REST APIs.
+
+What is REST?
+REST stands for Representational State Transfer. It is an architectural style that defines how applications should communicate with each other within a network.
+
+REST APIs provide a flexible, lightweight way to integrate applications and have emerged as the most common method for connecting components in microservices architectures.
+
+Three Core Characteristics of a RESTful API
+An API is classified as RESTful if it meets three specific characteristics:
+
+HTTP Request Management: It manages all requests through HTTP.
+
+Stateless Client-Server Communication: Each request contains all the necessary information to process it.
+
+Uniform Interface: It provides a consistent, standardized interface between components.
+
+HTTP Requests & CRUD Operations
+REST APIs communicate via standard HTTP requests to perform CRUD (Create, Read, Update, Delete) operations on resources:
+
+POST: Used to create a record.
+
+GET: Used to retrieve (read) a record.
+
+PUT: Used to update a record.
+
+DELETE: Used to delete a record.
+
+Statelessness & Scalability
+REST APIs are strictly stateless. Each request from a client to a server must contain all the information necessary to understand and process the request, without taking advantage of any stored context on the server.
+
+As Roy Fielding, the originator of REST, stated in his dissertation:
+
+"Each request from client to server must contain all of the information necessary to understand the request, and cannot take advantage of any stored context on the server. Session state is therefore kept entirely on the client."
+
+Because the server does not store session context between requests, this stateless nature makes REST APIs highly scalable.
+
+Benefits & The Uniform Interface
+The primary benefit of RESTful APIs is their uniform interface, regardless of where a request originates.
+
+Unique Identifiers: A REST API ensures that the same piece of data (such as a product ID) belongs to only one Uniform Resource Identifier (URI).
+
+Self-Contained Resources: Resources contain every piece of information that the client might need (for example, both the name and price of a product).
+
+Real-World Example: Cryptocurrency Exchange API
+CEX.IO, a cryptocurrency exchange, provides developers with bitcoin, crypto prices, and market data through a REST API.
+
+Documentation & Data Format: Requests and responses are fully documented for developers in simple JSON format.
+
+Code Support: Includes sample requests and code snippets across multiple languages, including JavaScript, Python, C#, and Java.
+
+Public Functionality: Allows users to query specific endpoints, such as requesting the last price of a currency pair through their public API.
+
+Lecture Summary
+
+REST is an architectural style defining how applications communicate across a network.
+
+REST APIs provide a flexible and uniform interface between application components.
+
+They are stateless and scalable, keeping session state entirely on the client.
+
+They communicate using standard HTTP methods (POST, GET, PUT, and DELETE) for CRUD operations.
