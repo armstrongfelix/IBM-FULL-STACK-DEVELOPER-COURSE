@@ -1,0 +1,67 @@
+Modules in Node.js: import vs require
+1. What is a Module?
+In Node.js, modules are files containing related, encapsulated JavaScript code that serve a specific purpose.
+
+They can be a single file or a collection of multiple files and folders.
+
+Benefits: Developers rely heavily on modules for their reusability and their ability to break down complex code into manageable chunks.
+
+Usage: When an external application needs to use the code contained in a module, it calls that module using either an import() or require() statement.
+
+2. Packages and Module Specifications
+Package: A directory with one or more modules bundled together.
+
+Module Specifications: The conventions and standards used to create packages in JavaScript code for Node.js applications.
+
+The two most commonly used module specifications for Node.js are CommonJS and ES modules.
+
+3. CommonJS vs. ES Modules
+By default, Node.js treats JavaScript code as a CommonJS module. However, library authors can easily enable ES modules by changing the file extension from .js to .mjs. When a module is needed outside of its own file, it must be exported first before it can be imported.
+
+CommonJS:
+
+Export Statement: Uses module.exports
+
+Import Statement: Uses the require() statement
+
+ES Modules:
+
+Export Statement: Uses the export keyword
+
+Import Statement: Uses the import() statement
+
+4. Key Differences: require vs import
+Calling these statements within your application code comes with distinct behavioral differences:
+
+Placement & Flexibility:
+
+require: Can be called anywhere in the file, including within conditional statements and functions.
+
+import: Must be called at the beginning of the file (cannot be used inside conditionals).
+
+Binding & Error Identification:
+
+require: Bound dynamically. Errors linking the function definition to the function call will not be identified until run-time.
+
+import: Bound statically. Binding errors are identified earlier at compile time.
+
+Processing (Synchronous vs Asynchronous):
+
+require: Synchronous in nature. Modules are loaded and processed in a linear fashion, one at a time.
+
+import: Asynchronous in nature. Modules can be processed simultaneously.
+
+Performance: Because it is asynchronous, import runs faster compared to require in large-scale applications that involve loading hundreds of modules.
+
+5. Code Examples from the Lecture
+CommonJS Example (require):
+
+Exporting (from message.js): Uses module.exports to export the string "Hello programmers".
+
+Importing (into main application): The result of the require statement is assigned to a variable (let msg), which is then logged to the console.
+
+ES Modules Example (import):
+
+Exporting (from module.mjs): A constant a is set to 1. The export statement is used with curly brackets to rename a to myValue.
+
+Importing: Uses the import keyword to bring myValue from the module.mjs file into the application.

@@ -1,0 +1,41 @@
+Introduction to Web Frameworks
+1. Node.js vs. Web Frameworks
+Node.js: A runtime environment that executes JavaScript on a server. It acts as the hardware and software foundation that runs a codebase, but it is not a framework itself.
+
+Node Web Frameworks: A framework serves as a foundational skeleton built for a specific environment to support application structure. To properly build web applications with Node.js, you must use a Node web framework in conjunction with it.
+
+2. Backend Architectural Styles
+Web frameworks typically employ two primary approaches when building backends, and they are not mutually exclusive (they can be used simultaneously):
+
+Model-View-Controller (MVC)
+An architectural pattern that divides an application into three interconnected components:
+
+Model: Responsible for managing application data, handling data logic, and interacting with the database.
+
+View: Responsible for rendering the visual presentation of the data supplied by the model.
+
+Controller: Regulates data flow by processing user input and sending that data to the model for storage or manipulation.
+
+Framework Examples: Koa, Django, Express, and NestJS lend themselves well to the MVC pattern.
+
+REST APIs (Representational State Transfer)
+A style that allows multiple web services to communicate through operations on resources, subject to specific constraints:
+
+Independence: The client-side code and server-side code must remain completely independent, allowing updates to one without affecting the other.
+
+Statelessness: Neither the client nor the server needs to know the state of the other in order to communicate.
+
+HTTP Communication: Clients request resources using standard methods (GET, POST, PATCH, DELETE), and the server returns a representation of the resource's state.
+
+Payloads: Data is typically transferred as a JSON payload, but can also be formatted as HTML, XLT, Python, PHP, or plain text.
+
+3. Prominent Web Frameworks
+Express.js: A highly popular, straightforward framework focused on routing and middleware. It has a small learning curve, easily implements MVC, and delivers high performance by handling multiple independent operations concurrently using asynchronous programming.
+
+Koa: Developed by the Express team, this framework is designed to be smaller, more expressive, and highly robust. It uses async functions to eliminate the need for callbacks and improves error handling. It is ideal for complex, demanding applications built by large, experienced teams.
+
+Socket.io: Essential for real-time, bidirectional data exchange. It uses WebSockets rather than standard HTTP, allowing the server to push data to the client without a direct request. It is highly appropriate for chat rooms, video conferencing, and multiplayer games.
+
+Hapi.js: A reliable, open-source framework distinguished by its heavy built-in security and extensive official plugins (minimizing reliance on third-party middleware). It is widely used for proxy/API servers and REST APIs.
+
+NestJS: An MVC-based framework built on top of Express, ideal for dynamic, scalable enterprise applications. It natively supports TypeScript and uniquely combines object-oriented and functional reactive programming, drastically improving developer productivity and application performance.

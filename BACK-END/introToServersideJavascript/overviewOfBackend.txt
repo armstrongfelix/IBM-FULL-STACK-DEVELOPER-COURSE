@@ -1,0 +1,54 @@
+What is Backend Development?
+1. Core Definitions & Client-Server Architecture
+Client-server applications (like cloud-based and web apps) are split into two main parts:
+
+Frontend: Runs on the client machine. This includes the web browser and the browser’s engine (which communicates with the backend).
+
+Backend: Runs on a server. It involves developing server-side logic, including code that pertains to databases, servers, and applications to ensure a website performs correctly.
+
+2. Backend Technologies
+Backend infrastructure relies on several interconnected components:
+
+Servers
+Servers consist of hardware, software, or both. They communicate with clients and with each other. Common types include:
+
+Database Servers: The machine and application that houses, retrieves, and delivers data. (The terms "database" and "database server" are often used interchangeably).
+
+Web Servers: Ensure client requests are responded to, typically using HTTP (Hypertext Transfer Protocol). The software part controls how users access hosted files.
+
+Application Servers: Sit between the database and web servers. They host and deliver business applications via HTTP, transform data into dynamic content, and run the business logic (data storage and transfer rules).
+
+APIs and Web Services
+APIs (Application Programming Interfaces): Allow two pieces of software to communicate.
+
+Web Services: A specific type of web API that sends and receives requests using HTTP among web servers and the client.
+
+Programming Languages
+Languages used to make servers function, such as:
+
+JavaScript, PHP, Python, Ruby, Java, and C# (C-sharp).
+
+Frameworks
+Provide structure for your code and often generate unalterable code to perform common tasks. Examples include:
+
+Django: Python framework
+
+Ruby on Rails: Ruby framework
+
+Express.js: A JavaScript framework running on top of Node.js that handles HTTP requests made to a web server.
+
+Runtime Environments
+A runtime acts like a mini operating system, providing the necessary hardware and software infrastructure for a codebase to execute.
+
+Node.js: A popular backend runtime environment that executes JavaScript.
+
+Why it's popular: It runs on Google Chrome’s open-source V8 engine—the exact same engine that powers most modern frontend browsers (like Chrome, Edge, and Opera). This makes JavaScript highly versatile for both frontend and backend development.
+
+3. Key Backend Responsibilities
+Beyond just writing code, backend developers are responsible for the overall health of the application:
+
+Scalability: The ability of the application to dynamically handle changes in "load" (concurrent users, transactions, and data transfers) as it grows or shrinks, without affecting performance. This is essential for enterprise software success.
+
+Security: Handling authentication and preventing malware attacks.
+
+Performance: Efficiently retrieving and transferring data between machines, delivering content to the frontend, and supplying the business logic.

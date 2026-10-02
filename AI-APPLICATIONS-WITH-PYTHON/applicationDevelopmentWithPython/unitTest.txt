@@ -1,0 +1,60 @@
+Lecture Notes: Unit Testing
+Learning Objectives
+By the end of this lecture, you should be able to define unit testing, explain the unit test process, build and execute unit tests, and review the output of a unit test.
+
+What is Unit Testing?
+Unit testing is a method used to validate whether individual units of code are operating exactly as designed.
+
+A unit is defined as a smaller, testable part of an application. For example, a single Python file named mymodule.py containing a square function and a doubler function represents testable units.
+
+To develop and run unit tests in Python, you will use the unittest library. This is a built-in Python module that provides a framework containing all the necessary testing functionality.
+
+The Unit Testing Process
+The end-to-end testing process takes a unit of code from local development all the way to the production codebase.
+
+During code development, each unit is tested in two distinct phases.
+
+In the first phase, you will test the unit on your local system. If the test fails, you must determine the reason for the failure, fix the issue, and test the unit again.
+
+Once the unit test passes locally, the second phase involves testing the unit in a server environment, such as a Continuous Integration Continuous Delivery (CI/CD) test server.
+
+If the unit fails the server test, you will receive failure details to help you find and fix the issue.
+
+Once the unit successfully passes the server test, it is finally integrated into the final codebase.
+
+Naming Conventions for Testing
+When creating test files, you should append or prepend the word "test" to the original file name. This clearly differentiates the unit file from the unit test file.
+
+It is also a good naming convention to prefix the word "Test" to your unit testing class name (for example, TestMyModule) to help distinguish between the unit class and the test class.
+
+Most importantly, you must prepend the word "test" to the individual test functions inside your class (such as test_square or test_doubler). The testing framework will only execute functions that start with the word "test".
+
+Steps to Build a Unit Test
+The first step is to import the unittest Python library into your test file.
+
+Next, you need to import the specific functions you want to test from your module. For example, you would write: from mymodule import square, doubler.
+
+Then, you build a unit testing class so you can call your tests from a single class object.
+
+This class must inherit the TestCase class of the unittest library. Inheriting this class allows you to leverage existing methods in the TestCase class.
+
+Inside this class, you create functions corresponding to each module function that needs to be tested.
+
+Finally, you create the test cases by adding one or more assertion methods to ensure the unit test condition is met.
+
+A commonly used assertion function is assertEqual. The assertEqual function compares two values or entities and determines if they are equal, verifying if functions are returning the correct values.
+
+One of the parameters the assertEqual function takes is the actual value, which is the function you want to test. The second parameter is the expected value, which is what the function is expected to return.
+
+For example, assertEqual(square(2), 4) evaluates the function and compares the output to see if they are equal.
+
+Reviewing Unit Test Output
+After running the test file, an output is generated that displays the test results along with additional details.
+
+If the test passes, the output might display the time it took to run, and an "OK" indicates that the functions were implemented correctly.
+
+If the test fails, for instance, if your square function incorrectly calculates a cube, the output will clearly display that the unit test failed.
+
+The failure output will state "FAIL", show the specific function where the unit test failed, and provide an assertion error explaining the mismatch (such as "8 is not equal to 4").
+
+This detailed output enables you to quickly identify and correct mistakes before the actual deployment of your solution.

@@ -1,0 +1,32 @@
+Working with JSON
+1. What is JSON?
+Definition: JSON stands for JavaScript Object Notation.
+
+Purpose: It is the standard format for exchanging data across Application Programming Interfaces (APIs), including data parsed from HTTP messages.
+
+Compatibility: JSON is the standard representation of native JavaScript objects, meaning Node.js can handle and process it incredibly easily.
+
+Structure: JSON objects are structured fundamentally as attribute-value pairs (often also called key-value pairs).
+
+2. JSON Structure Example
+The lecture provided a simple example of what a JSON object looks like using attribute-value pairs:
+
+Attribute: "Company" / Value: "IBM"
+
+Attribute: "Country" / Value: "USA"
+
+Attribute: "Headquarters" / Value: "Armonk, New York"
+
+3. Core JSON Methods in JavaScript
+There are two highly important, built-in methods used to manipulate JSON data in your applications:
+
+JSON.parse(): This method is used to take a raw JSON string (such as one received from an HTTP response) and parse it into a native, usable JavaScript object.
+
+JSON.stringify(): This method does the exact opposite. It takes a native JavaScript object and converts it into a standard JSON string (which is useful for sending data out in an HTTP request).
+
+4. Real-World API Example
+Once you know how to use parse and stringify, you can interact with real endpoints that return JSON data.
+
+The ISS Example: The video referenced hitting a real endpoint to find out the current number of astronauts aboard the International Space Station (ISS).
+
+By receiving the HTTP message and parsing the JSON string into a JavaScript object, the application was able to extract the specific data point showing that there were currently five astronauts in space.

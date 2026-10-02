@@ -1,0 +1,70 @@
+Overview of Cloud Native Applications
+
+
+A cloud native application is an application developed from the very beginning to work exclusively in a cloud environment, or it is an existing application that has been refactored and reconfigured using cloud native principles.
+
+
+Instead of being a single, massive block of code, a cloud native application consists of small, independent microservices working together as a whole. Because these microservices are independent, each one can be scaled and iterated upon individually through automation and orchestration processes.
+
+
+These microservices are typically packaged in containers. Containers are executable units of software that package the application code alongside its required libraries and dependencies, allowing the code to be run consistently from anywhere. This independence allows developers to make frequent, iterative improvements to the application without disrupting the end-user's experience.
+
+
+Contrast with Traditional Applications
+
+
+Cloud native applications are fundamentally different from traditional, or "monolithic," applications. Monolithic applications are built as one huge piece of software where the user interface, business-logic layer, and data-layer are tightly coupled together, making them difficult to update and scale efficiently.
+
+
+Real-World Example: A Travel Website
+
+
+Consider a travel website built as a cloud native application. Each distinct topic covered by the site—such as flights, hotels, cars, and specials—functions as its own separate microservice.
+
+
+Because they are independent, developers can roll out new features for the "hotels" microservice without touching the "flights" microservice. If there is a sudden surge in traffic for holiday discounts, the "specials" microservice can scale out independently to handle the load. While the customer experiences a single, unified travel site, the underlying architecture remains modular and highly adaptable.
+
+
+Core Development Principles
+
+
+Whether building a new cloud native application or modernizing an existing one, developers follow a consistent set of principles:
+
+
+Microservices Architecture: Breaking applications down into single-function microservices.
+
+Containers: Relying on containers to achieve maximum flexibility, scalability, and portability.
+
+Agile Methods: Adopting Agile methodologies to speed up the creation and improvement process through quick, iterative updates based on direct user feedback.
+
+
+The Cloud Native Stack
+
+
+Cloud native applications apply seamlessly to hybrid and multicloud situations. The architecture generally consists of several distinct layers:
+
+
+Cloud Infrastructure: The foundational layer, which can be private, public, or enterprise infrastructure.
+
+Scheduling and Orchestration Layer: The control plane, which utilizes tools like Kubernetes (K8s) to manage the deployment of containers.
+
+Application and Data Services Layer: Handles backing services and integrates application code with existing services on other clouds or on-premises.
+
+Application Runtimes: Traditionally known as middleware.
+
+Cloud Native Apps: The topmost layer (the "sweet spot") where the application code is designed, built, and delivered differently than heritage monolithic apps.
+
+
+Benefits, Instrumentation, and Use Cases
+
+
+The primary benefits of a cloud native approach are enabled innovation, business agility, and the commoditization of the solution stack. As technologies mature, core services move lower down in the stack, which frees up developers to focus purely on innovation at the application level.
+
+
+When considering use cases for building a cloud native app, the rule is simple: everything that lives in the cloud should utilize a cloud native design and approach.
+
+
+However, this requires strict instrumentation within the application code. Development squads must implement standardized logging and standardized events, matching them to a standard catalog so that multiple microservices can use them seamlessly. The architecture also requires distributed tracing to monitor the many moving parts of a microservices environment.
+
+
+Finally, the system must leverage core services like load balancing, service discovery, and routing. These are often commoditized in the lower layers through projects like Istio and Knative. Ultimately, cloud native applications are entirely focused on achieving enterprise-grade engineering at massive scale.

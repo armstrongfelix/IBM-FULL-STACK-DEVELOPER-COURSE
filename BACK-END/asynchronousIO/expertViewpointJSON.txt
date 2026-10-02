@@ -1,0 +1,34 @@
+Expert Viewpoints: Using JSON and JavaScript
+1. The Ubiquity of JavaScript and JSON
+Familiarity with both JavaScript and JSON is considered an absolute requirement for modern web developers.
+
+The Language of the Internet: JavaScript is widely regarded as the language of the internet and appears in a vast number of applications. Being able to write JavaScript from scratch or add code to an existing project is highly valuable, akin to speaking a very popular language.
+
+Built-in Compatibility: JSON (JavaScript Object Notation) is built natively into JavaScript. When you are working with objects in JavaScript, you are essentially working directly with JSON.
+
+Unavoidable for Backend Developers: While a backend developer who never touches the front end might be able to get away without writing JavaScript, they cannot escape JSON. It is a fundamental, friendly format that Node.js and JavaScript developers must understand and pick up as soon as possible.
+
+Cross-Language Adoption: JSON's utility extends far beyond JavaScript. It is used by many modern programming languages, including Python, as a highly effective way to structure data and pass it back and forth.
+
+2. JSON as the Standard for APIs
+JSON is the de facto standard for data serialization and the primary format of communication for RESTful web services.
+
+Consuming and Producing APIs: Developers must learn how to use JSON to successfully consume APIs written by other people. Furthermore, developers should ensure their own APIs return JSON so that external users can easily consume their data.
+
+Cloud REST APIs: Request and response objects in cloud-based REST APIs are almost always formatted in JSON. This is especially apparent when interacting with APIs at the command line level using tools like curl or shell scripts.
+
+3. Serialization and Deserialization
+JSON is one of the dominant formats used to encode objects into a string. The experts defined the mechanics of this data conversion:
+
+Serialization: The process of converting a native JSON object into a byte string.
+
+Deserialization: The process of converting the byte string back into a usable JSON object.
+
+4. Expanding Use Cases: Configuration and Databases
+Beyond passing data back and forth over the web, JSON is heavily used anywhere a developer needs to specify instructions in a way a computer can easily understand.
+
+Project Requirements: JSON is commonly used to specify the configuration requirements for Node.js projects (such as inside a package.json file).
+
+Cloud Deployments: Developers frequently use JSON to specify deployment instructions for Platform as a Service (PaaS) offerings or Kubernetes workloads.
+
+Database Management: Knowing JavaScript and JSON provides a massive advantage when working with modern, JSON-oriented document databases.

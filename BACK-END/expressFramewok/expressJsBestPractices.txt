@@ -1,0 +1,69 @@
+Lecture Notes: Express Best Practices
+1. Directory Structure Conventions
+Unlike frameworks such as Ruby on Rails or Django, Express does not enforce a strict directory structure. However, defining one early is critical for maintaining the application as it grows.
+
+Standard Folders
+node_modules: Contains the application’s modules and packages. Automatically generated when running npm install.
+
+config: Houses configuration files, including database connections, environment variables, and external API credentials.
+
+models: Contains data models (relational or non-relational) defined by an Object-Relational Mapping (ORM) library.
+
+routes: Stores routing logic. Group similar functioning routes into their own files (e.g., one file per resource type).
+
+views: Contains template files used to dynamically render HTML, CSS, and JavaScript to the client.
+
+public: Stores static assets like images, raw CSS, and client-side JavaScript. It is recommended to use sub-folders for each asset type.
+
+Note: When building an API-only application, you omit the views and public folders entirely.
+
+Essential Root Files
+app.js: The main configuration file and entry point for the application.
+
+routes.js: A central hub that imports all individual route files from the routes folder and exports them as a single module to be used by app.js.
+
+package.json: Contains the project's metadata and manages its dependencies.
+
+2. API Routing and Design Best Practices
+Resource Identifiers: Always use a noun to name API routes (e.g., using the word employee for POST, GET, PATCH, and DELETE operations).
+
+API Documentation: Because APIs are built to be consumed by others, comprehensive documentation is essential. Recommended open-source tools include Swagger (swagger.io) and API Blueprint (apiblueprint.org).
+
+Authentication: REST APIs must be stateless. Therefore, use JWT-based stateless authentication, which verifies users by handling session information (like user properties) on the client side.
+
+3. Standardized HTTP Status Codes
+Always return the appropriate status code to accurately communicate the API's response:
+
+200s: Everything is OK / Success.
+
+300s: The requested resource has been moved.
+
+400s: Client-side error (e.g., bad request, unauthorized).
+
+500s: Server-side error (something went wrong within the API).
+
+4. Testing Methodologies
+Black-Box Testing: Test the REST API as a whole system without looking at its internal code structure and without using mocked or stubbed dependencies.
+
+Tooling: Use Mocha (a JavaScript testing framework for Node.js) combined with the SuperTest module, which is specifically designed for testing HTTP requests.
+
+5. NPM and Naming Conventions
+Follow these widely accepted community standards when writing Express/Node.js code:
+
+NPM (Node Package Manager) Rules:
+
+Always initialize a new project using npm init.
+
+Always install dependencies using npm install with the --save or --save-dev flags to ensure dependencies travel with the application across different platforms.
+
+Never push the node_modules folder to a code repository.
+
+Capitalization Rules:
+
+File names: all lowercase.
+
+Variables: camelCase.
+
+NPM modules: lowercase, separated by dashes (e.g., body-parser).
+
+Module imports: When using require to import an NPM module into a variable, name that variable using camelCase

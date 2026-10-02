@@ -1,0 +1,38 @@
+Overview of File Storage
+File storage allows users to provision large amounts of storage capacity that is presented as a disk to a server. Like direct-attached storage, it must be attached to a compute node before it can be accessed or used to store data. However, file storage generally offers lower costs, higher resilience to hardware failure, and significantly less management and maintenance overhead for the end user.
+
+Infrastructure and Management
+
+Remote Appliances: Unlike local storage, file storage is mounted from remote, specialized physical hardware appliances rather than the host server itself.
+
+Fully Managed: The cloud service provider completely manages these storage appliances.
+
+Built-in Security: Because data lives on these specialized appliances, providers can seamlessly offer advanced security features, such as data encryption in transit, alongside high reliability.
+
+Network Connection and Speed
+
+Ethernet Delivery: File storage connects to compute nodes over a dedicated ethernet network within the data center. Because of this architecture, it is frequently referred to as Network Attached Storage (NAS), Network File Storage, or simply NFS.
+
+Variable Bandwidth: Ethernet network speeds can fluctuate depending on the overall traffic load. While cloud providers engineer their networks for massive capacity, they cannot guarantee perfectly consistent speeds at all times.
+
+Ideal Workloads: Due to the potential for variable network speeds, file storage is best suited for applications where consistently high-speed data transfer is not a strict requirement. It can be used for demanding applications like databases if minimizing cost is a higher priority than peak performance.
+
+Shared Storage Capabilities
+
+Multi-Node Mounting: A major advantage of file storage is that a single volume can be mounted to multiple compute nodes simultaneously, functioning like a standard local drive on every connected node.
+
+Common Use Cases: This simultaneous access makes file storage ideal for shared repositories, such as departmental file shares, "landing zones" for files that require processing by multiple applications, or centralized directories accessed by web services.
+
+Understanding IOPS (Input/Output Operations Per Second)
+
+What it Measures: When provisioning file storage, you must configure its IOPS capacity. IOPS strictly measures the speed at which the underlying physical disks can read and write data—it does not refer to the speed of the ethernet network.
+
+Cost vs. Performance: Higher IOPS values deliver faster underlying disk speeds but incur higher costs.
+
+Finding the Right Balance:
+
+If IOPS is set too low, the disk becomes a bottleneck and application performance will suffer.
+
+If IOPS is set too high, you will pay for capacity your application does not actually use.
+
+Varying Requirements: Every application has unique IOPS needs. For example, a departmental file share mounted on 30 different nodes that processes a total of 60 requests per minute only requires an average of 1 IOPS. Accurately assessing these requirements ensures optimal performance and cost efficiency.

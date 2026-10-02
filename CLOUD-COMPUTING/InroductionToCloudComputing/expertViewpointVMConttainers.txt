@@ -1,0 +1,171 @@
+Components of Cloud Computing — Computing Resources
+1. Introduction
+
+Cloud computing provides different computing resources, and there are factors to consider when deciding which resource to use.
+
+The computing resources discussed in the video are:
+
+Virtual Servers
+Containers
+Serverless Functions
+Bare Metal Servers
+2. Virtual Servers / Virtual Machines (VMs)
+
+Virtual servers involve running a different operating system inside another operating system.
+
+Example: Running Windows on top of Linux.
+
+Characteristics of Virtual Machines
+They contain their own complete operating system.
+They look and act very much like physical servers.
+Because they contain the whole operating system, they are typically large, measured in gigabytes.
+They are far less portable because of their dependence on:
+The operating system
+Application versions
+Library versions
+When a Virtual Server May Be Used
+
+A virtual server may be selected when there are security concerns with having containers running on the same VM as another customer's containers.
+
+In such a situation, an organization may decide to provision its own virtual server.
+
+3. Containers
+
+Containers are often considered because of their scalability and cost efficiency.
+
+However, they are not always the best option for every situation.
+
+Characteristics of Containers
+They are based on a Linux-based shared image.
+The shared image can be used across:
+Development (Dev)
+QA
+Production
+They can be started very quickly.
+They can be started in milliseconds, compared with seconds for virtual machines.
+They are lightweight and typically measured in megabytes.
+Container Technologies
+
+The technologies mentioned in the video are:
+
+Docker
+Kubernetes
+OpenShift
+
+Kubernetes and OpenShift are mentioned in relation to container orchestration.
+
+4. Containers and Microservices
+
+Containers are useful when workloads can be broken into the smallest serviceable units.
+
+One example mentioned in the video is microservices.
+
+Containers are described as perhaps a foundational technology for what is referred to as cloud native architecture.
+
+5. Containers and Cloud Agnosticism
+
+Containers can be a good choice when an organization wants to be cloud agnostic.
+
+The video explains this in relation to a hybrid cloud setup, where an organization can be on different cloud providers at the same time.
+
+One reason containers can support this is that Docker runs the same anywhere.
+
+The video also notes that containers have come a long way, particularly in the enterprise space with Kubernetes, OpenShift, and other technologies.
+
+6. Limitations of Containers
+
+Containers can run almost any workload, but there are some exceptions.
+
+A container may not be suitable when:
+
+A special video card is needed in a bare metal machine.
+Access to kernel-level settings is required.
+
+In such situations, another computing resource may be more appropriate.
+
+7. Serverless Functions
+
+Serverless functions are suitable when something:
+
+Does not cost as much.
+Only runs when needed.
+
+On some cloud providers, users may be charged for serverless functions based on very small periods of usage, as little as by the millisecond.
+
+Advantage of Serverless Functions
+
+Serverless functions also help avoid spending time on work such as patching the operating system.
+
+The video suggests that, for the most part, users are likely to use containers or serverless unless there is a specific need not to.
+
+8. Bare Metal Servers
+
+Bare metal servers are basically single-tenant dedicated hardware servers.
+
+The video describes this as a legacy hardware approach.
+
+Advantages of Bare Metal Servers
+
+Bare metal servers can be optimized according to specific needs for:
+
+Performance
+Security
+Reliability
+Disadvantages of Bare Metal Servers
+
+The disadvantages mentioned are:
+
+Limited demand scalability because the hardware has fixed capacity.
+Flat monthly pricing.
+9. Use Cases for Bare Metal Servers
+
+Bare metal servers make sense in situations requiring very high performance.
+
+Examples mentioned include:
+
+Gaming
+Real-time analytics
+
+Bare metal can also be appropriate when regulatory or compliance requirements dictate a dedicated computing environment.
+
+Another use case is applications that require steady and continuous compute resources.
+
+10. Supersonic Jet Example
+
+The video gives an example involving the design of a supersonic jet.
+
+If the design needs to be modelled to determine how it would act in a wind tunnel, and the modelling needs to be performed 500 times, there would be a large amount of data to process.
+
+In this situation, the goal would be to use:
+
+The most powerful machines in a cluster.
+Machines that are as close together as possible.
+
+According to the video, this is a situation where bare metal machines would be appropriate.
+
+11. Key Points to Remember
+Virtual Machines
+Contain a complete operating system.
+Typically large, measured in gigabytes.
+Less portable because of operating system, application, and library dependencies.
+May be selected where security requires a separate virtual server.
+Containers
+Scalable and cost-efficient.
+Lightweight and typically measured in megabytes.
+Can start in milliseconds.
+Shared images can be used across Dev, QA, and Production.
+Docker, Kubernetes, and OpenShift are key technologies mentioned.
+Useful for microservices and cloud native architecture.
+Can be useful for hybrid cloud setups.
+May not be suitable when special video cards or kernel-level settings are required.
+Serverless Functions
+Suitable for things that only run when needed.
+Can cost less.
+Some cloud providers charge based on usage as little as by the millisecond.
+Help avoid work such as patching the operating system.
+Bare Metal Servers
+Single-tenant dedicated hardware.
+Can be optimized for performance, security, and reliability.
+Have fixed hardware capacity.
+Have flat monthly pricing.
+Suitable for very high-performance workloads, gaming, real-time analytics, compliance requirements, and steady continuous computing.

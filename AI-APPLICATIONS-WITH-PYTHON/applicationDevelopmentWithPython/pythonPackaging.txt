@@ -1,0 +1,56 @@
+Python Packaging
+Learning Objectives
+By the end of this lecture, you should be able to differentiate between a Python module, package, and library; create a Python package; verify a Python package; and use a Python package.
+
+Key Terminology: Modules, Packages, and Libraries
+Python Module
+A Python module is simply a .py file that contains Python definitions, statements, functions, and classes.
+
+You can easily import a module into other scripts and notebooks if it is in the same directory.
+
+For example, a file named module.py might contain two functions: one that squares an input, and another that doubles an input. You can import this file and use those specific functions in your code.
+
+Python Package
+A package is a collection of Python modules organized into a directory that contains an __init__.py file.
+
+The presence of the __init__.py file is what distinguishes a true Python package from just a standard folder full of Python scripts.
+
+Interestingly, when you import a module or a package, the object created by Python is always technically of type "module." The distinction between a module and a package really only exists at the file system level.
+
+Python Library
+A library is a broader collection of packages, though it can also just be a single package.
+
+Examples of popular libraries include NumPy, PyTorch, and Pandas.
+
+In practice, the terms "package" and "library" are often used interchangeably in the coding community.
+
+How to Create a Python Package
+To group your modules (for example, module1.py and module2.py) into a package, follow these specific steps:
+
+First, create a folder and give it your desired package name (for example, myproject).
+
+Second, create an empty file named __init__.py inside that new folder.
+
+Third, create or move your required module files into this folder.
+
+Finally, open the __init__.py file and add the code needed to reference your modules (for example: from . import module1 and from . import module2).
+
+How to Verify a Python Package
+After creating your package, you must verify that it loads correctly using your bash terminal.
+
+First, open a bash terminal and ensure your current directory is the same as the folder where your package is located.
+
+Next, open the Python interpreter by typing the command python into the shell.
+
+At the Python prompt, type import followed by your project name (for example, import myproject). If the command runs without any errors, the package has successfully loaded.
+
+To test a specific function within your loaded package, use the general structure: packagename.modulename.functionname(parameters).
+
+How to Use a Python Package
+Once created and verified, you can use your new package in other scripts, provided the script is in the same parent directory as the package folder.
+
+For example, if you have a test.py file, you can import specific functions directly from your package's modules.
+
+You would write code such as from myproject.module1 import square, doubler or from myproject.module2 import mean.
+
+Once imported, you can run these functions normally within your script (for example, running square(4)) and print the results to check if they are working properly.

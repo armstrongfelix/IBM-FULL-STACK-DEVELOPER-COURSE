@@ -1,0 +1,42 @@
+Lecture Notes: Dynamic Routes
+Learning Objectives
+By the end of this lecture, you should be able to call external APIs within a Flask application, pass parameters to routes using dynamic routing, and utilize different Flask parameter types for request validation.
+
+Calling External APIs in Flask
+When building web applications, you often need to fetch data from outside sources.
+
+The easiest way to call an external API in Flask is by using the Python requests library.
+
+You can retrieve data from an external service, process or filter the results, and then send the final JSON response back to your client.
+
+For example, when querying the OpenLibrary API for a specific author:
+
+If the response status code is 200, you return the successful JSON data to the client.
+
+If the response status code is 404, you can return a custom message like "Something went wrong".
+
+For any other unexpected response, you can return a status of 500 along with a "Server error" message.
+
+Dynamic Routing in Flask
+When developing RESTful APIs, you often want clients to pass a resource ID (such as an International Standard Book Number, or ISBN) as part of the URL instead of hardcoding values.
+
+Flask provides dynamic routing for this exact purpose.
+
+You define a dynamic part of the URL by enclosing the variable name in angle brackets (for example, /book/<isbn>). Flask will automatically capture whatever value the user inputs in that part of the URL and pass it directly to your Python method as an argument.
+
+Flask Parameter Types and Converters
+Flask allows you to specify parameter types directly in your route definitions. The framework uses these types to validate incoming requests automatically.
+
+Available parameter types include:
+
+string: Accepts any text without slashes (this is the default type).
+
+int: Accepts positive integers.
+
+float: Accepts floating-point numbers.
+
+path: Similar to a string, but accepts slashes, making it useful for web paths or folder structures.
+
+uuid: Accepts universally unique identifiers (UUIDs) for unique resource IDs.
+
+For instance, you can create an endpoint that expects a parameter of type uuid (e.g., /network/<uuid:network_id>). If the UUID matches an entry, you return a success message; otherwise, you return an appropriate error code.

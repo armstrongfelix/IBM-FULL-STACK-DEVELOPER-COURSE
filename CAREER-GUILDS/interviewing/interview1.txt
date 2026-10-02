@@ -1,0 +1,62 @@
+Mock Interview of a Software Engineer: Part 1
+1. Candidate Introduction and Background
+Candidate: Michelle, a student who just finished her second year at York University, applying for a Software Engineer position.
+
+Origin of Interest: Her interest in technology began in the 10th grade when she wanted to create her own video game. This led her to take high school computer science classes.
+
+Experience: She became highly involved in the technical community by participating in hackathons and building personal projects to explore different aspects of technology.
+
+Notable Project: She developed a Google Chrome extension that changes the language of every webpage, designed as a tool to help users learn new languages.
+
+2. Programming Languages: Java vs. Python
+When asked to name her two favorite programming languages, the candidate chose Java and Python, citing the following reasons and technical differences:
+
+Java:
+
+Why she prefers it: It was her first programming language; it is easy to learn and use, which makes debugging and maintaining programs much easier.
+
+Structure: It is strictly object-oriented, making it easier to create modular programs.
+
+Execution: It is a compiled language (run in the Java Virtual Machine), making it faster than Python.
+
+Concurrency: Because it is faster, Java is much better suited for multi-threading and running concurrent programs.
+
+Typing: It is statically typed, meaning you must explicitly specify the variable type.
+
+Syntax: Uses brackets to structure code blocks.
+
+Python:
+
+Why she prefers it: It is highly popular and has a vast array of libraries. This allows developers to tackle a wide variety of tasks (e.g., web scraping, data science, machine learning) without the hassle of learning a new language for each domain.
+
+Structure: It can utilize object-oriented design, but it is not strictly required.
+
+Execution: It is an interpreted language, which makes it slower and less ideal for concurrent programs.
+
+Typing: It is dynamically typed, meaning variable types are determined at runtime.
+
+Syntax (Space Indentation): Relies on spacing and indentation instead of brackets.
+
+Disadvantage: Incorrect spacing will throw an error, which can make some errors slightly harder to catch.
+
+Advantage: Removing brackets makes the code much cleaner and easier to read.
+
+3. The Web Request Process (Loading a Webpage)
+The interviewer asked the candidate to explain what happens between typing "ibm.com" into a browser and the homepage appearing. She outlined the following sequence:
+
+DNS Lookup: The domain name (ibm.com) must be mapped to the specific IP address of the server hosting the site.
+
+Checking Caches: The system first searches local caches (such as the browser cache and the OS cache) for the IP address.
+
+Recursive Search: If the IP address is not found in the initial caches, the system performs a recursive search through various DNS servers to locate the correct mapping.
+
+Establishing a Connection: Once the IP address is found, the browser uses a specific protocol (HTTP or HTTPS, depending on the domain ID) to establish a connection between the user's device and the server.
+
+Sending a GET Request: After the connection is established, the browser sends a GET request to retrieve the webpage, which then loads onto the computer.
+
+4. HTTP vs. HTTPS
+Meaning: The "S" in HTTPS stands for "secure."
+
+Function: It encrypts the data being sent between the user and the server.
+
+Purpose: Encryption prevents "middleman" attacks. For example, it ensures that sensitive data, such as credit card information entered while shopping online, cannot be intercepted or taken by an unauthorized third party.

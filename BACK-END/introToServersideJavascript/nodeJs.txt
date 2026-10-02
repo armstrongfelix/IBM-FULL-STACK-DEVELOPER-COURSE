@@ -1,0 +1,59 @@
+Node.js Core Concepts & Architecture
+1. The Full-Stack Application
+A full-stack application is divided into two primary environments:
+
+The Client Side: The user-facing components, such as websites and mobile applications.
+
+The Server Side: Processes client requests and sends back responses. In modern architecture, the web server, application server, and database are typically hosted in the cloud.
+
+2. Node.js: Open Source & Cross-Platform
+JavaScript was initially chosen for client-side HTML validation due to its versatility and cross-platform compatibility. It was later adapted for the server, creating Node.js.
+
+Runtime Environment: Node.js functions as a runtime and requires no special licenses.
+
+Ecosystem: Its open-source nature has led to a massive ecosystem of packages and libraries.
+
+Cross-Platform: Node.js code runs seamlessly across Linux, Windows, and macOS.
+
+3. The V8 Engine
+All code must be converted into a machine-readable form to execute.
+
+Node.js uses the Google V8 engine to execute JavaScript on the server side.
+
+V8 is a high-performance, open-source engine originally developed for Google Chrome and is also used by modern browsers like Microsoft Edge.
+
+4. Node.js Execution Model
+Server processes are generally either single-threaded (processing one command at a time) or multi-threaded (processing multiple simultaneously). Node.js is uniquely designed:
+
+Single-Threaded but Efficient: Node.js operates on a single thread but remains highly efficient.
+
+Asynchronous & Non-Blocking: The program does not wait for a process to finish before moving on.
+
+Event-Driven: When Node.js performs an I/O operation (like reading from a network, database, or file system), it doesn't block the thread. Instead, an event is triggered, and operations resume only when the response is received.
+
+Result: This allows the server to remain responsive and handle multiple tasks concurrently, mimicking the benefits of a multi-threaded environment.
+
+5. JSON Payloads
+Data transmitted between the client and server is called the payload, which is formatted as JSON (JavaScript Object Notation) using key-value pairs.
+
+Client Request Payload:
+When the client sends data, it sends a JSON object. The server can then extract this data (e.g., using request.name).
+
+JSON
+{ 
+  "name": "John", 
+  "age": "24", 
+  "email": "johnparker@gmail.com"
+}
+Server Response Payload:
+The server also sends its response back to the client as JSON.
+
+JSON
+{ 
+  "status": "ok", 
+  "message": "Successfully added"
+}
+6. The Express Framework
+While Node.js has built-in packages to create a server, the Express framework simplifies the process of creating APIs and endpoints.
+
+API Endpoint: A specific point of entry for a request sent from the client to the server.

@@ -1,0 +1,59 @@
+Business Transformation Through Cloud Adoption: Key Case Studies
+
+While these specific examples feature organizations utilizing IBM Cloud, they represent broader industry trends where companies leverage cloud infrastructure to achieve massive scale, innovation, and growth.
+
+American Airlines: Delivering Better Customer Service
+
+In the highly competitive airline industry, customer experience serves as a massive differentiator, making digital channels incredibly important. American Airlines needed a new approach to development and a modern technology platform to quickly deliver digital self-service tools and enhanced value to its customers.
+
+To achieve this, the airline recognized the need to abandon its legacy, monolithic code structure. They transitioned their customer-facing applications to a cloud-native, microservices-based architecture on the cloud.
+
+The Results:
+
+Faster development and seamless release of new applications.
+
+Significantly improved operational reliability, team productivity, and end-customer response times.
+
+Substantial cost savings achieved by avoiding the expensive upgrades required by their previous legacy systems.
+
+UBank: Removing Barriers to Innovation
+
+UBank operates as a lean organization with a self-imposed limit on headcount, meaning they are continually challenged to find highly efficient, innovative ways to meet market demands. The IT team needed a solution that gave developers more control, eliminated the need for additional human resources, and removed the traditional barriers of moving an idea into production.
+
+They explored a Platform as a Service (PaaS) cloud development model. Using an IBM Cloud Platform environment, UBank launched new initiatives, including an intelligent virtual assistant powered by IBM Watson to support the bank’s online home loan applications.
+
+The Results:
+
+Faster time to market due to a streamlined cloud framework that heavily empowers product teams.
+
+Enhanced innovation through cloud-based development resources that are quick, easy, and cost-effective to deploy.
+
+More efficient overall operations that require fewer manual resources.
+
+Bitly: Meeting the Demand for Enterprise Scale
+
+Since starting in 2008, Bitly evolved from a simple startup offering intelligent link-shortening for social media into a robust enterprise product. To support this massive transition, Bitly required an agile, cost-effective IT infrastructure.
+
+Their primary needs included a pay-as-you-go pricing model, the ability to scale resources up and down dynamically, and a massive global presence with geo-distributed Points of Presence (POPs)—all while maintaining low risk. They migrated to a highly scalable IBM Cloud hosting platform to deliver low-latency services to enterprise customers worldwide.
+
+The Results:
+
+Successfully migrated 25 billion data-infused links to a cloud infrastructure with worldwide data center locations.
+
+Effectively stored and managed a massive 1-billion user interaction dataset within a flexible, cost-effective Cloud Object Storage environment.
+
+Transformed their IT operations to automatically scale for growth, control costs, and free up valuable resources to focus on new product development.
+
+ActivTrades: Accelerating Business Growth
+
+In the financial trading sector, profitability depends on split-second decisions. Online brokers require extreme speed, absolute reliability, and zero downtime. As ActivTrades—a leading broker in forex, equities, cryptocurrencies, and commodities—grew its client base, it desperately needed to cut latency, accelerate trade execution, and deploy new functions faster.
+
+To achieve this, ActivTrades migrated three of its major, on-premises trading systems to IBM Cloud for VMware solutions. This migration was fully backed by enterprise-grade data storage, networking, and security offerings.
+
+The Results:
+
+Up to a 3X performance boost, enabling clients to seize fleeting, split-second market opportunities.
+
+A highly secure cloud platform with ultra-high availability that actively protects client investments.
+
+The ability to fire up new compute resources in a matter of hours instead of days, allowing the business to respond immediately to emerging requirements.

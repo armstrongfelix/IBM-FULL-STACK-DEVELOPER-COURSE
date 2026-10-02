@@ -1,0 +1,67 @@
+Cloud Storage Expert Viewpoints
+
+
+Key Criteria for Selecting Cloud Storage
+
+
+When choosing cloud storage, professionals evaluate several core factors to determine the best solution for their workloads:
+
+
+Cost: Determining expenses can be complex because cost depends not only on the total capacity provisioned or used, but also on how often data is accessed. Generally, more frequent access and lower latency requirements lead to higher storage costs.
+
+
+Performance and Speed: Measured by latency and the speed of data input and output (I/O). Highly active workloads require low latency and high transfer speeds.
+
+
+Availability and Lifespan: Factoring in how long the storage will remain available to the application and team.
+
+
+Security and Encryption: Ensuring data is properly encrypted both at rest and in flight, while verifying provider encryption features.
+
+
+Business & Lifecycle Requirements: Managing data lifecycles through automated policies to retain, move, archive, or delete old data. This includes considering whether data must be immutable (protected against modification or deletion) or moved across access frequencies—from active, low-latency tiers to infrequent, cold, or long-term archive tiers.
+
+
+Operational Ease of Use: Evaluating how straightforward the storage system is to integrate and maintain.
+
+
+Storage Types: Expert Comparisons & Use Cases
+
+
+File Storage (e.g., NFS):
+
+Architecture & Interface: Presents a familiar interface identical to a local computer file system, attached closely to compute resources.
+
+Key Advantage: Supports concurrent access, allowing multiple clients, servers, and applications to mount the same storage simultaneously.
+
+Data Updates: Allows users to make direct insertions and updates within the data without rewriting the entire file.
+
+Performance: Slightly slower than block storage, but provides lower latency than object storage.
+
+
+Block Storage:
+
+Architecture & Network: Operates over fiber networks, with some providers offering Storage Area Networks (SAN) to aggregate block storage across virtual machines.
+
+Performance: Delivers very low latency and fast I/O. Users can select block storage-optimized virtual machines for extreme low-latency requirements.
+
+Concurrency: Does not support concurrent access across multiple nodes.
+
+Best Use Cases: Performance-intensive applications such as transactional or relational databases.
+
+
+Object Storage:
+
+Architecture & Capacity: Provides effectively unlimited storage capacity organized into buckets and accessed over the Internet via APIs.
+
+Cost vs. Latency: Highly cost-effective, but has higher latency and slower speeds.
+
+Update Behavior: Updating even a single character in a file requires replacing the entire object, which adds both waiting time and update costs.
+
+Best Use Cases: Large datasets, video files, end-user data, application configurations, database backups, and unstructured data that is modified infrequently.
+
+
+Complementary Delivery: Content Delivery Networks (CDNs)
+
+
+A Content Delivery Network (CDN) is used alongside storage to replicate and store media assets as close to the end user as possible geographically. This ensures that website images and media load instantly for users across different regions.

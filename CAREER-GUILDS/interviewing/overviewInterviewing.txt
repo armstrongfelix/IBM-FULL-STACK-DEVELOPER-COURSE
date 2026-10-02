@@ -1,0 +1,45 @@
+Lecture Notes: Overview of the Interview Process
+1. Factors That Affect the Interview Process
+Every job interview is unique. Even within the same company, the interview process can vary significantly based on several factors:
+
+Company Size and Culture: An interview at a large company will often look very different from one at a small startup.
+
+Team Size: The size of the specific working team or department you are joining.
+
+Hiring Volume: The number of positions the company needs to fill.
+
+Position Type and Level: The process for an entry-level position will differ greatly from a lead or higher-level management position.
+
+2. Stage One: The Initial Technical Screen
+After you apply and are accepted as a candidate for a technical position, the first step is usually a skills assessment.
+
+Code Challenges/Technical Tests: Companies use these tests to verify that a candidate actually possesses the necessary technical abilities to perform the job.
+
+Requirement: Candidates typically must pass this initial screening to proceed further in the hiring process.
+
+3. Stage Two: Intermediate Screenings
+If you pass the initial technical test, you will move on to a stage that can involve a combination of several different types of interviews:
+
+Team Interviews: You will likely speak with a team leader or project manager, and possibly other team members. The goal is to see if you work well together and if you truly understand the role.
+
+Human Resources (HR) Screens: These conversations usually focus on how the company defines the role and cover basic company policies.
+
+Technical Interviews: This is an expansion of the initial technical screen. You will discuss your skills in much greater depth and dive into the technical specifics of the daily job.
+
+4. Stage Three: The Final Interview
+If a candidate does well in the intermediate steps, they advance to the final interview.
+
+Leadership Meeting: You will typically meet with higher-level managers.
+
+In-Depth Discussion: Expect to talk in much greater detail about the role and your potential impact.
+
+Question Types: You will likely face more situational and behavioral questions at this stage.
+
+Your Turn to Ask: This is your final chance to ask questions to clarify the role and ensure you understand the company before they make an offer decision.
+
+5. Final Takeaways
+The interview process generally follows a pattern of first-round, second-round, and final interviews.
+
+Each round has predictable features you can prepare for.
+
+Every employer conducts interviews slightly differently, so regardless of the exact order of stages, your goal is to understand the process and prepare to make the best impression.

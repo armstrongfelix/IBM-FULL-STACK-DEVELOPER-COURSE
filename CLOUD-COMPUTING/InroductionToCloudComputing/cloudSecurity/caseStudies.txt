@@ -1,0 +1,43 @@
+Case Study 1: The Weather Company
+
+
+Mission and Scale: The company maps the Earth's atmosphere to generate accurate, hyperlocal forecasts at a one-square-kilometer resolution. Their system delivers 250 billion on-demand forecasts daily, while their API platform processes around 150,000 requests per second. While normal load is 30 million unique users, severe weather events (like hurricanes) can drive usage past 100 million, requiring the infrastructure to scale up and down instantly to keep the public safe.
+
+
+Cloud Solution and Impact: The company migrated its platform to IBM Cloud Kubernetes Services over a six-month period. This transition reduced their DevOps workflow pipeline by about 80%. Because it is a managed service, the engineering team no longer has to manually monitor or "babysit" the system, freeing them to build new features. Additionally, the migration provided built-in, automated security, with IBM proactively notifying the team of any vulnerabilities.
+
+
+Case Study 2: Airline Industry Customer Experience
+
+
+The Challenge: Routine natural events, such as hurricanes and storms, frequently impact flight schedules. The airline's legacy system automatically found new seats for customers during cancellations, but it did not allow customers to see if the rebooking was actually their best option.
+
+
+Cloud Solution and Impact: The airline leveraged cloud technology and microservices to break complex operational problems into smaller, manageable components. This allowed them to rapidly develop and deploy a new, automated system that presents customers with alternate flight options across their preferred channels. Adopting the cloud mitigated the risks of a traditional, slow software rollout, enabling the airline to keep pace with modern customer expectations during severe weather disruptions.
+
+
+Case Study 3: Cementos Pacasmayo
+
+
+The Challenge: Operating in a fast-paced technological environment, this cement company needed to undergo a digital transformation to shift from being a product-driven company to a service-driven one. Customers were demanding a broader portfolio of products and a quicker time-to-market.
+
+
+Cloud Solution and Impact: The company implemented SAP S/4HANA on IBM Cloud to secure a cost-effective and highly scalable infrastructure. This modernization provided different departments with real-time data insights; the accounting department now accesses real-time financial statements, and the supply chain and procurement teams utilize dashboards to make critical decisions immediately.
+
+
+Case Study 4: Welch's (Welch Foods)
+
+
+The Challenge: As a 150-year-old farmer-owned cooperative, Welch's relies heavily on its IT department to manage complex manufacturing data and ERP systems. The organization’s primary goal is to maximize the value of every dollar spent to benefit its farmers.
+
+
+Cloud Solution and Impact: Welch's began its modernization journey with a private cloud before evaluating the public cloud for new application requests. Their strategy involves slowly and steadily moving non-mission-critical systems to public cloud providers. By offloading infrastructure management, the internal team can dedicate their time and resources exclusively to the company's core business values.
+
+
+Case Study 5: Liquid Power
+
+
+The Challenge: Liquid Power sells products injected into crude oil or gasoline pipelines to increase fluid flow or reduce the energy required to move the fluids. When transitioning to a standalone company under Berkshire Hathaway, they had no prior experience running their own SAP infrastructure and had to decide between an on-premise or cloud-based back-office solution.
+
+
+Cloud Solution and Impact: After consulting with industry CIOs and IT professionals—who unanimously recommended cloud architecture—the company chose to run SAP on IBM Cloud. This migration provided a competitive advantage by delivering highly scalable infrastructure, allowing the business to implement changes and adapt much faster than a traditional on-premise setup would permit.

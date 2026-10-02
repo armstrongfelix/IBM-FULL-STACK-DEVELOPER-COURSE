@@ -1,0 +1,86 @@
+Lecture Notes: Introduction to Flask
+Learning Objectives
+By the end of this lecture, you should be able to define the Flask web framework and its features, explain how to install it, describe its main dependencies, and contrast it with Django.
+
+What is Flask?
+Flask is a micro framework used to create web applications.
+
+Unlike some larger frameworks, Flask is not opinionated. It does not bind the user to a specific set of tools.
+
+Created in 2004 by Armin Ronacher originally as an April Fool's joke, it quickly gained popularity due to its ease of use and extensibility.
+
+Flask ships with only the minimal dependencies needed to create a web application. However, it is highly extensible, meaning you can add many community extensions for additional features.
+
+A key dependency of Flask is Python itself. For example, running Flask version 2.2.2 requires a minimum Python version of 3.7.
+
+Main Features of Flask
+Flask includes a built-in web server specifically for running applications in development mode.
+
+It comes with a debugger that shows interactive tracebacks and stack traces directly in the browser to help troubleshoot applications.
+
+Flask utilizes standard Python logging for application logs, allowing developers to use the same logger for custom messages.
+
+It strongly supports a test-driven approach. Developers can easily test different parts of their application using frameworks like Pytest and coverage.
+
+Developers have direct access to request and response objects, allowing them to pull arguments and deeply customize application responses.
+
+Additional Built-in Features
+Static Assets: The framework supports static assets (like CSS, JavaScript files, and images) and provides specific tags to load them into templates.
+
+Dynamic Pages: You can develop dynamic web pages using the Jinja templating framework. These pages can display changing information or check if a user is logged in.
+
+Routing & URLs: Flask provides routing and supports dynamic URLs, which is extremely useful for building RESTful services. You can easily create routes for different HTTP methods and provide redirections.
+
+Error Handling & Sessions: Developers can write global error handlers that work at the application level, and Flask fully supports user session management.
+
+Popular Community Extensions
+Because Flask is a micro framework, developers often use community extensions to add functionality:
+
+Flask-SQLAlchemy: Adds support for the SQLAlchemy ORM, allowing developers to work with database objects in Python.
+
+Flask-Mail: Provides the ability to set up an SMTP mail server.
+
+Flask-Admin: Easily adds administrative interfaces to applications.
+
+Flask-Uploads: Adds customized file uploading capabilities.
+
+Flask-CORS: Handles Cross-Origin Resource Sharing for JavaScript requests.
+
+Flask-Migrate: Adds database migration support to the SQLAlchemy ORM.
+
+Flask-User: Handles user authentication, authorization, and management.
+
+Marshmallow: Adds extensive object serialization and deserialization support.
+
+Celery: A powerful task queue for background tasks and complex schedules.
+
+Installing Flask
+Flask is available via the Python package manager, pip.
+
+Before installing Flask on your local machine, it is highly recommended to first create a virtual environment using the venv module.
+
+When installing packages, it is recommended to "pin" the version number of your dependencies.
+
+Pinning versions ensures your application can be reproduced perfectly in different environments (development, staging, production) and prevents bugs that might occur if packages automatically update without a version number.
+
+Built-in Dependencies
+Flask comes with several built-in dependencies (which you can view in your virtual environment using the pip freeze command) that enable its core features:
+
+Werkzeug: Implements WSGI (Web Server Gateway Interface), which is the standard Python interface between web apps and servers.
+
+Jinja: The template language used to render pages in your application.
+
+MarkupSafe: Installed alongside Jinja, it escapes untrusted input when rendering templates to prevent injection attacks.
+
+ItsDangerous: Used to securely assign data. It detects if data has been tampered with and protects the Flask session cookie.
+
+Click: A framework for writing command-line applications that provides the flask command and allows for custom management commands.
+
+Flask vs. Django
+While both are Python web frameworks, they have completely different philosophies.
+
+Flask aims to be a very light "micro framework." It provides only the most basic dependencies needed to create a web application. It is incredibly flexible, allowing the developer to add or remove pieces in a plug-and-play manner.
+
+Django, on the other hand, is a full-stack framework. It includes absolutely everything you need to create a complete application right out of the box.
+
+Because of this, Django is considered "opinionated"—it makes most of the architectural decisions for the developer so they can focus strictly on the application's logic, whereas Flask leaves those choices up to the developer.

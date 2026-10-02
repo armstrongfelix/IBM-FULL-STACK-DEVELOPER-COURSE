@@ -1,0 +1,66 @@
+Overview of Cloud Storage
+Cloud storage allows users to save data files in the cloud. It is hosted, secured, managed, and maintained by cloud providers, ensuring on-demand data access.
+
+Accessibility: Storage can be attached to a specific compute node or accessed directly via the public internet or a dedicated private network.
+
+Scalability & Cost: Capacity scales as needed. Users pay only for what is provisioned (typically per gigabyte). Generally, the faster the read/write speeds, the higher the cost per gigabyte.
+
+The Four Main Types of Cloud Storage
+
+Direct Attached (Local Storage)
+
+Connected directly to a cloud-based server (within the host server chassis or the same rack).
+
+Very fast speeds.
+
+Primarily used to store a server’s operating system.
+
+Limitations: Typically "ephemeral" (lasts only as long as the attached compute resource), cannot be shared with other nodes, and is less resilient to failure than other types.
+
+File Storage (NFS Storage)
+
+Connected to compute nodes over a standard ethernet network.
+
+Slower and lower cost than direct-attached or block storage.
+
+Organizes data in a simple, familiar hierarchical folder structure.
+
+Key Advantage: Can be mounted and used on multiple servers at once.
+
+Block Storage
+
+Presented to compute nodes using high-speed fibre connections.
+
+Highly reliable with much faster read and write speeds than file storage.
+
+Ideal for databases and other applications where disk speed is critical.
+
+Provisioned in "volumes" that the compute node sees as a hard drive. Volumes can normally only be mounted onto one compute node at a time.
+
+Object Storage
+
+Accessed via an API rather than being attached to a specific compute node.
+
+The cheapest storage option, though it has the slowest read and write speeds.
+
+Effectively infinite in size; it never fills up, and you only pay for what you use.
+
+Ideal for unstructured data types such as documents, videos, logs, backups, IoT data, and virtual machine images.
+
+Key Storage Concepts & Terminology
+
+IOPS (Input/Output Operations Per Second): A metric used with File and Block storage that relates to the speed of the storage, specifically how quickly data can be read from or written to it.
+
+Persistence vs. Ephemeral:
+
+Persistent Storage: The storage is not deleted when the attached compute node is terminated. The data is preserved, can be mounted to another node, and you continue to pay for it.
+
+Ephemeral Storage: The storage is automatically deleted along with the terminated compute node. You stop paying for it, but all data is lost unless backed up.
+
+Snapshots:
+
+A method to back up File and Block storage by capturing an image of the storage at a specific instant.
+
+They are fast to create (creating metadata rather than writing actual data), require no downtime, and record only the changes made since the previous snapshot.
+
+They are used to restore a storage volume to a specific point in time, but cannot be used to recover individual files.

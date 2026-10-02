@@ -1,0 +1,67 @@
+Overview of Cloud Security Challenges
+
+Migrating workloads to hybrid cloud environments increases the overall threat attack surface, resulting in new data security and compliance challenges. To address this, organizations require a robust, data-centric cybersecurity program that provides centralized visibility and continuous monitoring to guard against unauthorized access, exposure, and data theft across the entire enterprise.
+
+Core Data Security Capabilities
+
+To effectively secure data, organizations must improve maturity across people, processes, and technology:
+
+Asset Identification: Identify your most critical data assets, understand who has access to them, and determine how they are currently protected.
+
+Data Loss Prevention: Detect and enforce policy violations to avoid accidental data loss.
+
+Data Governance: Establish strict processes, metrics, and continuous steady-state data discovery and classification.
+
+Database Monitoring: Monitor database security by enforcing data protection and compliance policies consistently across all hybrid cloud environments.
+
+Identity and Access Management (IAM) & Zero Trust
+
+Managing access controls and authentication is a primary focus in any cloud environment. Organizations must develop Cloud IAM strategies built on a Zero Trust architecture, which constantly authenticates every user requesting access to any resource. When building a cloud framework (such as IBM Cloud), consider the following:
+
+Paced Modernization: Modernize at a pace that matches business requirements, retaining existing on-premises investments while slowly inducting the right cloud IAM architecture.
+
+Zero-Trust Implementation: Establish centralized access control to preserve client confidentiality, reduce insider threats, and secure remote resources. The system must securely connect the right users to the right data at the right time and under the right conditions.
+
+Scalability: Ensure your cloud IAM can scale to handle millions of users or transactions without requiring major infrastructure modifications.
+
+Cloud Network Security
+
+Cloud network security refers to the measures, technologies, policies, and processes used to protect data across public, private, and hybrid cloud networks. Because extending a network to the cloud introduces new security implications, network security must be built directly on the cloud. Benefits include:
+
+Centralized security monitoring, management, and easy updating of granular policies.
+
+Real-time detection and powerful prevention against intrusions, DDoS, and web-based attacks.
+
+Automated configuration and management to eliminate misconfiguration errors and control traffic.
+
+Encryption services for data at rest and in transit.
+
+Best Practices for Cloud Security (Three Phases)
+
+Organizations should follow critical steps divided into three operational phases:
+
+Phase 1: Identify Usage and Risks: Identify how data is accessed, detect unknown cloud usage, check configurations for cloud services, and monitor for signs of malicious activity.
+
+Phase 2: Protect the Cloud System: Assign protection policies, encrypt sensitive data, formulate and restrict data sharing (especially to unknown devices), and implement bot protection and anti-malware solutions.
+
+Phase 3: Respond to Attacks: Add additional authentication and verification steps for high-risk access scenarios and continuously add new policies as new cloud services are adopted.
+
+NIST Cybersecurity Framework & CSPM
+
+NIST Framework: The National Institute of Standards and Technology (NIST) provides best practices for a secure computing framework. It is built upon five core cybersecurity pillars: Identify, Protect, Detect, Respond, and Recover.
+
+Cloud Security Posture Management (CSPM): CSPM solutions are emerging technologies designed to address a highly common error in cloud environments: misconfigurations. CSPM also assists in deploying core components like IAM, regulatory compliance, traffic monitoring, threat response, risk mitigation, and digital asset management.
+
+Current and Future Trends
+
+As cloud adoption increases globally, cybercriminals are increasingly targeting cloud environments. To stay ahead, current major trends in cloud security include:
+
+Multi-cloud strategies and cybersecurity mesh.
+
+Zero-trust security models and securing remote workforces.
+
+Cloud-native tools, applications, and the deployment of DevSecOps.
+
+Artificial Intelligence (AI) and Machine Learning for advanced threat detection.
+
+An intensified focus on privacy and data protection regulations.

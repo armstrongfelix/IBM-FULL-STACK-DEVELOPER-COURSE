@@ -1,0 +1,40 @@
+Introduction to Node.js
+1. What is Node.js?
+Node.js is the server-side component of JavaScript. While JavaScript is traditionally used for client-side functionality (using frameworks like AngularJS, Dojo, and jQuery), Node.js allows developers to use the same language on the server.
+
+Engine: It is an open-source language that runs on the V8 engine (an open-source engine developed by Google for the Chrome browser).
+
+Architecture: It is event-driven and uses asynchronous, non-blocking I/O.
+
+Performance & Adoption: Using Node.js can improve application performance. It is used in production by major companies such as Uber, Yahoo, LinkedIn, GoDaddy, eBay, and PayPal.
+
+Role: It occupies the same server-side architectural space traditionally held by languages like Java, Perl, C++, Python, and Ruby.
+
+2. The Web Service Request Lifecycle
+With server-side JavaScript, Node applications process and route web service requests from the client in a typical four-step process:
+
+Step 1: The user selects an option in the client user interface (written in HTML and CSS).
+
+Step 2: The user's action triggers client-side JavaScript code that implements business logic (e.g., input validation).
+
+Step 3: The client-side JavaScript application makes a web service call over HTTP, sending a JSON data payload.
+
+Step 4: The REST web service (part of the Node.js application running on the Node server) receives the HTTP request, processes it, and returns the result back to the client as a JSON payload over HTTP.
+
+3. Express.js Overview
+Express.js is a highly configurable framework designed to simplify and speed up application development on Node.js.
+
+Functionality: It abstracts lower-level Node.js APIs by utilizing HTTP utility methods and middleware.
+
+4. Express.js Application Structure
+Express.js provides specific features and file structures to help you develop applications quickly:
+
+Public: A directory for public assets like images, CSS, and Java.
+
+Templates or Views: Server-rendered HTML that is sent back to the client in response to requests.
+
+Routes: Define the specific endpoints that accept and process client requests.
+
+Server.js: The file that contains the main application code.
+
+Package.json: A file containing metadata information about the project, including dependencies, scripts, and other configurations.

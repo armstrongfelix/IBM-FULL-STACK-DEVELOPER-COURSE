@@ -1,0 +1,25 @@
+Cloud Infrastructure Architecture: A Comprehensive Overview
+
+After choosing a cloud service model and deployment type, customers must plan their infrastructure architecture. The infrastructure layer serves as the absolute foundation of the cloud. This layer consists of physical resources that are geographically organized into Regions, Zones, and Data Centers.
+
+A Cloud Region is a broad geographic area where a provider’s infrastructure is clustered, often carrying names like "NA South" or "US East." These regions are strictly isolated from one another. This isolation ensures that if one region is impacted by a localized event, such as a natural disaster, the cloud operations in other regions will continue running without interruption.
+
+Each Cloud Region contains multiple Zones, commonly referred to as Availability Zones or AZs. These zones are typically distinct physical data centers equipped with their own independent power, cooling, and networking resources. Isolating these zones improves the overall fault tolerance of the cloud, decreases latency, and prevents the creation of a single shared point of failure.
+
+Availability Zones are connected to other AZs, regions, private data centers, and the broader internet using ultra-high-bandwidth network connectivity. At the ground level, a cloud data center is a massive facility containing standardized pods and racks of computing resources, storage, and networking equipment—essentially housing everything found in a traditional physical IT environment.
+
+Cloud providers offer three primary compute options: Virtual Servers, Bare Metal Servers, and Serverless computing. Most servers in a cloud data center run hypervisors to create virtual servers (Virtual Machines or VMs), which are software-based computers built on virtualization technologies.
+
+Other racks contain bare metal servers, which are physical servers that are not virtualized, giving users direct access to the hardware. Customers can provision both VMs and bare metal servers on-demand to run their workloads. Alternatively, users can utilize serverless computing resources, which act as an abstraction layer built on top of virtual machines, removing the need to manage the underlying servers entirely.
+
+Cloud platforms must store a vast array of information, including files, code, documents, images, video, backups, snapshots, and databases. To handle this, providers offer many different types of storage options. As a baseline, both bare metal servers and virtual servers are provisioned with default local drive storage upon creation.
+
+The networking infrastructure within a cloud data center includes traditional hardware like routers and switches. However, more importantly for cloud users, providers utilize Software Defined Networking (SDN). SDN virtualizes specific networking resources or makes them available programmatically via APIs, allowing for vastly easier network provisioning, configuration, and management.
+
+When servers are provisioned in the cloud, users must set up their network interfaces. Public network interfaces connect the servers directly to the public internet, while private interfaces provide secure connectivity to other internal cloud resources. Just like in the physical IT world, these cloud network interfaces require IP addresses and subnets, which can be assigned automatically or configured manually.
+
+Security is paramount in a cloud environment, making it critical to configure exactly which users and network traffic can access your resources. This is accomplished by setting up Security Groups and Access Control Lists (ACLs). For deeper security and resource isolation, most cloud providers offer Virtual Local Area Networks (VLANs), Virtual Private Clouds (VPCs), and Virtual Private Networks (VPNs).
+
+Many traditional hardware appliances, such as firewalls, load balancers, gateways, and traffic analyzers, have been virtualized and are offered as on-demand services in the cloud.
+
+Additionally, providers offer Content Delivery Networks (CDNs). CDNs distribute content to multiple geographic points worldwide, ensuring that users can access data much more quickly by retrieving it from the node geographically closest to them.

@@ -1,0 +1,61 @@
+Overview of Object Storage and Data Tiers
+
+
+Object storage buckets utilize different storage tiers, or classes, which are categorized based on how frequently the data within them is accessed. Selecting the appropriate tier is crucial for optimizing costs, as pricing varies depending on the chosen class.
+
+
+The standard tier is designed for objects that are frequently accessed. Because of its ready availability, this tier typically incurs the highest per-gigabyte storage cost.
+
+
+The vault or archive tier is intended for documents that are accessed infrequently, such as once or twice a month or less. This tier is offered at a lower storage cost compared to the standard tier.
+
+
+The cold vault tier is reserved for data that is rarely accessed, typically only once or twice a year. Storing data here is extremely inexpensive, often costing just a fraction of a US cent per gigabyte per month. However, because the storage is kept offline, retrieving data from a cold vault can sometimes take hours.
+
+
+To manage these costs efficiently, users can set up automatic archiving rules. These rules use object metadata to monitor access frequency and automatically move data that hasn't been accessed for a specific period into a cheaper storage tier.
+
+
+Performance and Cost Considerations
+
+
+Unlike file or block storage, object storage does not offer Input/Output Operations Per Second (IOPS) options. It is significantly slower, with downloads typically taking seconds or longer to complete. Therefore, object storage is not a suitable choice if an application requires fast file access.
+
+
+While object storage is generally priced per gigabyte of storage used per month, there are additional costs associated with data retrieval. These retrieval charges are higher for data stored in vault or cold vault tiers, reinforcing the importance of placing data in the correct tier based on its access frequency.
+
+
+Object Storage APIs
+
+
+Object storage differs from other types of storage because it does not need to be attached to a compute node. Instead, it is accessed over the network through an Application Programming Interface (API).
+
+
+The most common API for this purpose is the S3 API, which is based on the S3 object storage standard created by AWS. Many different cloud providers offer S3-compatible APIs. This compatibility is highly beneficial as it allows developers to write application code that can seamlessly interact with object storage from multiple different vendors.
+
+
+The API itself operates as an HTTP-based RESTful web service. It enables applications to manage storage buckets and perform actions such as putting, uploading, getting, or downloading objects.
+
+
+Use Cases: Backup and Disaster Recovery
+
+
+Object storage is highly versatile and can be used to meet the requirements of both new and existing applications.
+
+
+A prominent use case for object storage is serving as an effective solution for backup and disaster recovery. It often replaces traditional off-site tape-based backup solutions.
+
+
+Using object storage for backups significantly reduces the time required to restore data. It is also much more efficient than tape backups, which require physical tapes to be manually loaded, removed from drives, and physically transported off-site to ensure geographical redundancy. Many modern backup software packages now include built-in capabilities to back up directly to cloud object storage.
+
+
+Summary and Next Steps
+
+
+Object storage is characterized by its tier system based on access frequency, making it much cheaper than file or block storage, albeit significantly slower.
+
+
+It relies on APIs (commonly S3-compatible) for access rather than being attached to a compute node, and it provides an excellent modern solution for disaster recovery and automated data archiving.
+
+
+The next topic of discussion will cover Content Delivery Networks (CDNs), which are fundamentally driven by object storage.

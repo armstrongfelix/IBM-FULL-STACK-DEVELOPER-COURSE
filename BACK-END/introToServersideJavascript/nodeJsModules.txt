@@ -1,0 +1,43 @@
+Working with Node.js Modules
+1. Node.js Packages and package.json
+Package Definition: A package consists of one or more Node.js modules.
+
+The package.json File: This file contains specific details and metadata about a Node.js module.
+
+Identifier Fields: The name and version fields combine to form a unique identifier for the module (e.g., today-1.0.0).
+
+Main Script: The main field specifies the relative path to the primary Node.js script (e.g., pointing to a today.js script inside a lib subdirectory).
+
+Other Fields: It can contain many other fields, such as license, which states the module's usage rights.
+
+Default Behavior: If a package does not have a package.json file, Node.js automatically assumes the main file is named index.js.
+
+2. Importing Modules using the require Function
+You use the require function to import a Node.js module into your script. It automatically assumes scripts have a .js file extension.
+
+How Node.js Resolves the require Path:
+
+Single Script Import: You can pass a relative path to import a specific script file (e.g., a hello.js file making a call to today.js in the same directory).
+
+Directory Import Logic:
+
+When you call require with the name of a subdirectory, Node.js first looks for a script file with the exact same name as that subdirectory.
+
+If that script file does not exist, it assumes the name refers to a directory and looks for a script named index.js within that directory (since index.js is the default name).
+
+Example: Calling require on a directory named mod_today will prompt Node.js to look for and execute mod_today/index.js.
+
+3. Exporting and Accessing Module Properties
+The Implicit exports Object: Every Node.js module has a built-in, implicit exports object.
+
+Exporting: To make a function or a value available to other applications that import your module, you simply add a property to this exports object.
+
+Example: Adding a dayOfWeek property to the exports object and assigning it an anonymous function that returns the current day.
+
+Accessing:
+
+When you import a module, the require function returns a JavaScript object that represents an instance of that imported module.
+
+If you store this object in a variable (e.g., today), you can access the exported properties directly from that variable.
+
+Example: Calling today.dayOfWeek will execute the specific function you attached to the exports object in the module.

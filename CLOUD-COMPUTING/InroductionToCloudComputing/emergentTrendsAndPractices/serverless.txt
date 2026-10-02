@@ -1,0 +1,55 @@
+Overview of Serverless Computing
+
+
+Serverless computing is an approach that offloads the responsibility for common infrastructure management tasks—such as scaling, scheduling, patching, and provisioning application stacks—directly to cloud providers. This model allows developers to focus their time and effort purely on writing the code and business logic specific to their applications or processes.
+
+
+Despite the name, "serverless" does not mean there are no servers involved. It simply means that the management of the underlying physical or virtual servers is completely abstracted and removed from the end users. In this environment, resources are allocated dynamically as needed by the applications.
+
+
+Key Attributes of Serverless Computing
+
+
+The serverless model is distinguished from traditional compute models in several ways. Primarily, it requires absolutely no provisioning of servers, installation of software stacks, or operational management by the developer.
+
+
+Code is executed only on-demand, operating strictly on a per-request basis, and scales transparently along with the volume of incoming requests.
+
+
+Economically, serverless allows end users to pay only for the exact resources they consume. Unlike traditional virtual machines (VMs) where users pay continuously as long as the VM is running, a serverless model ensures users never pay for idle capacity.
+
+
+Execution Model and Examples
+
+
+In a serverless architecture, code is executed as individual functions. Each function operates inside a stateless container, meaning that no prior execution context is required to serve a request. With every new request, a brand new instance of the function is invoked.
+
+
+A common scenario involves placing a serverless platform between a website's front end and a storage layer. For instance, a front end might send text files to a serverless application, which then executes individual functions to translate the text into different languages, stores the translated files in a cloud-based storage service, and finally returns the links to the user.
+
+
+Today, some of the most prominent serverless computing services include IBM Cloud Functions (based on Apache OpenWhisk), AWS Lambda, and Microsoft Azure Functions.
+
+
+Ideal Characteristics and Use Cases
+
+
+Serverless architecture is not a one-size-fits-all solution; applications must align with specific patterns to benefit from it. It is best suited for short-running, stateless functions (lasting seconds or minutes), seasonal workloads with distinct peaks and off-peaks, and applications with volumetric data that experience significant idle time. It is also ideal for event-based processing, asynchronous request processing, and stateless microservices.
+
+
+Because of its automatic scaling, rapid provisioning, and cost-efficiency during idle time, supporting a microservices architecture has become one of the most common applications of serverless computing today. Other highly suited use cases include data and event processing, IoT backends, and mobile backends.
+
+
+Serverless excels at data processing tasks such as data enrichment, transformation, validation, and cleansing across structured text, audio, image, and video data. Specific tasks like PDF processing, audio normalization, thumbnail generation, video transcoding, parallel data search, and genome processing are highly compatible. It is also well equipped to handle data stream ingestions, including business data streams, IoT sensor data, log data, and financial market data.
+
+
+Challenges and Limitations
+
+
+While highly scalable, serverless workloads are not ideal for all scenarios. For workloads characterized by long-running processes, managing a traditional server environment is often simpler and more cost-effective.
+
+
+There is also a potential for vendor lock-in, as serverless architectures often become heavily dependent on a specific cloud provider's proprietary platform capabilities for authentication, scaling, monitoring, and configuration management.
+
+
+Finally, because serverless architectures scale down to zero when idle, they sometimes must start up from zero to serve a newly incoming request. While this slight delay is negligible for many applications, it would be unacceptable for highly sensitive, low-latency workloads such as financial applications.

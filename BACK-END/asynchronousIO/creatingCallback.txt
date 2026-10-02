@@ -1,0 +1,47 @@
+Creating Callback Functions to Intercept HTTP Calls
+1. The Role of Callbacks in Node.js
+As an asynchronous framework, Node.js makes extensive use of callback functions to return results to the calling function. Because operations are non-blocking, callbacks are essential for handling data once an operation (like an HTTP request) finally completes.
+
+2. The Error-First Callback Convention
+Node.js modules in the Software Development Kit (SDK) follow a strict convention: an error object is passed as the first parameter in a callback function.
+
+When you write a callback function, it should always check this first parameter:
+
+If the error is defined: The callback function must handle the error, print the error message, and clean up any open network or database connections.
+
+If the error is NOT defined (null): The function call completed successfully. The callback function can then examine and process the resulting data.
+
+Note on Custom Modules: When building your own modules, you should follow this pattern. If an error occurs, call the application's callback function passing the error object. If no error occurred, call the application's callback with null as the first parameter.
+
+3. The Asynchronous Disconnect Problem
+A common challenge arises when a main application calls a custom Node.js module, which in turn makes an HTTP.request:
+
+The module makes the HTTP.request and immediately returns control to the main application.
+
+The main application continues its processing.
+
+Later, the remote server sends back an HTTP response.
+
+The Node.js framework triggers the callback handler defined inside the custom Node.js module.
+
+The Problem: At this point, there is no built-in connection between the module's internal callback function and the main application. If you just use a standard return statement inside the module's callback, the main application will never receive the data.
+
+4. The Solution: Linking Callback Functions
+To pass the response message from the custom Node.js module back to the main application, you must link their callbacks. The pattern requires one callback function at each level:
+
+Step 1: When the main application calls the custom module, it provides an anonymous callback function as an input parameter (often named something like resultcallback) to process the final result.
+
+Step 2: The custom module receives this resultcallback and stores it. It then makes the HTTP.request and defines its own internal callback to handle the HTTP response.
+
+Step 3: When the module's internal callback finishes receiving the data (e.g., during the response end event), it invokes the main application's resultcallback, passing the final data to it.
+
+Having one callback function invoke another callback function is the only way to pass a message from the Node.js module to the main application.
+
+5. Example Scenario: The Weather Module
+The lecture illustrates this pattern using a weather application:
+
+Main Application: Has a weather object (the Node.js module) and calls weather.current(location, callback). The callback expects a parameter (temp_f) and prints the result to the browser (e.g., "The current weather reading is $temp_f degrees").
+
+Custom Module: The exported current function takes the input location and the resultcallback from the main app.
+
+Execution: Inside the module's response.on('end') event handler, the code makes a call to resultcallback(temp_f), successfully passing the value from the module's callback handler to the main application's callback handler.

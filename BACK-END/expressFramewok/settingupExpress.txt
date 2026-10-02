@@ -1,0 +1,44 @@
+First Express Web Application
+
+
+1. Five Steps to Install and Work with Express
+
+The video outlines a clear, five-step process for setting up and running your first Express application.
+
+1. Declare Express: Add Express as a dependency in the package manifest of your Node.js project.
+
+2. Download Modules: Run the npm command to download any missing modules.
+
+3. Create the Application: Import the Express module and create an Express application instance.
+
+4. Create a Route Handler: Define a new route handler to process incoming web requests.
+
+5. Start the Server: Start a Hypertext Transfer Protocol (HTTP) server on a given port number.
+
+
+2. Coding the Express Application
+
+Once the initial setup is complete, you can create a file (e.g., mynodeserver.js) and begin writing the application logic.
+
+Importing and Instantiating: After importing a copy of the Express framework, you create an instance of the app JavaScript object from the framework.
+
+Handling Requests: To handle web requests, you map an HTTP method (like a GET request) and a web resource path to a JavaScript function.
+
+Extracting Parameters: When listening to a specific path (such as a temperature resource path), you can capture dynamic values from the URL. 
+
+You can access these route parameters using request.params (e.g., request.params.location_code) and store the value in a local variable.
+
+Executing Logic: You can then pass this captured parameter into a function (like a weather retrieval function) to process the data based on the route.
+
+
+3. Starting the Server
+
+The final step is to make your application actively listen for requests.
+
+The listen Method: Call the app.listen method on your Express application instance to create a web server object.
+
+Port Number: The first parameter specifies the port number (such as 8080) where the app will listen for incoming HTTP requests.
+
+Callback Function: The second parameter defines an anonymous function that the Express framework calls once it successfully creates an instance of the server object.
+
+Testing the Result: Once the server is listening, you can enter the Uniform Resource Locator (URL) in your web browser to see the result of your application.

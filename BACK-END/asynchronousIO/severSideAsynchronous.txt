@@ -1,0 +1,66 @@
+Asynchronous I/O with Callback Programming
+1. The Problem with Blocking I/O
+Network operations are inherently asynchronous (e.g., a response from a remote web service call might not return immediately).
+
+When an application blocks (or waits) for a network operation to complete before moving on, that application wastes valuable processing time on the server.
+
+2. The Node.js Solution: Non-Blocking Operations
+Node.js executes all network operations in a non-blocking manner.
+
+Every network operation returns immediately, simply indicating that the request message was sent successfully. It does not wait for the actual response payload.
+
+Callback Functions: To handle the actual result from a network call once the remote server replies, you write a callback function that Node.js triggers only when the network operation fully completes.
+
+3. The Request Lifecycle Scenarios
+Scenario A: A Standard Web Service Call
+
+The application calls HTTP.request to contact a remote web server.
+
+The Node.js framework immediately returns a successful "sent" result to the application.
+
+The application continues its processing.
+
+When the Node.js framework finally receives the HTTP response message from the remote server, it executes your defined callback function to handle the data.
+
+Scenario B: Using a Custom Module
+
+The application calls a custom Node.js module, which makes the HTTP.request call.
+
+Node.js immediately returns a value to the custom module, which then returns control to the main application so it can continue processing.
+
+When the remote server responds, the Node.js framework calls the callback function defined inside your custom module.
+
+4. Building the HTTP.request
+The HTTP.request function generally takes in a URL and a set of options. If both are passed, they are merged, with the options taking precedence.
+
+Parameter 1: Options Object: Includes variables like the hostname of the remote server, ports, authentication, protocol, headers, and the URL resource path. (Example from the lecture: requesting weather observation data from the San Francisco International Airport via the US National Weather Service).
+
+Note: In actual coding, you may need to use HTTPS instead of HTTP depending on the endpoint.
+
+Parameter 2: Callback Function: An optional (usually anonymous) function that handles the response.
+
+It is invoked immediately once a response is received.
+
+The first parameter passed into this callback is the response object.
+
+5. Handling Events (data, end, and error)
+While the module is receiving the HTTP response object, the Node.js framework emits several events. You can listen to these using the object.on('eventName') method.
+
+Success Events:
+
+'data': Emitted every time a chunk of data comes in. You define a callback to handle these chunks (e.g., parsing a JSON string).
+
+'end': Emitted when the response is completely finished.
+
+Failure Events:
+
+'error': Emitted if the request fails. You should define a callback to listen for this and output the error message.
+
+'close': Emitted following an error event.
+
+6. The ClientRequest Object
+The HTTP.request method actually returns an object of type HTTP.ClientRequest, which represents the request currently in progress.
+
+Using this object, you can append data to the request body, make changes to the headers, and listen for the error events mentioned above.
+
+To finalize and actually send out the request, you must call clientRequest.end()

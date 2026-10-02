@@ -1,0 +1,42 @@
+EXPLORING AUTHENTICATION AND AUTHORIZATION IN NODE.JS
+
+
+The Need for Authentication
+
+When building applications like an e-commerce platform with Node.js, robust authentication and authorization mechanisms are essential. Without them, user data is at risk of unauthorized access, which can lead to severe consequences such as data breaches and the loss of customer trust. Learning these concepts is crucial for securing user authentication, safeguarding sensitive data, and enhancing overall application reliability and user satisfaction.
+
+
+What is Authentication?
+
+Authentication refers to the process of verifying who a person claims to be by checking their credentials. This ensures that only authorized users gain access to certain parts of a system. The backend of the application is responsible for handling this verification process.
+
+There are three popular authentication methods in Node.js: session-based, token-based, and passwordless authentication.
+
+
+Session-Based Authentication
+
+Session-based authentication is one of the earliest methods used to secure applications. When you log in with your credentials, they are validated against a database. If the credentials are valid, the server creates a unique, encrypted session ID. This ID is stored in two places: the database and as a browser cookie on the client side.
+
+When the user logs out, or after a specific period of time has passed, this session ID is destroyed. This action effectively logs the user out from both the browser and the database.
+
+In an Express application, this is typically implemented using the express-session middleware. The code configures the middleware with a secret key for encrypting the session data and handles options like resave and save uninitialized. During a login POST request, if the username and password match, the user's information is stored in the session, allowing the application to check if the user is authenticated on subsequent requests.
+
+
+Token-Based Security
+
+Token-based security involves two key concepts: authentication and authorization. Authentication occurs when you provide credentials and receive a token validating your identity. Authorization occurs when you use that token to access protected resources, ensuring the server knows what you are permitted to access.
+
+Tokens are often formatted as JSON Web Tokens (JWT, pronounced "jot"). A JWT is an internet standard for creating signed JSON payload data and consists of three parts. The first part is the Header, which contains the token type and the algorithm used. The second part is the Payload, which includes user attributes, known as claims, such as permissions and expiration times. The third part is the Signature, which ensures the token's integrity during transit over the internet.
+
+In token-based authentication, an authentication server responds to a login request with an ID token, which is stored as a secure cookie by the client. For token-based authorization, an authorization server generates an access token. With each HTTP request, this token is passed to the resource API server. Because the token carries embedded permission details, the API server does not need to repeatedly query the authorization server. Even if the token is stolen, the encryption ensures credentials are not exposed.
+
+In Node.js, this is implemented by checking for a valid JWT in the authorization header of incoming requests. The server verifies the token and extracts the user details to grant access.
+
+
+Passwordless Authentication
+
+Passwordless authentication eliminates the need for traditional passwords entirely. Instead, it uses methods like biometrics, magic links sent to an email, or one-time passcodes sent to a mobile device.
+
+This approach relies heavily on public and private key encryption. When a user registers, their device generates a key pair. The public key is accessible to anyone and is used to encrypt data. The private key is securely stored on the user's device and is used to decrypt data. During sign-in, the application creates a login challenge encrypted with the public key. The user's device then decrypts it using the private key to authorize access.
+
+In an Express code example, this can be seen when a user submits their email. The server generates a six-digit verification code and stores it in memory. A second POST request is then made to verify the received code against the stored code. If they match, access is granted.

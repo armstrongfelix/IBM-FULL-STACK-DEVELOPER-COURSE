@@ -1,0 +1,60 @@
+Lecture Notes: Python Style Guide and Coding Practices
+Learning Objectives
+By the end of this lecture, you should be able to describe the importance of writing readable code, list standard Python coding conventions, and explain static code analysis.
+
+Introduction to PEP-8
+When working in a team, your code must be easily readable and understandable by everyone.
+
+To ensure this uniformity, Python.org released PEP-8, or the Python Enhancement Proposal 8.
+
+PEP-8 is a document that provides conventions and guidelines to make your Python code consistently formatted and highly readable.
+
+Key PEP-8 Readability Guidelines
+1. Indentation: Use Spaces, Not Tabs
+The PEP-8 guideline states that you should always use four spaces for every indentation level in your code.
+
+The reason for this is that different text editors and Integrated Development Environments (IDEs) interpret tabs differently. For example, one editor might read a tab as three spaces, while another reads it as four.
+
+Using tabs instead of spaces can lead to non-uniformity in your code and result in formatting errors. Four spaces provide appropriate readability and ensure consistency across all editors.
+
+2. Blank Lines
+PEP-8 recommends using blank lines to separate functions and classes in your code.
+
+These blank lines act as visual dividers. They help establish the clear beginning and end of different parts of the code, making the overall structure much easier for a developer to scan and understand.
+
+3. Spacing Around Operators
+To further improve code readability, you should use spaces around mathematical or assignment operators and after commas.
+
+For example, writing "A = B + C" with spaces is much clearer than writing "A=B+C" with no spaces.
+
+Adding these spaces makes the commands look spacious and discreet, which significantly improves how easily the command can be read.
+
+Python Coding & Naming Conventions
+Maintaining consistency through coding conventions makes your code much easier to manage and reuse.
+
+Structuring Code with Functions
+A key convention is to create separate functions for functionalities that contain larger blocks of code, rather than writing them loosely in the main program.
+
+Once wrapped in a function, you can easily call it from the main program whenever needed.
+
+This approach supports code reuse, makes the code much more convenient to work with, and can even increase the execution speed of your program.
+
+Naming Conventions
+Python has many built-in libraries and predefined functions that follow common naming conventions. Adhering to these makes your code standard and prevents naming conflicts.
+
+For functions and files, the convention is to use lowercase letters with underscores separating the words (for example: comp_surface_radiation).
+
+An exception to the underscore rule is Python packages. For packages, you should use lowercase letters, but underscores are generally discouraged (for example: mypackage).
+
+For classes, the accepted coding convention is to use CamelCase, also known as CapWords. You capitalize the first letter of each word without using underscores (for example: LambSquirrelCage). This specific casing helps developers easily distinguish classes from functions.
+
+For constants, the convention is to capitalize all words and separate them with underscores (for example: MAX_FILE_UPLOAD_SIZE). The uppercase name visually indicates that the variable's value should not be changed.
+
+Static Code Analysis
+To ensure all these coding conventions and style guidelines are followed, software developers commonly use a technique called static code analysis.
+
+Static code analysis is a method used to evaluate your code against a predefined style and standard without actually executing the program.
+
+This analysis helps developers automatically find issues such as programming errors, coding standard violations, undefined values, syntax violations, and security vulnerabilities.
+
+A popular tool for this is the PyLint library, which you can use to check the compliance of your Python code against the PEP-8 guidelines.

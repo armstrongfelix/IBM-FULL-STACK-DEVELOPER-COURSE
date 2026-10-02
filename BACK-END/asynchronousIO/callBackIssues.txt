@@ -1,0 +1,72 @@
+Issues with Callbacks
+1. Review: What is a Callback?
+Definition: A callback is a function passed as an argument into another function, which then executes the callback based on a specific result. Essentially, they are functions executed only after a result is produced.
+
+Purpose: Callbacks help developers write asynchronous JavaScript code. They ensure that a specific function will not run before a prerequisite task is fully completed.
+
+Common Use Cases: Asynchronous callbacks (async) are heavily used when dealing with resources provided by services outside of the application. Common examples include accessing values from databases, downloading images, or reading files. The callback function waits for a response from these services and executes only when that response is sent.
+
+Code Example (setTimeout): The built-in JavaScript method setTimeout waits a specified time (in milliseconds) before performing an action. If you have a callback function named message (which writes to the console), you can pass message into setTimeout. After waiting the specified time (e.g., 3 seconds), setTimeout executes the message callback.
+
+2. The Problem of Sequential Execution
+While callbacks are great for asynchronous tasks, problems arise when tasks must happen in a specific, sequential order.
+
+The Cake Analogy: Imagine making a cake. The steps must be completed in order:
+
+Purchase ingredients
+
+Combine ingredients
+
+Bake the cake
+
+Decorate the cake
+
+Serve the cake.
+
+These steps absolutely cannot be completed at the same time (asynchronously). The next step can only start after the previous one finishes.
+
+The Code Translation: When using callbacks to force this kind of sequential execution, developers must nest functions within one another. Each subsequent function becomes the argument passed into the previous function.
+
+3. Callback Hell (The Pyramid of Doom)
+The Pyramid Structure: Because every callback depends on and waits for the previous callback, nesting them creates a deep, indented pyramid structure in the code.
+
+The Impact: This heavy nesting severely degrades the readability and maintainability of the code.
+
+Terminology: This structural problem of stacked, nested callback functions is notoriously referred to in the industry as "Callback Hell" or "The Pyramid of Doom."
+
+4. Inversion of Control (IoC)
+Another major issue with relying heavily on callbacks is Inversion of Control (IoC).
+
+Definition: Inversion of control happens when the flow of control (the execution of instructions) is handled externally to your own code.
+
+The Trust Issue: Callbacks often hand control over to a third party. This forces you to trust that the third-party code is completely bug-free, which is dangerous because errors in their code can be difficult to catch and can break your application.
+
+Specific Third-Party Risks: Without strict safeguards, third-party code might execute your callback incorrectly by:
+
+Calling it too many times, or too few times.
+
+Calling it too early, or too late.
+
+Losing context.
+
+Passing back incorrect arguments.
+
+The Boolean Flag Example (Trying to fix IoC)
+The Bug: Imagine third-party code has a bug where it gets called multiple times if a user mistakenly double-clicks a "buy" button.
+
+The Workaround: You might try to solve this with a boolean flag. You set a flag to false. When the button is clicked, you charge the card and immediately set the flag to true. If the button is clicked again, your branching logic sees the flag is true and prevents the customer from being charged a second time.
+
+The New Problem: What if the third-party callback never gets called at all? Your flag remains false, creating yet another use case you have to account for.
+
+The Result: To catch all these potential third-party errors, your own codebase becomes bloated and riddled with extraneous logic just to ensure the external code doesn’t fail.
+
+5. Mitigating Callback Issues
+To avoid Callback Hell and Inversion of Control trust issues, developers can use a few different strategies:
+
+Write Comments: Clearly document the nested structures to help with readability.
+
+Split Functions: Break large, deeply nested anonymous functions out into smaller, named functions.
+
+Use Promises: A more modern JavaScript feature designed to handle asynchronous operations more cleanly (to be discussed in upcoming videos).
+
+Use async/await: The newest syntax for handling Promises, making asynchronous code read like synchronous code (to be discussed in upcoming videos).

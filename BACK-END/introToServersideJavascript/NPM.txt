@@ -1,0 +1,40 @@
+Node Package Manager (NPM)
+1. What is a Package Manager?
+When working with languages that use modules and packages (like JavaScript), a package manager is essential.
+
+Definition: A set of tools used to automate the process of finding, installing, upgrading, configuring, maintaining, and removing packages for a computer program.
+
+Dependencies: These are pieces of code (usually libraries and packages) that are called and reused in a program. If your module calls a function from another module, which calls a third-party module, your code is dependent on all of them.
+
+Core Purpose: The package manager maintains a database of these dependencies and their versioning information. It ensures your software has exactly what it needs to run correctly, eliminating the need to track and install them manually.
+
+2. Node Package Manager (NPM)
+NPM is the default package manager for the Node.js runtime engine. It serves two main functions:
+
+Command Line Interface (CLI): A tool that allows users to interact with NPM to publish and download packages.
+
+Online Repository: A database of binary JavaScript packages that tracks the specific versions of packages referenced in applications.
+
+3. The package.json File
+All NPM packages require a package.json file, which must be located in the project’s root directory.
+
+Purpose: NPM uses the metadata inside this file to determine all of the dependencies required by a package.
+
+Required Contents: The metadata is formatted as key-value pairs. At an absolute minimum, the file must contain the project's name and version number.
+
+4. Local vs. Global Installations
+NPM can install packages in two different ways, and it is crucial to know when to use each.
+
+Local Install (Default Behavior)
+Use Case: When you are installing a package you want to use strictly within your specific application.
+
+Command: npm install <package_name>
+
+Behavior: It creates a node_modules directory in your current working directory and places the package and its dependencies inside it. Only the application within that directory can access the package.
+
+Global Install
+Use Case: When you need the package code to be accessible by any application on your entire machine.
+
+Command: npm install -g <package_name> (adding the -g flag).
+
+Warning: Global installs should be used judiciously. Because all projects on the machine will share this globally installed package, having different versions of projects on your computer could break compatibility with other dependencies.

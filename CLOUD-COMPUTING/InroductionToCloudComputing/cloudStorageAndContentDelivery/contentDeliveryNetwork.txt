@@ -1,0 +1,49 @@
+Content Delivery Networks (CDNs)
+
+
+What is a Content Delivery Network (CDN)?
+
+
+A Content Delivery Network (CDN) is a distributed network of servers designed to accelerate Internet content delivery. It achieves this by delivering temporarily stored, or cached, copies of website content to users based on their geographic location.
+
+
+The Challenge: Distance and Latency
+
+
+When a website is hosted on a single central server (for example, in Dallas), it must serve users located all around the world. Because data must physically travel from the server to the user and back, the geographic distance creates latency.
+
+
+For instance, a user in Sydney might experience a 170-millisecond round-trip time because the data has to travel 8,600 miles each way. Meanwhile, a user in New York might only experience a 40-millisecond delay, and a user in Los Angeles might experience a 30-millisecond delay. Ultimately, the further a user is from the source server, the longer the data takes to travel, and the slower the website will perform for them.
+
+
+How a CDN Solves the Problem
+
+
+A CDN addresses this latency issue by reducing the physical distance between the user and the content. It does this by placing CDN endpoints in as many locations around the world as possible.
+
+
+When users request content, it is first retrieved from the main server by the CDN service and then distributed to these global endpoints. As a result, a user in London can fetch the website's content directly from a nearby CDN server in London, rather than waiting for it to travel all the way from the main server in Dallas.
+
+
+Primary Benefit of CDNs
+
+
+The direct and most obvious benefit of a CDN is speed. By allowing users to retrieve data from their closest geographic location, a CDN drastically reduces the time it takes to retrieve content, providing a significantly faster website experience for the end user.
+
+
+Indirect Benefits of CDNs
+
+
+Aside from speed, CDNs provide several critical indirect benefits to the main server infrastructure.
+
+
+First, CDNs reduce the amount of direct traffic hitting the origin server. Since the global endpoints handle the majority of requests, the main server experiences a significantly lower overall load.
+
+
+Second, this reduction in traffic means that the website owner requires less server capacity at their main hosting location to support their global user base.
+
+
+Third, by decreasing the strain on the system and eliminating the need to communicate directly with distant users, the origin server's environment often sees an increase in overall uptime and reliability.
+
+
+Finally, CDNs provide an increase in security through obscurity. Because end users are communicating directly with the CDN endpoints rather than the origin server itself, the main infrastructure remains hidden and protected from direct access.

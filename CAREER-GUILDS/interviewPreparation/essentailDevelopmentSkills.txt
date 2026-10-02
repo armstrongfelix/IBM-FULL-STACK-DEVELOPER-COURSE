@@ -1,0 +1,94 @@
+Refreshing Essential Development Skills
+1. Web Development Roles
+Front-end Developers: Work on the parts of the website or application that the user sees and interacts with.
+
+Back-end Developers: Work on the logic and functionality that keeps the website running and responding to user inputs.
+
+Full-stack Developers: Possess both front-end and back-end skills.
+
+2. Core Languages and Frameworks
+Front-end Languages: HTML, CSS, JavaScript, and React.
+
+Back-end Languages/Frameworks: Python, Django, and Flask.
+
+Frameworks and Libraries: Used to extend the functionality of base coding languages like JavaScript and Python.
+
+3. Front-End Fundamentals
+HTML: Provides the basic structure and content of a website using tags. It uses APIs to enhance user experience with advanced animation, audio, and video features. The structure of a website is described by the HTML DOM Tree.
+
+CSS: Provides a consistent style and design throughout the website that can be edited globally without changing individual pages.
+
+JavaScript: A scripting language used to add dynamic, interactive content.
+
+Runs client-side in the browser, meaning it does not rely on server resources.
+
+Accesses HTML DOM elements using specific DOM notation.
+
+Variables are declared using the var keyword and derive their type from the assigned value.
+
+Execution is controlled by statements like If...Then...Else, Switch, For loops, and While loops.
+
+Adheres to ECMAScript 6 (ES6), a modern language standard ensuring interoperability.
+
+4. Distributed Version Control
+Version control tracks changes to code and documents across different storage locations.
+
+Repositories: Storage structures that hold code, track issues, and enable collaboration.
+
+Cloning vs. Forking:
+
+Clone: A localized copy that retains a connection to the original repository. Developers work locally and sync changes back.
+
+Fork: A completely new, independent copy used as a base for a new project or independent work.
+
+Branches: New parts of an existing project tree used to isolate code changes, which can later be merged back into the master branch.
+
+Team Roles:
+
+Developers: Create code.
+
+Integrators: Manage changes made by developers.
+
+Repository Administrators: Configure and maintain access rights to ensure project security.
+
+5. Front-End Frameworks (React)
+React is an open-source library used to build applications that run in the browser (other examples include Angular and Vue).
+
+Utilizes a special markup language called JSX.
+
+Manages the internal state of the application using states and props.
+
+Components are categorized into two types: functional and class.
+
+6. Back-End Frameworks (Node.js & Express)
+Node.js: A server-side programming framework that builds scalable, concurrent server applications quickly using minimal tools.
+
+Uses server-side JavaScript to process and route web service requests.
+
+Relies on asynchronous callback functions to handle completed results.
+
+Packaged with utility modules for application creation and extension.
+
+npm: An application used to manage Node.js packages (which consist of one or more modules, often third-party).
+
+Express: A back-end framework that works alongside Node.js to abstract low-level details.
+
+Middleware: Comes in several types, including application-level, router-level, error-handling, built-in, and third-party.
+
+7. Cloud Computing & Infrastructure
+Cloud computing delivers on-demand computing resources over the internet on a pay-as-you-go basis, scaling dynamically based on user needs.
+
+Services: Providers offer Infrastructure, Platform, and Software services. Networking is delivered as a service rather than via physical devices.
+
+Virtualization: Creating software-based versions of physical resources using hypervisors.
+
+Deployment: Cloud resources (virtual machines, storage, load balancers) are deployed into subnets within virtual private clouds. Infrastructure includes data centers, storage, networking components, and compute resources.
+
+8. Containers, DevOps, and Modernization
+Containers: Executable software units that package application code with its libraries and dependencies. They run anywhere (desktops, traditional IT, cloud) and consume fewer resources than Virtual Machines, streamlining development.
+
+DevOps: A collaborative approach between development and operations teams. It enables continuous software delivery in fast, iterative cycles, reducing overhead and duplication while navigating cloud complexities.
+
+Cloud-Native Applications: Built or refactored specifically for cloud environments using DevOps methodologies. They consist of microservices packaged in containers for quick feature updates.
+
+Application Modernization: Driven by cloud computing, it helps organizations accelerate digital transformation and respond quickly to market changes.

@@ -1,0 +1,103 @@
+Technical Review Fundamentals
+1. Software Engineering Overview
+Software engineering encompasses all aspects of software production, from early system specification to maintaining the system in use. As an engineering discipline, it uses appropriate theories and methods to solve problems within organizational and financial constraints, including project management and the development of support tools.
+
+Every software process includes three primary activities:
+
+Software Specification: Customers and engineers define the software to be produced and its operational constraints.
+
+Software Development: Developers and engineers design and program the software.
+
+Software Testing: The software is checked to ensure it meets customer requirements. Engineers may step back in if a redesign is necessary.
+
+2. Basic Coding Concepts
+Coding translates the ideas from an algorithm into computer language. Fundamental concepts include:
+
+Array: A data structure consisting of a collection of values or variables, each identified by at least one array index or key. (In some languages, array types overlap with lists and strings).
+
+Loop (Iteration): Executing a statement or block until the program reaches a certain state, or operations have been applied to every element of a collection. Expressed with keywords like while, repeat, for, or do-until.
+
+Data Type: A classification indicating how the programmer intends to use the data (e.g., integer, real, character/string, Boolean).
+
+Arithmetic Operations: Addition, subtraction, multiplication, and division, performed according to an order of operations.
+
+Scope: The region of a computer program where an identifier name binding (an association of a name to an entity, like a variable) is valid. This region is called a scope block.
+
+3. Programming Languages
+CPUs only understand machine language instructions, which are difficult for humans to write. High-level languages simplify giving instructions and are translated into machine language by a compiler or an interpreter.
+
+Brief History of Languages:
+
+1950s: FORTRAN (for complex mathematical calculations) and COBOL (for business applications).
+
+1960s: BASIC (a general-purpose language designed for beginners).
+
+1970s: C and C++ (powerful, general-purpose languages developed at Bell Laboratories).
+
+1990s: Java (created by Sun Microsystems for single computers or web servers), JavaScript (a related scripting language run only in browsers), Python (a popular general-purpose language), and Ruby (popular for web server programs).
+
+2000s: C# (created by Microsoft for the .NET platform).
+
+4. Networking Concepts
+Knowledge of networking is fundamental to modern software development.
+
+Network Types (by geographic area): Personal Area Networks (PANs), Local Area Networks (LANs), Metropolitan Area Networks (MANs), and Wide Area Networks (WANs).
+
+Network Protocols: Rules determining how data is transmitted between devices.
+
+SMTP and POP3: Provide e-mail services.
+
+HTTP: Delivers web content in browsers.
+
+DNS: Translates domain names.
+
+SNMP: Network management protocol.
+
+DHCP: Automatically assigns IP addresses.
+
+IP Addresses: Enable devices to find each other. IPv4 is a four-byte format used for decades, while IPv6 is a newer six-byte format allowing for many more addressable devices.
+
+5. Object-Oriented Programming (OOP)
+OOP models complicated real-world systems into manageable software solutions using "objects" (data structures). Objects contain data (fields) and code (procedures). Procedures can access and modify the object's data fields.
+
+Four Fundamentals of OOP:
+
+Abstraction: Handling complexity by hiding unnecessary details from the user, ensuring only relevant aspects are included. This allows users to implement complex logic without thinking about hidden complexity.
+
+Encapsulation: Bundling data with the methods that operate on it. It hides the state of a data object inside a class, preventing unauthorized direct access.
+
+Inheritance: Basing an object or class upon another. A "child object" acquires all the properties and behaviors of the parent, with well-defined exceptions.
+
+Polymorphism: Providing a single interface to entities of different types that share characteristics. (e.g., A function accepting a "Person" parameter can work on both "Instructor" and "Student" objects if both inherit from a Person parent object).
+
+6. SQL and Database Architecture
+Structured Query Language (SQL) creates and manipulates relational databases.
+
+Normalization: A design technique dividing larger tables into smaller ones linked by relationships. It reduces data redundancy, eliminates redundant data, ensures logical storage, and removes insertion/update/deletion anomalies.
+
+Sub-languages:
+
+Data Definition Language (DDL): Commands to create and destroy databases and objects.
+
+Data Manipulation Language (DML): Commands to insert, retrieve, and modify data.
+
+Joins: Combine data across several tables to process large quantities efficiently. The five types are inner, outer, right, left, and cross joins.
+
+7. Cloud Computing
+Cloud computing provides extended, virtualized computing resources available anywhere, pooling hardware like servers and networking without physical boundaries.
+
+Cloud Service Models:
+
+Infrastructure as a Service (IaaS): Highly flexible; gives complete control over the hardware running the application.
+
+Platform as a Service (PaaS): A ready-to-use development environment where developers focus entirely on writing and executing code.
+
+Software as a Service (SaaS): A complete product fully run and managed by the service provider.
+
+Cloud Deployment Models:
+
+Public Cloud: Services shared among multiple clients through a provider on a virtual server, offered free or pay-per-use.
+
+Private Cloud: A proprietary environment dedicated to a single business or organization.
+
+Hybrid Cloud: Combines cloud solutions so subscribers can use whichever is best for a given situation.

@@ -1,0 +1,34 @@
+Expert Viewpoints: Tech Screen Expectations
+1. Types of Technical Screenings
+Companies have various methods for screening candidates to assess their technical abilities before or during the interview stage. You may encounter:
+
+Code Assignments/Homework: Take-home projects that you complete on your own time. While some managers dislike them because they require unpaid time, you must be prepared to decide if a company is worth the extra effort.
+
+Online Quizzes and Technical Questions: Short assessments often sent before an interview (even used by large companies like IBM). It is highly recommended to brush up on coding challenges online to pass this stage.
+
+Challenge Problems: Short or slightly longer problems (similar to LeetCode or HackerRank) where you must solve a specific issue using a combination of algorithms and data structures.
+
+Whiteboarding Sessions: You may not write actual code; instead, you virtually or physically walk through your logic using pseudocode to explain how you would solve a problem.
+
+Take-Home Challenges: Larger projects, such as building a basic web application (e.g., a painting app) with specific requirements. You may be asked to add one unique feature to demonstrate your creativity.
+
+2. How Hiring Managers View Screenings
+Some hiring managers do not place heavy stock in the results of technical quizzes.
+
+They often care much more about how a candidate communicates, their passion, their potential, and the quality of their portfolio or GitHub repositories.
+
+However, because many companies still strictly use these screenings, you must prepare for them to reach the later interview stages where your personality and portfolio can shine.
+
+3. Preparation Strategies
+Where to Study: Use YouTube videos, LeetCode, and HackerRank to study data structures and algorithms.
+
+What to Study: Learn what these structures and algorithms are, what they do, and how to implement them in multiple scenarios.
+
+Consistency: The best approach is consistent practice. Doing one problem a day (or one every other day) is far more effective than cramming five problems in one day and doing nothing for a week.
+
+4. The Right Mindset During the Screen
+Perfection is Not Expected: Interviewers know that anxiety is normal and that candidates might draw a blank. Even senior developers rely on Google daily; you are not expected to know everything off the top of your head.
+
+Focus on the Thought Process: The primary goal of a technical screen is to see how you think and solve problems.
+
+Communication is Key: If you get stuck, explain how you are thinking about the problem. If the interviewer gives you a hint, show how you would use it to move forward. Explaining your logic and how things would play out is much more important than getting every single line of code perfectly correct.

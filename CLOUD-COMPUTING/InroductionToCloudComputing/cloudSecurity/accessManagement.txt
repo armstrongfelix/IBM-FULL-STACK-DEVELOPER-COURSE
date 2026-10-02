@@ -1,0 +1,59 @@
+Identity and Access Management (IAM) in Cloud Security
+
+Top Cloud Security Concerns and Vulnerabilities
+
+According to the Cloud Security Report by Cybersecurity Insiders, the number one cloud security concern among cybersecurity professionals is data loss and leakage.
+
+The single biggest perceived vulnerability to cloud security is unauthorized access resulting from the misuse of employee credentials and improper access controls, followed closely by insecure interfaces and APIs.
+
+Overview of Identity and Access Management (IAM)
+
+Identity and Access Management (also known as access control) functions as the first line of defense in the cloud. It authenticates and authorizes users to provide user-specific access to cloud resources, services, and applications.
+
+A comprehensive security strategy must address the access requirements of diverse user groups, including organizational users, internet and social-based users, and third-party business partners or vendors.
+
+The Three Main Types of Users
+
+Administrative Users: Includes platform administrators, operators, and managers who create, update, and delete application and service instances, as well as monitor team activities. A compromised administrative account carries severe risks, enabling attackers to steal data from production databases, deploy malicious applications, or deface and destroy existing systems.
+
+Developer Users: Includes cloud application developers, platform developers, and application publishers. Developers are authorized to read sensitive information and create, update, and delete applications.
+
+Application Users: The end users who interact with and use cloud-hosted applications.
+
+Key Components of IAM
+
+Authentication (Identity Service): Enables applications to authenticate users at the application level using various identity providers, including cloud directories, enterprise-hosted identity providers, cloud-hosted providers, or social providers (such as Google, LinkedIn, Facebook, and Twitter). Applications or users can also be identified via unique identifiers or API keys.
+
+Multifactor Authentication (MFA): Combats identity theft by adding extra layers of verification, such as single-use passwords, PINs, certificates, physical tokens, or risk-based authentication (evaluating factors like changes in user location, past activity, and preferences).
+
+Cloud Directory Services: Securely manage user profiles, credentials, and password policies in a central cloud environment, eliminating the need for individual cloud applications to maintain separate user repositories.
+
+Reporting: Delivers user-centric views of resource access and resource-centric views of user activity. Reports track which users have access to specific resources, monitor changes in permissions, and identify how access is utilized under various conditions.
+
+Audit and Compliance: Validates implemented controls against organizational security policies, industry compliance standards, and risk frameworks to identify and report deviations for both cloud providers and consumers.
+
+User and Service Access Management: Allows resource owners to provision and de-provision profiles for customers, partners, and vendors with minimal human interaction, automating access control based on organizational roles and policies.
+
+Securing Sensitive Accounts (Admins and Developers)
+
+Because administrative and developer accounts hold access to critical and sensitive systems, organizations must maintain strict control over their entire lifecycle using specific controls:
+
+Role-based provisioning tailored to specific resources.
+
+Enforced password policies governing minimum length, special characters, and related requirements.
+
+Mandatory multifactor authentication, such as time-based one-time passwords (TOTP).
+
+Immediate de-provisioning of access permissions when employees leave the organization or change roles.
+
+Access Groups and Access Policies
+
+Access Groups: A collection of users and service IDs grouped together so that identical permissions can be assigned to all entities at once using one or more access policies. This streamlines permission management and reduces the total number of policies in an account.
+
+Access Policies: Formal definitions that grant access permissions to account resources. Every policy contains three key elements:
+
+Subject: The entity requesting access (a user, service ID, or access group).
+
+Target: The specific resource or provisioned service offering being accessed.
+
+Role: The explicit actions and operations permitted on the target resource.

@@ -1,0 +1,43 @@
+Lecture Notes: Mock Interview of a Software Engineer: Part 3
+1. Technical Comparison: React vs. Plain JavaScript
+The interviewer asked the candidate to explain why a developer would choose to use React over plain JavaScript for web development.
+
+Plain JavaScript:
+
+It is a versatile, full programming language (similar to Python or Java) that can be used for both front-end and back-end development.
+
+It does not enforce a specific structure, allowing developers to build however they want.
+
+Drawback: All data is stored directly in the DOM. To retrieve data, you have to search for the correct DOM element, which makes it easy to get lost and makes the code harder to maintain.
+
+React:
+
+It is a specific library intended strictly for front-end development.
+
+It requires developers to structure the user interface in a specific, required way.
+
+Advantage: Data is stored in normal JavaScript variables rather than relying on searching the DOM. Even though it forces a specific structure, this approach makes the application much easier to maintain and use.
+
+Handling Unknowns: When asked about the "virtual DOM," the candidate honestly admitted she was not familiar with it, which the interviewer accepted without issue.
+
+2. Discussing a Past Project: Music XML Converter
+Interviewers often ask candidates to discuss a project they are particularly proud of to gauge their practical experience and teamwork skills.
+
+Project Overview: A 5-month group project (completed with four other members) built entirely in Java. The application takes a music XML file and converts it into customizable sheet music that can also be played aloud by a virtual instrument.
+
+Personal Connection: The candidate plays the guitar and piano, showing a personal interest in the domain of the project.
+
+Candidate's Specific Contribution:
+
+She was responsible for taking the initial file and building the entire XML parser.
+
+After finishing the parser, she assisted with the UI by using a Java library to properly render and display the sheet music on the screen.
+
+3. Explaining a Technical Challenge and Solution
+Candidates must be prepared to explain specific challenges they faced during their projects and how they solved them.
+
+The Problem: The teammates working on the sound output encountered a major issue: when the user clicked "play," the entire application would freeze. The user could not interact with the program at all while the music was playing (which is a massive problem if a song lasts two minutes).
+
+The Solution (Multi-threading): To fix this, the team researched and implemented multi-threading. They placed the audio playing functionality into an asynchronous function.
+
+The Result: The music played in the background on one thread, while the user interface ran on another. This allowed the user to continue interacting with the program (such as skipping to a certain music measure) without the application freezing.

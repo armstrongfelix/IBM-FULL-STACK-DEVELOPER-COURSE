@@ -1,0 +1,53 @@
+Opportunities in Software Development
+Note on Terminology: As a reminder, the terms "software developer" and "software engineer" are used interchangeably in this course.
+
+1. Core Role and Industry Reach
+What Developers Do: Software developers design and create computer applications that fulfill specific user needs. They also build the underlying systems that run devices and develop software that operates both local networks and expansive cloud services.
+
+Breadth of the Field: While a large percentage of developers work within the technology and information industry, their skills are crucial everywhere. Developers are highly sought after in manufacturing, shipping, medical research, entertainment, travel, law, finance, and government.
+
+"Big Tech": Many developers work for massive multinational corporations like IBM, Microsoft, Amazon, and Facebook (Meta). Each of these major players has a distinct company culture, organizational structure, and product goal.
+
+2. Company Size and Working Styles
+The size of a company significantly affects the nature of its positions, team composition, and overall work environment.
+
+Large Companies (Big Tech)
+
+Pros: Typically offer higher entry-level salaries and benefits.
+
+Cons: Bureaucratic policies may limit how quickly your salary can grow.
+
+Environment: Tend to feature regular work schedules and strict, traditional channels of hierarchy.
+
+Small Companies and Startups
+
+Pros: Offer exciting opportunities to create something new, rapidly grow your skills, and tackle a wide variety of challenges by wearing many hats.
+
+Cons: Generally less stable with a less predictable advancement path.
+
+Environment: Often demand longer or irregular working hours but feature a "flatter" organizational structure with less hierarchy.
+
+Medium-Size Companies
+
+Provide a middle ground by offering more stability than a startup but more agility than a massive corporation. Because they vary greatly in style, positions here should be evaluated on a case-by-case basis.
+
+3. Job Growth and Global Opportunities
+Software development remains one of the fastest-growing occupations in the world, largely because every new technological advancement (such as the shift to cloud-based services) creates a demand for brand new software and updates to older systems.
+
+United States Outlook:
+
+Growth: The U.S. Bureau of Labor Statistics estimates a 22% growth in software development jobs over the next 10 years, classifying it as "much faster than average."
+
+Compensation: The median wage is approximately $110,000, with a starting salary around $62,000 (note that wages vary widely depending on industry and geographic area).
+
+Global Outlook:
+
+Growth: The worldwide number of software developers is projected to grow by a remarkable 75% over the next decade.
+
+High-Demand Regions:
+
+Europe: The United Kingdom, Switzerland, and the Netherlands.
+
+Asia: China, Japan, Russia, India, and South Korea.
+
+Other Strong Markets: Canada and Australia are also experiencing heavy demand for development talent.

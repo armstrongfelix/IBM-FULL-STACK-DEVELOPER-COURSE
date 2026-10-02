@@ -1,0 +1,40 @@
+Lecture Notes: Expert Viewpoints: Building Your Network
+1. Specialization and Visibility
+To stand out early in your career, focus on becoming highly valuable rather than just acquiring generic skills.
+
+Specialize in a Technology Stack: Learning an emerging or highly sought-after technology can make you incredibly valuable to employers looking for those specific skills.
+
+Put Yourself Out There: Do not be shy about your career goals (e.g., wanting to work for a larger company or move to a new location).
+
+Share Your Knowledge: Use platforms like a blog to discuss technical topics. This allows you to reach a larger audience and opens the door for unexpected career opportunities.
+
+2. Curating Your Community and Space
+Networking can be intimidating, and you will face rejection, but it is excellent preparation for the job search itself.
+
+Find Your Community: Seek out organizations and groups that represent you, advocate for you, and where you can see yourself fitting in. Start networking within these groups.
+
+Curate Your Online Presence: Tailor your social media feeds (LinkedIn, Twitter, TikTok, Instagram) to exactly what you want to be. Follow professionals whose careers you want to emulate and actively document your software engineering journey online.
+
+3. Setting SMART Goals
+The journey to becoming a developer will have difficult moments, such as struggling with a new language or facing job rejections. Setting SMART goals turns an abstract dream into a tangible, step-by-step plan that keeps you motivated.
+
+Specific: Avoid arbitrary goals like "I want to be a software engineer." Define exactly what languages you want to learn, the companies you want to work for, and the environments you prefer.
+
+Measurable: Establish clear benchmarks, such as treating each new programming language you learn as a completed milestone.
+
+Attainable: Be realistic. Attempting to learn everything and get a job in one week is an outlandish goal that leads to disappointment.
+
+Relevant: Ensure that every small goal directly contributes to your overarching career objective.
+
+Time-Based: Give yourself a realistic timeline rather than saying you will do something "eventually." A one-year timeline is a practical timeframe to learn languages, complete projects, and begin applying for roles.
+
+4. Maximizing Your LinkedIn Profile
+Building a professional network is crucial for job seeking, and LinkedIn is the primary tool for this.
+
+Achieve "All-Star" Status: Follow LinkedIn's built-in guides to completely fill out every section of your profile.
+
+Showcase Your Value: List your key skills, add projects you have worked on, request recommendations from others, and embed relevant videos or links to make your profile visually interesting.
+
+Build Your Network: Actively connect with recruiters, former colleagues, and managers.
+
+Personalize Your Outreach: Always include a short, personalized message when sending connection invites to avoid looking like spam.

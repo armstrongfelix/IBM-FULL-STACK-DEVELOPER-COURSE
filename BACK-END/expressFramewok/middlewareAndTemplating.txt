@@ -1,0 +1,40 @@
+ROUTING, MIDDLEWARE, AND TEMPLATING
+
+
+Routing in Express
+
+Routing is an important aspect of server-side scripting. Requests to different routes to the same server must be handled appropriately by the server, whether they are GET, POST, PUT, or DELETE requests. If a route cannot be handled, the server must return appropriate error messages.
+
+Routing can be handled at two levels: the application level or the router level.
+
+Application-level routing involves defining separate methods for each HTTP method on each route (such as app.get or app.post). This approach is simple and works well when there are only a few endpoints.
+
+Router-level routing is used when there are many routes to handle, as it makes code maintenance much better. A router is used for branching query handling and routing each query differently. For instance, you can define an itemRouter to handle all requests starting with /item, and a userRouter for all requests starting with /user. Depending on the Uniform Resource Locator (URL) requested, the response changes accordingly.
+
+
+Understanding Middleware
+
+Middleware includes functions that have access to the request object, the response object, and the next function. The next parameter is crucial because it determines what is done after the current function finishes executing.
+
+An Express application can have more than one middleware, and they can be chained to each other. The order in which they are chained depends entirely on the order in which the .use method is used to bind them in the code. Middleware is highly useful for activities like parsing requests, adding authentication, and handling errors.
+
+There are five types of middleware, categorized based on purpose, use, and source:
+
+1. Application-level middleware: This is bound directly to the application using app.use. It acts as a gatekeeper, meaning all client requests to the server application are routed through it. It is useful for tasks like checking session information or adding authentication. For example, it can check if a password equals a specific value; if correct, it logs the time and chains to the next logical action. If incorrect, it sets an error status (like 402) and stops the user from logging in.
+
+2. Router-level middleware: Instead of binding to the entire application, this is bound to an instance of express.Router(). This allows you to apply specific middleware only to specific routes, rather than forcing all requests through the exact same middleware.
+
+3. Error-handling middleware: This can be bound to the entire application or to specific routers. It must always take exactly four arguments: error, request, response, and next. Even if you do not use the next parameter, you still have to define it in the method signature. It is used to catch thrown errors (such as preventing access to a specific admin user ID) and return proper error responses (like a 500 status code) while allowing other requests to process seamlessly.
+
+4. Built-in middleware: This can be bound to the entire application or specific routers. It is useful for activities like rendering HTML pages from the server, parsing JSON input from the front end, and parsing cookies. A common example is static middleware, which renders static HTML pages and images from a specific server-side directory.
+
+5. Third-party middleware: Because Node.js is open source, there are plenty of custom middleware packages available to install via npm. You can also easily create your own middleware by defining a function with the request, response, and next parameters and binding it to your app or router.
+
+
+Template Rendering
+
+Template rendering is the ability of the server to fill in dynamic content within an HTML template.
+
+For example, you can use a package like express-react-views to render React components directly from the server. To do this, you set a view engine property that is responsible for creating HTML from your view files (which are written in JSX code).
+
+When a request comes in, the view engine looks for the specified JSX file in a designated views directory, passes dynamic properties (like a user's name) into it, and renders the final dynamic HTML output for the client.

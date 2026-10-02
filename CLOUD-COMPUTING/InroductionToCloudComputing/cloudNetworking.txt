@@ -1,0 +1,45 @@
+Building a Secure Cloud Networking Presence
+
+The concept of building a cloud network is fundamentally similar to deploying a network in a traditional on-premises data center.
+
+The primary difference is that cloud environments utilize logical instances of networking elements instead of physical, rack-mounted devices.
+
+For example, a physical network interface controller (NIC) is represented as a virtual NIC (vNIC). In the cloud, networking functions are inherently delivered as a service.
+
+To create a cloud network, you must first define the size of the network or the specific IP address range that establishes its boundaries.
+
+Cloud networks are deployed within logically separated segments called Virtual Private Clouds (VPCs).
+
+These VPCs provide the security of a private cloud combined with the massive scalability of a public cloud.
+
+A VPC can be further divided into smaller, manageable segments known as subnets.
+
+Cloud resources, such as Virtual Server Instances (VSIs), storage, network connectivity, and load balancers, are deployed directly into these subnets.
+
+Utilizing subnets allows organizations to deploy complex enterprise applications using the same multi-tier concepts found in traditional on-premises environments.
+
+Subnets serve as the primary area where security is implemented within the cloud.
+
+Every subnet is protected by Access Control Lists (ACLs), which act as a subnet-level firewall to control incoming and outgoing traffic.
+
+For more granular control, security groups can be created within a subnet to provide strict security rules at the individual instance level, such as protecting specific VSIs.
+
+When deploying a multi-tier application—for instance, an architecture consisting of web access VSIs, application tier VSIs, and backend database VSIs—each tier is isolated into its own distinct security group.
+
+Because web-facing VSIs require internet access to function, a public gateway instance is added to the network to enable external users to reach the application's internet tier.
+
+While public gateways handle general internet access, enterprises often need to securely extend their own on-premises resources into the cloud.
+
+This secure connection is typically achieved using Virtual Private Networks (VPNs).
+
+As multiple subnets are built and several workloads are deployed, it becomes critical to maintain application responsiveness.
+
+Load balancers are introduced to distribute traffic efficiently and ensure the constant availability of bandwidth across different applications.
+
+For enterprises operating in a hybrid cloud environment, relying on public internet connectivity is often insufficient.
+
+Instead, they use dedicated, high-speed connections to link their public cloud resources with their on-premises data centers.
+
+Solutions like IBM Cloud Direct Link or AWS Direct Connect provide a highly secure and highly efficient way to extend on-premises resources directly into the cloud.
+
+Ultimately, building a cloud network involves creating a set of logical constructs that deliver the exact same robust networking functionality IT professionals rely on in traditional data centers, ensuring environments remain secure and business applications perform optimally.

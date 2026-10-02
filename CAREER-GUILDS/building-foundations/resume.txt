@@ -1,0 +1,49 @@
+Draft Your Resume
+1. Fundamental Principles
+Your resume, alongside your portfolio, forms the critical first impression for potential employers. It serves to market your strengths and competence effectively.
+
+Alignment: Your resume should not simply be a paper version of your portfolio. Instead, the two should complement each other. Additionally, your resume must be closely aligned with your LinkedIn profile, containing consistent information.
+
+Length: Keep it brief. One page is standard, though up to two pages is acceptable if you have extensive relevant experience. Never exceed two pages.
+
+Formatting Details: Use bulleted lists that are informative yet concise. Consistently use present tense for current positions and past tense for all completed projects.
+
+Quality Check: Thoroughly check spelling and grammar. Have a friend proofread it if possible.
+
+2. Resume Structure and Core Sections
+Hiring managers often decide within seconds whether to keep reading, so organize your resume to catch their attention immediately.
+
+Contact Information: Place your name at the top. Include your city and state (a full mailing address is no longer necessary), a professional-looking email address, and a working phone number. You can also include your website or LinkedIn URL, but avoid cluttering this space.
+
+Skills Section: Place this near the top to quickly highlight your capabilities. For your master draft, list all your skills, software, and tools. When applying for a specific role, tailor this section by removing skills not required for that job. This section can be a standard list or include a graphical representation of your mastery level. You may also include a brief, one-sentence summary of yourself and what you are looking for.
+
+Work Experience: Usually the largest section of the resume. When writing experience statements, use the following formula: Action Word + Task + Quantifiable Result.
+
+Example: "Deployed improved database design, which increased efficiency by 25% and saved 15% in storage."
+
+Action words to use: initiated, constructed, converted, deployed, led, designed.
+
+Projects: Highly recommended if you are new to the job market. List relevant projects that do not fit into a formal job role to demonstrate practical experience.
+
+Education: Highlights formal study (college degrees) and other educational achievements (professional certificates, specializations, seminars). Format entries with: Achievement type/focus, Organization name, Year completed, and (optionally) GPA and honors.
+
+3. Optional Sections
+Only include additional sections if they directly support your application; avoid using them as padding.
+
+Hobbies and Interests: These can be distracting or overly personal for experienced professionals. Only include them if you have limited work/educational experience, lack specific job-related skills, or if a job posting explicitly lists duties that align with your hobbies.
+
+Other Potential Sections: Conferences, publications, awards, technical training, and certifications.
+
+4. Optimizing for ATS and Search Engines
+While creative, visually appealing templates are popular, your resume must be easily readable by Applicant Tracking System (ATS) software and optimized for search engines (SEO) to ensure you pass automated screenings.
+
+Avoid Complex Layouts: Resumes with multiple columns, images, and highly creative layouts often fail to be read correctly by ATS software, potentially causing a qualified candidate to be rejected.
+
+Keyword Strategy: Use keywords purposefully within normal text contexts (ATS software can detect keyword stuffing). Align your terminology and acronyms with those used in the specific job posting.
+
+Accessibility and Links: Regularly verify that any links you include work correctly. Avoid large image files, and always add alt-text to images. This aids visually impaired users and provides another area for relevant keywords.
+
+5. Accepted File Formats
+Microsoft Word: Almost all ATS software works best with Microsoft Word. Many companies strictly require this format, so you must always maintain a Word version of your resume.
+
+Alternate Formats: Depending on the application requirements, you may also need to provide alternative versions such as Plain Text, PDF (or accessible PDF), Graphic, Braille, or translated versions in other languages.

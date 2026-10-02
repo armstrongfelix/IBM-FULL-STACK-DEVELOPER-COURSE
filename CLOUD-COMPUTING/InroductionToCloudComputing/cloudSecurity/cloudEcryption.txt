@@ -1,0 +1,49 @@
+Cloud Encryption
+
+Given the concerns around data security and privacy in public cloud environments, encryption serves as a key role and is often referred to as the last line of defense in a layered security model.
+
+This protection goes beyond simply encrypting data; it also provides robust data access control, key management, and certificate management.
+
+How Encryption Works
+
+Encryption is the process of scrambling data in a way that makes it illegible. It ensures that only authorized users have access to sensitive data, and if the data is intercepted without authorization, it remains unreadable and meaningless.
+
+An encryption system consists of two main parts: the encryption algorithm (which defines the rules for transforming the data into an illegible format) and the decryption key (which defines how the encrypted data will be transformed back into a legible format).
+
+Cloud providers offer various cloud encryption services. These can range from limited encryption applied only to data identified as sensitive, to end-to-end encryption of all data uploaded to the cloud. Typically, data is encrypted upon receipt, and encryption keys are passed to the customers to decrypt their data when needed. It is crucial to manage these keys securely, as losing them means you will lose the ability to read your data.
+
+The Three States of Data Protection
+
+Encryption at Rest: Protects data while it is physically stored in a database or storage layer. Options for encrypting data at rest include block and file storage encryption, built-in object storage encryption, and database encryption services.
+
+Encryption in Transit: Protects data while it is being transmitted from one location to another. This involves encrypting data before transmission, authenticating endpoints, and decrypting and verifying data upon arrival. Common protocols for this include Secure Sockets Layer (SSL) and Transport Layer Security (TLS), which are used for secure website access as well as for data moving between servers and services within the cloud.
+
+Encryption in Use: Protects data when it is actively in use within memory for computations. It allows computations to be performed directly on encrypted text without the need to decrypt the underlying data first.
+
+Server-Side vs. Client-Side Encryption
+
+Server-Side Encryption: Occurs after the cloud storage receives your data, but before it is written to disk and stored. For server-side encryption, you can either create and manage your own keys (Customer Supplied Encryption Keys) or have the cloud provider generate and manage them using their key management services (Customer Managed Encryption Keys).
+
+Client-Side Encryption: Occurs before the data is ever sent to the cloud storage. By using this method, users utilize encryption algorithms and keys that remain completely invisible to the cloud provider, making it virtually impossible for the provider to decrypt the hosted data.
+
+Multi-Cloud Data Encryption
+
+Because a majority of enterprises operate in multi-cloud environments, it is necessary to implement a singular data protection strategy across on-premise, hybrid, and multi-cloud deployments.
+
+Some providers offer multi-cloud data encryption services featuring data access management, integrated key management, and sophisticated encryption. Using a multi-cloud data encryption console, organizations can define and manage access policies, create, rotate, and manage encryption keys, and aggregate access logs to protect sensitive workloads regardless of where the data resides.
+
+Encryption Key Management and Best Practices
+
+Encryption does not eliminate data security risks; rather, it separates the security risk from the data itself by transferring that risk to the encryption keys. These keys must be managed and protected against threats to keep the data secure.
+
+Key management services offered by cloud providers help perform lifecycle management for encryption keys used in cloud services or custom applications. Because the keys remain in the customer's possession, the data is protected from both the cloud service provider and other users.
+
+Best practices for encryption key management include:
+
+Storing encryption keys separately from the encrypted data.
+
+Taking key backups off-site and auditing them on a regular basis.
+
+Refreshing the keys periodically.
+
+Implementing multi-factor authentication for both the master keys and the recovery keys.

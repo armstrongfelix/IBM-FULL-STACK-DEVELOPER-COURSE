@@ -1,0 +1,54 @@
+Interviewing: Discussing a Project
+1. The Value of Discussing Past Projects
+In technical interviews, discussing past projects is the most effective way to demonstrate that you have the skills and knowledge to handle complex work. A strong project discussion proves:
+
+You understand project structure and how components fit together.
+
+You possess a solid grasp of varied technical skills and concepts.
+
+You communicate complex technical information effectively.
+
+2. How to Introduce and Frame the Project
+Because interview time is limited, you must structure your discussion efficiently.
+
+Lead with the Challenge: Begin by highlighting the biggest technical challenge you encountered. This immediately engages the interviewer and sets the context for your story.
+
+Establish Context: Describe the application domain, the basic need the project fulfilled, and why you chose to discuss this specific project.
+
+Outline the Structure: Mention the specific modules and describe the overall flow or process of the project.
+
+Define Success: Explain the main functionality, the advantages of your solution, and whether the project was ultimately successful or not (and why). Note: Use graphs or flowcharts if they help clarify the structure.
+
+3. Detailing Tools and Technologies
+Explaining your tech stack allows the interviewer to gauge your professional skills and the working process of the project.
+
+Categorize Your Tech: Organize your information into functional categories to make it digestible. Examples include: User Interface (UI), Application Logic/Business Services, External Services, Database, and DevOps processes.
+
+Prepare for Deep Dives: Interviewers will likely ask deeper questions about specific tools. Review your tools, technologies, and third-party documentation ahead of time so you can confidently answer technical questions regarding the project's structure.
+
+4. Highlighting Your Specific Accomplishments
+Ensure the interviewer understands exactly what you contributed, not just what the team achieved.
+
+Your Code and Tasks: Detail your specific tasks, the exact code you wrote, its function, and the obstacles you overcame.
+
+Problem-Solving Focus: Emphasize your ability to tackle problems independently, develop creative solutions, and utilize resources for help when needed.
+
+Professional Growth: Detail how the experience helped you grow as a developer, particularly your ability to handle negative feedback and confront unexpected challenges.
+
+Target Alignment: Whenever possible, explicitly align the skills you used in this project with the specific skills required by the role you are interviewing for.
+
+5. Proving Reliability: Testing and Follow-Up
+Demonstrate your commitment to keeping software reliable by explaining how you verified your work.
+
+Testing Strategies: Describe how you approached testing feature specifications to ensure needs were met. Detail your use of both automated and manual tests.
+
+Monitoring and Validation: Discuss the specific procedures or tools you used to monitor code, log failures, or analyze the codebase for common mistakes in production.
+
+6. Summarizing Personal Learning
+Conclude your project discussion by succinctly but thoroughly summarizing your takeaways.
+
+Hard Skills: Mention the new technologies and technical skills you learned.
+
+Soft Skills: Discuss improvements in problem-solving, solution design, and teamwork.
+
+Embrace Mistakes: Analyze what you learned from mistakes or unsuccessful work just as much as you discuss your successes.

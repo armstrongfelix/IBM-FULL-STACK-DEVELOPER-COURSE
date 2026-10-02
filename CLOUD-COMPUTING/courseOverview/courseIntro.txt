@@ -1,0 +1,33 @@
+Course Learning Objectives: What You Will Master
+1. Cloud Fundamentals & Business Strategy
+Core Concepts: Define cloud computing, its essential characteristics, and its historical evolution.
+
+The Business Case: Articulate the business rationale for adopting cloud technology.
+
+Emerging Technologies: Understand how the cloud acts as a foundation for advanced technologies like the Internet of Things (IoT), Artificial Intelligence (AI), Blockchain, and Data Analytics.
+
+2. Architecture, Models & Infrastructure
+Service & Deployment Models: Identify the key features, benefits, and real-world use cases of various cloud service models (e.g., IaaS, PaaS, SaaS) and deployment models (e.g., Public, Private, Hybrid).
+
+Core Infrastructure: Grasp the components that make up cloud environments, including virtual machines (VMs), bare metal servers, cloud networking, and container-based technologies.
+
+Storage & Delivery: Understand different types of cloud storage (their features and use cases) and explain the mechanics of Content Delivery Networks (CDNs).
+
+Emergent Trends: Navigate modern cloud architecture trends, specifically Hybrid Multicloud environments, Microservices, and Serverless computing.
+
+3. Modern Development & Operations
+Cloud-Native Applications: Learn the key concepts, development principles, benefits, and use cases of building applications natively for the cloud.
+
+DevOps Integration: Understand how DevOps practices are essential for managing and mitigating the complexities of cloud environments.
+
+App Modernization: Explain the strategies and processes organizations use to modernize their legacy applications for the cloud.
+
+4. Security & Ecosystem
+Cloud Security: Master fundamental cloud security concepts, including Identity and Access Management (IAM) and Cloud Encryption.
+
+Career Landscape: Identify the various job roles and career paths available within the cloud computing industry.
+
+5. Practical Hands-On Application (Optional)
+Platform Setup: Create and configure a personal account on IBM Cloud.
+
+Deployment: Provision an object storage instance on IBM Cloud and successfully upload/store items within it.

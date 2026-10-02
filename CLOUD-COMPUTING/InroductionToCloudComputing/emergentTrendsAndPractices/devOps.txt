@@ -1,0 +1,55 @@
+Overview of DevOps
+
+
+DevOps is a collaborative approach that merges Development (teams designing, developing, delivering, and running software) and Operations (teams identifying problems, monitoring, managing environments, and fixing issues). It unites business owners, developers, operations, and quality assurance teams to continuously deliver software.
+
+
+By applying agile and lean thinking principles across the entire software supply chain, DevOps involves all stakeholders who develop, operate, or benefit from the software, including customers, suppliers, and partners. This approach improves productivity by accelerating customer feedback cycles, unifying measurements across an enterprise, and significantly reducing overhead, duplication, and rework.
+
+
+Using this approach, developers can produce software in short iterations on a continuous delivery schedule. This allows businesses to release new features and bug fixes in rapid cycles, quickly seize market opportunities, and easily integrate customer feedback into their products.
+
+
+Core DevOps Processes
+
+
+Continuous Delivery: The practice of delivering small, well-designed, high-quality increments of software directly to customers.
+
+
+Continuous Integration: Creating packaged builds of code changes released as immutable images. In this context, "immutable" means that when modifications are needed, the entire component is replaced with an upgraded version rather than being patched or altered.
+
+
+Continuous Deployment: Progressing each newly packaged build through the deployment lifecycle as rapidly as possible.
+
+
+Continuous Monitoring: Utilizing tools that help developers track and understand the performance and availability of their applications even before they are deployed to production.
+
+
+Delivery Pipeline: An automated, continuous loop of steps that includes ideation, coding, building, deploying, managing, and continuous improvement (which loops directly back into the ideation phase).
+
+
+DevOps in the Cloud Environment
+
+
+While DevOps can be applied to applications anywhere, there is a highly compelling case for using it with cloud-ready and cloud-native applications. Cloud computing platforms offer near-limitless compute power and data services, but they also introduce new complexities and risks.
+
+
+Cloud-native applications form complex, distributed systems with multiple moving parts, independent tech stacks, and rapid release cycles. DevOps principles provide the essential framework to define how people work together to build, deploy, and manage these complex cloud-native architectures quickly and reliably.
+
+
+Key Capabilities and Best Practices
+
+
+Automated Provisioning: DevOps practices make it possible to programmatically provision servers, build middleware, and install application code. This creates a fully automated installation process that is fully documented, repeatable, verifiable, and traceable.
+
+
+Automated Deployment Pipelines: Application deployments are inherently complex. The combined practices of continuous integration and continuous deployment create a fully automated pipeline to manage this complexity throughout the application development lifecycle.
+
+
+Enhanced Testing Environments: Through automated provisioning and continuous deployment, developers and quality professionals can test software in low-cost, production-like environments that were previously unavailable, boosting both productivity and software quality.
+
+
+Disaster Recovery: If systems are compromised or struggling to recover from natural disasters, DevOps best practices enable organizations to rebuild these systems quickly and reliably from scratch.
+
+
+Modernization: Ultimately, DevOps provides a powerful set of principles, practices, and tools to realize the full potential of cloud-native computing and helps modernize existing legacy applications so they can leverage cloud benefits.

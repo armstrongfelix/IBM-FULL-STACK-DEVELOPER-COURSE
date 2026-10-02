@@ -1,0 +1,74 @@
+Lecture Notes: Authentication and Authorization in Node.js
+1. Core Concepts
+Authentication is the process of confirming a user's identity by obtaining and validating their credentials. It identifies users to provide specific access rights and tailored content based on their ID.
+
+Authorization determines which specific resources or endpoints an authenticated user is permitted to access.
+
+There are three primary approaches to authentication:
+
+Session-based authentication
+
+Token-based authentication (The most popular approach for Node.js)
+
+Password-less authentication
+
+2. Advantages of Token-Based Authentication
+Token-based authentication is the preferred method in Node.js for several reasons:
+
+Highly Scalable: The server does not need to store session data. The token is stored entirely on the client side, making it easier for the server to handle multiple users simultaneously.
+
+Flexible: A single token can be used across multiple servers, offering authentication for diverse websites and applications at once.
+
+Secure: JSON Web Tokens (JWTs) can be signed and encrypted. They cannot be tampered with or read without the server's private encryption key.
+
+3. API Architecture Overview
+To implement this in an Express.js server, the application typically requires two main API endpoints:
+
+POST API (Login): Used for authentication. The client sends a username and password in the request body. If successful, the server returns a signed web token.
+
+GET API (Protected Resource): Used for authorization. This endpoint (e.g., /employees) requires a valid token to access restricted data.
+
+4. Implementation Guide
+Step A: Setup and Dependencies
+Initialize the Server: Create an Express web server module (e.g., apiServer.js) and set it to listen on a port (like 5000).
+
+Install the JWT Package: Run the command npm install --save jsonwebtoken to install the necessary library.
+
+Import the Module: Require jsonwebtoken at the top of your file.
+
+Enable JSON parsing: Use app.use() to allow the API to return JSON responses.
+
+Step B: Building the Login Endpoint (POST)
+Process: The endpoint reads the username and password from the incoming request body and compares them with credentials fetched from the database (or hardcoded for demo purposes).
+
+Success (Match):
+
+Generate a verified JWT using jsonwebtoken.sign().
+
+Pass the username and a JWT secret as parameters into the sign function.
+
+Return the generated token as a JSON response.
+
+Failure (No Match):
+
+Return an HTTP status code of 401 (Unauthorized).
+
+Include a message: "invalid username and or password".
+
+Step C: Building the Protected Endpoint (GET)
+Process: The client must pass the token they received during login into the Authorization header of their GET request. Because this header typically starts with the string "Bearer ", it is known as a Bearer token.
+
+Header Check: Use the request.header function to read the incoming token. If no header is found, return a 401 status code with the message "no token".
+
+Verification:
+
+Verify the fetched token using jsonwebtoken.verify(), passing in the token and the JWT secret.
+
+Check if the user property in the decoded token matches the database records.
+
+Success: Return a 200 Success status code with the message "access successful to employee endpoint".
+
+Failure: If verification fails, return a 401 status code with the message "please log in to access this resource".
+
+5. Security Best Practice
+Protecting the Secret Key: The JWT secret used to sign and verify tokens must never be hardcoded into the API file. It should always be generated using a password generator and stored securely in a configuration file as an environment variable.

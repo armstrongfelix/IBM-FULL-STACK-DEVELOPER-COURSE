@@ -1,0 +1,39 @@
+Mock Interview of a Software Engineer: Part 2
+1. HTTP Requests: GET vs. POST
+GET and POST are two different HTTP requests with distinct functionalities.
+
+GET Request: Used to read data. It sends data as key-value pairs directly through the URL of the request.
+
+POST Request: Used to create or update data. It takes the key-value pairs and sends them securely within the body of the request.
+
+2. Security Considerations for Login Forms
+Using a GET request for a login form (which includes sensitive information like a username and password) is a bad idea.
+
+Because GET requests store data in the URL, that sensitive information can be cached, bookmarked, or stored in the browser history.
+
+A POST request is much safer for login forms because the data is sent in the body. It is not cached or stored in the URL, preventing someone else from bookmarking the page and logging in with another user's credentials.
+
+3. RESTful Conventions: POST vs. PUT
+While GET and POST are very common, PUT and DELETE are also standard HTTP verbs. In a RESTful web service, the convention for using POST and PUT is:
+
+POST: Used specifically for the creation of a brand new resource.
+
+PUT: Used to update an existing resource.
+
+4. Handling Unknown Interview Questions
+The interviewer brought up SQL injection as a major security concern with web forms. The candidate admitted to not knowing the answer because she lacked experience with SQL. The interviewer noted that this is perfectly acceptable—nobody knows the answer to every question, and it is fine to admit gaps in knowledge and move on to the next question.
+
+5. HTTP Status Code Families
+When a server responds to a request, it provides an HTTP status code. These codes are grouped into five main families based on their first digit:
+
+100s (Informational): Indicates what is currently happening with the server (e.g., a "continue" message).
+
+200s (Success): Indicates that a request (like a GET or POST) was completed successfully.
+
+300s (Redirects): Used to redirect the user, such as when a URL has been moved permanently to a new location.
+
+400s (Client Errors): Indicates an issue on the user's end, such as typing an incorrect URL.
+
+Example: A 404 code specifically means the page was "Not Found."
+
+500s (Server Errors): Indicates that an issue occurred on the server side.

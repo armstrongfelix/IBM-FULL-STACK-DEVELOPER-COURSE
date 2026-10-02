@@ -1,0 +1,48 @@
+Lecture Notes: Deploying Web Apps Using Flask
+Learning Objectives
+By the end of this lecture, you should be able to describe Flask features, install Flask, and create and deploy a Python web app using Flask.
+
+Flask and CRUD Operations
+Flask is a micro-framework designed to help you create web applications quickly and easily using Python.
+
+It fully supports CRUD (Create, Read, Update, and Delete) operations by handling POST, PUT, GET, PATCH, and DELETE requests.
+
+Here is how CRUD operations map to different requests:
+
+POST: Used for creating objects or data (such as creating a user). Note that many web applications also tend to use POST for updating and deleting objects.
+
+GET: Used to read data from the server.
+
+PUT & PATCH: Used to update existing data or objects.
+
+DELETE: Used to delete existing data or objects.
+
+Steps to Create a Flask Web Application
+Creating a basic web application with Flask involves a clear sequence of steps.
+
+First, you need to install the Flask package using pip, the standard package manager for Python, by running the command pip install flask.
+
+Second, import the Flask module from the Flask package by writing from flask import Flask.
+
+Third, create an object of the Flask class to act as your web application and store it in a variable (for example, app = Flask("MyFirstWebApplication")).
+
+Fourth, define the root route and the HTTP method invoked when accessed using a decorator like @app.route('/'). If no HTTP method is explicitly specified, it defaults to a GET request.
+
+Fifth, write the Python function directly below the route definition, such as def hello(): returning the string 'hello world!'.
+
+Sixth, add a condition to run the web application only if the name attribute is set to main (if __name__ == '__main__': app.run(debug=True)).
+
+When you run the script, the development server starts and provides an IP address and port (such as 127.0.0.1:5000) where you can view your application in a browser.
+
+Working with Templates and Static Files
+Flask applications can serve both static assets and dynamic templates.
+
+By default, a Flask application looks for templates in a directory called templates under the root directory.
+
+Static files like images, style sheets, and JavaScript files are stored in a folder named static and are rendered as-is.
+
+Dynamic pages display information that changes based on each request, often utilizing arguments passed directly through the URL or as request parameters.
+
+To build apps using templates, you import render_template and request alongside Flask.
+
+You can define multiple endpoints, such as rendering a static HTML page for /sample or capturing dynamic variables for routing like /user/<username>

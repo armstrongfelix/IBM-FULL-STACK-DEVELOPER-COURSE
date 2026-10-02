@@ -1,0 +1,7 @@
+Coding Challenge Level 2: Intermediate Problem
+For the intermediate-level problem below, you can choose between JavaScript or Python language to code. You can use any IDE of your choice on your local machine. Use the 4-step framework to assess and code the problem.
+
+Task
+Create a function that takes an array of any items, removes all duplicate items (items with the same name or number-case sensitive), and returns a new array in the same sequence as the old array without any duplicates.
+
+You will get a chance to compare your code with a proposed solution in the following lab.

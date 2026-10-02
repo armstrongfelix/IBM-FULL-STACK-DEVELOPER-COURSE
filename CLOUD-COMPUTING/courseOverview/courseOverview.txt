@@ -1,0 +1,41 @@
+Course Overview: Introduction to Cloud Computing
+Core Objective
+This course is designed to build a strong foundational understanding of cloud computing. It bridges the gap between high-level business strategy and technical execution, preparing learners to either make informed business decisions or step into a technical role as a Cloud Practitioner.
+
+Target Audience & Prerequisites
+Who it is for: The curriculum accommodates everyone from non-technical business leaders (C-level executives, managers, sellers, students) to aspiring technical professionals (developers, systems/cloud architects, technical leads, data/security engineers, consultants).
+
+Prerequisites: Basic computer literacy is the only requirement. Absolutely no prior knowledge of computer programming or cloud computing is necessary.
+
+Curriculum Breakdown
+The course material is divided into four main learning pillars:
+
+1. Cloud Fundamentals & Business Value
+
+Definition & Characteristics: The core definition of what cloud computing is and the essential traits that define a cloud environment.
+
+Context & Future: The historical evolution of cloud technology and current emerging trends.
+
+The Business Case: Understanding the financial, operational, and strategic reasons why organizations adopt cloud computing.
+
+2. Architecture & Delivery Models
+
+Service Models: How cloud services are delivered (typically covering Infrastructure as a Service, Platform as a Service, and Software as a Service).
+
+Deployment Models: Where and how cloud environments are hosted (such as Public, Private, or Hybrid clouds).
+
+Key Components: The underlying architectural building blocks that make cloud environments work.
+
+3. The Cloud Industry Landscape
+
+Major Providers: An introduction to the prominent cloud service providers dominating the current market and the specific services they offer.
+
+Real-World Application: Case studies exploring how different industry verticals successfully utilize cloud computing.
+
+Career Pathways: An overview of the job market and specific career opportunities available within the cloud computing domain.
+
+4. Hands-On Practical Experience
+
+Platform: IBM Cloud.
+
+Activity: Learners will move beyond theory by creating an active account and provisioning a real object storage instance to upload and store files on the cloud.

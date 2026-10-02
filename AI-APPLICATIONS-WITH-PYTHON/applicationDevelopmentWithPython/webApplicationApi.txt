@@ -1,0 +1,74 @@
+ntroduction to Web Applications and APIs
+Learning Objectives
+By the end of this lecture, you should be able to:
+
+Describe web applications (web apps).
+
+Describe an Application Programming Interface (API).
+
+Compare and contrast web apps and APIs.
+
+Web Applications (Web Apps)
+Definition
+A web app is a program stored on a remote server and delivered over the internet. Users interact with the application using a web browser (e.g., e-commerce sites, webmail). Most web apps work across all modern web browsers.
+
+Core Components
+A web app requires three main components to process a client request:
+
+Web Server: Manages the incoming requests.
+
+App Server: Executes the requested tasks.
+
+Database: Stores the information needed to complete the tasks.
+
+Programming Languages
+Front-end (User end): JavaScript, HTML, CSS.
+
+Back-end (Server end): Python, Java, Ruby.
+
+Advantages of Web Apps
+Compared to traditional apps that must run locally on a user's system, web apps offer several benefits:
+
+Version Control: Developers can make the exact same version of the app available to multiple users simultaneously.
+
+Platform Flexibility: Users can access the app from their preferred device (desktop, laptop, or mobile).
+
+Browser Flexibility: Users can use their browser of choice.
+
+No Installation: Users do not need to install the software on their local systems.
+
+Application Programming Interfaces (APIs)
+Definition
+An API is a software component that enables two unconnected applications to communicate with each other. They create flexibility for programmers by providing standardized rules and functions that determine how data can be taken or modified from otherwise closed-off apps.
+
+Examples
+Phone Permissions: Mobile apps using APIs to request access to your phone's location, camera, audio, or recorder.
+
+Weather App: A mobile weather app doesn't generate its own data; it uses an API to request and retrieve data from a remote software system that gathers weather information, which the app then displays as a forecast.
+
+API Architectures
+The two most popular architectures software developers follow to create an API are:
+
+REST: Representational State Transfer
+
+SOAP: Simple Object Access Protocol
+
+Benefits of APIs
+Improves connectivity between apps.
+
+Supports traditional CRUD actions (Create, Read, Update, Delete).
+
+Works with HTTP verbs (PUT, POST, DELETE, and GET).
+
+Highly customizable because they are based on HTTP.
+
+Comparing Web Apps and APIs
+Key Distinctions
+API is a generic term: It applies to all forms of applications that create a link between two parts of a system. APIs can be both "online" (web-based) and "offline."
+
+Web apps are a specific form of API: The fundamental nature of a web app is to share data with other apps (communicating between the front-end and back-end). Therefore, all web apps can be considered APIs.
+
+The E-commerce Example: When shopping online via a browser, the browser acts as the API connecting you to the web app. If you use a mobile device, the device's app acts as the API connecting you to the e-commerce service.
+
+Summary Rule
+All web apps are APIs, but not all APIs are web apps. Both exist to share data between applications, but web apps strictly require networks (the internet) to function, whereas not all APIs do.

@@ -1,0 +1,60 @@
+Developing Backend Applications with Node.js and Express
+1. Relevance and Industry Popularity
+According to the 2022 Stack Overflow survey, these technologies are highly dominant in the industry:
+
+Node.js: Used by approximately 50% of surveyed developers, making it the #1 most used server-side technology.
+
+Express: Ranked as the most popular web technology overall, making it the most popular server-side web framework.
+
+2. Core Definitions
+Node.js: A runtime environment that allows you to run server-side JavaScript applications.
+
+Express: A server-side JavaScript web framework that runs on top of Node.js, used to write your applications.
+
+3. Target Audience
+This course is designed to help you succeed as a backend or full-stack developer. It is ideal for:
+
+IT professionals looking to advance their careers.
+
+New graduates looking to establish server-side skills.
+
+IT decision-makers managing cloud-centric projects.
+
+Professionals from other fields who want to discuss server-side computing knowledgeably.
+
+4. Course Objectives (What You Will Learn)
+Through videos and labs, the course covers the following technical skills:
+
+Server-Side JavaScript: Developing on the server using JS and coding your first web server.
+
+Dependency Management: Using Node Package Manager to manage application modules and dependencies.
+
+Asynchronous Programming: Making applications non-blocking using asynchronous callbacks and promises.
+
+REST APIs: Using APIs in conjunction with HTTP requests and responses using the Express.js framework.
+
+Express Features: Building a web server and creating dynamic content utilizing middleware, routing, and templating.
+
+5. Course Structure and Success Strategy
+To get the most out of the course and build a winning portfolio:
+
+View all instructional and expert viewpoint videos.
+
+Check your learning with quizzes.
+
+Complete the hands-on labs and the final project.
+
+6. Industry Experts Featured
+The course includes expert viewpoint videos featuring:
+
+James Reeve: Full-stack software engineer at IBM
+
+Rupinder: Chief solutions architect at Skillab Technologies
+
+Dennis Harvey: Content strategy manager for cloud technology at Coursera
+
+Bradley Steinfeld: Software architect at IBM Cloud and Cognitive Software
+
+Subkaru Leder: Developer advocate with IBM
+
+Jan Stoneman: Solution architect at Smartronics

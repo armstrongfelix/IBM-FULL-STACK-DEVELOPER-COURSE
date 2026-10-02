@@ -1,0 +1,42 @@
+Coding Challenges in Software Engineering
+1. What is a Coding Challenge?
+If an interview process includes a coding challenge (or take-home questions), it is likely one of the most important steps.
+
+Timing: It usually occurs after the initial screening phase, though occasionally it is the very first step.
+
+Format: You work on a problem at home on your own time and turn it in for review. You may be sent files to work with or given a URL to complete the problem online.
+
+Purpose: The primary goal is to showcase your practical problem-solving and coding skills.
+
+2. The Nature of the Assessment
+Coding challenges simulate real-life job environments and everyday problems.
+
+Format of the Problem: Developers are often given a problem statement along with partially completed code and are asked to create a synthesized solution.
+
+Tech Stack Specific: The skills tested will be based on the specific technology stack used by the hiring organization. For example, a full-stack Python developer role might test a combination of Django and MySQL, or Flask and PostgreSQL.
+
+Full-Stack Assessments: These comprehensive tests are designed to evaluate both front-end and back-end development capabilities simultaneously.
+
+3. Types of Coding Challenges
+Coding challenge goals and structures differ from company to company. You will generally encounter three types:
+
+Directed Challenges: The requirements clearly state the ultimate goal and exactly how to achieve it.
+
+Strategy: Be extremely careful to follow all directions correctly.
+
+Open-Ended Challenges: These provide a target but have no expectations regarding how you achieve it.
+
+Strategy: You may be tempted to try an ambitious solution to show off as many skills as possible. However, it is much more impressive to keep the scope narrow and finish all requirements thoroughly. It is better to do one thing well than many things poorly.
+
+Vague Challenges: Sometimes, companies make their requirements purposefully vague just to see how you approach problem-solving.
+
+Strategy: In all cases (but especially here), it is best to ask questions. This proves you are actively thinking about the problem rather than just making blind assumptions.
+
+4. Confidentiality and Legal Considerations
+When taking a coding challenge, there are professional and legal expectations you must follow:
+
+Confidentiality: Companies expect that once you solve the challenge, you will not share the problem or your results with other job seekers.
+
+Ownership of Work: Companies often have strict policies regarding who legally owns the code you write for the challenge.
+
+NDAs: All of these details regarding confidentiality and work ownership are typically outlined in a Non-Disclosure Agreement (NDA) that you will be asked to sign.

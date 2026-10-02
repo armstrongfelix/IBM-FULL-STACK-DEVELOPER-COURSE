@@ -1,0 +1,45 @@
+Overview of Block Storage
+
+How it Works: Data is broken down into chunks (blocks), written in raw form, and stored separately under unique addresses. It is accessed by servers through a storage area network.
+
+Infrastructure & Network: It is mounted as a volume from remote storage appliances using a dedicated network of fiber optics. Because signals move at the speed of light over fiber, it is incredibly fast, though these networks are more expensive to build than ethernet, leading to a higher price point.
+
+Performance & Reliability: Delivers consistent, high-speed, and low-latency data transfer. It features built-in redundancy across the volume, meaning if a disk fails, data can be recovered seamlessly without impacting the application.
+
+Attachment Limit: A block storage volume can typically only be mounted to one compute node at a time. It is not designed for disk sharing between nodes.
+
+IOPS Management: Users can specify Input/Output Operations Per Second (IOPS) when provisioning and often adjust it later if application behaviors or requirements change.
+
+Overview of File Storage
+
+Infrastructure & Network: Connected to compute nodes over a standard ethernet network (often called Network Attached Storage or NFS). Because ethernet speeds can fluctuate based on traffic load, consistent lightning-fast speeds cannot be guaranteed.
+
+Attachment Limit: File storage is highly scalable and can be mounted to multiple compute nodes simultaneously (sometimes 80 or more).
+
+Concurrency: It acts as a shared network drive, allowing multiple simultaneous reads and writes from different servers without the risk of data being overwritten.
+
+Shared Characteristics
+
+Prerequisites: Both types must be attached to a compute node before they can be utilized for workloads.
+
+Security & Resilience: Both are mounted from remote, highly available storage appliances managed by the service provider. They both keep data secure by offering encryption at rest and encryption in transit.
+
+Planning: Both require users to carefully consider the IOPS requirements of their applications prior to provisioning.
+
+When to Use Block vs. File Storage
+
+Choose Block Storage For:
+
+Applications that require consistently fast disk access, high IOPS, and the lowest possible latency.
+
+Workloads where disk sharing is not required.
+
+Examples: Transactional databases, relational databases, mail servers, and boot volumes for virtual environments (such as VMware configurations).
+
+Choose File Storage For:
+
+Scenarios where cost is a primary factor and peak network speed is not a strict requirement.
+
+Workloads that require a common storage space shared across multiple compute nodes.
+
+Examples: Departmental file shares, collaborative workspaces where users are reading and writing simultaneously, and web hosting servers that house a mix of structured and unstructured data (like text and media files).

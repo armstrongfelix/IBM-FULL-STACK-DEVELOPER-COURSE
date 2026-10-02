@@ -1,0 +1,70 @@
+Lecture Notes: Basic Application and Routes
+Learning Objectives
+By the end of this lecture, you should be able to create and run a Flask application with basic routes, return JSON responses from the server, and describe various Flask configuration options.
+
+Creating Your First Flask App and Routes
+Before building your application, ensure that Flask is installed on your system.
+
+Create a new Python file to act as your server, typically named app.py.
+
+Inside the file, import the Flask class from the flask module.
+
+Instantiate an object of the Flask class to serve as your app by passing the built-in name variable into the constructor. This name helps Flask find resources on the filesystem and aids extensions in providing debugging information.
+
+To define a path or endpoint without adding an explicit sub-path, use the @app decorator above your method.
+
+For example, defining @app.route('/') above a method named hello_world() allows you to return a text or HTML message (such as a bolded greeting) when users visit the root URL.
+
+Running the Application
+To run your application, you can use system environment variables or command-line flags.
+
+You can set the FLASK_APP environment variable to the name of your main server file and FLASK_ENV to define your environment (though FLASK_ENV is deprecated in Flask 2.3).
+
+Alternatively, you can pass parameters directly to the Flask command, such as using --app to specify the Python file and --debug to enable development mode.
+
+The debug flag automatically restarts the server when source files change, making it easy to view updates instantly during development.
+
+To execute the server, run the flask run command in your terminal. By default, the application runs on port 5000, and you can view it by browsing to http://localhost:5000.
+
+When inspecting the network response via browser developer tools, a successful request returns a 200 OK status code, a content type of text/html, and shows that the server is powered by Werkzeug.
+
+Returning JSON Responses
+Flask allows you to return JSON responses to clients in two primary ways.
+
+The first method is returning a native serializable object, such as a Python dictionary or list. Flask will automatically use Python's built-in JSON module to convert it, returning a content type of application/json with a 200 OK status.
+
+The second method is using the jsonify() utility provided by Flask. You first import jsonify from Flask and pass key-value pairs directly into the function to return the correct JSON structure.
+
+Flask Configuration Options
+Flask provides several built-in configuration keys that you can adjust for your application:
+
+ENV: Indicates whether the app runs in production or development.
+
+DEBUG: Enables or disables debug mode.
+
+TESTING: Enables testing mode.
+
+SECRET_KEY: Used to sign the session cookie securely.
+
+SESSION_COOKIE_NAME: Specifies the name of the session cookie.
+
+SERVER_NAME: Binds the host and port.
+
+JSONIFY: Defaults to application/json.
+
+You can assign these options using the app.config object directly, load them from environment variables, or keep configurations in a separate JSON file and load them via the from_file method.
+
+Structuring a Growing Application
+As your application scales beyond a single file, it is best practice to organize your project into a structured directory:
+
+Store the main source code inside its own module directory.
+
+Keep configuration settings in a dedicated configuration file.
+
+Place static assets (images, JavaScript, and CSS files) in a designated static folder.
+
+Store dynamic content in a separate template directory.
+
+Keep all test files inside a dedicated test directory.
+
+Use an activated virtual environment to manage and install the correct version of your dependencies.

@@ -1,0 +1,42 @@
+Introduction to Server-Side JavaScript
+1. JavaScript Fundamentals
+Core Role: JavaScript is a primary language of the World Wide Web, originally built to add dynamic behavior to static websites in browsers.
+
+Characteristics: It is an interpreted language (requires no compilation before running). Despite having similar syntax, it is not derived from the Java programming language.
+
+The Frontend Stack: Developers use HTML, CSS, and JavaScript together to build responsive, interactive web applications. You can write, test, and debug these applications quickly with just a text editor and a web browser.
+
+Evolution: While historically tied to the browser, all modern browsers support it, and it can now be run on different servers and embedded systems.
+
+2. The Traditional Architecture (Non-JS Backend)
+In a traditional client-server setup, the browser uses JavaScript, but the server relies on a different language to handle the backend:
+
+UI Rendering: The user interface is rendered using HTML and CSS.
+
+Client-Side Logic: A user selects an option on the web page, which triggers business logic written as a JavaScript application.
+
+The Request: The JavaScript application sends a web service request using JSON (JavaScript Object Notation) over HTTP.
+
+Server Interception: On the server, a REST web service intercepts the call. Traditionally, this backend service would be written in languages like Java or PHP.
+
+Processing & Response: The application server processes the request (e.g., using Enterprise Java components) and returns the result to the client.
+
+3. The Node.js Architecture (Server-Side JavaScript)
+When using Node.js, the workflow is almost identical to the traditional architecture, but the server-side language is unified with the frontend:
+
+UI Interaction: The user selects an option in the HTML/CSS user interface.
+
+Client-Side Logic: The option triggers the client-side JavaScript business logic.
+
+The Request: The JavaScript application makes a web service call over HTTP with a JSON data payload.
+
+Server Interception: A REST web service intercepts the HTTP request.
+
+The Key Difference: Instead of invoking a Java or PHP application, the Node.js server hosts and processes the application using JavaScript. This code executes entirely on the server, completely separate from the client's web browser.
+
+4. Key Takeaways
+Node.js is a server-side programming framework that uses JavaScript as its programming language.
+
+With server-side JavaScript, Node.js applications process and route web service requests from the client.
+
+Node.js is built for developers who want to create scalable, concurrent server applications quickly while relying on a minimal set of tools

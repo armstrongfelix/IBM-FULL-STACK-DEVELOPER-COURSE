@@ -1,0 +1,28 @@
+Overview of Microservices Architecture
+
+
+Microservices architecture is an approach in which a single application is composed of many loosely coupled and independently deployable smaller components or services. These services typically have their own stack running on their own containers, and they communicate with one another over a combination of APIs, event streaming, and message brokers.
+
+
+The Shift from Monolithic to Microservices
+
+
+In the past, software was built as large monolithic applications where a team of developers would spend months constructing an application on a common code base, writing every part from start to finish. Now, developers leverage cloud platforms that provide an ecosystem of reusable code. Instead of one huge team building a single application, developers break into small, independent teams to write microservices that handle core functions like search, recommendations, customer ratings, or product catalogs.
+
+
+Containers and Communication
+
+
+A container acts as the distribution method for each microservice, delivering the code where it needs to go. These containers are plug-and-play, allowing developers to remove and replace a specific microservice without disrupting how the rest of the application functions. Before they can work together, microservices use a mechanism called Service Discovery to find one another and create a roadmap for communication. Once located, they communicate using an application programming interface (API).
+
+
+Use Case: Dream Game Streaming Service
+
+
+The Dream Game online streaming service illustrates microservices in action. The application relies on several distinct microservices: a Content Catalog that houses millions of games tagged with metadata, a Search Function that captures user searches to compare against the catalog, and a Recommendations service that tracks popular content among all users. All of these services run in separate containers and communicate via APIs to deliver a seamless user experience.
+
+
+Business Benefits and Agility
+
+
+When Dream Game wanted to improve the Recommendations service with a new analytics algorithm, developers were able to deploy the new functionality in a matter of days without needing to write code from scratch. These updates happened completely behind the scenes while the rest of the microservice containers functioned normally. For businesses, this means components can be developed and updated more efficiently, teams can use different technology stacks for different services, and individual components facing heavy traffic can be scaled independently, drastically reducing the waste and cost associated with scaling an entire application.

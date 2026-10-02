@@ -1,0 +1,33 @@
+Expert Viewpoints: Interviewing
+1. The Importance of Asking Questions
+Asking questions at the end of an interview is a critical part of the process. Replying with, "No, I'm good," when prompted makes you appear uninterested and uninvolved.
+
+A Two-Way Process: Interviews are not just about the company evaluating you; they are also your opportunity to evaluate the company. You need to leave the interview knowing whether the organization is actually the right fit for you.
+
+2. Formulating Your Questions
+It is essential to strike a balance to show you are interested in contributing, rather than just taking. Have prepared questions ready before you walk into the interview.
+
+Appropriate Questions to Ask:
+
+The Interviewer's Experience: "How do you like working at [Company]?" or "You’ve worked here for 15 years, what kept you there?"
+
+Team Dynamics and Daily Life: Ask for a breakdown of what the day-to-day life of a developer on the team looks like, or ask about other team members.
+
+Role Expectations: "What does success look like in the first six months of this role?"
+
+Role History: "Why did the previous person move on from this role?" or "Why did this role open up?"
+
+Questions to Avoid:
+
+Confrontational or Overly Personal: Use your best judgment to avoid questions that might intentionally irritate the interviewer.
+
+Self-Serving First Impressions: Avoid focusing heavily on what the company can do for you right out of the gate. Do not lead with questions like, "What is your company's sick policy?", "What are the benefits?", or "How much annual leave do I get?" While these are legitimate concerns, asking them first sends the wrong message.
+
+3. Navigating Behavioral Questions
+Most interviewers who hire software developers will ask behavioral questions, typically during a second-round or soft-skills interview.
+
+Common Scenarios: Interviewers will often ask about classic situations, such as a time you struggled with a problem you could not easily solve, or how you went about resolving a conflict with a colleague.
+
+Authenticity Over Perfection: While you can search online for common behavioral questions and suggested answers to prepare, the best approach is to be completely honest. Tell the truth about how you actually behaved and how you resolved the issue. Interviewers appreciate genuine honesty over rehearsed answers that simply tell them what they want to hear. Never pretend to be someone else to get a job.
+
+The Interviewer's Strategy: Hiring managers often do not ask a blank list of behavioral questions. Instead, they use them to probe specific concerns. For example, if a candidate appears highly individualistic (a trait that is great for independent work but potentially detrimental to a team), the interviewer will ask targeted behavioral questions about teamwork to see if their initial hunch is correct.

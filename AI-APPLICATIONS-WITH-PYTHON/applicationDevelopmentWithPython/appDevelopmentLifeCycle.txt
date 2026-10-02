@@ -1,0 +1,75 @@
+Application Development Lifecycle
+Learning Objectives
+By the end of this lecture, you should be able to:
+
+List the steps in the application development lifecycle.
+
+Describe the different phases of the lifecycle.
+
+Recognize the importance of writing application code in multiple files.
+
+Introduction
+When a customer requests an application (such as an employee task tracker or a hotel reservation app), you cannot start building or coding immediately. Every application, regardless of type, must go through a structured process of planning, analyzing, and coding known as the Application Development Lifecycle.
+
+The 7 Phases of the Application Development Lifecycle
+1. Requirement Gathering
+The first phase involves capturing all requirements and identifying constraints for the application.
+
+User Requirements: What the user needs to do (e.g., viewing rooms and amenities).
+
+Business Requirements: Business logic and rules (e.g., determining charges for rooms).
+
+Technical Requirements: Technical specifications (e.g., the app must run on all browsers and mobile devices).
+
+Constraints & Viability: Identifying design limitations or business model costs (e.g., adding a convenience fee to cover the constant server costs of tracking room availability).
+
+2. Analysis
+Analyze the gathered requirements and constraints to brainstorm a possible solution.
+
+Involves multiple rounds of verification and revision to ensure the solution meets all specifications.
+
+3. Design
+Create the final proposed model solution based on the analysis.
+
+Documentation: You must maintain clear and concise documentation recording all design updates, which will be passed on to the coding phase.
+
+4. Code and Test
+The team uses the programming requirements from the design documentation to write the code.
+
+Includes Unit Testing: Testing conducted at the programming level for individual code units to ensure they meet required specifications.
+
+Code is repeatedly tested and revised until an acceptable version is generated.
+
+5. User and System Test
+The new version is put through a series of broader tests:
+
+User Tests: Verifies the app's functionality from the end-user's point of view.
+
+System-Level Tests:
+
+Integration Testing: Verifies that all individual programs function correctly together and within the larger framework.
+
+Performance Testing: Evaluates the application's speed, scalability, and stability under varying workloads.
+
+6. Production
+The application is deployed and made available to end users.
+
+The app should remain in a steady state (meaning no spontaneous changes are made).
+
+If errors occur, changes must be tightly controlled and heavily tested before being implemented into the live production environment.
+
+7. Maintenance
+Involves upgrading the app or adding new features over time to fix user or system issues.
+
+Any new features must go through all the previous phases (requirements, design, testing, etc.) before being integrated into the production version.
+
+Best Practice: Organizing Code in Multiple Files
+Instead of writing an entire application in one file, it is highly recommended to split the code up.
+
+How to structure it: Code each distinct functionality in a separate file. Then, create a central program that runs the application and calls upon those individual files to perform specific actions.
+
+Why it's important:
+
+It makes code maintenance highly efficient and easy.
+
+When adding a new feature, you only need to write it in a new, separate file. That single file goes through the design and testing phases before being added, without disrupting the rest of the running application.

@@ -1,0 +1,70 @@
+Lecture Notes: Request and Response Objects
+Learning Objectives
+By the end of this lecture, you should be able to explain the Flask request object, explore its properties and methods for extracting data, and describe how to manage response objects in Flask.
+
+Customizing Routes and HTTP Methods
+By default, the @app.route() decorator handles only GET requests.
+
+However, you can pass a methods argument to control which HTTP methods a path responds to (for example, methods=['GET', 'POST']).
+
+Inside your handler function, you can check the request method to execute different logic based on whether the client sent a GET or a POST request.
+
+The Flask Request Object
+All HTTP calls to Flask contain a request object created from the flask.request class.
+
+When a client requests a resource, you can examine and explore this request object directly within your handler function.
+
+Key attributes available on the request object include:
+
+Host: The address of the server as a (host, port) tuple.
+
+Headers: Metadata sent with the request.
+
+URL: The specific resource requested by the client.
+
+AccessRoute: A list of IP addresses for requests forwarded multiple times.
+
+FullPath: The complete path of the request, including any query strings.
+
+IsSecure: A boolean that is true if the client makes a request using HTTPS or WSS.
+
+IsJSON: A boolean that is true if the request contains JSON data.
+
+Cookies: A dictionary containing any cookies sent with the request.
+
+Important header properties include CacheControl, Accept, AcceptEncoding, UserAgent, AcceptLanguage, and Host.
+
+Extracting Data from Requests
+Flask provides focused properties to extract data easily without manual parsing:
+
+args: Gives query parameters as a dictionary.
+
+json: Parses request body data into a dictionary.
+
+files: Provides user-uploaded files.
+
+form: Contains all values posted in a form submission.
+
+values: Combines both args and form data.
+
+These methods return data structures like Multidict or ImmutableMultidict, which behave just like Python dictionaries.
+
+When extracting query parameters, you can use indexing (e.g., request.args['course']), which raises an error and stops the server with a 400 Bad Request if the parameter is missing.
+
+Alternatively, you can use the get() method (e.g., request.args.get('rating')), which safely returns None if the argument is absent.
+
+The Flask Response Object
+Flask provides a response object to send custom attributes, data, and headers back to the client.
+
+Common response attributes include the status code, headers, content type, content length, content encoding, MIME type, and expires time.
+
+Standard methods on response objects include set_cookie to set a browser cookie and delete_cookie to remove one.
+
+Creating Responses in Flask
+Flask automatically creates a response object with a 200 status code and an HTML MIME type when you return data from a route, or when you use jsonify().
+
+You can use make_response() to build entirely custom responses.
+
+Flask also provides a special redirect() method to return a 302 status code and send the client to another URL.
+
+Finally, you can use the abort() method to return a response with a specific error condition.

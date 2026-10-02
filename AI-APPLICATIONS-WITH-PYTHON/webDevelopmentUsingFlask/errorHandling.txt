@@ -1,0 +1,53 @@
+Lecture Notes: Error Handling in Flask
+Learning Objectives
+By the end of this lecture, you should be able to describe different HTTP status codes, explain how error handling works in Flask, and return specific error responses from your API endpoints.
+
+HTTP Status Code Categories
+Every HTTP response contains a three-digit code indicating the status of the request. These codes are divided into five major categories of 100 each:
+
+100–199 (Informational): Indicates that the request has been received and is being processed.
+
+200–299 (Success): Indicates that the request was successfully received, understood, and accepted.
+
+300–399 (Redirection): Indicates that further action needs to be taken to complete the request.
+
+400–499 (Client Error): Shows an error or bad request originating from the client side.
+
+500–599 (Server Error): Indicates that an error occurred on the server side while processing a valid request.
+
+Returning Status Codes in Flask
+By default, Flask automatically returns a 200 OK status code when data is returned from an @app.route method or when using the jsonify() function. However, you can explicitly customize these codes in your application:
+
+Using Tuples: Flask allows you to send the status code in a tuple alongside the response (e.g., return "My first application", 200).
+
+Using make_response(): You can explicitly use the make_response() method to build a response object, attach custom headers, and set explicit status codes.
+
+Common HTTP Status Codes Cheat Sheet
+Here are some of the most frequently used status codes you will encounter in web development:
+
+200 OK: Request is successful.
+
+201 Created: The server has successfully created a new resource.
+
+202 Accepted: The request has been accepted for processing (commonly used for batch operations).
+
+204 No Content: Request completed successfully, but no content is returned (the browser stays on the current page).
+
+400 Bad Request: The request is invalid or missing proper parameters.
+
+401 Unauthorized: Credentials are missing or invalid.
+
+403 Forbidden: Client credentials are insufficient to fulfill the request.
+
+404 Not Found: The requested resource could not be found on the server.
+
+405 Method Not Allowed: The requested HTTP operation is not supported by the endpoint.
+
+422 Unprocessable Entity: The request was well-formed but unable to be followed due to semantic errors (such as a missing mandatory input parameter).
+
+500 Internal Server Error: A general error occurred on the server side.
+
+Application-Level Error Handlers in Flask
+Beyond returning codes inside specific routes, Flask allows you to handle errors globally at the application level.
+
+You can write custom error-handling functions to catch specific HTTP status codes across your entire application. For instance, you can define an application-level handler for a 404 error to return a custom "API not found" message, or catch 500 errors to gracefully display a "Something went wrong on the server" message.

@@ -1,0 +1,37 @@
+Creating a Web Server with Node.js
+1. Characteristics of Node.js
+Language & Framework: Node.js is a server-side programming framework that uses JavaScript, a language already familiar to many developers.
+
+Concurrency: It places a heavy emphasis on concurrent programming using a lightweight language.
+
+Execution Environment: It is a single-threaded application environment.
+
+Non-Blocking I/O: Instead of blocking operations while waiting for asynchronous Input/Output (I/O) to finish, Node.js handles I/O operations through events. You write callback functions to handle the results once those operations complete.
+
+Target Use Case: Because of the Node.js runtime event loop and callback functions, it is perfectly suited for developers who want to build scalable and concurrent server applications quickly and with a minimal set of tools.
+
+2. Modules and Packages
+Modules: In Node.js, every single JavaScript file is considered a module. A module directly corresponds to a script file.
+
+Packages: A package is a collection that can contain one or more nodes (modules).
+
+Utility Modules: The Node.js runtime comes pre-packaged with many utility modules that developers can use to create and extend applications.
+
+3. The HTTP Module and Web Server Creation
+The built-in HTTP module allows you to develop applications that listen to incoming HTTP requests and return appropriate HTTP response messages.
+
+Creating a basic server involves two primary functions:
+
+HTTP.createServer
+
+This function creates an instance of a web server.
+
+The resulting server instance is typically stored in a variable (e.g., named "server").
+
+It accepts an optional parameter: a callback function (often written as an anonymous function). This callback is responsible for handling the incoming request messages and providing the appropriate response messages.
+
+Listening to a Port
+
+Once the server object instance is created, you must set it to listen to a specific port so it can receive traffic.
+
+You do this by calling the listen function on your server variable, passing the port number as a parameter (for example, passing 8080 sets the server to listen on port 8080).

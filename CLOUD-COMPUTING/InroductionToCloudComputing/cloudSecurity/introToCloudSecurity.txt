@@ -1,0 +1,55 @@
+Overview of Cloud Security
+
+
+As organizations undergo digital transformation and move their infrastructure to the cloud, they incorporate various cloud-based tools and computing models such as Infrastructure-as-a-Service (IaaS), Platform-as-a-Service (PaaS), and Software-as-a-Service (SaaS).
+
+
+While these models offload time-consuming IT tasks, they also introduce potential security risks. If cloud technologies are not used securely, enterprises can be subjected to external threats. Although third-party cloud computing providers implement security best practices and ensure the integrity of their servers, the management of data assets remains the responsibility of the organization.
+
+
+Considerations for Cloud Security Solutions
+
+
+Identifying the right cloud security solution requires evaluating several challenges inherent to cloud environments:
+
+
+Lack of Visibility: In a public cloud, it is difficult to keep track of who is accessing your data and which specific cloud services they are using outside the organization.
+
+
+Multitenancy: Public clouds host multiple client infrastructures on the same provider. Your services might be compromised if malicious attackers target other businesses sharing the same environment.
+
+
+Access Management and Shadow IT: It can be difficult to restrict unfiltered access to cloud services from unauthorized devices or geolocations.
+
+
+Misconfigurations of Assets: Inappropriate privacy settings or failing to change default administrative passwords often lead to breached records.
+
+
+Evolving Threats and Risks in Cloud Computing
+
+
+Modern cyberattacks target cloud environments due to a lack of transparency in data movement and access. Key threats include:
+
+
+Insider Threats: Current or former employees, business partners, or contractors can abuse their past or present access permissions. Because these threats originate from within, they are invisible to external security systems and highly dangerous.
+
+
+Distributed Denial-of-Service (DDoS): This attack targets and overloads an enterprise server using traffic from multiple synchronized systems. It works through the Simple Network Management Protocol (SNMP), which is used for modems, printers, switches, routers, and servers.
+
+
+Data Breaches: A leak in an organization's cloud security measures can allow malicious users to access and misuse sensitive data, leading to severe financial and reputational loss.
+
+
+The Shared Responsibility Model
+
+
+To ensure business continuity and defense against modern cyberattacks, cloud computing uses a shared responsibility model. This is a security framework where the organization hands off specific IT security responsibilities to the cloud provider. Both parties work together to achieve full security coverage, with responsibilities divided based on the service model:
+
+
+IaaS (Infrastructure-as-a-Service): The provider secures the physical infrastructure at their data centers. The user is responsible for securing the software (including the operating system required to run applications) and their data.
+
+
+PaaS (Platform-as-a-Service): The provider secures the platform, which includes the operating system, user subscriptions, and login credentials. The user remains responsible for the security of any code, data, or other content they produce on the platform.
+
+
+SaaS (Software-as-a-Service): The provider is responsible for almost every aspect of security, including the underlying infrastructure, the service application, and the data the application produces. The user's primary security responsibility is the protection of their login credentials.

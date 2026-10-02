@@ -1,0 +1,50 @@
+Understanding Promises in Node.js
+1. What is a Promise?
+Definition: A promise is an object that is returned by an asynchronous method.
+
+Purpose: Promises are designed to handle operations that are time-consuming and have the potential to block system resources.
+
+Common Use Cases: They are most useful for handling:
+
+Application Programming Interface (API) requests.
+
+Input/Output (I/O) operations (like reading files).
+
+Any other heavy or delayed operations.
+
+Implementation: If you know a method is going to take time to execute and thereby block resources, you can define that method to return a promise object. You can also manually create a promise object whenever you are going to perform operations that could be blocking.
+
+2. The Three States of a Promise
+When you call a method that returns a promise, a promise object is immediately created. From its creation to its completion, the promise exists in one of three distinct states:
+
+1. Pending: This is the initial state of the promise object upon creation. The promise remains in this pending state until the asynchronous operation is either completely finished or an error causes the operation to abort.
+
+2. Resolved (Fulfilled): When the asynchronous operation successfully completes, the promise transitions to the resolved state.
+
+3. Rejected: When there is an error that prevents the operation from completing, the promise transitions to the rejected state.
+
+3. Handling Promise Results: then and catch
+Once a promise leaves the "pending" state, your code needs a way to handle the outcome. Promise objects come with built-in methods to deal with success and failure:
+
+The then method: This method is called automatically after the promise is successfully fulfilled (resolved). It is used to process the resulting data.
+
+The catch method: This method is executed if the promise is rejected. It is used to handle and deal with the resulting error state.
+
+4. Code Examples Discussed in the Lecture
+Example A: Reading a File (methCall)
+In this scenario, a promise named methCall is created to read a file.
+
+Success Scenario: If the filename provided is valid, the file is successfully read. The promise is resolved, and the content of the file is displayed on the output screen.
+
+Failure Scenario: If the filename provided is invalid, the promise is rejected, and an error message is displayed instead.
+
+Example B: HTTP Requests using Axios
+Synchronous HTTP requests can severely block resources. To solve this, the Node.js ecosystem contains many packages that wrap promises around HTTP requests.
+
+The Axios Package: axios is a specific package used to handle HTTP requests. Whenever you make a request using axios, it returns a promise object.
+
+The Lifecycle: The status of the promise remains "pending" until the application hears back from the requested Uniform Resource Locator (URL).
+
+Success Scenario (Valid URL): You pass a valid URL to axios. A pending promise is created. Once the promise is fulfilled (the server responds), the .then method is triggered, and the response is logged to the console.
+
+Failure Scenario (Invalid URL): You pass an invalid URL. A pending promise is created. Because the URL is bad, the promise is rejected. The .catch block intercepts this rejected state, and the error is logged to the console.

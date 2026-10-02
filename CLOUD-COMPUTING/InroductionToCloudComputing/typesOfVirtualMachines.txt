@@ -1,0 +1,37 @@
+Types of Virtual Machines (VMs): A Comprehensive Overview
+
+Virtual Machines (VMs) are also known across different cloud providers as Virtual Servers, Virtual Instances, or simply instances. Cloud service providers make VMs available in a wide range of configurations and deployment models to satisfy diverse workload requirements.
+
+When provisioning a virtual server in the cloud, you select specific parameters including the Region and Zone (or Data Center), the desired Operating System, the tenancy model (shared multi-tenant vs. dedicated single-tenant), the billing model (hourly vs. monthly), and associated storage and networking configurations.
+
+Shared or Public Cloud VMs
+
+Shared or Public Cloud VMs are provider-managed, multi-tenant deployments that can be provisioned on-demand. In this setup, the underlying physical server is virtualized and shared among multiple customer workloads.
+
+Providers offer predefined VM sizes and profiles to meet specific workload needs, such as Compute-Intensive, Memory-Intensive, or High-Performance Input/Output (I/O) configurations. Some cloud platforms also support custom configurations, allowing users to specify exact numbers of virtual CPU (vCPU) cores, RAM capacity, and storage characteristics.
+
+Public VMs are typically billed on a granular, pay-as-you-go basis by the hour or second, with entry-level pricing starting at pennies per hour. Many providers also offer monthly billing options, which provide cost savings for predictable, ongoing workloads; however, decommissioning a monthly instance mid-billing cycle still incurs the full month's charge.
+
+Transient or Spot VMs
+
+Transient or Spot VMs take advantage of excess, unused capacity within a cloud provider's data centers. Providers offer this idle compute capacity at substantial discounts compared to standard on-demand rates.
+
+The trade-off for the discounted price is that the provider reserves the right to de-provision and reclaim these instances at any time when demand for regular, higher-priced VMs increases.
+
+Because of the potential for sudden reclamation, Transient VMs are best suited for fault-tolerant and non-production workloads. Common use cases include development and testing environments, stateless application tiers, scalability testing, and batch processing for big data or High-Performance Computing (HPC) jobs.
+
+Reserved Virtual Server Instances
+
+Reserved instances allow organizations to reserve compute capacity and guarantee resources in advance for future deployment.
+
+Users commit to a fixed term—typically one or three years—which yields significant cost savings compared to standard hourly or monthly rates. In exchange, the cloud provider guarantees that the reserved capacity remains available in the designated data center throughout the contract duration.
+
+Reserved instances are ideal for baseline workloads with steady, predictable resource requirements. If capacity needs temporarily exceed the reserved baseline, organizations can supplement their environment with standard hourly or monthly on-demand VMs.
+
+Dedicated Hosts
+
+Dedicated hosts provide single-tenant hardware isolation, ensuring that only your organization's virtual machines run on a specific physical server.
+
+When configuring a dedicated host, the user designates the specific data center and Pod where the hardware is placed, granting granular control over instance placement across the underlying physical cores and sockets.
+
+Dedicated hosts are primarily used to satisfy strict security, compliance, and regulatory mandates, as well as to accommodate specialized software licensing agreements that require dedicated physical hardware (such as core-based or socket-based software licenses).
