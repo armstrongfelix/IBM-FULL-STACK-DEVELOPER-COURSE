@@ -1,0 +1,56 @@
+Basic Operations
+git clone <URL>: Copies a remote repository to your local machine.
+
+git add: Stages files for the next commit. Use git add <file> for specific files, git add . for current directory changes, or git add -A for all changes.
+
+git pull origin main: Fetches and merges remote changes into your local branch.
+
+git push origin <branch-name>: Uploads local commits to a remote repository.
+
+git version: Displays the installed Git version on your system.
+
+Branching & Navigation
+git branch: Lists existing branches. Use git branch <new-branch> to create one, or git branch -d <branch-name> to delete one.
+
+git checkout <branch-name>: Switches your working directory to a specific branch.
+
+git switch <branch-name>: A streamlined, modern alternative specifically for changing branches.
+
+Inspecting, Reverting & Restoring
+git diff: Shows differences between the working directory and the last commit, or use git diff <branch1> <branch2> to compare branches.
+
+git reset --hard HEAD: Resets the repository to the last commit. Warning: The --hard flag permanently deletes uncommitted changes.
+
+git revert HEAD: Undoes changes from a previous commit by safely creating a new commit.
+
+git restore <file>: Discards local changes to a file. Use git restore --staged <file> to unstage a file.
+
+Configuration & Remotes
+git config --global user.name <Name> and user.email <Email>: Sets your authentication details. This must be done before making your first commit.
+
+git remote: Lists the names of all associated remote repositories.
+
+git remote -v: Lists all connected remotes along with their full URLs.
+
+git remote add origin <URL>: Connects a new remote repository and names it "origin".
+
+git remote rename origin upstream: Changes the name of an existing remote from "origin" to "upstream".
+
+git remote rm origin: Disconnects the specified remote repository.
+
+gh auth login: Authenticates your GitHub account directly in the command line interface.
+
+Advanced Tools (Patches & Web)
+git format-patch HEAD~3: Generates patch files for the last three commits for email submission.
+
+git request-pull origin/main <branch>: Generates a summary of pending changes to send to a maintainer.
+
+git send-email *.patch: Sends a collection of generated patches via email.
+
+git am <patchfile.patch>: Applies the changes specified in a patch file to your repository.
+
+git daemon --base-path=/path: Exposes repositories using the lightweight Git:// protocol for efficient communication.
+
+git instaweb --httpd=webrick: Instantly launches a local web server to browse repository contents in your browser.
+
+git rerere: Reuses recorded resolutions for previously solved merge conflicts (must be enabled in config first).

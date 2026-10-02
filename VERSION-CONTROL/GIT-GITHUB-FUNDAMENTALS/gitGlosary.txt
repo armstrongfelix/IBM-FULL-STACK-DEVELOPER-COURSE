@@ -1,0 +1,41 @@
+Core Concepts & Systems
+Version control: A system that tracks changes to your documents, allowing you to recover older versions if mistakes are made.
+
+Distributed version control system (DVCS): A system that tracks code changes where multiple users work on the same repository by mirroring it locally. The software manages synchronization among all the local copies.
+
+Git: A free, open-source distributed version control system that allows users to track project changes on their local computers.
+
+GitHub: A popular web-hosted service for managing Git repositories and collaborating with others.
+
+Repository: A data structure (folder setup) for storing documents and application source code under version control.
+
+Remote repositories: Repositories that are stored elsewhere, such as on the internet, your company network, or a different server.
+
+Git Architecture & Locations
+Main branch: The default, definitive branch in a repository that stores the final, deployable version of your code.
+
+Staging area: A holding space where modified files are prepped and reviewed before they are officially committed to the project history.
+
+Fork: A personal copy of someone else's repository that lives under your own GitHub account.
+
+Origin: A shorthand name referring to the remote repository from which your local copy was directly cloned.
+
+Upstream: A term referring to the original, primary source repository from which a local copy or fork was derived.
+
+Actions & Processes
+Cloning: The act of downloading a complete copy of a remote repository (including its full version history) onto your local machine.
+
+Forking: The act of creating a remote copy of a repository so you can experiment or contribute without affecting the original project.
+
+Commit: A saved snapshot of your project's current state at a specific point in time, accompanied by a description of what changed.
+
+Pull request (PR): A formal request asking maintainers to review, approve, and integrate your code changes into the main project.
+
+Merge: The process of combining code changes from one branch (like a feature branch) into another branch (like the main branch).
+
+Project Roles
+Developer: A programmer participating in the project who is responsible for writing and updating the code.
+
+Integrator: A team member responsible for reviewing, managing, and merging the code changes submitted by developers.
+
+Repository administrator: A high-level manager responsible for configuring the repository's structure and maintaining user access rights.

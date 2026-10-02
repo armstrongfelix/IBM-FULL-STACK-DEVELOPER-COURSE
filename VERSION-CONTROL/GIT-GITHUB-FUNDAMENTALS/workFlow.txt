@@ -1,0 +1,29 @@
+Git Workflows Overview
+1. Joining an Existing Project (Standard Workflow)
+Clone: Copy the remote repository and its full version history to your local computer.
+
+Branch: Create an isolated workspace off the main branch to safely develop new features without altering the core codebase.
+
+Stage: Select specific modified files and move them to a temporary holding space.
+
+Commit: Save the staged changes to your local branch permanently. Always include a descriptive message (e.g., "Added product recommendation feature").
+
+Push: Upload your local branch and its commits to the remote repository.
+
+Pull Request (PR): Submit a request for a project maintainer to review your code. Once approved, they will merge your branch into the main branch.
+
+2. Starting a New Project
+Initialize: Convert a local project directory into a Git repository to begin tracking changes.
+
+Stage & Commit: Select your initial project files, move them to the staging area, and record the initial commit.
+
+Link & Push: Create an empty remote repository (on GitHub), link your local repository to it, and push the initial commit so others can clone it.
+
+3. Team Release Cycle (Use Case)
+Develop: Team members clone the remote repo, work on feature branches, and submit PRs.
+
+Review: The lead developer (maintainer) reviews and merges PRs into main.
+
+Release Branch: A dedicated branch (e.g., "Release 1.0") is created off main specifically for final testing, documentation, and bug fixes.
+
+Finalize: Once testing is complete, changes are merged back into main and the project is formally tagged (e.g., "Release 1.0").

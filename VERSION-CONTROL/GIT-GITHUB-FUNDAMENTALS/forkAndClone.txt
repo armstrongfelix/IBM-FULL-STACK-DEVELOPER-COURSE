@@ -1,0 +1,35 @@
+Cloning vs. Forking: Core Differences
+Forking: Creates a remote copy of an existing repository under your own GitHub account. You use this when you want to create a derivative project (like adding custom features to an existing app) or when you want to contribute to an open-source project where you do not have direct write access.
+
+Cloning: Creates a local copy of a remote repository on your computer. You use this when you need to download the codebase to your machine so you can actually edit, run, and test the code.
+
+Key Terminology
+Upstream Repository: The original project repository that you fork from.
+
+Origin: Your forked, remote copy of the repository hosted on GitHub.
+
+Local Repo: The cloned copy of the repository residing on your physical computer.
+
+The Forking Workflow
+Fork the Project: Use the GitHub web interface to click "Fork" on the upstream repository. (Note: There is no native Git command to do this; it is a GitHub feature). This creates your origin.
+
+Clone to Local: Run git clone <URL> using your origin's URL to bring the project to your local machine.
+
+Develop: Create branches, make changes, and save your work locally.
+
+Push to Origin: Upload your local changes back to your forked repository (the origin) using git push.
+
+Submit a Pull Request (PR): To contribute your changes back to the original upstream project, open a PR. The upstream maintainers will review your code, provide feedback, and merge it into their main branch if approved.
+
+The Standard Cloning Workflow (Team Collaboration)
+Clone: Copy the HTTPS URL from the repository and run git clone <URL> in your terminal.
+
+Create a Branch: Use git branch <name> to create an isolated workspace, and git checkout <name> to activate it.
+
+Make Changes: Update the code, stage it with git add, and save it to the history with git commit.
+
+Push: Upload your new branch to the remote repository using git push.
+
+Review: A project maintainer retrieves your updates using git fetch or git pull, and inspects the changes using git diff.
+
+Merge: Once the code is approved, the maintainer switches to the main branch (git checkout main) and uses git merge to integrate your branch into the primary codebase.

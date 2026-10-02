@@ -1,0 +1,21 @@
+General CLI Commands
+mkdir: Stands for "make directory." Used to create a new folder (e.g., mkdir MyRepository).
+
+cd: Navigates into a specific directory (e.g., cd MyRepository).
+
+Core Git Commands
+git init: Initializes a new Git repository by setting up the necessary data structures for version control.
+
+git add: Moves file changes from your working directory into the staging area.
+
+git commit -m "[message]": Saves your staged snapshot of changes to the project history alongside a descriptive message.
+
+git log: Displays the commit history so you can review and confirm previous changes.
+
+git branch: Lists, creates, renames, or deletes branches, allowing you to experiment with code in isolation.
+
+git checkout: Switches your working directory between existing branches.
+
+git status: Shows the current state of your working directory files in relation to the repository.
+
+git merge: Combines a feature branch back into the main branch. (Note: You must checkout the main branch first before merging the feature branch into it).

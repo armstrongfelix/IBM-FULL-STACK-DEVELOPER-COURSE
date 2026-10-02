@@ -1,0 +1,135 @@
+Setup & Configuration
+git init: Creates a new local Git repository in a specified directory.
+
+Example: git init <directory>
+
+git clone: Creates a local copy of a remote repository.
+
+Example: git clone <repository-url>
+
+git config --global: Sets global configurations for Git, such as your username and email.
+
+Example: git config --global user.name "Your Name"
+
+Example: git config --global user.email "your.email@example.com"
+
+git version: Displays the current version of Git installed on your system.
+
+Example: git --version
+
+Basic Operations
+git add: Moves specific file changes from the working directory to the staging area.
+
+Example: git add sample.md
+
+git add .: Stages all changed files in the current directory and subdirectories for the next commit.
+
+git commit: Takes a snapshot of your staged changes and saves them to the project history.
+
+Example: git commit -m "Your commit message here"
+
+git status: Shows the current state of your working directory and staging area.
+
+Branching & Merging
+git branch: Creates an isolated environment (branch) within the repository to safely make changes.
+
+Example: git branch <new-branch>
+
+git checkout: Switches to an existing branch.
+
+Example: git checkout <existing-branch>
+
+Example: git checkout main (Switches specifically to the main branch)
+
+git merge: Integrates changes from another branch into your current active branch.
+
+Example: git merge feature_branch
+
+Example: git merge upstream/main (Merges changes directly from the 'upstream/main' branch)
+
+History, Comparing & Undoing
+git log: Enables you to browse the history of previous project changes.
+
+Example: git log -p filename
+
+git diff: Helps identify and compare code changes for review.
+
+Example: git diff example.txt
+
+git reset: Undoes changes made to files in your working directory.
+
+Example: git reset HEAD~1
+
+git revert: Safely undoes botched commits by creating a new, opposing commit.
+
+Example: git revert HEAD
+
+Remote Repository Management
+git remote: Manages the set of tracked remote repositories.
+
+git remote -v: Views a list of all remotes associated with your local repository.
+
+git remote add origin: Adds a remote repository named "origin".
+
+Example: git remote add origin https://github.com/yourusername/your-repo.git
+
+git remote add upstream: Adds an original repository as a new remote labeled "upstream".
+
+Example: git remote add upstream https://github.com/original/repo.git
+
+git remote rename: Changes the name of an existing remote repository.
+
+Example: git remote rename origin new-origin
+
+git fetch: Downloads changes from a remote repository locally without merging them into your working files.
+
+Example: git fetch <remote name> <branch name>
+
+Example: git fetch upstream main:upstream-main (Grabs specific upstream branches)
+
+git pull: Transfers changes from a remote repository and immediately merges them into your active local branch.
+
+Example: git pull origin main
+
+Example: git pull upstream main (Pulls from the upstream repository)
+
+Example: git pull downstream main (Pulls from a downstream repository)
+
+git push: Uploads all committed local changes to the remote repository.
+
+Example: git push origin your_branch_name
+
+Advanced, Patching & Server Commands
+git format-patch: Generates formatted emails/patches for public forum workflows (like the Linux kernel).
+
+Example: git format-patch -n <number_of_commits>
+
+git send-email: Sends email submissions (or collections of patches) directly without corruption by standard email clients.
+
+Example: git send-email --to=recipient@example.com path/to/patchfile.patch
+
+git am: Applies patches that were emailed to the repository.
+
+Example: git am < patchfile.patch
+
+git request-pull: Generates a summary of pending changes for an upstream maintainer to review and pull.
+
+Example: git request-pull origin/main your-branch
+
+git rerere: Automatically reuses the recorded resolution of previously resolved merge conflicts.
+
+Example: git rerere
+
+git instaweb: Sets up a quick web front-end to browse Git repositories locally.
+
+Example: git instaweb -p 8080
+
+git daemon: Allows anonymous, read-only downloads from the repository.
+
+Example: git daemon --reuseaddr --verbose
+
+git http-backend: Provides a server-side implementation of Git-over-HTTP, allowing fetch and push services.
+
+git-shell: Used as a restricted login shell for shared central repository users.
+
+Example: sudo usermod -s /usr/bin/git-shell gituser 

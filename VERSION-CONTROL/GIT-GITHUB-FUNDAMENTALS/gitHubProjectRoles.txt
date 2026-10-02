@@ -1,0 +1,29 @@
+Managing GitHub Projects: Roles & Responsibilities
+1. The Developer
+A participant in a group project who focuses on writing code, managing their local branch, and communicating changes with the rest of the team.
+
+git clone: Creates a local copy of an upstream (remote shared) repository to start working.
+
+git pull & git fetch: Retrieves updates from the origin to keep the local repository synced with the upstream.
+
+git push: Uploads local commits to the shared repository.
+
+git request-pull: Generates a summary of proposed changes for the upstream maintainer to review and pull.
+
+2. The Integrator
+A project maintainer who receives, reviews, and integrates the code changes made by developers. They respond to pull requests and publish the final, approved code.
+
+git pull: Used to fetch and merge changes from trusted contributors into the main project.
+
+git revert: Safely undoes any problematic or "botched" commits without breaking the project history.
+
+git push: Publishes the integrated, finalized project from the local repository back to the remote repository for the rest of the team to use.
+
+3. The Repository Administrator
+The high-level manager who oversees the infrastructure, access, and automation of the repository.
+
+Access & Structure: Sets up and maintains developer access, structures how users interact with the repository, and manages communities, asset types, and categories.
+
+Configuration: Configures servers for web services and documentation, defines email and index settings, and manages the overall look and feel of the application.
+
+Automation: Utilizes GitHub Actions to automate software workflows, such as setting up Continuous Integration and Continuous Delivery (CI/CD) pipelines.
